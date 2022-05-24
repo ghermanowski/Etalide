@@ -25,6 +25,8 @@
 		50CF1BCA283CD9C900324353 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CF1BC9283CD9C900324353 /* DataController.swift */; };
 		50CF1BCE283CDE3900324353 /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CF1BCD283CDE3900324353 /* MemoryView.swift */; };
 		50CF1BCF283CDE3900324353 /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CF1BCD283CDE3900324353 /* MemoryView.swift */; };
+		50CF1BD2283CE17B00324353 /* TestCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CF1BD1283CE17B00324353 /* TestCardView.swift */; };
+		50CF1BD3283CE17B00324353 /* TestCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CF1BD1283CE17B00324353 /* TestCardView.swift */; };
 		F58A8D0C283CC3B8000A859A /* EtalideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D0B283CC3B8000A859A /* EtalideApp.swift */; };
 		F58A8D0E283CC3B8000A859A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D0D283CC3B8000A859A /* ContentView.swift */; };
 		F58A8D10283CC3B8000A859A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F58A8D0F283CC3B8000A859A /* Assets.xcassets */; };
@@ -59,6 +61,7 @@
 		50CF1BBC283CD8DA00324353 /* Card+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Card+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		50CF1BC9283CD9C900324353 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		50CF1BCD283CDE3900324353 /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; };
+		50CF1BD1283CE17B00324353 /* TestCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCardView.swift; sourceTree = "<group>"; };
 		F58A8D08283CC3B8000A859A /* Etalide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Etalide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F58A8D0B283CC3B8000A859A /* EtalideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtalideApp.swift; sourceTree = "<group>"; };
 		F58A8D0D283CC3B8000A859A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				50CF1BCD283CDE3900324353 /* MemoryView.swift */,
+				50CF1BD1283CE17B00324353 /* TestCardView.swift */,
 			);
 			path = MemoryGame;
 			sourceTree = "<group>";
@@ -345,6 +349,7 @@
 				50CF1BB6283CD78300324353 /* Etalide.xcdatamodeld in Sources */,
 				50CF1BC6283CD8DA00324353 /* Card+CoreDataProperties.swift in Sources */,
 				F58A8D0E283CC3B8000A859A /* ContentView.swift in Sources */,
+				50CF1BD2283CE17B00324353 /* TestCardView.swift in Sources */,
 				50CF1BC0283CD8DA00324353 /* Deck+CoreDataProperties.swift in Sources */,
 				50CF1BC3283CD8DA00324353 /* Card+CoreDataClass.swift in Sources */,
 				50CF1BCA283CD9C900324353 /* DataController.swift in Sources */,
@@ -371,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50CF1BB8283CD78300324353 /* Etalide.xcdatamodeld in Sources */,
+				50CF1BD3283CE17B00324353 /* TestCardView.swift in Sources */,
 				50CF1BC8283CD8DA00324353 /* Card+CoreDataProperties.swift in Sources */,
 				F58A8D27283CC3B8000A859A /* EtalideUITests.swift in Sources */,
 				50CF1BC2283CD8DA00324353 /* Deck+CoreDataProperties.swift in Sources */,
