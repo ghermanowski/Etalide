@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F58A8D0C283CC3B8000A859A /* EtalideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D0B283CC3B8000A859A /* EtalideApp.swift */; };
+		F58A8D0E283CC3B8000A859A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D0D283CC3B8000A859A /* ContentView.swift */; };
+		F58A8D10283CC3B8000A859A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F58A8D0F283CC3B8000A859A /* Assets.xcassets */; };
+		F58A8D13283CC3B8000A859A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F58A8D12283CC3B8000A859A /* Preview Assets.xcassets */; };
+		F58A8D1D283CC3B8000A859A /* EtalideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D1C283CC3B8000A859A /* EtalideTests.swift */; };
+		F58A8D27283CC3B8000A859A /* EtalideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D26283CC3B8000A859A /* EtalideUITests.swift */; };
+		F58A8D29283CC3B8000A859A /* EtalideUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D28283CC3B8000A859A /* EtalideUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F58A8D19283CC3B8000A859A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F58A8D00283CC3B8000A859A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F58A8D07283CC3B8000A859A;
+			remoteInfo = Etalide;
+		};
+		F58A8D23283CC3B8000A859A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F58A8D00283CC3B8000A859A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F58A8D07283CC3B8000A859A;
+			remoteInfo = Etalide;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F58A8D08283CC3B8000A859A /* Etalide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Etalide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F58A8D0B283CC3B8000A859A /* EtalideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtalideApp.swift; sourceTree = "<group>"; };
+		F58A8D0D283CC3B8000A859A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F58A8D0F283CC3B8000A859A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F58A8D12283CC3B8000A859A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F58A8D18283CC3B8000A859A /* EtalideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EtalideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F58A8D1C283CC3B8000A859A /* EtalideTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtalideTests.swift; sourceTree = "<group>"; };
+		F58A8D22283CC3B8000A859A /* EtalideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EtalideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F58A8D26283CC3B8000A859A /* EtalideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtalideUITests.swift; sourceTree = "<group>"; };
+		F58A8D28283CC3B8000A859A /* EtalideUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtalideUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F58A8D05283CC3B8000A859A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F58A8D15283CC3B8000A859A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F58A8D1F283CC3B8000A859A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F58A8CFF283CC3B8000A859A = {
+			isa = PBXGroup;
+			children = (
+				F58A8D0A283CC3B8000A859A /* Etalide */,
+				F58A8D1B283CC3B8000A859A /* EtalideTests */,
+				F58A8D25283CC3B8000A859A /* EtalideUITests */,
+				F58A8D09283CC3B8000A859A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F58A8D09283CC3B8000A859A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F58A8D08283CC3B8000A859A /* Etalide.app */,
+				F58A8D18283CC3B8000A859A /* EtalideTests.xctest */,
+				F58A8D22283CC3B8000A859A /* EtalideUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F58A8D0A283CC3B8000A859A /* Etalide */ = {
+			isa = PBXGroup;
+			children = (
+				F58A8D0B283CC3B8000A859A /* EtalideApp.swift */,
+				F58A8D0D283CC3B8000A859A /* ContentView.swift */,
+				F58A8D0F283CC3B8000A859A /* Assets.xcassets */,
+				F58A8D11283CC3B8000A859A /* Preview Content */,
+			);
+			path = Etalide;
+			sourceTree = "<group>";
+		};
+		F58A8D11283CC3B8000A859A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F58A8D12283CC3B8000A859A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F58A8D1B283CC3B8000A859A /* EtalideTests */ = {
+			isa = PBXGroup;
+			children = (
+				F58A8D1C283CC3B8000A859A /* EtalideTests.swift */,
+			);
+			path = EtalideTests;
+			sourceTree = "<group>";
+		};
+		F58A8D25283CC3B8000A859A /* EtalideUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F58A8D26283CC3B8000A859A /* EtalideUITests.swift */,
+				F58A8D28283CC3B8000A859A /* EtalideUITestsLaunchTests.swift */,
+			);
+			path = EtalideUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F58A8D07283CC3B8000A859A /* Etalide */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F58A8D2C283CC3B8000A859A /* Build configuration list for PBXNativeTarget "Etalide" */;
+			buildPhases = (
+				F58A8D04283CC3B8000A859A /* Sources */,
+				F58A8D05283CC3B8000A859A /* Frameworks */,
+				F58A8D06283CC3B8000A859A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Etalide;
+			productName = Etalide;
+			productReference = F58A8D08283CC3B8000A859A /* Etalide.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F58A8D17283CC3B8000A859A /* EtalideTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F58A8D2F283CC3B8000A859A /* Build configuration list for PBXNativeTarget "EtalideTests" */;
+			buildPhases = (
+				F58A8D14283CC3B8000A859A /* Sources */,
+				F58A8D15283CC3B8000A859A /* Frameworks */,
+				F58A8D16283CC3B8000A859A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F58A8D1A283CC3B8000A859A /* PBXTargetDependency */,
+			);
+			name = EtalideTests;
+			productName = EtalideTests;
+			productReference = F58A8D18283CC3B8000A859A /* EtalideTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F58A8D21283CC3B8000A859A /* EtalideUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F58A8D32283CC3B8000A859A /* Build configuration list for PBXNativeTarget "EtalideUITests" */;
+			buildPhases = (
+				F58A8D1E283CC3B8000A859A /* Sources */,
+				F58A8D1F283CC3B8000A859A /* Frameworks */,
+				F58A8D20283CC3B8000A859A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F58A8D24283CC3B8000A859A /* PBXTargetDependency */,
+			);
+			name = EtalideUITests;
+			productName = EtalideUITests;
+			productReference = F58A8D22283CC3B8000A859A /* EtalideUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F58A8D00283CC3B8000A859A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					F58A8D07283CC3B8000A859A = {
+						CreatedOnToolsVersion = 13.4;
+					};
+					F58A8D17283CC3B8000A859A = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = F58A8D07283CC3B8000A859A;
+					};
+					F58A8D21283CC3B8000A859A = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = F58A8D07283CC3B8000A859A;
+					};
+				};
+			};
+			buildConfigurationList = F58A8D03283CC3B8000A859A /* Build configuration list for PBXProject "Etalide" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F58A8CFF283CC3B8000A859A;
+			productRefGroup = F58A8D09283CC3B8000A859A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F58A8D07283CC3B8000A859A /* Etalide */,
+				F58A8D17283CC3B8000A859A /* EtalideTests */,
+				F58A8D21283CC3B8000A859A /* EtalideUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F58A8D06283CC3B8000A859A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F58A8D13283CC3B8000A859A /* Preview Assets.xcassets in Resources */,
+				F58A8D10283CC3B8000A859A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F58A8D16283CC3B8000A859A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F58A8D20283CC3B8000A859A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F58A8D04283CC3B8000A859A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F58A8D0E283CC3B8000A859A /* ContentView.swift in Sources */,
+				F58A8D0C283CC3B8000A859A /* EtalideApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F58A8D14283CC3B8000A859A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F58A8D1D283CC3B8000A859A /* EtalideTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F58A8D1E283CC3B8000A859A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F58A8D27283CC3B8000A859A /* EtalideUITests.swift in Sources */,
+				F58A8D29283CC3B8000A859A /* EtalideUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F58A8D1A283CC3B8000A859A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F58A8D07283CC3B8000A859A /* Etalide */;
+			targetProxy = F58A8D19283CC3B8000A859A /* PBXContainerItemProxy */;
+		};
+		F58A8D24283CC3B8000A859A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F58A8D07283CC3B8000A859A /* Etalide */;
+			targetProxy = F58A8D23283CC3B8000A859A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F58A8D2A283CC3B8000A859A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F58A8D2B283CC3B8000A859A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F58A8D2D283CC3B8000A859A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Etalide/Preview Content\"";
+				DEVELOPMENT_TEAM = JB3QK77KA5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.nimbusInfinity.Etalide;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F58A8D2E283CC3B8000A859A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Etalide/Preview Content\"";
+				DEVELOPMENT_TEAM = JB3QK77KA5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.nimbusInfinity.Etalide;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F58A8D30283CC3B8000A859A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JB3QK77KA5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.nimbusInfinity.EtalideTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Etalide.app/Etalide";
+			};
+			name = Debug;
+		};
+		F58A8D31283CC3B8000A859A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JB3QK77KA5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.nimbusInfinity.EtalideTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Etalide.app/Etalide";
+			};
+			name = Release;
+		};
+		F58A8D33283CC3B8000A859A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JB3QK77KA5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.nimbusInfinity.EtalideUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Etalide;
+			};
+			name = Debug;
+		};
+		F58A8D34283CC3B8000A859A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JB3QK77KA5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.nimbusInfinity.EtalideUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Etalide;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F58A8D03283CC3B8000A859A /* Build configuration list for PBXProject "Etalide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F58A8D2A283CC3B8000A859A /* Debug */,
+				F58A8D2B283CC3B8000A859A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F58A8D2C283CC3B8000A859A /* Build configuration list for PBXNativeTarget "Etalide" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F58A8D2D283CC3B8000A859A /* Debug */,
+				F58A8D2E283CC3B8000A859A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F58A8D2F283CC3B8000A859A /* Build configuration list for PBXNativeTarget "EtalideTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F58A8D30283CC3B8000A859A /* Debug */,
+				F58A8D31283CC3B8000A859A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F58A8D32283CC3B8000A859A /* Build configuration list for PBXNativeTarget "EtalideUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F58A8D33283CC3B8000A859A /* Debug */,
+				F58A8D34283CC3B8000A859A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F58A8D00283CC3B8000A859A /* Project object */;
+}
