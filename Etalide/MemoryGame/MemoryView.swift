@@ -8,13 +8,30 @@
 import SwiftUI
 
 struct MemoryView: View {
+	var emojis: [String] = ["🚀","🚔", "🚖","✈️", "🚑", "🚌", "🚜", "🚲", "🚁", "🛳", "🛶", "⛵️"]
+	
+	let columns = [
+//		GridItem(.adaptive(minimum: UIScreen.main.bounds.height / 6.5))
+	GridItem(.flexible(maximum: UIScreen.main.bounds.height / 5)),
+		GridItem(.flexible(maximum: UIScreen.main.bounds.height / 5)),
+		GridItem(.flexible(maximum: UIScreen.main.bounds.height / 5)),
+		GridItem(.flexible(maximum: UIScreen.main.bounds.height / 5))
+
+	]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+		LazyVGrid(columns: columns, spacing: 30) {
+			ForEach(emojis, id: \.self) { emoji in
+				TestCardView(content: emoji)
+					.aspectRatio(2/3, contentMode: .fit)
+					.padding()
+			}
+		}		
     }
 }
 
 struct MemoryView_Previews: PreviewProvider {
     static var previews: some View {
-        MemoryView()
+		MemoryView()
+			.previewInterfaceOrientation(.portraitUpsideDown)
     }
 }

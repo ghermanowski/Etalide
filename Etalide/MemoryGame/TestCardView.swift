@@ -18,10 +18,11 @@ struct TestCardView: View {
 				
 			if isFaceUp {
 				shape.fill().foregroundColor(.white)
-				shape.strokeBorder(lineWidth: 3).foregroundColor(.red)
-				Text(content).font(.largeTitle)
+				shape.strokeBorder(lineWidth: 3).foregroundColor(.indigo)
+				Text(content).font(.system(size: 100))
 			} else {
-				shape.fill().foregroundColor(.red)
+				shape.fill().foregroundColor(.indigo)
+					
 				
 			}
 		}
