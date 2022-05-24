@@ -2,7 +2,7 @@
 //  EtalideUITestsLaunchTests.swift
 //  EtalideUITests
 //
-//  Created by Gregor Hermanowski on 24. May.
+//  Created by Gregor Hermanowski on 24/05/22.
 //
 
 import XCTest

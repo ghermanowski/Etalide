@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Etalide
 //
-//  Created by Gregor Hermanowski on 24. May.
+//  Created by Gregor Hermanowski on 24/05/22.
 //
 
 import SwiftUI
