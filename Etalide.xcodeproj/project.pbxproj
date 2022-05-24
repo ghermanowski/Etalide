@@ -44,6 +44,8 @@
 		F58A8D22283CC3B8000A859A /* EtalideUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EtalideUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F58A8D26283CC3B8000A859A /* EtalideUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtalideUITests.swift; sourceTree = "<group>"; };
 		F58A8D28283CC3B8000A859A /* EtalideUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtalideUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F58A8D37283CC492000A859A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F58A8D38283CC492000A859A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,8 @@
 		F58A8CFF283CC3B8000A859A = {
 			isa = PBXGroup;
 			children = (
+				F58A8D37283CC492000A859A /* README.md */,
+				F58A8D38283CC492000A859A /* LICENSE */,
 				F58A8D0A283CC3B8000A859A /* Etalide */,
 				F58A8D1B283CC3B8000A859A /* EtalideTests */,
 				F58A8D25283CC3B8000A859A /* EtalideUITests */,
