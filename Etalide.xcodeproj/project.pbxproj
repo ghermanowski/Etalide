@@ -34,6 +34,8 @@
 		F58A8D1D283CC3B8000A859A /* EtalideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D1C283CC3B8000A859A /* EtalideTests.swift */; };
 		F58A8D27283CC3B8000A859A /* EtalideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D26283CC3B8000A859A /* EtalideUITests.swift */; };
 		F58A8D29283CC3B8000A859A /* EtalideUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D28283CC3B8000A859A /* EtalideUITestsLaunchTests.swift */; };
+		F5C4230C283CE69900A385B5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C4230B283CE69900A385B5 /* ImagePicker.swift */; };
+		F5C4230D283CE69900A385B5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C4230B283CE69900A385B5 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,7 @@
 		F58A8D28283CC3B8000A859A /* EtalideUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtalideUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F58A8D37283CC492000A859A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F58A8D38283CC492000A859A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F5C4230B283CE69900A385B5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +186,7 @@
 		F5C42307283CDBA600A385B5 /* Card */ = {
 			isa = PBXGroup;
 			children = (
+				F5C42314283CED0500A385B5 /* View */,
 				F5C42309283CDC0600A385B5 /* Model */,
 			);
 			path = Card;
@@ -213,6 +217,14 @@
 				50CF1BBA283CD8DA00324353 /* Deck+CoreDataProperties.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F5C42314283CED0500A385B5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F5C4230B283CE69900A385B5 /* ImagePicker.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +365,7 @@
 				50CF1BC0283CD8DA00324353 /* Deck+CoreDataProperties.swift in Sources */,
 				50CF1BC3283CD8DA00324353 /* Card+CoreDataClass.swift in Sources */,
 				50CF1BCA283CD9C900324353 /* DataController.swift in Sources */,
+				F5C4230C283CE69900A385B5 /* ImagePicker.swift in Sources */,
 				50CF1BBD283CD8DA00324353 /* Deck+CoreDataClass.swift in Sources */,
 				F58A8D0C283CC3B8000A859A /* EtalideApp.swift in Sources */,
 			);
@@ -379,6 +392,7 @@
 				50CF1BD3283CE17B00324353 /* TestCardView.swift in Sources */,
 				50CF1BC8283CD8DA00324353 /* Card+CoreDataProperties.swift in Sources */,
 				F58A8D27283CC3B8000A859A /* EtalideUITests.swift in Sources */,
+				F5C4230D283CE69900A385B5 /* ImagePicker.swift in Sources */,
 				50CF1BC2283CD8DA00324353 /* Deck+CoreDataProperties.swift in Sources */,
 				50CF1BC5283CD8DA00324353 /* Card+CoreDataClass.swift in Sources */,
 				50CF1BBF283CD8DA00324353 /* Deck+CoreDataClass.swift in Sources */,
