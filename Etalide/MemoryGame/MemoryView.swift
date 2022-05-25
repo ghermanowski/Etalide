@@ -22,7 +22,7 @@ struct MemoryView: View {
 				if cardStore.hiddenCards.contains(card) {
 					Spacer()
 				} else {
-					TestCardView(card: card, selectedCards: $cardStore.selectedCards)
+					TestCardView(card: card, selectedCards: $cardStore.selectedCards, cardStore: cardStore)
 						.aspectRatio(2/3, contentMode: .fit)
 						.padding()
 				}
