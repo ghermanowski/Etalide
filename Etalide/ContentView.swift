@@ -105,7 +105,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             
-            Text("Choose Deck")
+            Text("Choose a Deck")
                 .foregroundColor(Color( UIColor.blue))
                 .font(.largeTitle).bold()
                 .frame(maxWidth: .infinity, alignment: .leading)
