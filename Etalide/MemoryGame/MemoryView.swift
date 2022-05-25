@@ -10,8 +10,9 @@ import SwiftUI
 struct MemoryView: View {
 	
 	@StateObject var cardStore = CardStore()
-		
+	
 	@State var selectedCards: [TestCard] = []
+	@State var hiddenCards: [TestCard] = []
 	
 	let columns = Array(repeating: GridItem(.flexible(maximum: UIScreen.main.bounds.height / 5)), count: 4)
 	
@@ -20,9 +21,13 @@ struct MemoryView: View {
 	var body: some View {
 		LazyVGrid(columns: columns, spacing: 30) {
 			ForEach(cardStore.duplicatedCards) { card in
-				TestCardView(card: card, selectedCards: $selectedCards)
-					.aspectRatio(2/3, contentMode: .fit)
-					.padding()
+				if hiddenCards.contains(card) {
+					Spacer()
+				} else {
+					TestCardView(card: card, selectedCards: $selectedCards)
+						.aspectRatio(2/3, contentMode: .fit)
+						.padding()
+				}
 			}
 		}
 		.onAppear {
@@ -37,6 +42,12 @@ struct MemoryView: View {
 	func checkPair() {
 		if selectedCards[0].emoji == selectedCards[1].emoji {
 			print("Correct!!!!!")
+			
+			Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+				let cards = cardStore.duplicatedCards.filter { selectedCards[0].emoji == $0.emoji }
+				
+				hiddenCards += cards
+			}
 			
 		} else {
 			print("Oh noooo")
