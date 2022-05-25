@@ -35,13 +35,6 @@ class CardStore: ObservableObject {
 				
 				self.hiddenCards += cards
 			}
-			
-		} else {
-			print("Oh noooo")
-		}
-		
-		Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
-			self.selectedCards = []
 		}
 	}
 }
