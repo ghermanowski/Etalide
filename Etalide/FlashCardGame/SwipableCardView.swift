@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SwipableCardView: View {
     @State private var translation: CGSize = .zero
+    @State var selectateCardsPlaceholder = [TestCard]()
     
     private var card: Card
     private var onRemove: (Card) -> Void
@@ -24,7 +25,7 @@ struct SwipableCardView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            TestCardView(content: "Galina")
+            TestCardView(card: card1, selectedCards: $selectateCardsPlaceholder)
             //Update the offset of the view based on whatever values are in the width/height of our translation. This will move the view exactly where we are dragging it.
             //only horizontal dragging
                 .offset(x: translation.width, y: 0)
