@@ -13,6 +13,8 @@ class CardStore: ObservableObject {
 	
 	@Published var duplicatedCards: [TestCard] = []
 	
+	@Published var hiddenCards: [TestCard] = []
+	@Published var selectedCards: [TestCard] = []
 	
 	func createGame() {
 		for card in cards {
@@ -22,6 +24,25 @@ class CardStore: ObservableObject {
 			duplicatedCards.append(card)
 		}
 		duplicatedCards.shuffle()
+	}
+	
+	func checkPair() {
+		if selectedCards[0].emoji == selectedCards[1].emoji {
+			print("Correct!!!!!")
+			
+			Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+				let cards = self.duplicatedCards.filter { self.selectedCards[0].emoji == $0.emoji }
+				
+				self.hiddenCards += cards
+			}
+			
+		} else {
+			print("Oh noooo")
+		}
+		
+		Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+			self.selectedCards = []
+		}
 	}
 }
 
