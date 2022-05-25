@@ -25,7 +25,12 @@ struct SwipableCardView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            TestCardView(card: card1, selectedCards: $selectateCardsPlaceholder)
+			
+			// Ale: I added this Text to replace TestCardView that is missing a parameter. 
+			Text("Placeholder View")
+//            TestCardView(card: card1, selectedCards: $selectateCardsPlaceholder)
+			
+			
             //Update the offset of the view based on whatever values are in the width/height of our translation. This will move the view exactly where we are dragging it.
             //only horizontal dragging
                 .offset(x: translation.width, y: 0)
