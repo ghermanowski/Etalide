@@ -57,4 +57,12 @@ struct SwipableCardView: View {
     }
 }
 
-
+struct FlashCardGameView_Previews: PreviewProvider {
+    static var previews: some View {
+        SwipableCardView(card: cards[0],
+                         onRemove: { _ in
+            // do nothing
+        })
+        .padding()
+    }
+}
