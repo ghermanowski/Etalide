@@ -8,33 +8,36 @@
 import SwiftUI
 
 struct TestCardView: View {
-	@State var isFaceUp: Bool = false
-	var content: String
+	var card: TestCard
+	
+	@Binding var selectedCards: [TestCard]
 	
 	var body: some View {
 		
 		ZStack {
 			let shape = RoundedRectangle(cornerRadius:20)
-				
-			if isFaceUp {
+			
+			if selectedCards.contains(card) {
 				shape.fill().foregroundColor(.white)
 				shape.strokeBorder(lineWidth: 3).foregroundColor(.indigo)
-				Text(content).font(.system(size: 100))
+				Text(card.emoji).font(.system(size: 100))
 			} else {
 				shape.fill().foregroundColor(.indigo)
-					
 				
 			}
 		}
 		.onTapGesture {
-			isFaceUp = !isFaceUp
-			
+			if selectedCards.count < 2 {
+				if !selectedCards.contains(card) {
+					selectedCards.append(card)
+				}
+			}
 		}
 	}
 }
 
 struct TestCardView_Previews: PreviewProvider {
     static var previews: some View {
-        TestCardView(content: "🦄")
+		TestCardView(card: .example, selectedCards: .constant([.example]))
     }
 }

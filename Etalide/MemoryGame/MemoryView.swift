@@ -8,37 +8,43 @@
 import SwiftUI
 
 struct MemoryView: View {
-	var emojis: [String] = ["🚀","🚔", "🚖","✈️", "🚑", "🚌"]
 	
-	@State private var emojiPairs: [String] = []
-	
-	
-	let columns = [
-		//		GridItem(.adaptive(minimum: UIScreen.main.bounds.height / 6.5))
-		GridItem(.flexible(maximum: UIScreen.main.bounds.height / 5)),
-		GridItem(.flexible(maximum: UIScreen.main.bounds.height / 5)),
-		GridItem(.flexible(maximum: UIScreen.main.bounds.height / 5)),
-		GridItem(.flexible(maximum: UIScreen.main.bounds.height / 5))
+	@StateObject var cardStore = CardStore()
 		
-	]
+	@State var selectedCards: [TestCard] = []
+	
+	let columns = Array(repeating: GridItem(.flexible(maximum: UIScreen.main.bounds.height / 5)), count: 4)
+	
+	@State private var isFaceUp = false
 	
 	var body: some View {
 		LazyVGrid(columns: columns, spacing: 30) {
-			ForEach(emojiPairs.indices, id: \.self) { emojiIndex in
-				TestCardView(content: emojiPairs[emojiIndex])
+			ForEach(cardStore.duplicatedCards) { card in
+				TestCardView(card: card, selectedCards: $selectedCards)
 					.aspectRatio(2/3, contentMode: .fit)
 					.padding()
 			}
 		}
 		.onAppear {
-			createGame()
+			cardStore.createGame()
+		}
+		.onChange(of: selectedCards.count) { _ in
+			if selectedCards.count == 2 {
+				checkPair()
+			}
 		}
 	}
-	func createGame() {
+	func checkPair() {
+		if selectedCards[0].emoji == selectedCards[1].emoji {
+			print("Correct!!!!!")
+			
+		} else {
+			print("Oh noooo")
+		}
 		
-		emojiPairs = emojis + emojis
-		
-		emojiPairs.shuffle()
+		Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+			selectedCards = []
+		}
 	}
 }
 
