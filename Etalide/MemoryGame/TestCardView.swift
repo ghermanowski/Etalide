@@ -53,7 +53,7 @@ struct TestCardView: View {
 		Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
 			withAnimation {
 				rotationAmount -= 180
-				self.selectedCards = []
+				selectedCards = []
 			}
 		}
 	}	
