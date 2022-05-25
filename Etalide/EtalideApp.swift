@@ -13,7 +13,7 @@ struct EtalideApp: App {
 	
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MemoryView()
 				.environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
