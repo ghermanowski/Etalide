@@ -27,6 +27,12 @@
 		50CF1BCF283CDE3900324353 /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CF1BCD283CDE3900324353 /* MemoryView.swift */; };
 		50CF1BD2283CE17B00324353 /* TestCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CF1BD1283CE17B00324353 /* TestCardView.swift */; };
 		50CF1BD3283CE17B00324353 /* TestCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CF1BD1283CE17B00324353 /* TestCardView.swift */; };
+		5C596C27283E17050097C7B8 /* SwipableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C26283E17050097C7B8 /* SwipableCardView.swift */; };
+		5C596C28283E17050097C7B8 /* SwipableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C26283E17050097C7B8 /* SwipableCardView.swift */; };
+		5C596C29283E17050097C7B8 /* SwipableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C26283E17050097C7B8 /* SwipableCardView.swift */; };
+		5C596C2B283E17700097C7B8 /* CardGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C2A283E17700097C7B8 /* CardGameView.swift */; };
+		5C596C2C283E17700097C7B8 /* CardGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C2A283E17700097C7B8 /* CardGameView.swift */; };
+		5C596C2D283E17700097C7B8 /* CardGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C2A283E17700097C7B8 /* CardGameView.swift */; };
 		F58A8D0C283CC3B8000A859A /* EtalideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D0B283CC3B8000A859A /* EtalideApp.swift */; };
 		F58A8D0E283CC3B8000A859A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D0D283CC3B8000A859A /* ContentView.swift */; };
 		F58A8D10283CC3B8000A859A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F58A8D0F283CC3B8000A859A /* Assets.xcassets */; };
@@ -64,6 +70,8 @@
 		50CF1BC9283CD9C900324353 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		50CF1BCD283CDE3900324353 /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; };
 		50CF1BD1283CE17B00324353 /* TestCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCardView.swift; sourceTree = "<group>"; };
+		5C596C26283E17050097C7B8 /* SwipableCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipableCardView.swift; sourceTree = "<group>"; };
+		5C596C2A283E17700097C7B8 /* CardGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardGameView.swift; sourceTree = "<group>"; };
 		F58A8D08283CC3B8000A859A /* Etalide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Etalide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F58A8D0B283CC3B8000A859A /* EtalideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtalideApp.swift; sourceTree = "<group>"; };
 		F58A8D0D283CC3B8000A859A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,6 +121,15 @@
 			path = MemoryGame;
 			sourceTree = "<group>";
 		};
+		5C596C25283E16EC0097C7B8 /* FlashCardGame */ = {
+			isa = PBXGroup;
+			children = (
+				5C596C26283E17050097C7B8 /* SwipableCardView.swift */,
+				5C596C2A283E17700097C7B8 /* CardGameView.swift */,
+			);
+			path = FlashCardGame;
+			sourceTree = "<group>";
+		};
 		F58A8CFF283CC3B8000A859A = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +157,7 @@
 			children = (
 				F58A8D0B283CC3B8000A859A /* EtalideApp.swift */,
 				F58A8D0D283CC3B8000A859A /* ContentView.swift */,
+				5C596C25283E16EC0097C7B8 /* FlashCardGame */,
 				F5C42307283CDBA600A385B5 /* Card */,
 				F5C42306283CDB4200A385B5 /* Deck */,
 				50CF1BD0283CDE6600324353 /* MemoryGame */,
@@ -362,11 +380,13 @@
 				50CF1BC6283CD8DA00324353 /* Card+CoreDataProperties.swift in Sources */,
 				F58A8D0E283CC3B8000A859A /* ContentView.swift in Sources */,
 				50CF1BD2283CE17B00324353 /* TestCardView.swift in Sources */,
+				5C596C27283E17050097C7B8 /* SwipableCardView.swift in Sources */,
 				50CF1BC0283CD8DA00324353 /* Deck+CoreDataProperties.swift in Sources */,
 				50CF1BC3283CD8DA00324353 /* Card+CoreDataClass.swift in Sources */,
 				50CF1BCA283CD9C900324353 /* DataController.swift in Sources */,
 				F5C4230C283CE69900A385B5 /* ImagePicker.swift in Sources */,
 				50CF1BBD283CD8DA00324353 /* Deck+CoreDataClass.swift in Sources */,
+				5C596C2B283E17700097C7B8 /* CardGameView.swift in Sources */,
 				F58A8D0C283CC3B8000A859A /* EtalideApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,9 +395,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C596C28283E17050097C7B8 /* SwipableCardView.swift in Sources */,
 				50CF1BB7283CD78300324353 /* Etalide.xcdatamodeld in Sources */,
 				50CF1BC4283CD8DA00324353 /* Card+CoreDataClass.swift in Sources */,
 				50CF1BBE283CD8DA00324353 /* Deck+CoreDataClass.swift in Sources */,
+				5C596C2C283E17700097C7B8 /* CardGameView.swift in Sources */,
 				50CF1BC7283CD8DA00324353 /* Card+CoreDataProperties.swift in Sources */,
 				50CF1BC1283CD8DA00324353 /* Deck+CoreDataProperties.swift in Sources */,
 				F58A8D1D283CC3B8000A859A /* EtalideTests.swift in Sources */,
@@ -388,6 +410,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C596C2D283E17700097C7B8 /* CardGameView.swift in Sources */,
 				50CF1BB8283CD78300324353 /* Etalide.xcdatamodeld in Sources */,
 				50CF1BD3283CE17B00324353 /* TestCardView.swift in Sources */,
 				50CF1BC8283CD8DA00324353 /* Card+CoreDataProperties.swift in Sources */,
@@ -397,6 +420,7 @@
 				50CF1BC5283CD8DA00324353 /* Card+CoreDataClass.swift in Sources */,
 				50CF1BBF283CD8DA00324353 /* Deck+CoreDataClass.swift in Sources */,
 				F58A8D29283CC3B8000A859A /* EtalideUITestsLaunchTests.swift in Sources */,
+				5C596C29283E17050097C7B8 /* SwipableCardView.swift in Sources */,
 				50CF1BCF283CDE3900324353 /* MemoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
