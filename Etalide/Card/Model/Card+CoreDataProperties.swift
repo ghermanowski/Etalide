@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 extension Card {
 	@nonobjc
@@ -25,20 +26,25 @@ extension Card {
 	var wrappedID: UUID {
 		id ?? UUID()
 	}
+	
+	var image: UIImage? {
+		guard let id = id else { return nil }
+		return ImageManager.shared.find(id.uuidString)
+	}
 }
 
 // MARK: Generated accessors for deck
 extension Card {
-	@objc(addDeckObject:)
+	@objc(addDecksObject:)
 	@NSManaged public func addToDeck(_ value: Deck)
 	
-	@objc(removeDeckObject:)
+	@objc(removeDecksObject:)
 	@NSManaged public func removeFromDeck(_ value: Deck)
 	
-	@objc(addDeck:)
+	@objc(addDecks:)
 	@NSManaged public func addToDeck(_ values: NSSet)
 	
-	@objc(removeDeck:)
+	@objc(removeDecks:)
 	@NSManaged public func removeFromDeck(_ values: NSSet)
 }
 

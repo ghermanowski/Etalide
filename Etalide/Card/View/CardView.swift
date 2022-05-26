@@ -11,6 +11,9 @@ struct CardView: View {
 	init(_ card: Card? = nil, in deck: Deck? = nil) {
 		self.card = card
 		self.deck = deck
+		
+		_cardName = .init(initialValue: card?.name ?? "")
+		_image = .init(initialValue: card?.image)
 	}
 	
 	@Environment(\.editMode) private var editMode
@@ -19,7 +22,7 @@ struct CardView: View {
 	private let card: Card?
 	private let deck: Deck?
 	
-	@State private var cardName = ""
+	@State private var cardName: String
 	@State private var image: UIImage?
 	@State private var showImagePicker = false
 	
@@ -50,6 +53,9 @@ struct CardView: View {
 				.frame(maxWidth: .infinity)
 				.padding(.vertical)
 				.background(.ultraThinMaterial)
+				.onSubmit {
+					editMode?.wrappedValue = .inactive
+				}
 		}
 		.frame(minWidth: 225, minHeight: 300)
 		.aspectRatio(3 / 4, contentMode: .fit)
@@ -61,7 +67,7 @@ struct CardView: View {
 		.onChange(of: editMode?.wrappedValue) { editMode in
 			if let editMode = editMode,
 			   editMode == .inactive {
-				
+				saveCard()
 			}
 		}
 	}
@@ -75,6 +81,12 @@ struct CardView: View {
 	}
 	
 	private func saveCard() {
+		guard card == nil else {
+			card?.name = cardName
+			saveContext()
+			return
+		}
+		
 		guard let image = image else {
 			print("No image selected.")
 			return
@@ -90,8 +102,8 @@ struct CardView: View {
 			return
 		}
 		
-		let newCard = Card(context: moc, name: cardName, deck: deck)
-		
+		let newCard = Card(context: moc, name: cardName)
+		newCard.addToDeck(deck)
 		saveContext()
 		
 		ImageManager.shared.save(imageData, withName: newCard.id!.uuidString)

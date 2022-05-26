@@ -45,6 +45,7 @@ class ImageManager {
 			return nil
 		}
 		
-		return folderURL.appendingPathComponent("images/" + imageName)
+		return folderURL
+			.appendingPathComponent(imageName)
 	}
 }
