@@ -142,6 +142,15 @@
 			path = FlashCardGame;
 			sourceTree = "<group>";
 		};
+		6C7C3B10283EED6000F42669 /* DeckGridView */ = {
+			isa = PBXGroup;
+			children = (
+				6C7C3B0C283E284500F42669 /* DeviceRotationViewModifier.swift */,
+				6C7C3B0E283E3B7A00F42669 /* DeckGridView.swift */,
+			);
+			path = DeckGridView;
+			sourceTree = "<group>";
+		};
 		F58A8CFF283CC3B8000A859A = {
 			isa = PBXGroup;
 			children = (
@@ -169,8 +178,7 @@
 			children = (
 				F58A8D0B283CC3B8000A859A /* EtalideApp.swift */,
 				F58A8D0D283CC3B8000A859A /* ContentView.swift */,
-				6C7C3B0C283E284500F42669 /* DeviceRotationViewModifier.swift */,
-				6C7C3B0E283E3B7A00F42669 /* DeckGridView.swift */,
+				6C7C3B10283EED6000F42669 /* DeckGridView */,
 				5C596C25283E16EC0097C7B8 /* FlashCardGame */,
 				F5C42307283CDBA600A385B5 /* Card */,
 				F5C42306283CDB4200A385B5 /* Deck */,

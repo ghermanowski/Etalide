@@ -48,15 +48,17 @@ struct DeckGridView: View {
     /// - Returns: A view of the actual button
     func createNewDeckButton() -> some View  {
         
-        return ZStack {
+      ZStack {
             
             Button {
                 
             } label: {
                 ZStack {
-                    roundedRectangleStroke(cornerRadious: 25, width: orientation.isLandscape == true ?  UIScreen.main.bounds.width*(cardWidthLandscape):UIScreen.main.bounds.width*(cardWidthPortrait) , height: orientation.isLandscape == true ?  UIScreen.main.bounds.height*(cardHeightLandscape): UIScreen.main.bounds.height*(cardHeightPortrait), strokeColor: Color(UIColor.lightGray), lineWidth: 8, alignment: .center)
+                    roundedRectangleStroke (cornerRadious: 25, width: UIScreen.main.bounds.width*(orientation.isLandscape ? cardWidthLandscape: cardWidthPortrait), height: UIScreen.main.bounds.height*( orientation.isLandscape ? cardHeightLandscape:cardHeightPortrait), strokeColor: Color(UIColor.lightGray), lineWidth: 8, alignment: .center)
                     
-                    roundedRectangleFilled(cornerRadious: 25, width: orientation.isLandscape == true ?  UIScreen.main.bounds.width*(cardWidthLandscape): UIScreen.main.bounds.width*(cardWidthPortrait), height: orientation.isLandscape == true ? UIScreen.main.bounds.height*(cardHeightLandscape):UIScreen.main.bounds.height*(cardHeightPortrait), color: Color(UIColor.lightGray).opacity(0.2), alignment: .center)
+                    roundedRectangleFilled(cornerRadious: 25, width:  UIScreen.main.bounds.width*(orientation.isLandscape ? cardWidthLandscape: cardWidthPortrait),
+                                           height: UIScreen.main.bounds.height*( orientation.isLandscape ? cardHeightLandscape:cardHeightPortrait), color: Color(UIColor.lightGray).opacity(0.2),
+                                           alignment: .center)
                     
                     VStack {
                         Image(systemName: "plus")
@@ -68,40 +70,26 @@ struct DeckGridView: View {
                         Text ("New Deck ")
                             .font(.custom("Arial", size: 20))
                     }
-                    
-                    
-                    
                 }
             }
-            
-            
-            
         } .aspectRatio(contentMode: .fit)
-        
     }
-    
     
     /// Builds the preview of the available decks
     /// - Parameter numberOfDecks: The number of decks available for the user. This function is called inside a ForEach cicle.
     /// - Returns: A Preview of each available deck
     func deckPreview(numberOfDecks: Int) -> some View  {
         
-        return   Button {
+      Button {
             
         } label: {
-              ZStack {
-            roundedRectangleStroke(cornerRadious: 25, width: orientation.isLandscape == true ?  UIScreen.main.bounds.width*(cardWidthLandscape):UIScreen.main.bounds.width*(cardWidthPortrait) , height: orientation.isLandscape == true ?  UIScreen.main.bounds.height*(cardHeightLandscape): UIScreen.main.bounds.height*(cardHeightPortrait), strokeColor: Color(UIColor.lightGray), lineWidth: 8, alignment: .center)
-            
-                  roundedRectangleFilled(cornerRadious: 25, width: orientation.isLandscape == true ?  UIScreen.main.bounds.width*(cardWidthLandscape): UIScreen.main.bounds.width*(cardWidthPortrait), height: orientation.isLandscape == true ? UIScreen.main.bounds.height*(cardHeightLandscape):UIScreen.main.bounds.height*(cardHeightPortrait), color: Color(UIColor.lightGray).opacity(0.2), alignment: .center)
-            
-            
-        } .aspectRatio(contentMode: .fit)
+            ZStack {
+                roundedRectangleStroke(cornerRadious: 25, width: orientation.isLandscape ?  UIScreen.main.bounds.width*(cardWidthLandscape):UIScreen.main.bounds.width*(cardWidthPortrait) , height: orientation.isLandscape == true ?  UIScreen.main.bounds.height*(cardHeightLandscape): UIScreen.main.bounds.height*(cardHeightPortrait), strokeColor: Color(UIColor.lightGray), lineWidth: 8, alignment: .center)
+                
+                roundedRectangleFilled(cornerRadious: 25, width: orientation.isLandscape ?  UIScreen.main.bounds.width*(cardWidthLandscape): UIScreen.main.bounds.width*(cardWidthPortrait), height: orientation.isLandscape ? UIScreen.main.bounds.height*(cardHeightLandscape):UIScreen.main.bounds.height*(cardHeightPortrait), color: Color(UIColor.lightGray).opacity(0.2), alignment: .center)
+            } .aspectRatio(contentMode: .fit)
+        }
     }
-        
-        
-    }
-    
-    
     var body: some View {
         VStack {
             
@@ -126,11 +114,8 @@ struct DeckGridView: View {
                                 if item == 0 {
                                     createNewDeckButton()
                                 }
-                                
                                 deckPreview(numberOfDecks: item)
-                                
                             }
-                            
                         }
                     }   .onRotate { newOrientation in
                         orientation = newOrientation
