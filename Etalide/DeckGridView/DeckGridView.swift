@@ -138,10 +138,10 @@ struct DeckGridView: View {
                 .frame(maxHeight: .infinity)
             }
             .navigationTitle("Decks")
-            .sheet(isPresented: $isShowingPopover) {
-                DeckPopoverView()
-                    .padding()
-            }
+//            .sheet(isPresented: $isShowingPopover) {
+//                DeckPopoverView()
+//                    .padding()
+//            }
         
         }
         .navigationViewStyle(.stack)
