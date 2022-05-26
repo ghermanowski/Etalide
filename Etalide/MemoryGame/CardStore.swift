@@ -12,7 +12,6 @@ class CardStore: ObservableObject {
 	@Published var cards: [TestCard] = [card1, card2, card3, card4, card5, card6]
 	
 	@Published var duplicatedCards: [TestCard] = []
-	
 	@Published var hiddenCards: [TestCard] = []
 	@Published var selectedCards: [TestCard] = []
 	
@@ -23,6 +22,7 @@ class CardStore: ObservableObject {
 			duplicatedCards.append(newCard)
 			duplicatedCards.append(card)
 		}
+		
 		duplicatedCards.shuffle()
 	}
 	
@@ -30,11 +30,7 @@ class CardStore: ObservableObject {
 		if selectedCards[0].emoji == selectedCards[1].emoji {
 			print("Correct!!!!!")
 			
-			Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
-				let cards = self.duplicatedCards.filter { self.selectedCards[0].emoji == $0.emoji }
-				
-				self.hiddenCards += cards
-			}
+			hiddenCards += duplicatedCards.filter { selectedCards[0].emoji == $0.emoji }
 		}
 	}
 }

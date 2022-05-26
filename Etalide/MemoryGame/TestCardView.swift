@@ -8,52 +8,43 @@
 import SwiftUI
 
 struct TestCardView: View {
-	var card: TestCard
+	let card: TestCard
 	
-	@Binding var selectedCards: [TestCard]
+	@EnvironmentObject var cardStore: CardStore
 	
-	@State var rotationAmount: Double = 0.0
-	
-	@ObservedObject var cardStore: CardStore
 	var body: some View {
+		let isSelected = cardStore.selectedCards.contains(card)
 		
 		ZStack {
 			let shape = RoundedRectangle(cornerRadius:20)
 			
-			
-			if selectedCards.contains(card) {
-				shape.fill().foregroundColor(.white)
-				shape.strokeBorder(lineWidth: 3).foregroundColor(.indigo)
-				Text(card.emoji).font(.system(size: 100))
+			if isSelected {
+				shape
+					.fill()
+					.foregroundColor(.white)
+				
+				shape
+					.strokeBorder(lineWidth: 3)
+					.foregroundColor(.indigo)
+				
+				Text(card.emoji)
+					.font(.system(size: 100))
+					.rotation3DEffect(.degrees(180),
+									  axis: (x: 0, y: 1, z: 0))
 			} else {
 				shape.fill().foregroundColor(.indigo)
 				
 			}
 		}
-		.rotation3DEffect(.degrees(self.rotationAmount), axis: (x: 0, y: 1, z: 0))
+		.rotation3DEffect(.degrees(isSelected ? 180 : 0),
+						  axis: (x: 0, y: 1, z: 0))
 		.onTapGesture {
-			if selectedCards.count < 2 {
-				if !selectedCards.contains(card) {
+			if cardStore.selectedCards.count < 2 {
+				if !isSelected {
 					withAnimation {
-						rotationAmount += 180
-						selectedCards.append(card)
+						cardStore.selectedCards.append(card)
 					}
 				}
-			}
-		}
-		.onChange(of: selectedCards.count) { _ in
-			if selectedCards.count == 2 && selectedCards.contains(card) {
-				flipCardsBack()
-			}
-		}
-	}
-	
-	func flipCardsBack() {
-		
-		Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
-			withAnimation {
-				rotationAmount -= 180
-				selectedCards = []
 			}
 		}
 	}	
@@ -61,6 +52,7 @@ struct TestCardView: View {
 
 struct TestCardView_Previews: PreviewProvider {
     static var previews: some View {
-		TestCardView(card: .example, selectedCards: .constant([.example]), cardStore: CardStore())
+		TestCardView(card: .example)
+			.environmentObject(CardStore())
     }
 }

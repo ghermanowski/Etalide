@@ -14,26 +14,33 @@ struct MemoryView: View {
 	
 	let columns = Array(repeating: GridItem(.flexible(maximum: UIScreen.main.bounds.height / 5)), count: 4)
 	
-	@State private var isFaceUp = false
-	
 	var body: some View {
 		LazyVGrid(columns: columns, spacing: 30) {
 			ForEach(cardStore.duplicatedCards) { card in
-				if cardStore.hiddenCards.contains(card) {
-					Spacer()
-				} else {
-					TestCardView(card: card, selectedCards: $cardStore.selectedCards, cardStore: cardStore)
-						.aspectRatio(2/3, contentMode: .fit)
-						.padding()
-				}
+				let isHidden = cardStore.hiddenCards.contains(card)
+				
+				TestCardView(card: card)
+					.aspectRatio(2/3, contentMode: .fit)
+					.padding()
+					.opacity(isHidden ? 0 : 1)
+					.animation(.default, value: isHidden)
 			}
 		}
+		.environmentObject(cardStore)
 		.onAppear {
 			cardStore.createGame()
 		}
 		.onChange(of: cardStore.selectedCards.count) { _ in
 			if cardStore.selectedCards.count == 2 {
-				cardStore.checkPair()
+				Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+					cardStore.checkPair()
+					
+					Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+						withAnimation {
+							cardStore.selectedCards.removeAll()
+						}
+					}
+				}
 			}
 		}
 	}
