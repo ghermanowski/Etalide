@@ -23,8 +23,13 @@ extension Deck {
 	var wrappedName: String {
 		name ?? "No name"
 	}
+	
 	var wrappedID: UUID {
 		id ?? UUID()
+	}
+	
+	var allCards: [Card]? {
+		cards?.allObjects as? [Card]
 	}
 }
 

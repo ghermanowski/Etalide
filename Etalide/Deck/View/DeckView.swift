@@ -22,7 +22,7 @@ struct DeckView: View {
 				LazyVGrid(columns: columns, spacing: 20) {
 					CardView(in: deck)
 					
-					if let cards = deck.cards?.allObjects as? [Card] {
+					if let cards = deck.allCards {
 						ForEach(cards) { card in
 							CardView(card, in: deck)
 						}
