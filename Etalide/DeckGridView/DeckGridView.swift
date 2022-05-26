@@ -134,9 +134,9 @@ struct DeckGridView: View {
                 .frame(maxHeight: .infinity)
             }
             .navigationTitle("Choose a deck")
-			.sheet(isPresented: $showDeck) {
-				DeckView()
-			}
+//			.sheet(isPresented: $showDeck) {
+//				DeckView()
+//			}
     }
 }
 
