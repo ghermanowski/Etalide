@@ -13,6 +13,7 @@ struct DeckGridView: View {
     @State private var numberOfDecks: Int = 3
     @State private var orientation = UIDeviceOrientation.unknown
     @State var columns = Array(repeating: GridItem(.flexible(),spacing: 20), count: 3)
+    @State private var showDeck = false
     
     
     //Mark: Specifying width and hight of the decks preview depending on the orientation of the device. The numbers are proportions of the available area (not absolute sizes)
@@ -77,7 +78,6 @@ struct DeckGridView: View {
         } .aspectRatio(contentMode: .fit)
     }
     
-	@State private var showDeck = false
 	
     /// Builds the preview of the available decks
     /// - Parameter numberOfDecks: The number of decks available for the user. This function is called inside a ForEach cicle.
