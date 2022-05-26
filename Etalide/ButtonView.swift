@@ -16,8 +16,8 @@ struct ButtonView: View {
             RoundedRectangle(cornerRadius: 30)
                 .foregroundColor(.gray)
             
-            VStack (spacing: 20) {
-                
+            VStack (alignment: .leading) {
+                Spacer (minLength: UIScreen.main.bounds.height * 0.02)
             Text(title)
                 .foregroundColor(.white)
                 .font(.title)
@@ -26,6 +26,7 @@ struct ButtonView: View {
                 
         }
     }
+        .frame(width: UIScreen.main.bounds.width * 0.25, height: UIScreen.main.bounds.height * 0.16)
 }
 }
 struct ButtonView_Previews: PreviewProvider {

@@ -16,7 +16,7 @@ struct DeckPopoverView: View {
             HStack {
                 // Card preview view
                 VStack {
-                    
+                    DeckOfCardsView()
                 }
                 
                 // Buttons view
@@ -35,6 +35,8 @@ struct DeckPopoverView: View {
                     }
                     
                 }
+                .aspectRatio(2/3, contentMode: .fit)
+                .padding()
             }
         }
     }
