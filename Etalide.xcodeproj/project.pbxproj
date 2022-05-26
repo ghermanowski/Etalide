@@ -55,6 +55,7 @@
 		F5EDE18F283F8F8100E96A3A /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EDE18D283F8F7C00E96A3A /* ImageManager.swift */; };
 		F5EDE190283F8F8200E96A3A /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EDE18D283F8F7C00E96A3A /* ImageManager.swift */; };
 		F5EDE192283F939500E96A3A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EDE191283F939500E96A3A /* CardView.swift */; };
+		F5EDE194283FAD2600E96A3A /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EDE193283FAD2600E96A3A /* DeckView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		F5C4230B283CE69900A385B5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F5EDE18D283F8F7C00E96A3A /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		F5EDE191283F939500E96A3A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		F5EDE193283FAD2600E96A3A /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 		F5C42306283CDB4200A385B5 /* Deck */ = {
 			isa = PBXGroup;
 			children = (
+				F5EDE195283FAD3100E96A3A /* View */,
 				F5C4230A283CDC0E00A385B5 /* Model */,
 			);
 			path = Deck;
@@ -280,6 +283,14 @@
 			children = (
 				F5EDE191283F939500E96A3A /* CardView.swift */,
 				F5C4230B283CE69900A385B5 /* ImagePicker.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F5EDE195283FAD3100E96A3A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F5EDE193283FAD2600E96A3A /* DeckView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -431,6 +442,7 @@
 				5C596C6C283FBF750097C7B8 /* DeckPopoverView.swift in Sources */,
 				6C7C3B0D283E284500F42669 /* DeviceRotationViewModifier.swift in Sources */,
 				F5C4230C283CE69900A385B5 /* ImagePicker.swift in Sources */,
+				F5EDE194283FAD2600E96A3A /* DeckView.swift in Sources */,
 				50CF1BBD283CD8DA00324353 /* Deck+CoreDataClass.swift in Sources */,
 				5C596C2B283E17700097C7B8 /* CardGameView.swift in Sources */,
 				F58A8D0C283CC3B8000A859A /* EtalideApp.swift in Sources */,

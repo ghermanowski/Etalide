@@ -10,7 +10,6 @@ import SwiftUI
 
 
 struct DeckGridView: View {
-    @State private var isShowingPopover: Bool = false
     @State private var numberOfDecks: Int = 3
     @State private var orientation = UIDeviceOrientation.unknown
     @State var columns = Array(repeating: GridItem(.flexible(),spacing: 20), count: 3)
@@ -76,19 +75,22 @@ struct DeckGridView: View {
         } .aspectRatio(contentMode: .fit)
     }
     
+	@State private var showDeck = false
+	
     /// Builds the preview of the available decks
     /// - Parameter numberOfDecks: The number of decks available for the user. This function is called inside a ForEach cicle.
     /// - Returns: A Preview of each available deck
     func deckPreview(numberOfDecks: Int) -> some View  {
         
         Button {
-            isShowingPopover.toggle()
+			showDeck.toggle()  // TODO: Change to selected Deck
         } label: {
             ZStack {
                 roundedRectangleStroke(cornerRadious: 25, width: orientation.isLandscape ?  UIScreen.main.bounds.width*(cardWidthLandscape):UIScreen.main.bounds.width*(cardWidthPortrait) , height: orientation.isLandscape == true ?  UIScreen.main.bounds.height*(cardHeightLandscape): UIScreen.main.bounds.height*(cardHeightPortrait), strokeColor: Color(UIColor.lightGray), lineWidth: 8, alignment: .center)
                 
                 roundedRectangleFilled(cornerRadious: 25, width: orientation.isLandscape ?  UIScreen.main.bounds.width*(cardWidthLandscape): UIScreen.main.bounds.width*(cardWidthPortrait), height: orientation.isLandscape ? UIScreen.main.bounds.height*(cardHeightLandscape):UIScreen.main.bounds.height*(cardHeightPortrait), color: Color(UIColor.lightGray).opacity(0.2), alignment: .center)
-            } .aspectRatio(contentMode: .fit)
+            }
+			.aspectRatio(contentMode: .fit)
         }
     }
     var body: some View {
@@ -116,14 +118,12 @@ struct DeckGridView: View {
                                     if item == 0 {
                                         createNewDeckButton()
                                     }
-                                    NavigationLink {
-                                    
-                                    } label: {
-                                        deckPreview(numberOfDecks: item)
-                                    }
+									
+									deckPreview(numberOfDecks: item)
                                 }
                             }
-                        }   .onRotate { newOrientation in
+                        }
+						.onRotate { newOrientation in
                             orientation = newOrientation
                             
                             if orientation.isLandscape {
@@ -145,9 +145,7 @@ struct DeckGridView: View {
         
         }
         .navigationViewStyle(.stack)
-        
     }
-    
 }
 
 struct DeckGridView_Previews: PreviewProvider {

@@ -2,7 +2,7 @@
 //  ImageManager.swift
 //  Etalide
 //
-//  Created by Gregor Hermanowski on 26. May.
+//  Created by Gregor Hermanowski on 26/05/22.
 //
 
 import Foundation
@@ -45,6 +45,6 @@ class ImageManager {
 			return nil
 		}
 		
-		return folderURL.appendingPathComponent(imageName)
+		return folderURL.appendingPathComponent("images/" + imageName)
 	}
 }
