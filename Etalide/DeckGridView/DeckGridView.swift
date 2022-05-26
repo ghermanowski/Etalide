@@ -10,6 +10,7 @@ import SwiftUI
 
 
 struct DeckGridView: View {
+    @State private var isShowingPopover: Bool = false
     @State private var numberOfDecks: Int = 3
     @State private var orientation = UIDeviceOrientation.unknown
     @State var columns = Array(repeating: GridItem(.flexible(),spacing: 20), count: 3)
@@ -81,7 +82,7 @@ struct DeckGridView: View {
     func deckPreview(numberOfDecks: Int) -> some View  {
         
         Button {
-            
+            isShowingPopover.toggle()
         } label: {
             ZStack {
                 roundedRectangleStroke(cornerRadious: 25, width: orientation.isLandscape ?  UIScreen.main.bounds.width*(cardWidthLandscape):UIScreen.main.bounds.width*(cardWidthPortrait) , height: orientation.isLandscape == true ?  UIScreen.main.bounds.height*(cardHeightLandscape): UIScreen.main.bounds.height*(cardHeightPortrait), strokeColor: Color(UIColor.lightGray), lineWidth: 8, alignment: .center)
@@ -137,6 +138,8 @@ struct DeckGridView: View {
                 .frame(maxHeight: .infinity)
             }
             .navigationTitle("Decks")
+            
+        
         }
         .navigationViewStyle(.stack)
         
