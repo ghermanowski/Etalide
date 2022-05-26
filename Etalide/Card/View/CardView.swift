@@ -53,7 +53,7 @@ struct CardView: View {
 		.frame(width: 300, height: 400)
 		.cornerRadius(20)
 		.sheet(isPresented: $showImagePicker) {
-			ImagePicker(image: $image, imageID: $imageID)
+			ImagePicker(image: $image)
 		}
 		.onChange(of: editMode?.wrappedValue) { editMode in
 			if let editMode = editMode,
