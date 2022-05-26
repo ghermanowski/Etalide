@@ -64,11 +64,13 @@ struct DeckGridView: View {
                         Image(systemName: "plus")
                             .resizable()
                             .scaledToFit()
+                            .foregroundColor(Color(UIColor.systemBlue))
                             .frame(width: UIScreen.main.bounds.width*1/36,
                                    alignment: .center)
                         
                         Text ("New Deck ")
                             .font(.custom("Arial", size: 20))
+                            .foregroundColor(Color(UIColor.systemBlue))
                     }
                 }
             }
@@ -86,7 +88,7 @@ struct DeckGridView: View {
 			showDeck.toggle()  // TODO: Change to selected Deck
         } label: {
             ZStack {
-                roundedRectangleStroke(cornerRadious: 25, width: orientation.isLandscape ?  UIScreen.main.bounds.width*(cardWidthLandscape):UIScreen.main.bounds.width*(cardWidthPortrait) , height: orientation.isLandscape == true ?  UIScreen.main.bounds.height*(cardHeightLandscape): UIScreen.main.bounds.height*(cardHeightPortrait), strokeColor: Color(UIColor.lightGray), lineWidth: 8, alignment: .center)
+                roundedRectangleStroke(cornerRadious: 25, width: orientation.isLandscape ?  UIScreen.main.bounds.width*(cardWidthLandscape):UIScreen.main.bounds.width*(cardWidthPortrait) , height: orientation.isLandscape ?  UIScreen.main.bounds.height*(cardHeightLandscape): UIScreen.main.bounds.height*(cardHeightPortrait), strokeColor: Color(UIColor.lightGray), lineWidth: 8, alignment: .center)
                 
                 roundedRectangleFilled(cornerRadious: 25, width: orientation.isLandscape ?  UIScreen.main.bounds.width*(cardWidthLandscape): UIScreen.main.bounds.width*(cardWidthPortrait), height: orientation.isLandscape ? UIScreen.main.bounds.height*(cardHeightLandscape):UIScreen.main.bounds.height*(cardHeightPortrait), color: Color(UIColor.lightGray).opacity(0.2), alignment: .center)
             }
@@ -94,14 +96,8 @@ struct DeckGridView: View {
         }
     }
     var body: some View {
-        NavigationView {
             VStack {
-                
-//                Text("Choose a Deck")
-//                    .foregroundColor(Color( UIColor.blue))
-//                    .font(.largeTitle).bold()
-//                    .frame(maxWidth: .infinity, alignment: .leading)
-//                    .padding()
+
                 
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 20) {
@@ -133,16 +129,14 @@ struct DeckGridView: View {
                             }
                         }
                     }
-                    .padding(.horizontal)
+                    .padding(.all)
                 }
                 .frame(maxHeight: .infinity)
             }
-            .navigationTitle("Decks")
+            .navigationTitle("Choose a deck")
 			.sheet(isPresented: $showDeck) {
 				DeckView()
 			}
-        }
-        .navigationViewStyle(.stack)
     }
 }
 

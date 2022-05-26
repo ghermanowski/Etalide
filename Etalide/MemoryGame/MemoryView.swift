@@ -10,9 +10,13 @@ import SwiftUI
 struct MemoryView: View {
 	
 	@StateObject var cardStore = CardStore()
-	
-	
-	let columns = Array(repeating: GridItem(.flexible(maximum: UIScreen.main.bounds.height / 5)), count: 4)
+    @State private var orientation = UIDeviceOrientation.unknown
+    @State var columns = Array(repeating: GridItem(.flexible(), spacing: 16), count: 4)
+    //Mark: Specifying width and hight of the decks preview depending on the orientation of the device. The numbers are proportions of the available area (not absolute sizes)
+    let cardWidthLandscape:CGFloat = 2/10
+    let cardHeightLandscape:CGFloat = 2.7/10
+    let cardWidthPortrait:CGFloat = 2.1/10
+    let cardHeightPortrait:CGFloat = 2.1/10
 	
 	var body: some View {
 		LazyVGrid(columns: columns, spacing: 30) {
@@ -21,12 +25,18 @@ struct MemoryView: View {
 				
 				TestCardView(card: card)
 					.aspectRatio(2/3, contentMode: .fit)
-					.padding()
+                    .frame(width: UIScreen.main.bounds.width*(orientation.isLandscape ? cardWidthLandscape: cardWidthPortrait),
+                         height: UIScreen.main.bounds.height*( orientation.isLandscape ? cardHeightLandscape:cardHeightPortrait),
+                         alignment: .center)
 					.opacity(isHidden ? 0 : 1)
 					.animation(.default, value: isHidden)
 			}
 		}
 		.environmentObject(cardStore)
+        .onRotate { newOrientation in
+              orientation = newOrientation
+
+          }
 		.onAppear {
 			cardStore.createGame()
 		}
