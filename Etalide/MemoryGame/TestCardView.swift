@@ -19,7 +19,7 @@ struct TestCardView: View {
 		let isSelected = cardStore.selectedCards.contains(card)
 		
 		ZStack {
-			let shape = RoundedRectangle(cornerRadius:20)
+			let shape = RoundedRectangle(cornerRadius: 20)
 			
 			if isRotated {
 				shape
@@ -35,7 +35,9 @@ struct TestCardView: View {
 					.rotation3DEffect(.degrees(180),
 									  axis: (x: 0, y: 1, z: 0))
 			} else {
-				shape.fill().foregroundColor(.indigo)
+				shape
+					.fill()
+					.foregroundColor(.indigo)
 			}
 		}
 		.rotation3DEffect(.degrees(isSelected ? 180 : 0),
@@ -47,13 +49,11 @@ struct TestCardView: View {
 			}
 		}
 		.onTapGesture {
-			if cardStore.selectedCards.count < 2 {
-				if !isSelected {
-					cardStore.selectedCards.append(card)
-				}
+			if !isSelected && cardStore.selectedCards.count < 2 {
+				cardStore.selectedCards.append(card)
 			}
 		}
-	}	
+	}
 }
 
 struct TestCardView_Previews: PreviewProvider {
