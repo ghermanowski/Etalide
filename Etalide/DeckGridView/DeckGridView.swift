@@ -48,7 +48,7 @@ struct DeckGridView: View {
     /// - Returns: A view of the actual button
     func createNewDeckButton() -> some View  {
         
-      ZStack {
+        ZStack {
             
             Button {
                 
@@ -80,7 +80,7 @@ struct DeckGridView: View {
     /// - Returns: A Preview of each available deck
     func deckPreview(numberOfDecks: Int) -> some View  {
         
-      Button {
+        Button {
             
         } label: {
             ZStack {
@@ -91,46 +91,55 @@ struct DeckGridView: View {
         }
     }
     var body: some View {
-        VStack {
-            
-            Text("Choose a Deck")
-                .foregroundColor(Color( UIColor.blue))
-                .font(.largeTitle).bold()
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding()
-            
-            ScrollView {
-                LazyVGrid(columns: columns, spacing: 20) {
-                    Group {
-                        if numberOfDecks == 0 {
-                            createNewDeckButton()
-                        } else if numberOfDecks == 1 {
-                            createNewDeckButton()
-                            deckPreview(numberOfDecks: numberOfDecks)
-                        } else {
-                            ForEach(0...numberOfDecks-1, id: \.self) {
-                                item in
-                                
-                                if item == 0 {
-                                    createNewDeckButton()
+        NavigationView {
+            VStack {
+                
+//                Text("Choose a Deck")
+//                    .foregroundColor(Color( UIColor.blue))
+//                    .font(.largeTitle).bold()
+//                    .frame(maxWidth: .infinity, alignment: .leading)
+//                    .padding()
+                
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 20) {
+                        Group {
+                            if numberOfDecks == 0 {
+                                createNewDeckButton()
+                            } else if numberOfDecks == 1 {
+                                createNewDeckButton()
+                                deckPreview(numberOfDecks: numberOfDecks)
+                            } else {
+                                ForEach(0...numberOfDecks-1, id: \.self) {
+                                    item in
+                                    
+                                    if item == 0 {
+                                        createNewDeckButton()
+                                    }
+                                    NavigationLink {
+                                    
+                                    } label: {
+                                        deckPreview(numberOfDecks: item)
+                                    }
                                 }
-                                deckPreview(numberOfDecks: item)
+                            }
+                        }   .onRotate { newOrientation in
+                            orientation = newOrientation
+                            
+                            if orientation.isLandscape {
+                                columns = Array(repeating: GridItem(.flexible(),spacing: 20), count: 4)
+                            } else {
+                                columns = Array(repeating: GridItem(.flexible(),spacing: 20), count: 3)
                             }
                         }
-                    }   .onRotate { newOrientation in
-                        orientation = newOrientation
-                        
-                        if orientation.isLandscape {
-                            columns = Array(repeating: GridItem(.flexible(),spacing: 20), count: 4)
-                        } else {
-                            columns = Array(repeating: GridItem(.flexible(),spacing: 20), count: 3)
-                        }
                     }
+                    .padding(.horizontal)
                 }
-                .padding(.horizontal)
+                .frame(maxHeight: .infinity)
             }
-            .frame(maxHeight: .infinity)
+            .navigationTitle("Decks")
         }
+        .navigationViewStyle(.stack)
+        
     }
     
 }

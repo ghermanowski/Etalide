@@ -26,7 +26,7 @@ struct SwipableCardView: View {
     var body: some View {
         GeometryReader { geometry in
 			
-            TestCardView(card: card1)
+            CardView()
 			
             //Update the offset of the view based on whatever values are in the width/height of our translation. This will move the view exactly where we are dragging it.
             //only horizontal dragging
