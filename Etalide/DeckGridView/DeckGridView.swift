@@ -52,8 +52,8 @@ struct DeckGridView: View {
     func createNewDeckButton() -> some View  {
         ZStack {
             Button {
-//                _ = Deck(context: moc, name: "Test")
-//				saveContext()
+                _ = Deck(context: moc, name: "TestDeck")
+				saveContext()
             } label: {
                 ZStack {
                     roundedRectangleStroke (cornerRadious: 25, width: UIScreen.main.bounds.width*(orientation.isLandscape ? cardWidthLandscape: cardWidthPortrait), height: UIScreen.main.bounds.height*( orientation.isLandscape ? cardHeightLandscape:cardHeightPortrait), strokeColor: Color(UIColor.lightGray), lineWidth: 8, alignment: .center)
@@ -91,16 +91,25 @@ struct DeckGridView: View {
         } label: {
             ZStack {
                 roundedRectangleStroke(cornerRadious: 25, width: orientation.isLandscape ?  UIScreen.main.bounds.width*(cardWidthLandscape):UIScreen.main.bounds.width*(cardWidthPortrait) , height: orientation.isLandscape ?  UIScreen.main.bounds.height*(cardHeightLandscape): UIScreen.main.bounds.height*(cardHeightPortrait), strokeColor: Color(UIColor.lightGray), lineWidth: 8, alignment: .center)
-                
+					.overlay {
+						if let firstCard = deck.allCards?.first,
+						   let image = firstCard.image {
+							Image(uiImage: image)
+								.resizable()
+								.cornerRadius(25)
+						}
+					}
+				
                 roundedRectangleFilled(cornerRadious: 25, width: orientation.isLandscape ?  UIScreen.main.bounds.width*(cardWidthLandscape): UIScreen.main.bounds.width*(cardWidthPortrait), height: orientation.isLandscape ? UIScreen.main.bounds.height*(cardHeightLandscape):UIScreen.main.bounds.height*(cardHeightPortrait), color: Color(UIColor.lightGray).opacity(0.2), alignment: .center)
 				
 				Text(deck.wrappedName)
-					.font(.largeTitle)
-					.foregroundColor(.black)
+					.font(.largeTitle.bold())
+					.foregroundColor(.white)
             }
 			.aspectRatio(contentMode: .fit)
         }
     }
+	
 	var body: some View {
 		ScrollView {
 			LazyVGrid(columns: columns, spacing: 20) {
