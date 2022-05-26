@@ -9,8 +9,11 @@ import SwiftUI
 
 struct TestCardView: View {
 	let card: TestCard
+	private let animationDuration = 0.35
 	
 	@EnvironmentObject var cardStore: CardStore
+	
+	@State private var isRotated = false
 	
 	var body: some View {
 		let isSelected = cardStore.selectedCards.contains(card)
@@ -18,7 +21,7 @@ struct TestCardView: View {
 		ZStack {
 			let shape = RoundedRectangle(cornerRadius: 20)
 			
-			if isSelected {
+			if isRotated {
 				shape
 					.fill()
 					.foregroundColor(.white)
@@ -39,11 +42,15 @@ struct TestCardView: View {
 		}
 		.rotation3DEffect(.degrees(isSelected ? 180 : 0),
 						  axis: (x: 0, y: 1, z: 0))
+		.animation(.linear(duration: animationDuration), value: isSelected)
+		.onChange(of: isSelected) { newValue in
+			withAnimation(.linear(duration: 0.0001).delay(animationDuration / 2)) {
+				isRotated = newValue
+			}
+		}
 		.onTapGesture {
 			if !isSelected && cardStore.selectedCards.count < 2 {
-				withAnimation {
-					cardStore.selectedCards.append(card)
-				}
+				cardStore.selectedCards.append(card)
 			}
 		}
 	}
