@@ -30,16 +30,14 @@ struct CardView: View {
 							.font(.largeTitle)
 					}
 				}
-				.frame(width: 300, height: 400)
+				.frame(minWidth: 225, maxWidth: .infinity, minHeight: 300)
 				.background(Color.gray.opacity(0.5))
 			}
-			.disabled(editMode?.wrappedValue != .active)
 			
 			VStack {
 				if let imageID = imageID {
 					Text(imageID)
 				}
-				
 				
 				TextField("Name", text: $cardName)
 					.font(.largeTitle.weight(.bold))
@@ -50,8 +48,10 @@ struct CardView: View {
 					.background(.ultraThinMaterial)
 			}
 		}
-		.frame(width: 300, height: 400)
+		.frame(minWidth: 225, minHeight: 300)
+		.aspectRatio(3 / 4, contentMode: .fit)
 		.cornerRadius(20)
+		.disabled(editMode?.wrappedValue != .active)
 		.sheet(isPresented: $showImagePicker) {
 			ImagePicker(image: $image)
 		}
