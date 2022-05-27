@@ -8,12 +8,23 @@
 import SwiftUI
 
 struct CardView: View {
-	@Environment(\.editMode) private var editMode
+	init(_ card: Card? = nil, in deck: Deck? = nil) {
+		self.card = card
+		self.deck = deck
+		
+		_cardName = .init(initialValue: card?.name ?? "")
+		_image = .init(initialValue: card?.image)
+	}
 	
-	@State private var showImagePicker = false
-	@State private var cardName = ""
+	@Environment(\.editMode) private var editMode
+	@Environment(\.managedObjectContext) private var moc
+	
+	private let card: Card?
+	private let deck: Deck?
+	
+	@State private var cardName: String
 	@State private var image: UIImage?
-	@State private var imageID: String?
+	@State private var showImagePicker = false
 	
     var body: some View {
 		ZStack(alignment: .bottom) {
@@ -28,25 +39,23 @@ struct CardView: View {
 						Label("Choose an image", systemImage: "camera.fill")
 							.labelStyle(.iconOnly)
 							.font(.largeTitle)
+							.offset(y: -20)
 					}
 				}
 				.frame(minWidth: 225, maxWidth: .infinity, minHeight: 300)
 				.background(Color.gray.opacity(0.5))
 			}
 			
-			VStack {
-				if let imageID = imageID {
-					Text(imageID)
+			TextField("Name", text: $cardName)
+				.font(.largeTitle.weight(.bold))
+				.foregroundColor(.white)
+				.multilineTextAlignment(.center)
+				.frame(maxWidth: .infinity)
+				.padding(.vertical)
+				.background(.ultraThinMaterial)
+				.onSubmit {
+					editMode?.wrappedValue = .inactive
 				}
-				
-				TextField("Name", text: $cardName)
-					.font(.largeTitle.weight(.bold))
-					.foregroundColor(.white)
-					.multilineTextAlignment(.center)
-					.frame(maxWidth: .infinity)
-					.padding(.vertical)
-					.background(.ultraThinMaterial)
-			}
 		}
 		.frame(minWidth: 225, minHeight: 300)
 		.aspectRatio(3 / 4, contentMode: .fit)
@@ -58,14 +67,51 @@ struct CardView: View {
 		.onChange(of: editMode?.wrappedValue) { editMode in
 			if let editMode = editMode,
 			   editMode == .inactive {
-				
+				saveCard()
 			}
 		}
+	}
+	
+	private func saveContext() {
+		do {
+			try moc.save()
+		} catch {
+			fatalError("Unresolved error: \(error.localizedDescription)")
+		}
+	}
+	
+	private func saveCard() {
+		guard card == nil else {
+			card?.name = cardName
+			saveContext()
+			return
+		}
+		
+		guard let image = image else {
+			print("No image selected.")
+			return
+		}
+		
+		guard let imageData = image.jpegData(compressionQuality: 1) else {
+			print("Could not get image data.")
+			return
+		}
+		
+		guard let deck = deck else {
+			print("No deck present.")
+			return
+		}
+		
+		let newCard = Card(context: moc, name: cardName)
+		newCard.addToDeck(deck)
+		saveContext()
+		
+		ImageManager.shared.save(imageData, withName: newCard.id!.uuidString)
 	}
 }
 
 struct CardView_Previews: PreviewProvider {
 	static var previews: some View {
-		CardView()
+		CardView(Card())
 	}
 }

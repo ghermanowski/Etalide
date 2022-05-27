@@ -10,11 +10,13 @@ import SwiftUI
 
 
 struct DeckGridView: View {
-    @State private var numberOfDecks: Int = 3
+	@Environment(\.managedObjectContext) private var moc
+	
     @State private var orientation = UIDeviceOrientation.unknown
     @State var columns = Array(repeating: GridItem(.flexible(),spacing: 20), count: 3)
-    @State private var showDeck = false
+	@State private var selectedDeck: Deck?
     
+	@FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) private var decks: FetchedResults<Deck>
     
     //Mark: Specifying width and hight of the decks preview depending on the orientation of the device. The numbers are proportions of the available area (not absolute sizes)
     let cardWidthLandscape:CGFloat = 2.3/10
@@ -48,11 +50,10 @@ struct DeckGridView: View {
     /// Build the "New Deck" Button
     /// - Returns: A view of the actual button
     func createNewDeckButton() -> some View  {
-        
         ZStack {
-            
             Button {
-                
+                _ = Deck(context: moc, name: "TestDeck")
+				saveContext()
             } label: {
                 ZStack {
                     roundedRectangleStroke (cornerRadious: 25, width: UIScreen.main.bounds.width*(orientation.isLandscape ? cardWidthLandscape: cardWidthPortrait), height: UIScreen.main.bounds.height*( orientation.isLandscape ? cardHeightLandscape:cardHeightPortrait), strokeColor: Color(UIColor.lightGray), lineWidth: 8, alignment: .center)
@@ -75,69 +76,74 @@ struct DeckGridView: View {
                     }
                 }
             }
-        } .aspectRatio(contentMode: .fit)
+        }
+		.aspectRatio(contentMode: .fit)
     }
     
 	
     /// Builds the preview of the available decks
     /// - Parameter numberOfDecks: The number of decks available for the user. This function is called inside a ForEach cicle.
     /// - Returns: A Preview of each available deck
-    func deckPreview(numberOfDecks: Int) -> some View  {
+	func deckPreview(_ deck: Deck) -> some View  {
         
         Button {
-			showDeck.toggle()  // TODO: Change to selected Deck
+			selectedDeck = deck
         } label: {
             ZStack {
                 roundedRectangleStroke(cornerRadious: 25, width: orientation.isLandscape ?  UIScreen.main.bounds.width*(cardWidthLandscape):UIScreen.main.bounds.width*(cardWidthPortrait) , height: orientation.isLandscape ?  UIScreen.main.bounds.height*(cardHeightLandscape): UIScreen.main.bounds.height*(cardHeightPortrait), strokeColor: Color(UIColor.lightGray), lineWidth: 8, alignment: .center)
-                
+					.overlay {
+						if let firstCard = deck.allCards?.first,
+						   let image = firstCard.image {
+							Image(uiImage: image)
+								.resizable()
+								.cornerRadius(25)
+						}
+					}
+				
                 roundedRectangleFilled(cornerRadious: 25, width: orientation.isLandscape ?  UIScreen.main.bounds.width*(cardWidthLandscape): UIScreen.main.bounds.width*(cardWidthPortrait), height: orientation.isLandscape ? UIScreen.main.bounds.height*(cardHeightLandscape):UIScreen.main.bounds.height*(cardHeightPortrait), color: Color(UIColor.lightGray).opacity(0.2), alignment: .center)
+				
+				Text(deck.wrappedName)
+					.font(.largeTitle.bold())
+					.foregroundColor(.white)
             }
 			.aspectRatio(contentMode: .fit)
         }
     }
-    var body: some View {
-            VStack {
-
-                
-                ScrollView {
-                    LazyVGrid(columns: columns, spacing: 20) {
-                        Group {
-                            if numberOfDecks == 0 {
-                                createNewDeckButton()
-                            } else if numberOfDecks == 1 {
-                                createNewDeckButton()
-                                deckPreview(numberOfDecks: numberOfDecks)
-                            } else {
-                                ForEach(0...numberOfDecks-1, id: \.self) {
-                                    item in
-                                    
-                                    if item == 0 {
-                                        createNewDeckButton()
-                                    }
-									
-									deckPreview(numberOfDecks: item)
-                                }
-                            }
-                        }
-						.onRotate { newOrientation in
-                            orientation = newOrientation
-                            
-                            if orientation.isLandscape {
-                                columns = Array(repeating: GridItem(.flexible(),spacing: 20), count: 4)
-                            } else {
-                                columns = Array(repeating: GridItem(.flexible(),spacing: 20), count: 3)
-                            }
-                        }
-                    }
-                    .padding(.all)
-                }
-                .frame(maxHeight: .infinity)
-            }
-            .navigationTitle("Choose a deck")
-//			.sheet(isPresented: $showDeck) {
-//				DeckView()
-//			}
-    }
+	
+	var body: some View {
+		ScrollView {
+			LazyVGrid(columns: columns, spacing: 20) {
+				createNewDeckButton()
+				
+				ForEach(decks) { deck in
+					deckPreview(deck)
+				}
+			}
+			.onRotate { newOrientation in
+				orientation = newOrientation
+				
+				if orientation.isLandscape {
+					columns = Array(repeating: GridItem(.flexible(),spacing: 20), count: 4)
+				} else {
+					columns = Array(repeating: GridItem(.flexible(),spacing: 20), count: 3)
+				}
+			}
+			.padding(.all)
+		}
+		.frame(maxHeight: .infinity)
+		.navigationTitle("Decks")
+		.sheet(item: $selectedDeck) { deck in
+			DeckView(deck)
+		}
+	}
+	
+	private func saveContext() {
+		do {
+			try moc.save()
+		} catch {
+			fatalError("Unresolved error: \(error.localizedDescription)")
+		}
+	}
 }
 
 struct DeckGridView_Previews: PreviewProvider {
