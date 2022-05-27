@@ -11,6 +11,7 @@ struct SwipableCardView: View {
     
     @State private var translation: CGSize = .zero
     @State var selectateCardsPlaceholder = [TestCard]()
+    @State var opacity: Double = 1.0
     
     private var card: Card
     private var onRemove: (Card) -> Void
@@ -28,7 +29,7 @@ struct SwipableCardView: View {
         GeometryReader { geometry in
 			
             CardView(card)
-			
+                .opacity(opacity)
             //Update the offset of the view based on whatever values are in the width/height of our translation. This will move the view exactly where we are dragging it.
             //only horizontal dragging
                 .offset(x: translation.width, y: 0)
@@ -47,6 +48,7 @@ struct SwipableCardView: View {
                             // determine snap distance > half the width of the screen
                             if abs(getGesturePercentage(geometry, from: value)) > 0.5 {
                                 onRemove(card)
+                                opacity = 0
                             } else {
                                 translation = .zero
                             }
@@ -56,11 +58,11 @@ struct SwipableCardView: View {
     }
 }
 
-struct FlashCardGameView_Previews: PreviewProvider {
-    static var previews: some View {
-        SwipableCardView(card: Card()) { _ in
-            // do nothing
-        }
-        .padding()
-    }
-}
+//struct FlashCardGameView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SwipableCardView(card: Card()) { _ in
+//            // do nothing
+//        }
+//        .padding()
+//    }
+//}
