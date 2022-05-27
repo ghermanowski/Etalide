@@ -13,11 +13,11 @@ struct CardView: View {
 		self.deck = deck
 		
 		_cardName = .init(initialValue: card?.name ?? "")
-		_image = .init(initialValue: card?.image)
 	}
 	
 	@Environment(\.editMode) private var editMode
 	@Environment(\.managedObjectContext) private var moc
+	@Environment(\.scenePhase) private var scenePhase
 	
 	private let card: Card?
 	private let deck: Deck?
@@ -39,6 +39,9 @@ struct CardView: View {
 						} placeholder: {
 							ProgressView()
 						}
+					} else if let image = image {
+						Image(uiImage: image)
+							.resizable()
 					} else {
 						Label("Choose image", systemImage: "camera.fill")
 							.labelStyle(.iconOnly)
@@ -58,7 +61,9 @@ struct CardView: View {
 				.padding(.vertical)
 				.background(.ultraThinMaterial)
 				.onSubmit {
-					editMode?.wrappedValue = .inactive
+					if image != nil {
+						editMode?.wrappedValue = .inactive
+					}
 				}
 		}
 		.frame(minWidth: 225, minHeight: 300)
@@ -69,7 +74,8 @@ struct CardView: View {
 			ImagePicker(image: $image)
 		}
 		.onChange(of: editMode?.wrappedValue) { editMode in
-			if let editMode = editMode,
+			if scenePhase == .active,
+			   let editMode = editMode,
 			   editMode == .inactive {
 				saveCard()
 			}
@@ -80,12 +86,21 @@ struct CardView: View {
 		do {
 			try moc.save()
 		} catch {
-			fatalError("Unresolved error: \(error.localizedDescription)")
+			fatalError(error.localizedDescription)
 		}
 	}
 	
 	private func saveCard() {
 		guard let image = image else {
+			guard card == nil else {
+				if card?.name != cardName {
+					card?.name = cardName
+					saveContext()
+				}
+				
+				return
+			}
+			
 			print("No image selected.")
 			return
 		}
