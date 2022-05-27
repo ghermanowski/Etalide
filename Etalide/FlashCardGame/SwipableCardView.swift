@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SwipableCardView: View {
+    
     @State private var translation: CGSize = .zero
     @State var selectateCardsPlaceholder = [TestCard]()
     
