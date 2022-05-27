@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct DeckPopoverView: View {
+    init(_ deck: Deck) {
+        self.deck = deck
+    }
+    
+    private let deck: Deck
     @Binding var isShowingPopover: Bool
     var body: some View {
         VStack (alignment: .center) {
@@ -32,7 +37,7 @@ struct DeckPopoverView: View {
                 HStack (alignment: .center, spacing: 40) {
                     // Card preview view
                    
-                        DeckOfCardsView()
+                    DeckOfCardsView(deck)
                         .frame(width: geometry.size.width * 0.5, height: geometry.size.height)
                         .background(.brown)
                    
@@ -63,7 +68,7 @@ struct DeckPopoverView: View {
 
 struct DeckPopoverView_Previews: PreviewProvider {
     static var previews: some View {
-        DeckPopoverView(isShowingPopover: .constant(true))
+        DeckPopoverView(Deck())
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }
