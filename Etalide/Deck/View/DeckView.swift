@@ -9,12 +9,19 @@ import SwiftUI
 
 struct DeckView: View {
 	init(_ deck: Deck) {
-		self.deck = deck
+		_decks = FetchRequest(
+			entity: Deck.entity(),
+			sortDescriptors: [],
+			predicate: NSPredicate(format: "id = %@", deck.id! as CVarArg),
+			animation: .default
+		)
 	}
 	
-	private let deck: Deck
+	@FetchRequest var decks: FetchedResults<Deck>
 	
     var body: some View {
+		let deck = decks.first!
+		
 		NavigationView {
 			ScrollView {
 				let columns = Array(repeating: GridItem(.flexible()), count: 3)
