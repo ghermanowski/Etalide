@@ -136,9 +136,12 @@ struct DeckGridView: View {
 		}
 		.frame(maxHeight: .infinity)
 		.navigationTitle("Decks")
-		.sheet(item: $selectedDeck) { deck in
-			DeckView(deck)
-		}
+//		.sheet(item: $selectedDeck) { deck in
+//			DeckView(deck)
+//		}
+        .sheet(item: $selectedDeck) { deck in
+            DeckPopoverView(deck)
+        }
 	}
 	
 	private func saveContext() {

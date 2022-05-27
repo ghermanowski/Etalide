@@ -13,8 +13,10 @@ struct DeckPopoverView: View {
     }
     
     private let deck: Deck
-    @Binding var isShowingPopover: Bool
+//    @Binding var isShowingPopover: Bool
     var body: some View {
+    
+        NavigationView {
         VStack (alignment: .center) {
             HStack {
                 
@@ -26,7 +28,7 @@ struct DeckPopoverView: View {
                 Spacer()
                 
                 Button {
-                    isShowingPopover = false
+//                    isShowingPopover = false
                 } label: {
                     Image(systemName: "x.circle.fill")
                 }
@@ -52,13 +54,14 @@ struct DeckPopoverView: View {
                         }
                         
                         NavigationLink {
-                            // navigate to flashcard game
+                            CardGameView(deck)
                         } label: {
                             ButtonView(title: "Play FlashCards")
                         }                    }
                     .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.5)
                     
                 }            }
+        }
         }
         .padding()
         
