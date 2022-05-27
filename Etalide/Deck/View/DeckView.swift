@@ -27,7 +27,7 @@ struct DeckView: View {
 				let columns = Array(repeating: GridItem(.flexible()), count: 3)
 				
 				LazyVGrid(columns: columns, spacing: 20) {
-					CardView(in: deck)
+					NewCards(in: deck)
 					
 					if let cards = deck.allCards {
 						ForEach(cards) { card in
@@ -44,6 +44,36 @@ struct DeckView: View {
 			}
 			.navigationTitle(deck.wrappedName)
 			.navigationBarTitleDisplayMode(.inline)
+		}
+	}
+}
+
+private struct NewCards: View {
+	init(in deck: Deck) {
+		self.deck = deck
+	}
+	
+	@Environment(\.editMode) private var editMode
+	@Environment(\.scenePhase) private var scenePhase
+	
+	@State private var newCardsCount = 0
+	
+	private let deck: Deck
+	
+	var body: some View {
+		if editMode?.wrappedValue == .active {
+			Button {
+				withAnimation {
+					newCardsCount += 1
+				}
+			} label: {
+				Label("New Card", systemImage: "plus.rectangle.portrait.fill")
+			}
+			.buttonStyle(.verticalRectangle)
+			
+			ForEach(0..<newCardsCount, id: \.self) { _ in
+				CardView(in: deck)
+			}
 		}
 	}
 }

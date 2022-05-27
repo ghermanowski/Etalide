@@ -50,6 +50,8 @@
 		F58A8D1D283CC3B8000A859A /* EtalideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D1C283CC3B8000A859A /* EtalideTests.swift */; };
 		F58A8D27283CC3B8000A859A /* EtalideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D26283CC3B8000A859A /* EtalideUITests.swift */; };
 		F58A8D29283CC3B8000A859A /* EtalideUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D28283CC3B8000A859A /* EtalideUITestsLaunchTests.swift */; };
+		F58CB7842840D65100B74FD5 /* VerticalRectangleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CB7832840D65100B74FD5 /* VerticalRectangleStyle.swift */; };
+		F58CB7852840D65100B74FD5 /* VerticalRectangleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CB7832840D65100B74FD5 /* VerticalRectangleStyle.swift */; };
 		F5C4230C283CE69900A385B5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C4230B283CE69900A385B5 /* ImagePicker.swift */; };
 		F5C4230D283CE69900A385B5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C4230B283CE69900A385B5 /* ImagePicker.swift */; };
 		F5EDE18E283F8F7C00E96A3A /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EDE18D283F8F7C00E96A3A /* ImageManager.swift */; };
@@ -107,6 +109,7 @@
 		F58A8D28283CC3B8000A859A /* EtalideUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtalideUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F58A8D37283CC492000A859A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F58A8D38283CC492000A859A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F58CB7832840D65100B74FD5 /* VerticalRectangleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalRectangleStyle.swift; sourceTree = "<group>"; };
 		F5C4230B283CE69900A385B5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F5EDE18D283F8F7C00E96A3A /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		F5EDE191283F939500E96A3A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -204,6 +207,7 @@
 				F5C42306283CDB4200A385B5 /* Deck */,
 				50CF1BD0283CDE6600324353 /* MemoryGame */,
 				F5C42308283CDBD600A385B5 /* CoreData */,
+				F58CB7862840E42700B74FD5 /* ViewStyle */,
 				F58A8D0F283CC3B8000A859A /* Assets.xcassets */,
 				F58A8D11283CC3B8000A859A /* Preview Content */,
 			);
@@ -233,6 +237,14 @@
 				F58A8D28283CC3B8000A859A /* EtalideUITestsLaunchTests.swift */,
 			);
 			path = EtalideUITests;
+			sourceTree = "<group>";
+		};
+		F58CB7862840E42700B74FD5 /* ViewStyle */ = {
+			isa = PBXGroup;
+			children = (
+				F58CB7832840D65100B74FD5 /* VerticalRectangleStyle.swift */,
+			);
+			path = ViewStyle;
 			sourceTree = "<group>";
 		};
 		F5C42306283CDB4200A385B5 /* Deck */ = {
@@ -436,6 +448,7 @@
 				50CF1BD2283CE17B00324353 /* TestCardView.swift in Sources */,
 				5C596C70283FC7180097C7B8 /* DeckOfCardsView.swift in Sources */,
 				5C596C27283E17050097C7B8 /* SwipableCardView.swift in Sources */,
+				F58CB7842840D65100B74FD5 /* VerticalRectangleStyle.swift in Sources */,
 				F5EDE192283F939500E96A3A /* CardView.swift in Sources */,
 				6C7C3B0F283E3B7A00F42669 /* DeckGridView.swift in Sources */,
 				6CDBF17B283FDE15001C7336 /* NavigationConfigurator.swift in Sources */,
@@ -486,6 +499,7 @@
 				50CF1BC2283CD8DA00324353 /* Deck+CoreDataProperties.swift in Sources */,
 				50CF1BC5283CD8DA00324353 /* Card+CoreDataClass.swift in Sources */,
 				50CF1BBF283CD8DA00324353 /* Deck+CoreDataClass.swift in Sources */,
+				F58CB7852840D65100B74FD5 /* VerticalRectangleStyle.swift in Sources */,
 				F58A8D29283CC3B8000A859A /* EtalideUITestsLaunchTests.swift in Sources */,
 				5C596C29283E17050097C7B8 /* SwipableCardView.swift in Sources */,
 				50CF1BCF283CDE3900324353 /* MemoryView.swift in Sources */,
