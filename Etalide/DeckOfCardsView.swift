@@ -9,7 +9,9 @@ import SwiftUI
 
 struct DeckOfCardsView: View {
     
-    let gridItemLayot = Array(repeating: GridItem(.flexible(maximum: UIScreen.main.bounds.height / 5)), count: 4)
+    let gridItemLayot = Array(repeating: GridItem(.flexible(maximum: UIScreen.main.bounds.width)), count: 4)
+    
+    
     
     var body: some View {
         
@@ -21,6 +23,7 @@ struct DeckOfCardsView: View {
                     Text("\(number)")
                 }
                 .aspectRatio(2/3, contentMode: .fit)
+                
                 .padding()
             }
         }

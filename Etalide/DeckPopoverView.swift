@@ -8,43 +8,62 @@
 import SwiftUI
 
 struct DeckPopoverView: View {
+    @Binding var isShowingPopover: Bool
     var body: some View {
-        VStack {
-        Text("Animals")
-            .font(.system(.largeTitle))
-            
+        VStack (alignment: .center) {
             HStack {
-                // Card preview view
-                VStack {
-                    DeckOfCardsView()
-                }
                 
-                // Buttons view
-                VStack {
-                    
-                    NavigationLink {
-                        // navigate to memory game view
-                    } label: {
-                        ButtonView(title: "Play Memory")
-                    }
-                    
-                    NavigationLink {
-                        // navigate to flashcard game
-                    } label: {
-                        ButtonView(title: "Play FlashCards")
-                    }
-                    
+                Spacer()
+                
+                Text("Animals")
+                    .font(.system(.largeTitle))
+                
+                Spacer()
+                
+                Button {
+                    isShowingPopover = false
+                } label: {
+                    Image(systemName: "x.circle.fill")
                 }
-                .aspectRatio(2/3, contentMode: .fit)
-                .padding()
             }
+       
+            
+            GeometryReader { geometry in
+                HStack (alignment: .center, spacing: 40) {
+                    // Card preview view
+                   
+                        DeckOfCardsView()
+                        .frame(width: geometry.size.width * 0.5, height: geometry.size.height)
+                        .background(.brown)
+                   
+                    Divider()
+                        .frame(height: geometry.size.height * 0.7)
+                    // Buttons view
+                    VStack {
+                        NavigationLink {
+                            // navigate to memory game view
+                        } label: {
+                            ButtonView(title: "Play Memory")
+                        }
+                        
+                        NavigationLink {
+                            // navigate to flashcard game
+                        } label: {
+                            ButtonView(title: "Play FlashCards")
+                        }                    }
+                    .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.5)
+                    
+                }            }
         }
+        .padding()
+        
+        .background(.cyan)
     }
 }
 
 struct DeckPopoverView_Previews: PreviewProvider {
     static var previews: some View {
-        DeckPopoverView()
-            .previewLayout(.sizeThatFits)
+        DeckPopoverView(isShowingPopover: .constant(true))
+            .previewInterfaceOrientation(.landscapeLeft)
     }
 }

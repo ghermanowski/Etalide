@@ -26,7 +26,7 @@ struct ButtonView: View {
                 
         }
     }
-        .frame(width: UIScreen.main.bounds.width * 0.25, height: UIScreen.main.bounds.height * 0.16)
+        
 }
 }
 struct ButtonView_Previews: PreviewProvider {
