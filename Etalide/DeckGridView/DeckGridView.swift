@@ -93,10 +93,14 @@ struct DeckGridView: View {
                 roundedRectangleStroke(cornerRadious: 25, width: orientation.isLandscape ?  UIScreen.main.bounds.width*(cardWidthLandscape):UIScreen.main.bounds.width*(cardWidthPortrait) , height: orientation.isLandscape ?  UIScreen.main.bounds.height*(cardHeightLandscape): UIScreen.main.bounds.height*(cardHeightPortrait), strokeColor: Color(UIColor.lightGray), lineWidth: 8, alignment: .center)
 					.overlay {
 						if let firstCard = deck.allCards?.first,
-						   let image = firstCard.image {
-							Image(uiImage: image)
-								.resizable()
-								.cornerRadius(25)
+						   let imageURL = firstCard.imageURL {
+							AsyncImage(url: imageURL) { image in
+								image
+									.resizable()
+									.cornerRadius(25)
+							} placeholder: {
+								ProgressView()
+							}
 						}
 					}
 				
