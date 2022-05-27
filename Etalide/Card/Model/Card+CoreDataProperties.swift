@@ -31,6 +31,11 @@ extension Card {
 		guard let id = id else { return nil }
 		return ImageManager.shared.find(id.uuidString)
 	}
+	
+	var imageURL: URL? {
+		guard let id = id else { return nil }
+		return ImageManager.shared.fileURL(for: id.uuidString)
+	}
 }
 
 // MARK: Generated accessors for deck

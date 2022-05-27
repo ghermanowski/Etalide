@@ -38,7 +38,7 @@ class ImageManager {
 		}
 	}
 	
-	private func fileURL(for imageName: String) -> URL? {
+	func fileURL(for imageName: String) -> URL? {
 		guard let documentsURL = try? fileManager.url(
 			for: .documentDirectory,
 			in: .userDomainMask,

@@ -32,9 +32,13 @@ struct CardView: View {
 				showImagePicker.toggle()
 			} label: {
 				Group {
-					if let image = image {
-						Image(uiImage: image)
-							.resizable()
+					if let imageURL = card?.imageURL {
+						AsyncImage(url: imageURL) { image in
+							image
+								.resizable()
+						} placeholder: {
+							ProgressView()
+						}
 					} else {
 						Label("Choose image", systemImage: "camera.fill")
 							.labelStyle(.iconOnly)
