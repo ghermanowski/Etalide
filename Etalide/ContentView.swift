@@ -24,9 +24,6 @@ struct ContentView: View {
         NavigationView {
         DeckGridView()
                 .navigationBarTitle("Choose a Deck")
-                .background(NavigationConfigurator { newColor in
-                         newColor.navigationBar.titleTextAttributes = [.foregroundColor : UIColor.white]
-                     })
     }
         .accentColor(.white)
     .navigationViewStyle(.stack)
