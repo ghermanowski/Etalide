@@ -10,23 +10,25 @@ import SwiftUI
 struct MemoryView: View {
 	
 	@StateObject var cardStore = CardStore()
-    @State private var orientation = UIDeviceOrientation.unknown
     @State var columns = Array(repeating: GridItem(.flexible(), spacing: 16), count: 4)
-    //Mark: Specifying width and hight of the decks preview depending on the orientation of the device. The numbers are proportions of the available area (not absolute sizes)
-    let cardWidthLandscape:CGFloat = 2/10
-    let cardHeightLandscape:CGFloat = 2.7/10
-    let cardWidthPortrait:CGFloat = 2.1/10
-    let cardHeightPortrait:CGFloat = 2.1/10
+	
+	@State private var orientation = UIDeviceOrientation.unknown
+    /// Specifying width and hight of the decks preview depending on the orientation of the device. The numbers are proportions of the available area (not absolute sizes)
+    let cardWidthLandscape: CGFloat = 2/10
+    let cardHeightLandscape: CGFloat = 2.7/10
+    let cardWidthPortrait: CGFloat = 2.1/10
+    let cardHeightPortrait: CGFloat = 2.1/10
 	
 	var body: some View {
 		LazyVGrid(columns: columns, spacing: 30) {
 			ForEach(cardStore.duplicatedCards) { card in
+				// Hides the cards when they match.
 				let isHidden = cardStore.hiddenCards.contains(card)
 				
 				TestCardView(card: card)
 					.aspectRatio(2/3, contentMode: .fit)
-                    .frame(width: UIScreen.main.bounds.width*(orientation.isLandscape ? cardWidthLandscape: cardWidthPortrait),
-                         height: UIScreen.main.bounds.height*( orientation.isLandscape ? cardHeightLandscape:cardHeightPortrait),
+                    .frame(width: UIScreen.main.bounds.width * (orientation.isLandscape ? cardWidthLandscape : cardWidthPortrait),
+                         height: UIScreen.main.bounds.height * ( orientation.isLandscape ? cardHeightLandscape : cardHeightPortrait),
                          alignment: .center)
 					.opacity(isHidden ? 0 : 1)
 					.animation(.default, value: isHidden)
@@ -47,6 +49,7 @@ struct MemoryView: View {
 					
 					Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
 						withAnimation {
+							// Removes selected cards from the array.
 							cardStore.selectedCards.removeAll()
 						}
 					}
