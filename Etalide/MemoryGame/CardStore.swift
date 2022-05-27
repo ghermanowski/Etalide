@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+// ViewModel for MemoryGame.
 class CardStore: ObservableObject {
 	@Published var cards: [TestCard] = [card1, card2, card3, card4, card5, card6]
 	
@@ -15,6 +16,7 @@ class CardStore: ObservableObject {
 	@Published var hiddenCards: [TestCard] = []
 	@Published var selectedCards: [TestCard] = []
 	
+	// Creates duplicated cards from the cards array.
 	func createGame() {
 		for card in cards {
 			var newCard = card
@@ -26,6 +28,7 @@ class CardStore: ObservableObject {
 		duplicatedCards.shuffle()
 	}
 	
+	// Check is the cards selected match.
 	func checkPair() {
 		if selectedCards[0].emoji == selectedCards[1].emoji {
 			print("Correct!!!!!")

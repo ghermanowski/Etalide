@@ -44,11 +44,13 @@ struct TestCardView: View {
 						  axis: (x: 0, y: 1, z: 0))
 		.animation(.linear(duration: animationDuration), value: isSelected)
 		.onChange(of: isSelected) { newValue in
+			// The delay is needed to avoid seeing the content rotating and changing.
 			withAnimation(.linear(duration: 0.0001).delay(animationDuration / 2)) {
 				isRotated = newValue
 			}
 		}
 		.onTapGesture {
+			// Selects up to 2 cards adding them to the array of selected cards.
 			if !isSelected && cardStore.selectedCards.count < 2 {
 				cardStore.selectedCards.append(card)
 			}
