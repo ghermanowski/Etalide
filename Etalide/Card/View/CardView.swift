@@ -36,7 +36,7 @@ struct CardView: View {
 						Image(uiImage: image)
 							.resizable()
 					} else {
-						Label("Choose an image", systemImage: "camera.fill")
+						Label("Choose image", systemImage: "camera.fill")
 							.labelStyle(.iconOnly)
 							.font(.largeTitle)
 							.offset(y: -20)
@@ -81,12 +81,6 @@ struct CardView: View {
 	}
 	
 	private func saveCard() {
-		guard card == nil else {
-			card?.name = cardName
-			saveContext()
-			return
-		}
-		
 		guard let image = image else {
 			print("No image selected.")
 			return
@@ -94,6 +88,16 @@ struct CardView: View {
 		
 		guard let imageData = image.jpegData(compressionQuality: 1) else {
 			print("Could not get image data.")
+			return
+		}
+		
+		guard card == nil else {
+			card?.name = cardName
+			
+			if card?.image != image {
+				ImageManager.shared.save(imageData, withName: card!.id!.uuidString)
+			}
+			
 			return
 		}
 		
