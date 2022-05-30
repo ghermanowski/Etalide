@@ -43,7 +43,6 @@
 		5C596C70283FC7180097C7B8 /* DeckOfCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C6F283FC7180097C7B8 /* DeckOfCardsView.swift */; };
 		6C7C3B0D283E284500F42669 /* DeviceRotationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C3B0C283E284500F42669 /* DeviceRotationViewModifier.swift */; };
 		6C7C3B0F283E3B7A00F42669 /* DeckGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C3B0E283E3B7A00F42669 /* DeckGridView.swift */; };
-		6CDBF17B283FDE15001C7336 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDBF17A283FDE15001C7336 /* NavigationConfigurator.swift */; };
 		F58A8D0C283CC3B8000A859A /* EtalideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D0B283CC3B8000A859A /* EtalideApp.swift */; };
 		F58A8D0E283CC3B8000A859A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D0D283CC3B8000A859A /* ContentView.swift */; };
 		F58A8D10283CC3B8000A859A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F58A8D0F283CC3B8000A859A /* Assets.xcassets */; };
@@ -98,7 +97,6 @@
 		5C596C6F283FC7180097C7B8 /* DeckOfCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCardsView.swift; sourceTree = "<group>"; };
 		6C7C3B0C283E284500F42669 /* DeviceRotationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRotationViewModifier.swift; sourceTree = "<group>"; };
 		6C7C3B0E283E3B7A00F42669 /* DeckGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckGridView.swift; sourceTree = "<group>"; };
-		6CDBF17A283FDE15001C7336 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
 		F58A8D08283CC3B8000A859A /* Etalide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Etalide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F58A8D0B283CC3B8000A859A /* EtalideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtalideApp.swift; sourceTree = "<group>"; };
 		F58A8D0D283CC3B8000A859A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -167,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				6C7C3B0C283E284500F42669 /* DeviceRotationViewModifier.swift */,
-				6CDBF17A283FDE15001C7336 /* NavigationConfigurator.swift */,
 				6C7C3B0E283E3B7A00F42669 /* DeckGridView.swift */,
 			);
 			path = DeckGridView;
@@ -454,7 +451,6 @@
 				F58CB7842840D65100B74FD5 /* VerticalRectangleStyle.swift in Sources */,
 				F5EDE192283F939500E96A3A /* CardView.swift in Sources */,
 				6C7C3B0F283E3B7A00F42669 /* DeckGridView.swift in Sources */,
-				6CDBF17B283FDE15001C7336 /* NavigationConfigurator.swift in Sources */,
 				50DA136B283E1CF100A7ECC4 /* CardStore.swift in Sources */,
 				50CF1BC0283CD8DA00324353 /* Deck+CoreDataProperties.swift in Sources */,
 				50CF1BC3283CD8DA00324353 /* Card+CoreDataClass.swift in Sources */,
