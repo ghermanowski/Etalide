@@ -43,6 +43,9 @@
 		5C596C70283FC7180097C7B8 /* DeckOfCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C6F283FC7180097C7B8 /* DeckOfCardsView.swift */; };
 		6C7C3B0D283E284500F42669 /* DeviceRotationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C3B0C283E284500F42669 /* DeviceRotationViewModifier.swift */; };
 		6C7C3B0F283E3B7A00F42669 /* DeckGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C3B0E283E3B7A00F42669 /* DeckGridView.swift */; };
+		6CDBF17B283FDE15001C7336 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDBF17A283FDE15001C7336 /* NavigationConfigurator.swift */; };
+		71AE0B132844D3F700A128F2 /* SelectDifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE0B122844D3F600A128F2 /* SelectDifficultyView.swift */; };
+		71AE0B152844D6C500A128F2 /* MemoryDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE0B142844D6C500A128F2 /* MemoryDifficulty.swift */; };
 		F58A8D0C283CC3B8000A859A /* EtalideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D0B283CC3B8000A859A /* EtalideApp.swift */; };
 		F58A8D0E283CC3B8000A859A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D0D283CC3B8000A859A /* ContentView.swift */; };
 		F58A8D10283CC3B8000A859A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F58A8D0F283CC3B8000A859A /* Assets.xcassets */; };
@@ -97,6 +100,9 @@
 		5C596C6F283FC7180097C7B8 /* DeckOfCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCardsView.swift; sourceTree = "<group>"; };
 		6C7C3B0C283E284500F42669 /* DeviceRotationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRotationViewModifier.swift; sourceTree = "<group>"; };
 		6C7C3B0E283E3B7A00F42669 /* DeckGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckGridView.swift; sourceTree = "<group>"; };
+		6CDBF17A283FDE15001C7336 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
+		71AE0B122844D3F600A128F2 /* SelectDifficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDifficultyView.swift; sourceTree = "<group>"; };
+		71AE0B142844D6C500A128F2 /* MemoryDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryDifficulty.swift; sourceTree = "<group>"; };
 		F58A8D08283CC3B8000A859A /* Etalide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Etalide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F58A8D0B283CC3B8000A859A /* EtalideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtalideApp.swift; sourceTree = "<group>"; };
 		F58A8D0D283CC3B8000A859A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -196,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				F58A8D0B283CC3B8000A859A /* EtalideApp.swift */,
+				71AE0B122844D3F600A128F2 /* SelectDifficultyView.swift */,
+				71AE0B142844D6C500A128F2 /* MemoryDifficulty.swift */,
 				F58A8D0D283CC3B8000A859A /* ContentView.swift */,
 				5C596C6B283FBF750097C7B8 /* DeckPopoverView.swift */,
 				5C596C6F283FC7180097C7B8 /* DeckOfCardsView.swift */,
@@ -445,6 +453,8 @@
 				50CF1BC6283CD8DA00324353 /* Card+CoreDataProperties.swift in Sources */,
 				F5EDE18E283F8F7C00E96A3A /* ImageManager.swift in Sources */,
 				F58A8D0E283CC3B8000A859A /* ContentView.swift in Sources */,
+				71AE0B152844D6C500A128F2 /* MemoryDifficulty.swift in Sources */,
+				71AE0B132844D3F700A128F2 /* SelectDifficultyView.swift in Sources */,
 				50CF1BD2283CE17B00324353 /* TestCardView.swift in Sources */,
 				5C596C70283FC7180097C7B8 /* DeckOfCardsView.swift in Sources */,
 				5C596C27283E17050097C7B8 /* SwipableCardView.swift in Sources */,
