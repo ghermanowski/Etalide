@@ -17,6 +17,7 @@ struct DeckGridView: View {
 	@State private var selectedDeck: Deck?
     
 	@FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) private var decks: FetchedResults<Deck>
+    @State private var showPopover = false
     
     //Mark: Specifying width and hight of the decks preview depending on the orientation of the device. The numbers are proportions of the available area (not absolute sizes)
     let cardWidthLandscape:CGFloat = 2.3/10
@@ -88,6 +89,7 @@ struct DeckGridView: View {
         
         Button {
 			selectedDeck = deck
+            showPopover.toggle()
         } label: {
             ZStack {
                 roundedRectangleStroke(cornerRadious: 25, width: orientation.isLandscape ?  UIScreen.main.bounds.width*(cardWidthLandscape):UIScreen.main.bounds.width*(cardWidthPortrait) , height: orientation.isLandscape ?  UIScreen.main.bounds.height*(cardHeightLandscape): UIScreen.main.bounds.height*(cardHeightPortrait), strokeColor: Color(UIColor.lightGray), lineWidth: 8, alignment: .center)
@@ -120,6 +122,7 @@ struct DeckGridView: View {
     }
 	
 	var body: some View {
+        ZStack {
 		ScrollView {
 			LazyVGrid(columns: columns, spacing: 20) {
 				createNewDeckButton()
@@ -141,12 +144,20 @@ struct DeckGridView: View {
 		}
 		.frame(maxHeight: .infinity)
 		.navigationTitle("Decks")
+            if showPopover {
+                DeckPopoverView(selectedDeck!, isShowingPopover: $showPopover)
+                    .frame(width: UIScreen.main.bounds.width * 0.75, height: UIScreen.main.bounds.height * 0.75)
+//                    .padding()
+                   // .ignoresSafeArea()
+            }
+        }
+        
 //		.sheet(item: $selectedDeck) { deck in
 //			DeckView(deck)
 //		}
-        .sheet(item: $selectedDeck) { deck in
-            DeckPopoverView(deck)
-        }
+//        .sheet(item: $selectedDeck) { deck in
+//            DeckPopoverView(deck)
+//        }
 	}
 	
 	private func saveContext() {
