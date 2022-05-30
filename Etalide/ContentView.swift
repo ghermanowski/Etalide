@@ -12,7 +12,7 @@ let customColorNavAppearance = UINavigationBarAppearance()
 struct ContentView: View {
     init() {
           customColorNavAppearance.configureWithOpaqueBackground()
-          customColorNavAppearance.backgroundColor = UIColor(red: 0.094, green: 0.149, blue: 0.259, alpha: 1)
+		  customColorNavAppearance.backgroundColor = UIColor(.backgroundBlue)
           customColorNavAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
           customColorNavAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
                  

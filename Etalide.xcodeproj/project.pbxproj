@@ -31,6 +31,7 @@
 		50DA1369283E1C9E00A7ECC4 /* TestCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DA1367283E1C9E00A7ECC4 /* TestCard.swift */; };
 		50DA136B283E1CF100A7ECC4 /* CardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DA136A283E1CF100A7ECC4 /* CardStore.swift */; };
 		50DA136C283E1CF100A7ECC4 /* CardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DA136A283E1CF100A7ECC4 /* CardStore.swift */; };
+		50FC97E72844D78700410666 /* Extension-Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FC97E62844D78700410666 /* Extension-Color.swift */; };
 		5C596C27283E17050097C7B8 /* SwipableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C26283E17050097C7B8 /* SwipableCardView.swift */; };
 		5C596C28283E17050097C7B8 /* SwipableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C26283E17050097C7B8 /* SwipableCardView.swift */; };
 		5C596C29283E17050097C7B8 /* SwipableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C26283E17050097C7B8 /* SwipableCardView.swift */; };
@@ -89,6 +90,7 @@
 		50CF1BD1283CE17B00324353 /* TestCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCardView.swift; sourceTree = "<group>"; };
 		50DA1367283E1C9E00A7ECC4 /* TestCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCard.swift; sourceTree = "<group>"; };
 		50DA136A283E1CF100A7ECC4 /* CardStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStore.swift; sourceTree = "<group>"; };
+		50FC97E62844D78700410666 /* Extension-Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-Color.swift"; sourceTree = "<group>"; };
 		5C596C26283E17050097C7B8 /* SwipableCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipableCardView.swift; sourceTree = "<group>"; };
 		5C596C2A283E17700097C7B8 /* CardGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardGameView.swift; sourceTree = "<group>"; };
 		5C596C6B283FBF750097C7B8 /* DeckPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckPopoverView.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				F5C42308283CDBD600A385B5 /* CoreData */,
 				F58CB7862840E42700B74FD5 /* ViewStyle */,
 				F58A8D0F283CC3B8000A859A /* Assets.xcassets */,
+				50FC97E62844D78700410666 /* Extension-Color.swift */,
 				F58A8D11283CC3B8000A859A /* Preview Content */,
 			);
 			path = Etalide;
@@ -461,6 +464,7 @@
 				F5C4230C283CE69900A385B5 /* ImagePicker.swift in Sources */,
 				F5EDE194283FAD2600E96A3A /* DeckView.swift in Sources */,
 				50CF1BBD283CD8DA00324353 /* Deck+CoreDataClass.swift in Sources */,
+				50FC97E72844D78700410666 /* Extension-Color.swift in Sources */,
 				5C596C2B283E17700097C7B8 /* CardGameView.swift in Sources */,
 				F58A8D0C283CC3B8000A859A /* EtalideApp.swift in Sources */,
 				50DA1368283E1C9E00A7ECC4 /* TestCard.swift in Sources */,
