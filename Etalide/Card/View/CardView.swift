@@ -32,10 +32,7 @@ struct CardView: View {
 				showImagePicker.toggle()
 			} label: {
 				Group {
-					if let assetName = card?.assetName {
-						Image(assetName)
-							.resizable()
-					} else if let imageURL = card?.imageURL {
+					if let imageURL = card?.imageURL {
 						AsyncImage(url: imageURL) { image in
 							image
 								.resizable()

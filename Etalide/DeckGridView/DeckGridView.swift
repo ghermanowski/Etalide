@@ -95,11 +95,7 @@ struct DeckGridView: View {
                 roundedRectangleStroke(cornerRadious: 25, width: orientation.isLandscape ?  UIScreen.main.bounds.width*(cardWidthLandscape):UIScreen.main.bounds.width*(cardWidthPortrait) , height: orientation.isLandscape ?  UIScreen.main.bounds.height*(cardHeightLandscape): UIScreen.main.bounds.height*(cardHeightPortrait), strokeColor: Color(UIColor.lightGray), lineWidth: 8, alignment: .center)
 					.overlay {
 						if let firstCard = deck.allCards?.first {
-							if let assetName = firstCard.assetName {
-								Image(assetName)
-									.resizable()
-									.cornerRadius(25)
-							} else if let imageURL = firstCard.imageURL {
+							if let imageURL = firstCard.imageURL {
 								AsyncImage(url: imageURL) { image in
 									image
 										.resizable()
