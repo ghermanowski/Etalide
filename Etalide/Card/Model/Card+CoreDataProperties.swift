@@ -15,8 +15,9 @@ extension Card {
 		NSFetchRequest<Card>(entityName: "Card")
 	}
 	
-	@NSManaged public var name: String?
 	@NSManaged public var id: UUID?
+	@NSManaged public var name: String?
+	@NSManaged public var assetName: String?
 	@NSManaged public var decks: NSSet?
 	
 	var wrappedName: String {
