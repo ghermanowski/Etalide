@@ -49,7 +49,7 @@ struct SelectDifficultyView: View {
 		}
 		.padding(32)
 		.background {
-			Color(red: 0.094, green: 0.149, blue: 0.259)
+			Color(UIColor(.backgroundBlue))
 				.clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
 		}
 		.frame(width: 500, height: 400)
