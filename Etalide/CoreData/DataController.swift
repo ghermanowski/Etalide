@@ -26,14 +26,44 @@ class DataController: ObservableObject {
 			let context = container.viewContext
 			let animalsDeck = Deck(context: context, name: "Animals")
 			
+			func createCard(_ name: String, in deck: Deck) {
+				let card = Card(context: context, name: name, assetName: name)
+				card.addToDeck(deck)
+			}
+			
 			[
+				"Bear",
 				"Cat",
+				"Cow",
 				"Dog",
+				"Hen",
+				"Horse",
+				"Lion",
+				"Parrot",
+				"Pig",
+				"Rabbit",
+				"Sheep",
+				"Tiger",
 			]
-				.forEach { animal in
-					let card = Card(context: context, name: animal, assetName: animal)
-					card.addToDeck(animalsDeck)
-				}
+				.forEach { createCard($0, in: animalsDeck) }
+			
+			let foodDeck = Deck(context: context, name: "Food")
+			
+			[
+				"Cake",
+				"Caprese",
+				"Cheese",
+				"French Fries",
+				"Ice Cream",
+				"Mokka",
+				"Orange",
+				"Pasta",
+				"Pizza",
+				"Salami",
+				"Strawberry",
+				"Wine",
+			]
+				.forEach { createCard($0, in: foodDeck) }
 			
 			do {
 				try context.save()
