@@ -92,14 +92,19 @@ struct DeckGridView: View {
             ZStack {
                 roundedRectangleStroke(cornerRadious: 25, width: orientation.isLandscape ?  UIScreen.main.bounds.width*(cardWidthLandscape):UIScreen.main.bounds.width*(cardWidthPortrait) , height: orientation.isLandscape ?  UIScreen.main.bounds.height*(cardHeightLandscape): UIScreen.main.bounds.height*(cardHeightPortrait), strokeColor: Color(UIColor.lightGray), lineWidth: 8, alignment: .center)
 					.overlay {
-						if let firstCard = deck.allCards?.first,
-						   let imageURL = firstCard.imageURL {
-							AsyncImage(url: imageURL) { image in
-								image
+						if let firstCard = deck.allCards?.first {
+							if let assetName = firstCard.assetName {
+								Image(assetName)
 									.resizable()
 									.cornerRadius(25)
-							} placeholder: {
-								ProgressView()
+							} else if let imageURL = firstCard.imageURL {
+								AsyncImage(url: imageURL) { image in
+									image
+										.resizable()
+										.cornerRadius(25)
+								} placeholder: {
+									ProgressView()
+								}
 							}
 						}
 					}
