@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct DeckPopoverView: View {
-    init(_ deck: Deck) {
+    init(_ deck: Deck, isShowingPopover: Binding<Bool>) {
         self.deck = deck
+        self._isShowingPopover = isShowingPopover
     }
     
     private let deck: Deck
-//    @Binding var isShowingPopover: Bool
+    @Binding var isShowingPopover: Bool
     var body: some View {
     
-        NavigationView {
+//        NavigationView {
         VStack (alignment: .center) {
             HStack {
                 
@@ -28,7 +29,7 @@ struct DeckPopoverView: View {
                 Spacer()
                 
                 Button {
-//                    isShowingPopover = false
+                    isShowingPopover = false
                 } label: {
                     Image(systemName: "x.circle.fill")
                 }
@@ -62,7 +63,7 @@ struct DeckPopoverView: View {
                     
                 }            }
         }
-        }
+        
         .padding()
         
         .background(.cyan)
@@ -71,7 +72,7 @@ struct DeckPopoverView: View {
 
 struct DeckPopoverView_Previews: PreviewProvider {
     static var previews: some View {
-        DeckPopoverView(Deck())
+        DeckPopoverView(Deck(), isShowingPopover: .constant(true))
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }
