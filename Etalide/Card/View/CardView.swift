@@ -28,6 +28,7 @@ struct CardView: View {
 	
     var body: some View {
 		ZStack(alignment: .bottom) {
+			
 			Button {
 				showImagePicker.toggle()
 			} label: {
@@ -62,9 +63,21 @@ struct CardView: View {
 						editMode?.wrappedValue = .inactive
 					}
 				}
+			
 		}
 		.frame(minWidth: 75, minHeight: 100)
 		.aspectRatio(3 / 4, contentMode: .fit)
+		.overlay(alignment: .topTrailing) {
+			if editMode?.wrappedValue == .active,
+			   let card = card {
+				Button(role: .destructive) {
+					deleteCard(card: card)
+				} label: {
+					Image(systemName: "trash.fill")
+						.padding()
+				}
+			}
+		}
 		.cornerRadius(20)
 		.disabled(editMode?.wrappedValue != .active)
 		.sheet(isPresented: $showImagePicker) {
@@ -77,6 +90,11 @@ struct CardView: View {
 				saveCard()
 			}
 		}
+	}
+	
+	private func deleteCard(card: Card) {
+			moc.delete(card)
+			saveContext()
 	}
 	
 	private func saveContext() {
