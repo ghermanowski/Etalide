@@ -62,6 +62,7 @@
 		F5EDE190283F8F8200E96A3A /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EDE18D283F8F7C00E96A3A /* ImageManager.swift */; };
 		F5EDE192283F939500E96A3A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EDE191283F939500E96A3A /* CardView.swift */; };
 		F5EDE194283FAD2600E96A3A /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EDE193283FAD2600E96A3A /* DeckView.swift */; };
+		F5F2B0B42846094D00F5FFB3 /* CardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2B0B32846094D00F5FFB3 /* CardImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		F5EDE18D283F8F7C00E96A3A /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		F5EDE191283F939500E96A3A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		F5EDE193283FAD2600E96A3A /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
+		F5F2B0B32846094D00F5FFB3 /* CardImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -306,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				F5EDE191283F939500E96A3A /* CardView.swift */,
+				F5F2B0B32846094D00F5FFB3 /* CardImageView.swift */,
 				F5C4230B283CE69900A385B5 /* ImagePicker.swift */,
 			);
 			path = View;
@@ -455,6 +458,7 @@
 			files = (
 				50CF1BCE283CDE3900324353 /* MemoryView.swift in Sources */,
 				50CF1BB6283CD78300324353 /* Etalide.xcdatamodeld in Sources */,
+				F5F2B0B42846094D00F5FFB3 /* CardImageView.swift in Sources */,
 				50CF1BC6283CD8DA00324353 /* Card+CoreDataProperties.swift in Sources */,
 				F5EDE18E283F8F7C00E96A3A /* ImageManager.swift in Sources */,
 				F58A8D0E283CC3B8000A859A /* ContentView.swift in Sources */,

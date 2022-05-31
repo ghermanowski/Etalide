@@ -22,10 +22,10 @@ struct DeckOfCardsView: View {
         LazyVGrid (columns: gridItemLayot) {
             if let cards = deck.allCards {
                 ForEach(cards) { card in
-                    CardView(card, in: deck)
-                        .aspectRatio(2/3, contentMode: .fit)
-                        
-                        .padding()
+					if let imageURL = card.imageURL {
+						CardImageView(imageURL)
+							.cornerRadius(15)
+					}
                 }
             }
 //            ForEach(0..<12) { number in

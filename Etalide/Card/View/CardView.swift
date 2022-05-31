@@ -33,12 +33,7 @@ struct CardView: View {
 			} label: {
 				Group {
 					if let imageURL = card?.imageURL {
-						AsyncImage(url: imageURL) { image in
-							image
-								.resizable()
-						} placeholder: {
-							ProgressView()
-						}
+						CardImageView(imageURL)
 					} else if let image = image {
 						Image(uiImage: image)
 							.resizable()
@@ -49,9 +44,11 @@ struct CardView: View {
 							.offset(y: -20)
 					}
 				}
-				.frame(minWidth: 225, maxWidth: .infinity, minHeight: 300)
+				.frame(minWidth: 75, maxWidth: .infinity, minHeight: 100)
 				.background(Color.gray.opacity(0.5))
 			}
+			
+			// TODO: Change image of presets
 			
 			TextField("Name", text: $cardName)
 				.font(.largeTitle.weight(.bold))
@@ -66,7 +63,7 @@ struct CardView: View {
 					}
 				}
 		}
-		.frame(minWidth: 225, minHeight: 300)
+		.frame(minWidth: 75, minHeight: 100)
 		.aspectRatio(3 / 4, contentMode: .fit)
 		.cornerRadius(20)
 		.disabled(editMode?.wrappedValue != .active)

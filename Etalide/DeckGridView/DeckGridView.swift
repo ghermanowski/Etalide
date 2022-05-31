@@ -96,13 +96,8 @@ struct DeckGridView: View {
 					.overlay {
 						if let firstCard = deck.allCards?.first {
 							if let imageURL = firstCard.imageURL {
-								AsyncImage(url: imageURL) { image in
-									image
-										.resizable()
-										.cornerRadius(25)
-								} placeholder: {
-									ProgressView()
-								}
+								CardImageView(imageURL)
+									.cornerRadius(25)
 							}
 						}
 					}
