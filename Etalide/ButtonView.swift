@@ -23,7 +23,7 @@ struct ButtonView: View {
             VStack (alignment: .leading) {
                 
                 //Spacer (minLength: UIScreen.main.bounds.height * 0.02)
-                
+                Spacer ()
                 HStack {
                     
                     Text(title)
