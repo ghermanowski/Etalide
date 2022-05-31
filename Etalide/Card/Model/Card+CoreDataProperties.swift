@@ -34,7 +34,26 @@ extension Card {
 	}
 	
 	var imageURL: URL? {
+		guard assetName == nil else {
+			guard let decks = decks?.allObjects as? [Deck] else {
+				return nil
+			}
+			
+			for deck in decks {
+				if let url = Bundle.main.url(
+					forResource: assetName!,
+					withExtension: "jpeg",
+					subdirectory: "Images/" + deck.name!
+				) {
+					return url
+				}
+			}
+			
+			return nil
+		}
+		
 		guard let id = id else { return nil }
+		
 		return ImageManager.shared.fileURL(for: id.uuidString)
 	}
 }
