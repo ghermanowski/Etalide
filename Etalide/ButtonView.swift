@@ -12,34 +12,40 @@ struct ButtonView: View {
     let title: String
     var body: some View {
         
-        ZStack {
+//        ZStack {
             
             Image(imageTitle)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .scaledToFit()
-                
-            
-            VStack (alignment: .leading) {
-                
-                //Spacer (minLength: UIScreen.main.bounds.height * 0.02)
-                Spacer ()
-                HStack {
-                    
+                .overlay {
                     Text(title)
                         .foregroundColor(.white)
                         .bold()
                         .font(.title)
                         .padding()
-                    
-                    Spacer()
                 }
-                Spacer()
-                
-            }
-            .padding()
-        }
-        .background(.red)
+            // background
+//            VStack (alignment: .leading) {
+//
+//                //Spacer (minLength: UIScreen.main.bounds.height * 0.02)
+//                Spacer ()
+//                HStack {
+//
+//                    Text(title)
+//                        .foregroundColor(.white)
+//                        .bold()
+//                        .font(.title)
+//                        .padding()
+//
+//                    Spacer()
+//                }
+//                Spacer()
+//
+//            }
+//            .padding()
+//        }
+//        .background(.red)
         
     }
 }
