@@ -8,29 +8,43 @@
 import SwiftUI
 
 struct ButtonView: View {
+    let imageTitle: String
     let title: String
     var body: some View {
         
         ZStack {
             
-            RoundedRectangle(cornerRadius: 30)
-                .foregroundColor(.gray)
+            Image(imageTitle)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .scaledToFit()
+                
             
             VStack (alignment: .leading) {
-                Spacer (minLength: UIScreen.main.bounds.height * 0.02)
-            Text(title)
-                .foregroundColor(.white)
-                .font(.title)
                 
-            Spacer()
+                //Spacer (minLength: UIScreen.main.bounds.height * 0.02)
                 
+                HStack {
+                    
+                    Text(title)
+                        .foregroundColor(.white)
+                        .bold()
+                        .font(.title)
+                        .padding()
+                    
+                    Spacer()
+                }
+                Spacer()
+                
+            }
+            .padding()
         }
-    }
+        .background(.red)
         
-}
+    }
 }
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonView(title: "Play")
+        ButtonView(imageTitle: "FlashcardButton", title: "Play")
     }
 }

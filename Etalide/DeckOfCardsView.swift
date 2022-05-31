@@ -28,16 +28,6 @@ struct DeckOfCardsView: View {
 					}
                 }
             }
-//            ForEach(0..<12) { number in
-//                ZStack {
-//                    Color
-//                        .purple
-//                    Text("\(number)")
-//                }
-//                .aspectRatio(2/3, contentMode: .fit)
-//
-//                .padding()
-//            }
         }
     }
 }

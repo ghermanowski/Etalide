@@ -25,6 +25,8 @@ struct DeckPopoverView: View {
                 
                 Text(deck.wrappedName)
                     .font(.system(.largeTitle))
+                    .bold()
+                    .foregroundColor(.backgroundBlue)
                 
                 Spacer()
                 
@@ -32,6 +34,9 @@ struct DeckPopoverView: View {
                     isShowingPopover = false
                 } label: {
                     Image(systemName: "x.circle.fill")
+                        .foregroundColor(.backgroundBlue)
+                        .font(.system(.largeTitle))
+                        
                 }
             }
             
@@ -42,7 +47,7 @@ struct DeckPopoverView: View {
                     
                     DeckOfCardsView(deck)
                         .frame(width: geometry.size.width * 0.5, height: geometry.size.height)
-                        .background(.brown)
+                        .padding()
                     
                     Divider()
                         .frame(height: geometry.size.height * 0.7)
@@ -51,19 +56,20 @@ struct DeckPopoverView: View {
                         NavigationLink {
                             // navigate to memory game view
                         } label: {
-                            ButtonView(title: "Play Memory")
+                            ButtonView(imageTitle: "MemoryGameButton", title: "Play Memory")
                         }
                         
                         NavigationLink {
                             CardGameView(deck)
                         } label: {
-                            ButtonView(title: "Play FlashCards")
+                            ButtonView(imageTitle: "FlashcardButton", title: "Play FlashCards")
                         }                    }
                     
                 }            }
         }
-        
         .padding()
+        .background(.white)
+        .cornerRadius(35)
     }
 }
 
