@@ -30,7 +30,7 @@ struct DeckView: View {
 					NewCards(in: deck)
 					
 					if let cards = deck.allCards {
-						ForEach(cards) { card in
+						ForEach(cards.sorted(by: { $0.wrappedName < $1.wrappedName })) { card in
 							CardView(card, in: deck)
 						}
 					}
