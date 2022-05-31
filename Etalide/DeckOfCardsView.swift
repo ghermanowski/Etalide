@@ -9,13 +9,16 @@ import SwiftUI
 
 struct DeckOfCardsView: View {
     
-    let gridItemLayot = Array(repeating: GridItem(.flexible(maximum: UIScreen.main.bounds.width)), count: 4)
-    
+    @State var gridItemLayot = Array(repeating: GridItem(.flexible(maximum: UIScreen.main.bounds.width)), count: 3)
+    //@State var columns = Array(repeating: GridItem(.flexible(),spacing: 20), count: 3)
     init(_ deck: Deck) {
         self.deck = deck
     }
     
     private let deck: Deck
+    
+    
+    @State private var orientation = UIDeviceOrientation.unknown
     
     var body: some View {
         
@@ -27,6 +30,14 @@ struct DeckOfCardsView: View {
 							.cornerRadius(15)
 					}
                 }
+            }
+        }
+        .onRotate { newOrientation in
+            orientation = newOrientation
+            if orientation.isLandscape {
+                gridItemLayot = Array(repeating: GridItem(.flexible(maximum: UIScreen.main.bounds.width)), count: 4)
+            } else {
+                gridItemLayot = Array(repeating: GridItem(.flexible(maximum: UIScreen.main.bounds.width)), count: 3)
             }
         }
     }

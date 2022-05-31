@@ -14,10 +14,11 @@ struct DeckPopoverView: View {
     }
     
     private let deck: Deck
+    
     @Binding var isShowingPopover: Bool
+    
     var body: some View {
         
-        //        NavigationView {
         VStack (alignment: .center) {
             HStack {
                 
