@@ -16,14 +16,14 @@ struct DeckPopoverView: View {
     private let deck: Deck
     @Binding var isShowingPopover: Bool
     var body: some View {
-    
-//        NavigationView {
+        
+        //        NavigationView {
         VStack (alignment: .center) {
             HStack {
                 
                 Spacer()
                 
-                Text("Animals")
+                Text(deck.wrappedName)
                     .font(.system(.largeTitle))
                 
                 Spacer()
@@ -34,16 +34,16 @@ struct DeckPopoverView: View {
                     Image(systemName: "x.circle.fill")
                 }
             }
-       
+            
             
             GeometryReader { geometry in
                 HStack (alignment: .center, spacing: 40) {
                     // Card preview view
-                   
+                    
                     DeckOfCardsView(deck)
                         .frame(width: geometry.size.width * 0.5, height: geometry.size.height)
                         .background(.brown)
-                   
+                    
                     Divider()
                         .frame(height: geometry.size.height * 0.7)
                     // Buttons view
@@ -59,14 +59,11 @@ struct DeckPopoverView: View {
                         } label: {
                             ButtonView(title: "Play FlashCards")
                         }                    }
-                    .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.5)
                     
                 }            }
         }
         
         .padding()
-        
-        .background(.cyan)
     }
 }
 
