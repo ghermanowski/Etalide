@@ -33,11 +33,11 @@ struct CardView: View {
 				showImagePicker.toggle()
 			} label: {
 				Group {
-					if let imageURL = card?.imageURL {
-						CardImageView(imageURL)
-					} else if let image = image {
+					if let image = image {
 						Image(uiImage: image)
 							.resizable()
+					} else if let imageURL = card?.imageURL {
+						CardImageView(imageURL)
 					} else {
 						Label("Choose image", systemImage: "camera.fill")
 							.labelStyle(.iconOnly)
@@ -51,34 +51,36 @@ struct CardView: View {
 			
 			// TODO: Change image of presets
 			
-			TextField("Name", text: $cardName)
-				.font(.largeTitle.weight(.bold))
-				.foregroundColor(.white)
-				.multilineTextAlignment(.center)
-				.frame(maxWidth: .infinity)
-				.padding(.vertical)
-				.background(.ultraThinMaterial)
-				.onSubmit {
-					if image != nil {
-						editMode?.wrappedValue = .inactive
+			if !cardName.isEmpty || editMode?.wrappedValue == .active {
+				TextField("Name", text: $cardName)
+					.font(.largeTitle.weight(.bold))
+					.foregroundColor(.white)
+					.multilineTextAlignment(.center)
+					.frame(maxWidth: .infinity)
+					.padding(.vertical)
+					.background(.ultraThinMaterial)
+					.onSubmit {
+						if image != nil {
+							editMode?.wrappedValue = .inactive
+						}
 					}
-				}
-			
+			}
 		}
 		.frame(minWidth: 75, minHeight: 100)
 		.aspectRatio(3 / 4, contentMode: .fit)
+		.cornerRadius(20)
 		.overlay(alignment: .topTrailing) {
 			if editMode?.wrappedValue == .active,
 			   let card = card {
 				Button(role: .destructive) {
 					deleteCard(card: card)
 				} label: {
-					Image(systemName: "trash.fill")
+					Label("Delete", systemImage: "trash.fill")
+						.labelStyle(.iconOnly)
 						.padding()
 				}
 			}
 		}
-		.cornerRadius(20)
 		.disabled(editMode?.wrappedValue != .active)
 		.sheet(isPresented: $showImagePicker) {
 			ImagePicker(image: $image)
@@ -93,14 +95,14 @@ struct CardView: View {
 	}
 	
 	private func deleteCard(card: Card) {
+		moc.delete(card)
+		saveContext()
+		
 		// Preset assets could also be deleted via Card.imageURL.
 		// This is not done because then the presets cannot be restored.
 		if card.assetName == nil {
 			ImageManager.shared.delete(withName: card.id!.uuidString)
 		}
-		
-		moc.delete(card)
-		saveContext()
 	}
 	
 	private func saveContext() {
@@ -111,18 +113,17 @@ struct CardView: View {
 		}
 	}
 	
+	/// Saves changes to an existing card or creates a new card.
 	private func saveCard() {
+		// When no image was selected, a new name for the existing card will be saved if it was modified.
 		guard let image = image else {
-			guard card == nil else {
-				if card?.name != cardName {
-					card?.name = cardName
-					saveContext()
-				}
-				
+			guard let card = card,
+				  card.name != cardName else {
 				return
 			}
 			
-			print("No image selected.")
+			card.name = cardName
+			saveContext()
 			return
 		}
 		
@@ -131,26 +132,29 @@ struct CardView: View {
 			return
 		}
 		
-		guard card == nil else {
-			card?.name = cardName
-			
-			if card?.image != image {
-				ImageManager.shared.save(imageData, withName: card!.id!.uuidString)
+		guard let card = card else {
+			// If a new card should be created, it needs to have a deck,
+			// because currently there is no way to manage cards without decks from the UI.
+			guard let deck = deck else {
+				print("No deck present.")
+				return
 			}
 			
+			let newCard = Card(context: moc, name: cardName)
+			newCard.addToDeck(deck)
+			saveContext()
+			
+			ImageManager.shared.save(imageData, withName: newCard.id!.uuidString)
 			return
 		}
 		
-		guard let deck = deck else {
-			print("No deck present.")
-			return
-		}
-		
-		let newCard = Card(context: moc, name: cardName)
-		newCard.addToDeck(deck)
+		card.name = cardName
+		// If the card was part of a preset, the assetName needs to be deleted,
+		// so that the new image will be used.
+		card.assetName = nil
 		saveContext()
 		
-		ImageManager.shared.save(imageData, withName: newCard.id!.uuidString)
+		ImageManager.shared.save(imageData, withName: card.id!.uuidString)
 	}
 }
 
