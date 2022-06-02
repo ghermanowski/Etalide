@@ -93,8 +93,14 @@ struct CardView: View {
 	}
 	
 	private func deleteCard(card: Card) {
-			moc.delete(card)
-			saveContext()
+		// Preset assets could also be deleted via Card.imageURL.
+		// This is not done because then the presets cannot be restored.
+		if card.assetName == nil {
+			ImageManager.shared.delete(withName: card.id!.uuidString)
+		}
+		
+		moc.delete(card)
+		saveContext()
 	}
 	
 	private func saveContext() {
