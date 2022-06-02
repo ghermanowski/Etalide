@@ -27,30 +27,29 @@ struct CardView: View {
 	@State private var showImagePicker = false
 	
     var body: some View {
-		ZStack(alignment: .bottom) {
-			
-			Button {
-				showImagePicker.toggle()
-			} label: {
-				Group {
-					if let image = image {
-						Image(uiImage: image)
-							.resizable()
-					} else if let imageURL = card?.imageURL {
-						CardImageView(imageURL)
-					} else {
-						Label("Choose image", systemImage: "camera.fill")
-							.labelStyle(.iconOnly)
-							.font(.largeTitle)
-							.offset(y: -20)
-					}
+		Button {
+			showImagePicker.toggle()
+		} label: {
+			Group {
+				if let image = image {
+					Image(uiImage: image)
+						.resizable()
+				} else if let imageURL = card?.imageURL {
+					CardImageView(imageURL)
 				}
-				.frame(minWidth: 75, maxWidth: .infinity, minHeight: 100)
-				.background(Color.gray.opacity(0.5))
 			}
-			
-			// TODO: Change image of presets
-			
+			.overlay {
+				if editMode?.wrappedValue == .active {
+					Label("Choose image", systemImage: "camera.fill")
+						.labelStyle(.iconOnly)
+						.font(.largeTitle)
+						.foregroundColor(.white)
+						.offset(y: -20)
+				}
+			}
+		}
+		.buttonStyle(.verticalRectangle)
+		.overlay(alignment: .bottom) {
 			if !cardName.isEmpty || editMode?.wrappedValue == .active {
 				TextField("Name", text: $cardName)
 					.font(.largeTitle.weight(.bold))
@@ -66,9 +65,7 @@ struct CardView: View {
 					}
 			}
 		}
-		.frame(minWidth: 75, minHeight: 100)
-		.aspectRatio(3 / 4, contentMode: .fit)
-		.cornerRadius(20)
+		.cornerRadius(25)
 		.overlay(alignment: .topTrailing) {
 			if editMode?.wrappedValue == .active,
 			   let card = card {
