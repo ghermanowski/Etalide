@@ -47,6 +47,8 @@
 		71AE0B152844D6C500A128F2 /* MemoryDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE0B142844D6C500A128F2 /* MemoryDifficulty.swift */; };
 		F54D603A284901F2008B732D /* DeckPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54D6039284901F2008B732D /* DeckPreview.swift */; };
 		F54D603B284901F2008B732D /* DeckPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54D6039284901F2008B732D /* DeckPreview.swift */; };
+		F54D603E28490D0F008B732D /* MemoryDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE0B142844D6C500A128F2 /* MemoryDifficulty.swift */; };
+		F54D603F28490D8A008B732D /* SelectDifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE0B122844D3F600A128F2 /* SelectDifficultyView.swift */; };
 		F58A8D0C283CC3B8000A859A /* EtalideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D0B283CC3B8000A859A /* EtalideApp.swift */; };
 		F58A8D0E283CC3B8000A859A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D0D283CC3B8000A859A /* ContentView.swift */; };
 		F58A8D10283CC3B8000A859A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F58A8D0F283CC3B8000A859A /* Assets.xcassets */; };
@@ -156,10 +158,10 @@
 		50CF1BD0283CDE6600324353 /* MemoryGame */ = {
 			isa = PBXGroup;
 			children = (
-				50CF1BCD283CDE3900324353 /* MemoryView.swift */,
+				F54D603C28490CEF008B732D /* View */,
+				F54D603D28490CF7008B732D /* Model */,
 				50DA1367283E1C9E00A7ECC4 /* TestCard.swift */,
 				50CF1BD1283CE17B00324353 /* TestCardView.swift */,
-				50DA136A283E1CF100A7ECC4 /* CardStore.swift */,
 			);
 			path = MemoryGame;
 			sourceTree = "<group>";
@@ -180,6 +182,24 @@
 				6C7C3B0E283E3B7A00F42669 /* DeckGridView.swift */,
 			);
 			path = DeckGridView;
+			sourceTree = "<group>";
+		};
+		F54D603C28490CEF008B732D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				50CF1BCD283CDE3900324353 /* MemoryView.swift */,
+				71AE0B122844D3F600A128F2 /* SelectDifficultyView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F54D603D28490CF7008B732D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71AE0B142844D6C500A128F2 /* MemoryDifficulty.swift */,
+				50DA136A283E1CF100A7ECC4 /* CardStore.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F58A8CFF283CC3B8000A859A = {
@@ -209,8 +229,6 @@
 			children = (
 				F5F2B0B528461DD000F5FFB3 /* Info.plist */,
 				F58A8D0B283CC3B8000A859A /* EtalideApp.swift */,
-				71AE0B122844D3F600A128F2 /* SelectDifficultyView.swift */,
-				71AE0B142844D6C500A128F2 /* MemoryDifficulty.swift */,
 				F58A8D0D283CC3B8000A859A /* ContentView.swift */,
 				5C596C6B283FBF750097C7B8 /* DeckPopoverView.swift */,
 				5C596C6F283FC7180097C7B8 /* DeckOfCardsView.swift */,
@@ -503,6 +521,7 @@
 				50CF1BB7283CD78300324353 /* Etalide.xcdatamodeld in Sources */,
 				50CF1BC4283CD8DA00324353 /* Card+CoreDataClass.swift in Sources */,
 				50DA1369283E1C9E00A7ECC4 /* TestCard.swift in Sources */,
+				F54D603E28490D0F008B732D /* MemoryDifficulty.swift in Sources */,
 				50CF1BBE283CD8DA00324353 /* Deck+CoreDataClass.swift in Sources */,
 				5C596C2C283E17700097C7B8 /* CardGameView.swift in Sources */,
 				50CF1BC7283CD8DA00324353 /* Card+CoreDataProperties.swift in Sources */,
@@ -519,6 +538,7 @@
 				5C596C2D283E17700097C7B8 /* CardGameView.swift in Sources */,
 				50CF1BB8283CD78300324353 /* Etalide.xcdatamodeld in Sources */,
 				50CF1BD3283CE17B00324353 /* TestCardView.swift in Sources */,
+				F54D603F28490D8A008B732D /* SelectDifficultyView.swift in Sources */,
 				50CF1BC8283CD8DA00324353 /* Card+CoreDataProperties.swift in Sources */,
 				F58A8D27283CC3B8000A859A /* EtalideUITests.swift in Sources */,
 				F5C4230D283CE69900A385B5 /* ImagePicker.swift in Sources */,
