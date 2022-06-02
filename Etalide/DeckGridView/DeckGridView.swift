@@ -92,7 +92,7 @@ struct DeckGridView: View {
             ZStack {
                 roundedRectangleStroke(cornerRadious: 25, width: orientation.isLandscape ?  UIScreen.main.bounds.width*(cardWidthLandscape):UIScreen.main.bounds.width*(cardWidthPortrait) , height: orientation.isLandscape ?  UIScreen.main.bounds.height*(cardHeightLandscape): UIScreen.main.bounds.height*(cardHeightPortrait), strokeColor: Color(UIColor.lightGray), lineWidth: 8, alignment: .center)
 					.overlay {
-						if let firstCard = deck.allCards?.min(by: { $0.wrappedName < $1.wrappedName }) {
+						if let firstCard = deck.allCards?.min() {
 							if let imageURL = firstCard.imageURL {
 								CardImageView(imageURL)
 									.cornerRadius(25)

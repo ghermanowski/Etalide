@@ -74,3 +74,11 @@ extension Card {
 }
 
 extension Card: Identifiable {}
+
+extension Card: Comparable {
+	public static func < (lhs: Card, rhs: Card) -> Bool {
+		guard let leftName = lhs.name else { return lhs.name == rhs.name }
+		guard let rightName = rhs.name else { return true }
+		return leftName.localizedStandardCompare(rightName) == .orderedAscending
+	}
+}

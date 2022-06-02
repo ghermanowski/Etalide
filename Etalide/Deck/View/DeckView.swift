@@ -30,7 +30,7 @@ struct DeckView: View {
 					NewCards(in: deck)
 					
 					if let cards = deck.allCards {
-						ForEach(cards.sorted(by: { $0.wrappedName < $1.wrappedName })) { card in
+						ForEach(cards.sorted()) { card in
 							CardView(card, in: deck)
 						}
 					}
@@ -38,7 +38,7 @@ struct DeckView: View {
 				.padding()
 			}
 			.toolbar {
-				ToolbarItem(placement: .navigationBarTrailing) {
+				ToolbarItem(placement: .primaryAction) {
 					EditButton()
 				}
 			}
