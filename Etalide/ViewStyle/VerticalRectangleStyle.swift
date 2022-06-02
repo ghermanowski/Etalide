@@ -9,10 +9,10 @@ import SwiftUI
 
 struct VerticalRectangleStyle: ButtonStyle {
 	func makeBody(configuration: Configuration) -> some View {
-		configuration.label
-			.frame(maxWidth: .infinity, minHeight: 300, maxHeight: .infinity)
-			.background(configuration.isPressed ? Color.accentColor : Color(uiColor: .secondarySystemBackground))
+		(configuration.isPressed ? Color.accentColor : Color(uiColor: .secondarySystemBackground))
+			.aspectRatio(3 / 4, contentMode: .fit)
 			.cornerRadius(25)
+			.overlay { configuration.label }
 	}
 }
 
