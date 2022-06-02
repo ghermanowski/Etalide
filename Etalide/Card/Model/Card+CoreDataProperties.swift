@@ -17,27 +17,14 @@ extension Card {
 	
 	@NSManaged public var id: UUID?
 	@NSManaged public var name: String?
+	/// Name of the asset image. Only has a value for cards of a preset.
 	@NSManaged public var assetName: String?
 	@NSManaged public var decks: NSSet?
 	
-	var wrappedName: String {
-		name ?? "No name"
-	}
-	
-	var wrappedID: UUID {
-		id ?? UUID()
-	}
-	
-	var image: UIImage? {
-		guard let id = id else { return nil }
-		return ImageManager.shared.find(id.uuidString)
-	}
-	
 	var imageURL: URL? {
+		// Attempts to find a matching file from the images directory for preset cards.
 		guard assetName == nil else {
-			guard let decks = decks?.allObjects as? [Deck] else {
-				return nil
-			}
+			guard let decks = decks?.allObjects as? [Deck] else { return nil }
 			
 			for deck in decks {
 				if let url = Bundle.main.url(
