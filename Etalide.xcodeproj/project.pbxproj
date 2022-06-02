@@ -45,6 +45,8 @@
 		6C7C3B0F283E3B7A00F42669 /* DeckGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C3B0E283E3B7A00F42669 /* DeckGridView.swift */; };
 		71AE0B132844D3F700A128F2 /* SelectDifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE0B122844D3F600A128F2 /* SelectDifficultyView.swift */; };
 		71AE0B152844D6C500A128F2 /* MemoryDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE0B142844D6C500A128F2 /* MemoryDifficulty.swift */; };
+		F54D603A284901F2008B732D /* DeckPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54D6039284901F2008B732D /* DeckPreview.swift */; };
+		F54D603B284901F2008B732D /* DeckPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54D6039284901F2008B732D /* DeckPreview.swift */; };
 		F58A8D0C283CC3B8000A859A /* EtalideApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D0B283CC3B8000A859A /* EtalideApp.swift */; };
 		F58A8D0E283CC3B8000A859A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D0D283CC3B8000A859A /* ContentView.swift */; };
 		F58A8D10283CC3B8000A859A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F58A8D0F283CC3B8000A859A /* Assets.xcassets */; };
@@ -103,6 +105,7 @@
 		6C7C3B0E283E3B7A00F42669 /* DeckGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckGridView.swift; sourceTree = "<group>"; };
 		71AE0B122844D3F600A128F2 /* SelectDifficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDifficultyView.swift; sourceTree = "<group>"; };
 		71AE0B142844D6C500A128F2 /* MemoryDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryDifficulty.swift; sourceTree = "<group>"; };
+		F54D6039284901F2008B732D /* DeckPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckPreview.swift; sourceTree = "<group>"; };
 		F58A8D08283CC3B8000A859A /* Etalide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Etalide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F58A8D0B283CC3B8000A859A /* EtalideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtalideApp.swift; sourceTree = "<group>"; };
 		F58A8D0D283CC3B8000A859A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -319,6 +322,7 @@
 		F5EDE195283FAD3100E96A3A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F54D6039284901F2008B732D /* DeckPreview.swift */,
 				F5EDE193283FAD2600E96A3A /* DeckView.swift */,
 			);
 			path = View;
@@ -486,6 +490,7 @@
 				F58A8D0C283CC3B8000A859A /* EtalideApp.swift in Sources */,
 				50DA1368283E1C9E00A7ECC4 /* TestCard.swift in Sources */,
 				5C596C6E283FC34B0097C7B8 /* ButtonView.swift in Sources */,
+				F54D603A284901F2008B732D /* DeckPreview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +525,7 @@
 				50CF1BC2283CD8DA00324353 /* Deck+CoreDataProperties.swift in Sources */,
 				50CF1BC5283CD8DA00324353 /* Card+CoreDataClass.swift in Sources */,
 				50CF1BBF283CD8DA00324353 /* Deck+CoreDataClass.swift in Sources */,
+				F54D603B284901F2008B732D /* DeckPreview.swift in Sources */,
 				F58CB7852840D65100B74FD5 /* VerticalRectangleStyle.swift in Sources */,
 				F58A8D29283CC3B8000A859A /* EtalideUITestsLaunchTests.swift in Sources */,
 				5C596C29283E17050097C7B8 /* SwipableCardView.swift in Sources */,
