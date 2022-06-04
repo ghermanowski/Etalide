@@ -8,59 +8,49 @@
 import SwiftUI
 
 struct TestCardView: View {
-	let card: TestCard
-	private let animationDuration = 0.35
+	static private let animationDuration = 0.35
 	
-	@EnvironmentObject var cardStore: CardStore
+	internal init(_ card: MemoryCard) {
+		self.card = card
+	}
+	
+	private let card: MemoryCard
+	
+	@EnvironmentObject private var cardStore: CardStore
 	
 	@State private var isRotated = false
 	
 	var body: some View {
 		let isSelected = cardStore.selectedCards.contains(card)
 		
-		ZStack {
-			let shape = RoundedRectangle(cornerRadius: 20)
-			
-			if isRotated {
-				shape
-					.fill()
-					.foregroundColor(.white)
-				
-				shape
-					.strokeBorder(lineWidth: 3)
-					.foregroundColor(.indigo)
-				
-				Text(card.emoji)
-					.font(.system(size: 100))
-					.rotation3DEffect(.degrees(180),
-									  axis: (x: 0, y: 1, z: 0))
-			} else {
-				shape
-					.fill()
-					.foregroundColor(.indigo)
+		CardImageView(card.imageURL)
+			.overlay {
+				if !isRotated {
+					Color.backgroundBlue
+				}
 			}
-		}
-		.rotation3DEffect(.degrees(isSelected ? 180 : 0),
-						  axis: (x: 0, y: 1, z: 0))
-		.animation(.linear(duration: animationDuration), value: isSelected)
-		.onChange(of: isSelected) { newValue in
-			// The delay is needed to avoid seeing the content rotating and changing.
-			withAnimation(.linear(duration: 0.0001).delay(animationDuration / 2)) {
-				isRotated = newValue
+			.cornerRadius(25)
+			.rotation3DEffect(.degrees(isSelected ? 180 : 0),
+							  axis: (x: 0, y: 1, z: 0))
+			.animation(.linear(duration: Self.animationDuration), value: isSelected)
+			.onChange(of: isSelected) { newValue in
+				// The delay is needed to avoid seeing the content rotating and changing.
+				withAnimation(.linear(duration: 0.0001).delay(Self.animationDuration / 2)) {
+					isRotated = newValue
+				}
 			}
-		}
-		.onTapGesture {
-			// Selects up to 2 cards adding them to the array of selected cards.
-			if !isSelected && cardStore.selectedCards.count < 2 {
-				cardStore.selectedCards.append(card)
+			.onTapGesture {
+				// Selects up to 2 cards adding them to the array of selected cards.
+				if !isSelected && cardStore.selectedCards.count < 2 {
+					cardStore.selectedCards.append(card)
+				}
 			}
-		}
 	}
 }
 
 struct TestCardView_Previews: PreviewProvider {
     static var previews: some View {
-		TestCardView(card: .example)
-			.environmentObject(CardStore())
+		TestCardView(MemoryCard(id: UUID(), imageURL: URL(string: "https://picsum.photos/300/400")!))
+			.environmentObject(CardStore(deck: Deck()))
     }
 }
