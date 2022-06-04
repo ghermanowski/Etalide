@@ -18,10 +18,13 @@ struct CardImageView: View {
 		AsyncImage(url: url) { image in
 			image
 				.resizable()
-				.aspectRatio(3 / 4, contentMode: .fit)
 		} placeholder: {
-			ProgressView()
+			Color.backgroundBlue
+				.overlay {
+					ProgressView()
+				}
 		}
+		.aspectRatio(3 / 4, contentMode: .fit)
 	}
 }
 
