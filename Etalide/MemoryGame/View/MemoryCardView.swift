@@ -1,5 +1,5 @@
 //
-//  TestCardView.swift
+//  MemoryCardView.swift
 //  Etalide
 //
 //  Created by Alessia Andrisani on 24/05/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TestCardView: View {
+struct MemoryCardView: View {
 	static private let animationDuration = 0.35
 	
 	internal init(_ card: MemoryCard) {
@@ -48,9 +48,9 @@ struct TestCardView: View {
 	}
 }
 
-struct TestCardView_Previews: PreviewProvider {
+struct MemoryCardView_Previews: PreviewProvider {
     static var previews: some View {
-		TestCardView(MemoryCard(id: UUID(), imageURL: URL(string: "https://picsum.photos/300/400")!))
+		MemoryCardView(MemoryCard(id: UUID(), imageURL: URL(string: "https://picsum.photos/300/400")!))
 			.environmentObject(CardStore(deck: Deck()))
     }
 }

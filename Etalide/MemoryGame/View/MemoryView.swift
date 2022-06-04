@@ -24,7 +24,7 @@ struct MemoryView: View {
 				// Hides the cards when they match.
 				let isHidden = cardStore.hiddenCards.contains(card)
 				
-				TestCardView(card)
+				MemoryCardView(card)
 					.opacity(isHidden ? 0 : 1)
 					.animation(.default, value: isHidden)
 			}
