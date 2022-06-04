@@ -27,8 +27,6 @@
 		50CF1BCF283CDE3900324353 /* MemoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CF1BCD283CDE3900324353 /* MemoryView.swift */; };
 		50CF1BD2283CE17B00324353 /* TestCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CF1BD1283CE17B00324353 /* TestCardView.swift */; };
 		50CF1BD3283CE17B00324353 /* TestCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CF1BD1283CE17B00324353 /* TestCardView.swift */; };
-		50DA1368283E1C9E00A7ECC4 /* TestCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DA1367283E1C9E00A7ECC4 /* TestCard.swift */; };
-		50DA1369283E1C9E00A7ECC4 /* TestCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DA1367283E1C9E00A7ECC4 /* TestCard.swift */; };
 		50DA136B283E1CF100A7ECC4 /* CardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DA136A283E1CF100A7ECC4 /* CardStore.swift */; };
 		50DA136C283E1CF100A7ECC4 /* CardStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DA136A283E1CF100A7ECC4 /* CardStore.swift */; };
 		50FC97E72844D78700410666 /* Extension-Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FC97E62844D78700410666 /* Extension-Color.swift */; };
@@ -98,7 +96,6 @@
 		50CF1BC9283CD9C900324353 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		50CF1BCD283CDE3900324353 /* MemoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryView.swift; sourceTree = "<group>"; };
 		50CF1BD1283CE17B00324353 /* TestCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCardView.swift; sourceTree = "<group>"; };
-		50DA1367283E1C9E00A7ECC4 /* TestCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCard.swift; sourceTree = "<group>"; };
 		50DA136A283E1CF100A7ECC4 /* CardStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStore.swift; sourceTree = "<group>"; };
 		50FC97E62844D78700410666 /* Extension-Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-Color.swift"; sourceTree = "<group>"; };
 		5C596C26283E17050097C7B8 /* SwipableCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipableCardView.swift; sourceTree = "<group>"; };
@@ -164,8 +161,6 @@
 			children = (
 				F54D603C28490CEF008B732D /* View */,
 				F54D603D28490CF7008B732D /* Model */,
-				50DA1367283E1C9E00A7ECC4 /* TestCard.swift */,
-				50CF1BD1283CE17B00324353 /* TestCardView.swift */,
 			);
 			path = MemoryGame;
 			sourceTree = "<group>";
@@ -191,6 +186,7 @@
 		F54D603C28490CEF008B732D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				50CF1BD1283CE17B00324353 /* TestCardView.swift */,
 				50CF1BCD283CDE3900324353 /* MemoryView.swift */,
 				71AE0B122844D3F600A128F2 /* SelectDifficultyView.swift */,
 			);
@@ -512,7 +508,6 @@
 				50FC97E72844D78700410666 /* Extension-Color.swift in Sources */,
 				5C596C2B283E17700097C7B8 /* CardGameView.swift in Sources */,
 				F58A8D0C283CC3B8000A859A /* EtalideApp.swift in Sources */,
-				50DA1368283E1C9E00A7ECC4 /* TestCard.swift in Sources */,
 				5C596C6E283FC34B0097C7B8 /* ButtonView.swift in Sources */,
 				F54D603A284901F2008B732D /* DeckPreview.swift in Sources */,
 			);
@@ -526,7 +521,6 @@
 				50DA136C283E1CF100A7ECC4 /* CardStore.swift in Sources */,
 				50CF1BB7283CD78300324353 /* Etalide.xcdatamodeld in Sources */,
 				50CF1BC4283CD8DA00324353 /* Card+CoreDataClass.swift in Sources */,
-				50DA1369283E1C9E00A7ECC4 /* TestCard.swift in Sources */,
 				F5853397284B98FA0010765B /* MemoryCard.swift in Sources */,
 				F54D603E28490D0F008B732D /* MemoryDifficulty.swift in Sources */,
 				50CF1BBE283CD8DA00324353 /* Deck+CoreDataClass.swift in Sources */,
