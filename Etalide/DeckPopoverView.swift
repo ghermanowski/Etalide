@@ -18,10 +18,8 @@ struct DeckPopoverView: View {
     @Binding var isShowingPopover: Bool
     
     var body: some View {
-        
         VStack (alignment: .center) {
             HStack {
-                
                 Spacer()
                 
                 Text(deck.wrappedName)
@@ -37,10 +35,8 @@ struct DeckPopoverView: View {
                     Image(systemName: "x.circle.fill")
                         .foregroundColor(.backgroundBlue)
                         .font(.system(.largeTitle))
-                        
                 }
             }
-            
             
             GeometryReader { geometry in
                 HStack (alignment: .center, spacing: 40) {
@@ -55,18 +51,19 @@ struct DeckPopoverView: View {
                     // Buttons view
                     VStack {
                         NavigationLink {
-                            // navigate to memory game view
+                            MemoryView(deck: deck)
                         } label: {
                             ButtonView(imageTitle: "MemoryGameButton", title: "Play Memory")
                         }
                         
                         NavigationLink {
-                            CardGameView(deck)
+							CardGameView(deck)
                         } label: {
                             ButtonView(imageTitle: "FlashcardButton", title: "Play FlashCards")
-                        }                    }
-                    
-                }            }
+                        }
+					}
+                }
+			}
         }
         .padding()
         .background(.white)
