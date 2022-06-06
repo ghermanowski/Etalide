@@ -28,6 +28,7 @@ struct DeckPreview: View {
 			Text(deck.wrappedName)
 				.font(.largeTitle.bold())
 				.foregroundColor(.white)
+				.shadow(color: .black.opacity(0.5), radius: 5)
 		}
     }
 }
