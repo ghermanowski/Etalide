@@ -61,6 +61,8 @@ struct CardGameView: View {
             }
         }
         .padding()
+		.navigationBarTitle("Flashcards")
+		.navigationBarTitleDisplayMode(.inline)
     }
 }
 
