@@ -55,27 +55,12 @@ struct DeckGridView: View {
                     selectedDeck,
                     isShowingPopover: Binding(get: { self.selectedDeck != nil },
                                               set: { self.selectedDeck = $0 ? selectedDeck : nil }))
-                    .frame(width: UIScreen.main.bounds.width * 0.75, height: UIScreen.main.bounds.height * 0.6)
+				.padding(.horizontal, 64)
+				.padding(.vertical, 32)
+				.background(Color(uiColor: .secondarySystemBackground))
             }
         }
-		.frame(maxHeight: .infinity)
 		.navigationTitle("Decks")
-        
-//            if showPopover {
-//                DeckPopoverView(selectedDeck!, isShowingPopover: $showPopover)
-//                    .frame(width: UIScreen.main.bounds.width * 0.75, height: UIScreen.main.bounds.height * 0.75)
-////                    .padding()
-//                   // .ignoresSafeArea()
-//            }
-        
-        
-        
-//		.sheet(item: $selectedDeck) { deck in
-//			DeckView(deck)
-//		}
-//        .sheet(item: $selectedDeck) { deck in
-//            DeckPopoverView(deck)
-//        }
 	}
 	
 	private func saveContext() {
