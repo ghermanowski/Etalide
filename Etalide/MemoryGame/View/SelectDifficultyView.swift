@@ -27,7 +27,9 @@ struct SelectDifficultyView: View {
 				NavigationLink {
 					MemoryView(deck: deck, difficulty: difficulty)
 				} label: {
-					Text(difficulty.rawValue)
+					
+					// I don't know why this doesn't extract the String for Localisation.
+					Text(String(localized: String.LocalizationValue(difficulty.rawValue)))
 						.font(.title.weight(.semibold))
 						.foregroundColor(.white)
 						.padding(.vertical)

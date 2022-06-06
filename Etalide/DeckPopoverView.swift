@@ -62,7 +62,7 @@ struct DeckPopoverView: View {
                         NavigationLink {
                             CardGameView(deck, cards: deck.allCards!)
                         } label: {
-                            ButtonView(imageTitle: "FlashcardButton", title: "Play FlashCards")
+                            ButtonView(imageTitle: "FlashcardButton", title: String(localized: "Play FlashCards"))
                         }
 					}
 					.overlay {
