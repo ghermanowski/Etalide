@@ -51,6 +51,6 @@ struct MemoryCardView: View {
 struct MemoryCardView_Previews: PreviewProvider {
     static var previews: some View {
 		MemoryCardView(MemoryCard(id: UUID(), imageURL: URL(string: "https://picsum.photos/300/400")!))
-			.environmentObject(CardStore(deck: Deck()))
+			.environmentObject(CardStore(deck: Deck(), difficulty: .medium))
     }
 }

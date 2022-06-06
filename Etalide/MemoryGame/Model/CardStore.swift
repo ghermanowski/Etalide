@@ -10,8 +10,13 @@ import SwiftUI
 
 // ViewModel for MemoryGame.
 class CardStore: ObservableObject {
-	init(deck: Deck) {
-		cards = deck.allCards!.map { MemoryCard(id: $0.id!, imageURL: $0.imageURL!) }.shuffled()[0...5].shuffled()
+	init(deck: Deck, difficulty: MemoryDifficulty) {
+		cards = Array(
+			deck.allCards!
+				.map { MemoryCard(id: $0.id!, imageURL: $0.imageURL!) }
+				.shuffled()
+				.prefix(difficulty.amount)
+		)
 	}
 	
 	@Published var cards: [MemoryCard]

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct MemoryView: View {
-	init(deck: Deck) {
-		_cardStore = StateObject(wrappedValue: CardStore(deck: deck))
+	init(deck: Deck, difficulty: MemoryDifficulty) {
+		_cardStore = StateObject(wrappedValue: CardStore(deck: deck, difficulty: difficulty))
 	}
 	
 	@EnvironmentObject private var orientationManager: OrientationManager
@@ -53,7 +53,7 @@ struct MemoryView: View {
 
 struct MemoryView_Previews: PreviewProvider {
 	static var previews: some View {
-		MemoryView(deck: Deck())
+		MemoryView(deck: Deck(), difficulty: .medium)
 			.previewInterfaceOrientation(.portrait)
 	}
 }
