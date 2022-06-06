@@ -15,6 +15,7 @@ struct EtalideApp: App {
         WindowGroup {
            ContentView()
 				.environment(\.managedObjectContext, dataController.container.viewContext)
+				.environmentObject(OrientationManager())
         }
     }
 }
