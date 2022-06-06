@@ -16,41 +16,40 @@ struct DeckPopoverView: View {
     private let deck: Deck
     
     @Binding var isShowingPopover: Bool
+	
 	@State var isShowingDifficulties: Bool = false
     
     var body: some View {
-        VStack (alignment: .center) {
+        VStack {
             HStack {
-                Spacer()
-                
-                Text(deck.wrappedName)
-                    .font(.system(.largeTitle))
-                    .bold()
-                    .foregroundColor(.backgroundBlue)
-                
                 Spacer()
                 
                 Button {
                     isShowingPopover = false
                 } label: {
-                    Image(systemName: "x.circle.fill")
+                    Image(systemName: "xmark.circle.fill")
                         .foregroundColor(.backgroundBlue)
-                        .font(.system(.largeTitle))
+						.font(.system(.largeTitle).weight(.semibold))
                 }
             }
+			.overlay {
+				Text(deck.wrappedName)
+					.font(.system(.largeTitle))
+					.bold()
+					.foregroundColor(.backgroundBlue)
+			}
+			.padding([.top, .horizontal], 32)
             
             GeometryReader { geometry in
-                HStack (alignment: .center, spacing: 40) {
-                    // Card preview view
-                    
+                HStack(alignment: .center, spacing: 40) {
                     DeckOfCardsView(deck)
-                        .frame(width: geometry.size.width * 0.5, height: geometry.size.height)
-                        .padding()
+                        .frame(width: geometry.size.width * 0.4)
                     
                     Divider()
-                        .frame(height: geometry.size.height * 0.7)
-                    // Buttons view
-                    VStack {
+						.foregroundStyle(Color.backgroundBlue)
+						.padding(.vertical, 20)
+                    
+					VStack(spacing: 20) {
 						Button {
 							withAnimation{
 								isShowingDifficulties = true
@@ -70,13 +69,13 @@ struct DeckPopoverView: View {
 							SelectDifficultyView(deck: deck, isShowingDifficulties: $isShowingDifficulties)
 						}
 					}
-					.padding(.trailing, 10)
                 }
+				.padding(.vertical, 32)
+				.padding(.horizontal, 128)
 			}
         }
-        .padding()
         .background(.white)
-        .cornerRadius(35)
+        .cornerRadius(40)
     }
 }
 
