@@ -10,19 +10,26 @@ import SwiftUI
 struct MemoryView: View {
 	init(deck: Deck, difficulty: MemoryDifficulty) {
 		_cardStore = StateObject(wrappedValue: CardStore(deck: deck, difficulty: difficulty))
+		
+		self.difficulty = difficulty
 	}
 	
+	@Environment(\.dismiss) private var dismiss
 	@Environment(\.isLandscape) private var isLandscape
 	
 	@StateObject private var cardStore: CardStore
 	
+	private let difficulty: MemoryDifficulty
+	
 	var body: some View {
+		let padding: CGFloat = difficulty == .hard ? 12 : 24
+		
 		let columns = Array(
-			repeating: GridItem(.flexible()),
-			count: isLandscape ? 6 : 4
+			repeating: GridItem(.flexible(), spacing: padding),
+			count: isLandscape ? difficulty.columns : cardStore.duplicatedCards.count / difficulty.columns
 		)
 		
-		LazyVGrid(columns: columns, spacing: 30) {
+		LazyVGrid(columns: columns, spacing: padding) {
 			ForEach(cardStore.duplicatedCards) { card in
 				// Hides the cards when they match.
 				let isHidden = cardStore.hiddenCards.contains(card)
@@ -32,6 +39,8 @@ struct MemoryView: View {
 					.animation(.default, value: isHidden)
 			}
 		}
+		.padding(padding)
+		.background(Color(uiColor: .systemBackground))
 		.environmentObject(cardStore)
 		.onAppear(perform: cardStore.createGame)
 		.onChange(of: cardStore.selectedCards.count) { _ in
@@ -47,6 +56,16 @@ struct MemoryView: View {
 					}
 				}
 			}
+		}
+		.navigationBarHidden(true)
+		.overlay(alignment: .topLeading) {
+			Button {
+				dismiss()
+			} label: {
+				Image(systemName: "chevron.left.circle.fill")
+					.font(.largeTitle)
+			}
+			.padding(32)
 		}
 	}
 }
