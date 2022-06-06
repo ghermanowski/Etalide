@@ -28,7 +28,6 @@ struct SwipableCardView: View {
         GeometryReader { geometry in
 			
             CardView(card)
-                .background(.red)
                 .frame(width: geometry.size.width)
                 .frame(width: geometry.size.width, height: geometry.size.height)
                 .opacity(opacity)
