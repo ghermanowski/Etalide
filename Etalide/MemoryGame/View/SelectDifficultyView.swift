@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct SelectDifficultyView: View {
+	let deck: Deck
+	@Binding var isShowingDifficulties: Bool
+	
 	var body: some View {
 		
 		VStack(alignment: .leading, spacing: 10){
@@ -21,43 +24,46 @@ struct SelectDifficultyView: View {
 				.padding(.bottom, 20)
 			
 			ForEach(MemoryDifficulty.allCases) { difficulty in
-				Text(difficulty.rawValue)
-					.font(.title.weight(.semibold))
-					.foregroundColor(.white)
-					.padding(.vertical)
-					.frame(maxWidth: .infinity)
-					.padding(6)
-					.background {
-						RoundedRectangle(cornerRadius: 15)
-							.foregroundColor(Color(difficulty.rawValue))
-					}
-					.padding(.bottom, 8)
-					.padding(.horizontal, 20)
+				NavigationLink {
+					MemoryView(deck: deck, difficulty: difficulty)
+				} label: {
+					Text(difficulty.rawValue)
+						.font(.title.weight(.semibold))
+						.foregroundColor(.white)
+						.padding(.vertical)
+						.frame(maxWidth: .infinity)
+						.background {
+							RoundedRectangle(cornerRadius: 15)
+								.foregroundColor(Color(difficulty.rawValue))
+						}
+//						.padding(.bottom, 8)
+				}
 			}
 			
 			Button {
-				
+				withAnimation {
+					isShowingDifficulties = false
+				}
 			} label: {
 				Text("Cancel")
 					.font(.title2.weight(.medium))
 					.padding(.vertical)
-					.frame(maxWidth:.infinity)
+					.frame(maxWidth: .infinity)
+					.tint(.white)
+					.contentShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
 			}
-			.tint(.white)
-			.contentShape(RoundedRectangle(cornerRadius: 15, style: .continuous))
-			.padding(.top, 10)
 		}
 		.padding(32)
 		.background {
 			Color(UIColor(.backgroundBlue))
 				.clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
 		}
-		.frame(width: 500, height: 400)
 	}
 }
 
 struct SelectDifficultyView_Previews: PreviewProvider {
 	static var previews: some View {
-		SelectDifficultyView()
+		SelectDifficultyView(deck: Deck(), isShowingDifficulties: .constant(true))
+			.previewInterfaceOrientation(.portraitUpsideDown)
 	}
 }

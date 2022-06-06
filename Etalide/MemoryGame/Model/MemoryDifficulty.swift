@@ -13,4 +13,12 @@ enum MemoryDifficulty: String, CaseIterable, Identifiable {
 	case hard = "Hard"
 	
 	var id: String { rawValue }
+	
+	var amount: Int {
+		switch self {
+		case .easy: return 4
+		case .medium: return 8
+		case .hard: return 12
+		}
+	}
 }

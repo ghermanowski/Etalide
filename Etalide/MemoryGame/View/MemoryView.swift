@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct MemoryView: View {
-	init(deck: Deck) {
-		_cardStore = StateObject(wrappedValue: CardStore(deck: deck))
+	init(deck: Deck, difficulty: MemoryDifficulty) {
+		_cardStore = StateObject(wrappedValue: CardStore(deck: deck, difficulty: difficulty))
 	}
 	
-	@EnvironmentObject private var orientationManager: OrientationManager
+	@Environment(\.isLandscape) private var isLandscape
 	
 	@StateObject private var cardStore: CardStore
 	
 	var body: some View {
 		let columns = Array(
 			repeating: GridItem(.flexible()),
-			count: orientationManager.isLandscape ? 6 : 4
+			count: isLandscape ? 6 : 4
 		)
 		
 		LazyVGrid(columns: columns, spacing: 30) {
@@ -53,7 +53,7 @@ struct MemoryView: View {
 
 struct MemoryView_Previews: PreviewProvider {
 	static var previews: some View {
-		MemoryView(deck: Deck())
+		MemoryView(deck: Deck(), difficulty: .medium)
 			.previewInterfaceOrientation(.portrait)
 	}
 }

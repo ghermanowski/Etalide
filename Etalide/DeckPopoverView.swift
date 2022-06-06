@@ -16,6 +16,7 @@ struct DeckPopoverView: View {
     private let deck: Deck
     
     @Binding var isShowingPopover: Bool
+	@State var isShowingDifficulties: Bool = false
     
     var body: some View {
         VStack (alignment: .center) {
@@ -50,18 +51,26 @@ struct DeckPopoverView: View {
                         .frame(height: geometry.size.height * 0.7)
                     // Buttons view
                     VStack {
-                        NavigationLink {
-                            MemoryView(deck: deck)
-                        } label: {
-                            ButtonView(imageTitle: "MemoryGameButton", title: "Play Memory")
-                        }
-                        
+						Button {
+							withAnimation{
+								isShowingDifficulties = true
+							}
+						} label: {
+							ButtonView(imageTitle: "MemoryGameButton", title: "Play Memory")
+						}
+						
                         NavigationLink {
                             CardGameView(deck, cards: deck.allCards!)
                         } label: {
                             ButtonView(imageTitle: "FlashcardButton", title: "Play FlashCards")
                         }
 					}
+					.overlay {
+						if isShowingDifficulties {
+							SelectDifficultyView(deck: deck, isShowingDifficulties: $isShowingDifficulties)
+						}
+					}
+					.padding(.trailing, 10)
                 }
 			}
         }

@@ -60,6 +60,9 @@
 		F58C3774284DF23000623783 /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C3773284DF23000623783 /* OrientationManager.swift */; };
 		F58C3775284DF23000623783 /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C3773284DF23000623783 /* OrientationManager.swift */; };
 		F58C3776284DF23000623783 /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C3773284DF23000623783 /* OrientationManager.swift */; };
+		F58C3778284E0B4300623783 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C3777284E0B4300623783 /* Orientation.swift */; };
+		F58C3779284E0B4300623783 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C3777284E0B4300623783 /* Orientation.swift */; };
+		F58C377A284E0B4300623783 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C3777284E0B4300623783 /* Orientation.swift */; };
 		F58CB7842840D65100B74FD5 /* VerticalRectangleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CB7832840D65100B74FD5 /* VerticalRectangleStyle.swift */; };
 		F58CB7852840D65100B74FD5 /* VerticalRectangleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CB7832840D65100B74FD5 /* VerticalRectangleStyle.swift */; };
 		F58CB7F82845690800B74FD5 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = F58CB7F72845690800B74FD5 /* Images */; };
@@ -125,6 +128,7 @@
 		F58A8D37283CC492000A859A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F58A8D38283CC492000A859A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F58C3773284DF23000623783 /* OrientationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationManager.swift; sourceTree = "<group>"; };
+		F58C3777284E0B4300623783 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		F58CB7832840D65100B74FD5 /* VerticalRectangleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalRectangleStyle.swift; sourceTree = "<group>"; };
 		F58CB7F72845690800B74FD5 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		F5C4230B283CE69900A385B5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 				F58A8D0B283CC3B8000A859A /* EtalideApp.swift */,
 				F58A8D0D283CC3B8000A859A /* ContentView.swift */,
 				5C596C6B283FBF750097C7B8 /* DeckPopoverView.swift */,
+				F58C3777284E0B4300623783 /* Orientation.swift */,
 				5C596C6F283FC7180097C7B8 /* DeckOfCardsView.swift */,
 				5C596C6D283FC34A0097C7B8 /* ButtonView.swift */,
 				6C7C3B10283EED6000F42669 /* DeckGridView */,
@@ -511,6 +516,7 @@
 				F5C4230C283CE69900A385B5 /* ImagePicker.swift in Sources */,
 				F5EDE194283FAD2600E96A3A /* DeckView.swift in Sources */,
 				50CF1BBD283CD8DA00324353 /* Deck+CoreDataClass.swift in Sources */,
+				F58C3778284E0B4300623783 /* Orientation.swift in Sources */,
 				50FC97E72844D78700410666 /* Extension-Color.swift in Sources */,
 				5C596C2B283E17700097C7B8 /* CardGameView.swift in Sources */,
 				F58A8D0C283CC3B8000A859A /* EtalideApp.swift in Sources */,
@@ -533,6 +539,7 @@
 				50CF1BBE283CD8DA00324353 /* Deck+CoreDataClass.swift in Sources */,
 				5C596C2C283E17700097C7B8 /* CardGameView.swift in Sources */,
 				50CF1BC7283CD8DA00324353 /* Card+CoreDataProperties.swift in Sources */,
+				F58C3779284E0B4300623783 /* Orientation.swift in Sources */,
 				50CF1BC1283CD8DA00324353 /* Deck+CoreDataProperties.swift in Sources */,
 				F5EDE18F283F8F8100E96A3A /* ImageManager.swift in Sources */,
 				F58A8D1D283CC3B8000A859A /* EtalideTests.swift in Sources */,
@@ -555,6 +562,7 @@
 				F58C3776284DF23000623783 /* OrientationManager.swift in Sources */,
 				50CF1BBF283CD8DA00324353 /* Deck+CoreDataClass.swift in Sources */,
 				F54D603B284901F2008B732D /* DeckPreview.swift in Sources */,
+				F58C377A284E0B4300623783 /* Orientation.swift in Sources */,
 				F58CB7852840D65100B74FD5 /* VerticalRectangleStyle.swift in Sources */,
 				F58A8D29283CC3B8000A859A /* EtalideUITestsLaunchTests.swift in Sources */,
 				5C596C29283E17050097C7B8 /* SwipableCardView.swift in Sources */,
@@ -702,7 +710,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Etalide/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JB3QK77KA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Etalide/Info.plist;
@@ -733,7 +741,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Etalide/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JB3QK77KA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Etalide/Info.plist;
