@@ -14,6 +14,9 @@
 "Decks" = "Tutti i set";
 
 /* No comment provided by engineer. */
+"Delete" = "Cancella";
+
+/* No comment provided by engineer. */
 "Name" = "Nome";
 
 /* No comment provided by engineer. */
@@ -21,4 +24,10 @@
 
 /* No comment provided by engineer. */
 "New Deck" = "Nuovo set di carte";
+
+/* No comment provided by engineer. */
+"Play again" = "Gioca di nuovo";
+
+/* No comment provided by engineer. */
+"Play Memory" = "Gioca a Memory";
 

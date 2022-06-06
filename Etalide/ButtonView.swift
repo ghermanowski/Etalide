@@ -14,12 +14,12 @@ struct ButtonView: View {
         
 //        ZStack {
             
-            Image(imageTitle)
+		Image(imageTitle)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .scaledToFit()
                 .overlay {
-                    Text(title)
+                    Text(String(localized: String.LocalizationValue(title)))
                         .foregroundColor(.white)
                         .bold()
                         .font(.title)
