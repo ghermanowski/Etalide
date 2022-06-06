@@ -14,7 +14,7 @@ struct SwipableCardView: View {
     
     private var card: Card
     private var onRemove: (_ card: Card) -> Void
-    private var thresholdPercentage: CGFloat = 0.5
+    private var thresholdPercentage: CGFloat = 0.05
     
     init(card: Card, onRemove: @escaping (_ card: Card) -> Void) {
         self.card = card
