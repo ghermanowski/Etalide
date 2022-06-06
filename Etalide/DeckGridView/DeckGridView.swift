@@ -9,8 +9,7 @@ import SwiftUI
 
 struct DeckGridView: View {
 	@Environment(\.managedObjectContext) private var moc
-	
-	@EnvironmentObject private var orientationManager: OrientationManager
+	@Environment(\.isLandscape) private var isLandscape
 	
 	@State private var selectedDeck: Deck?
     
@@ -20,7 +19,7 @@ struct DeckGridView: View {
 		ScrollView {
 			let columns = Array(
 				repeating: GridItem(spacing: 20),
-				count: orientationManager.isLandscape ? 4 : 3
+				count: isLandscape ? 4 : 3
 			)
 			
 			LazyVGrid(columns: columns, spacing: 20) {

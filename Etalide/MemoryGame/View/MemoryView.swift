@@ -12,14 +12,14 @@ struct MemoryView: View {
 		_cardStore = StateObject(wrappedValue: CardStore(deck: deck, difficulty: difficulty))
 	}
 	
-	@EnvironmentObject private var orientationManager: OrientationManager
+	@Environment(\.isLandscape) private var isLandscape
 	
 	@StateObject private var cardStore: CardStore
 	
 	var body: some View {
 		let columns = Array(
 			repeating: GridItem(.flexible()),
-			count: orientationManager.isLandscape ? 6 : 4
+			count: isLandscape ? 6 : 4
 		)
 		
 		LazyVGrid(columns: columns, spacing: 30) {

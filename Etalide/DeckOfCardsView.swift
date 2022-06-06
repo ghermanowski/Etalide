@@ -12,14 +12,14 @@ struct DeckOfCardsView: View {
         self.deck = deck
     }
     
-	@EnvironmentObject private var orientationManager: OrientationManager
+	@Environment(\.isLandscape) private var isLandscape
 	
     private let deck: Deck
     
     var body: some View {
 		let columns = Array(
 			repeating: GridItem(),
-			count: orientationManager.isLandscape ? 4 : 3
+			count: isLandscape ? 4 : 3
 		)
 		
         LazyVGrid(columns: columns) {
