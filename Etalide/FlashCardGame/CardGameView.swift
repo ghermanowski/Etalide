@@ -45,7 +45,7 @@ struct CardGameView: View {
                                     HStack {
                                         Spacer()
                                         
-                                        ButtonView(imageTitle: "FlashcardButton", title: "Play again")
+                                        ButtonView(imageTitle: "FlashcardButton", title: String(localized: "Play again"))
                                             .frame(width: UIScreen.main.bounds.width * 0.40, height: UIScreen.main.bounds.height * 0.45)
                                         
                                         Spacer()
