@@ -25,8 +25,9 @@ struct CardGameView: View {
                     ZStack {
                         
                         ForEach(cards, id: \.self) { card in
-                            SwipableCardView(card: card, onRemove: withAnimation(.interactiveSpring()) {
+                            SwipableCardView(card: card, onRemove:
                                 { removedCard in
+                                withAnimation(.easeOut) {
                                     cards.removeAll { $0.id == removedCard.id}
                                 }
                             }
