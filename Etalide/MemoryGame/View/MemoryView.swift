@@ -12,12 +12,15 @@ struct MemoryView: View {
 		_cardStore = StateObject(wrappedValue: CardStore(deck: deck))
 	}
 	
-	@StateObject var cardStore: CardStore
+	@EnvironmentObject private var orientationManager: OrientationManager
 	
-	@State private var orientation = UIDeviceOrientation.unknown
+	@StateObject private var cardStore: CardStore
 	
 	var body: some View {
-		let columns = Array(repeating: GridItem(.flexible()), count: orientation.isPortrait ? 4 : 6)
+		let columns = Array(
+			repeating: GridItem(.flexible()),
+			count: orientationManager.isLandscape ? 6 : 4
+		)
 		
 		LazyVGrid(columns: columns, spacing: 30) {
 			ForEach(cardStore.duplicatedCards) { card in
@@ -30,9 +33,6 @@ struct MemoryView: View {
 			}
 		}
 		.environmentObject(cardStore)
-        .onRotate { newOrientation in
-			orientation = newOrientation
-		}
 		.onAppear(perform: cardStore.createGame)
 		.onChange(of: cardStore.selectedCards.count) { _ in
 			if cardStore.selectedCards.count == 2 {

@@ -10,15 +10,18 @@ import SwiftUI
 struct DeckGridView: View {
 	@Environment(\.managedObjectContext) private var moc
 	
-    @State private var orientation = UIDeviceOrientation.unknown
+	@EnvironmentObject private var orientationManager: OrientationManager
+	
 	@State private var selectedDeck: Deck?
     
 	@FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) private var decks: FetchedResults<Deck>
     
 	var body: some View {
 		ScrollView {
-			let columns = Array(repeating: GridItem(.flexible(),spacing: 20),
-								count: orientation.isPortrait ? 3 : 4)
+			let columns = Array(
+				repeating: GridItem(spacing: 20),
+				count: orientationManager.isLandscape ? 4 : 3
+			)
 			
 			LazyVGrid(columns: columns, spacing: 20) {
 				Button {
@@ -44,9 +47,6 @@ struct DeckGridView: View {
 					}
 					.buttonStyle(.verticalRectangle)
 				}
-			}
-			.onRotate { newOrientation in
-				orientation = newOrientation
 			}
 			.padding()
 		}

@@ -8,21 +8,21 @@
 import SwiftUI
 
 struct DeckOfCardsView: View {
-    
-    @State var gridItemLayot = Array(repeating: GridItem(.flexible(maximum: UIScreen.main.bounds.width)), count: 3)
-    //@State var columns = Array(repeating: GridItem(.flexible(),spacing: 20), count: 3)
-    init(_ deck: Deck) {
+	init(_ deck: Deck) {
         self.deck = deck
     }
     
+	@EnvironmentObject private var orientationManager: OrientationManager
+	
     private let deck: Deck
     
-    
-    @State private var orientation = UIDeviceOrientation.unknown
-    
     var body: some View {
-        
-        LazyVGrid (columns: gridItemLayot) {
+		let columns = Array(
+			repeating: GridItem(),
+			count: orientationManager.isLandscape ? 4 : 3
+		)
+		
+        LazyVGrid(columns: columns) {
             if let cards = deck.allCards {
                 ForEach(cards) { card in
 					if let imageURL = card.imageURL {
@@ -30,14 +30,6 @@ struct DeckOfCardsView: View {
 							.cornerRadius(15)
 					}
                 }
-            }
-        }
-        .onRotate { newOrientation in
-            orientation = newOrientation
-            if orientation.isLandscape {
-                gridItemLayot = Array(repeating: GridItem(.flexible(maximum: UIScreen.main.bounds.width)), count: 4)
-            } else {
-                gridItemLayot = Array(repeating: GridItem(.flexible(maximum: UIScreen.main.bounds.width)), count: 3)
             }
         }
     }
