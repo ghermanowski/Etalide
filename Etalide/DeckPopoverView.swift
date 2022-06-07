@@ -12,6 +12,8 @@ struct DeckPopoverView: View {
         self.deck = deck
         self._isShowingPopover = isShowingPopover
     }
+	
+	@Environment(\.isLandscape) private var isLandscape
     
     private let deck: Deck
     
@@ -79,11 +81,14 @@ struct DeckPopoverView: View {
 					}
                 }
 				.padding(.vertical, 32)
-				.padding(.horizontal, 128)
+				.padding(.horizontal, isLandscape ? 128 : 32)
 			}
         }
         .background(.white)
         .cornerRadius(40)
+		.padding(.vertical, isLandscape ? 32 : 160)
+		.padding(.horizontal, isLandscape ? 64 : 32)
+		.background(Color(uiColor: .secondarySystemBackground))
     }
 }
 
