@@ -24,11 +24,19 @@ struct DeckPopoverView: View {
             HStack {
                 Spacer()
                 
+				NavigationLink {
+					DeckView(deck)
+				} label: {
+					Image(systemName: "pencil.circle.fill")
+						.foregroundColor(.backgroundBlue)
+						.font(.system(.largeTitle).weight(.semibold))
+				}
+				
                 Button {
                     isShowingPopover = false
                 } label: {
                     Image(systemName: "xmark.circle.fill")
-                        .foregroundColor(.backgroundBlue)
+                        .foregroundColor(.secondary)
 						.font(.system(.largeTitle).weight(.semibold))
                 }
             }
