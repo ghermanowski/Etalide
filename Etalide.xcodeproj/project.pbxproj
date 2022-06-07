@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50314FBA284E454F005A1A7E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 50314FB8284E454F005A1A7E /* Localizable.strings */; };
 		50CF1BB6283CD78300324353 /* Etalide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50CF1BB4283CD78300324353 /* Etalide.xcdatamodeld */; };
 		50CF1BB7283CD78300324353 /* Etalide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50CF1BB4283CD78300324353 /* Etalide.xcdatamodeld */; };
 		50CF1BB8283CD78300324353 /* Etalide.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50CF1BB4283CD78300324353 /* Etalide.xcdatamodeld */; };
@@ -94,6 +95,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		50314FB9284E454F005A1A7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		50314FBB284E4572005A1A7E /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50CF1BB5283CD78300324353 /* Etalide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Etalide.xcdatamodel; sourceTree = "<group>"; };
 		50CF1BB9283CD8DA00324353 /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataClass.swift"; sourceTree = "<group>"; };
 		50CF1BBA283CD8DA00324353 /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -237,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				F5F2B0B528461DD000F5FFB3 /* Info.plist */,
+				50314FB8284E454F005A1A7E /* Localizable.strings */,
 				F58A8D0B283CC3B8000A859A /* EtalideApp.swift */,
 				F58A8D0D283CC3B8000A859A /* ContentView.swift */,
 				5C596C6B283FBF750097C7B8 /* DeckPopoverView.swift */,
@@ -446,6 +450,7 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
 			);
 			mainGroup = F58A8CFF283CC3B8000A859A;
 			productRefGroup = F58A8D09283CC3B8000A859A /* Products */;
@@ -465,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F58CB7F82845690800B74FD5 /* Images in Resources */,
+				50314FBA284E454F005A1A7E /* Localizable.strings in Resources */,
 				F58A8D13283CC3B8000A859A /* Preview Assets.xcassets in Resources */,
 				F58A8D10283CC3B8000A859A /* Assets.xcassets in Resources */,
 			);
@@ -586,6 +592,18 @@
 			targetProxy = F58A8D23283CC3B8000A859A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		50314FB8284E454F005A1A7E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50314FB9284E454F005A1A7E /* en */,
+				50314FBB284E4572005A1A7E /* it */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F58A8D2A283CC3B8000A859A /* Debug */ = {

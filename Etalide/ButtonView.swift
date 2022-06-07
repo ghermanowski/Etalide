@@ -10,43 +10,18 @@ import SwiftUI
 struct ButtonView: View {
     let imageTitle: String
     let title: String
-    var body: some View {
-        
-//        ZStack {
-            
-            Image(imageTitle)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .scaledToFit()
-                .overlay {
-                    Text(title)
-                        .foregroundColor(.white)
-                        .bold()
-                        .font(.title)
-                        .padding()
-                }
-            // background
-//            VStack (alignment: .leading) {
-//
-//                //Spacer (minLength: UIScreen.main.bounds.height * 0.02)
-//                Spacer ()
-//                HStack {
-//
-//                    Text(title)
-//                        .foregroundColor(.white)
-//                        .bold()
-//                        .font(.title)
-//                        .padding()
-//
-//                    Spacer()
-//                }
-//                Spacer()
-//
-//            }
-//            .padding()
-//        }
-//        .background(.red)
-        
+	
+	var body: some View {
+		Image(imageTitle)
+			.resizable()
+			.scaledToFit()
+			.overlay(alignment: .topLeading) {
+				Text(String(localized: String.LocalizationValue(title)))
+					.font(.title.weight(.bold))
+					.foregroundColor(.white)
+					.padding(.leading, 8)
+					.padding()
+			}
     }
 }
 struct ButtonView_Previews: PreviewProvider {

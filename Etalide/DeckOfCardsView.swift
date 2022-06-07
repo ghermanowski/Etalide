@@ -18,11 +18,11 @@ struct DeckOfCardsView: View {
     
     var body: some View {
 		let columns = Array(
-			repeating: GridItem(),
+			repeating: GridItem(spacing: 16),
 			count: isLandscape ? 4 : 3
 		)
 		
-        LazyVGrid(columns: columns) {
+        LazyVGrid(columns: columns, spacing: 16) {
             if let cards = deck.allCards {
                 ForEach(cards) { card in
 					if let imageURL = card.imageURL {
