@@ -19,33 +19,30 @@ struct DeckView: View {
 	
 	@FetchRequest var decks: FetchedResults<Deck>
 	
-    var body: some View {
+	var body: some View {
 		let deck = decks.first!
 		
-		NavigationView {
-			ScrollView {
-				let columns = Array(repeating: GridItem(.flexible()), count: 5)
+		ScrollView {
+			let columns = Array(repeating: GridItem(.flexible()), count: 5)
+			
+			LazyVGrid(columns: columns, spacing: 20) {
+				NewCards(in: deck)
 				
-				LazyVGrid(columns: columns, spacing: 20) {
-					NewCards(in: deck)
-					
-					if let cards = deck.allCards {
-						ForEach(cards.sorted()) { card in
-							CardView(card, in: deck)
-						}
+				if let cards = deck.allCards {
+					ForEach(cards.sorted()) { card in
+						CardView(card, in: deck)
 					}
 				}
-				.padding()
 			}
-			.toolbar {
-				ToolbarItem(placement: .primaryAction) {
-					EditButton()
-				}
-			}
-			.navigationTitle(deck.wrappedName)
-			.navigationBarTitleDisplayMode(.inline)
+			.padding()
 		}
-		.navigationViewStyle(.stack)
+		.toolbar {
+			ToolbarItem(placement: .primaryAction) {
+				EditButton()
+			}
+		}
+		.navigationTitle(deck.wrappedName)
+		.navigationBarTitleDisplayMode(.inline)
 	}
 }
 
@@ -75,7 +72,7 @@ private struct NewCards: View {
 }
 
 struct DeckView_Previews: PreviewProvider {
-    static var previews: some View {
-        DeckView(Deck())
-    }
+	static var previews: some View {
+		DeckView(Deck())
+	}
 }

@@ -53,11 +53,11 @@ struct CardView: View {
 			if !cardName.isEmpty || editMode?.wrappedValue == .active {
 				TextField("Name", text: $cardName)
 					.font(.largeTitle.weight(.bold))
-					.foregroundColor(.white)
+					.foregroundColor(.backgroundBlue)
 					.multilineTextAlignment(.center)
 					.frame(maxWidth: .infinity)
 					.padding(.vertical)
-					.background(.ultraThinMaterial)
+					.background(.thinMaterial)
 					.onSubmit {
 						if image != nil {
 							editMode?.wrappedValue = .inactive
@@ -92,13 +92,17 @@ struct CardView: View {
 	}
 	
 	private func deleteCard(card: Card) {
+		let cardID = card.id?.uuidString
+		let cardAssetName = card.assetName
+		
 		moc.delete(card)
 		saveContext()
 		
 		// Preset assets could also be deleted via Card.imageURL.
 		// This is not done because then the presets cannot be restored.
-		if card.assetName == nil {
-			ImageManager.shared.delete(withName: card.id!.uuidString)
+		if cardAssetName == nil,
+		   let cardID = cardID {
+			ImageManager.shared.delete(withName: cardID)
 		}
 	}
 	

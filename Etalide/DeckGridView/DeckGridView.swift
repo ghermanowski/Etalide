@@ -55,9 +55,6 @@ struct DeckGridView: View {
                     selectedDeck,
                     isShowingPopover: Binding(get: { self.selectedDeck != nil },
                                               set: { self.selectedDeck = $0 ? selectedDeck : nil }))
-				.padding(.horizontal, 64)
-				.padding(.vertical, 32)
-				.background(Color(uiColor: .secondarySystemBackground))
             }
         }
 		.navigationTitle("Decks")
