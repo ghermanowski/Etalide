@@ -26,7 +26,7 @@ struct MemoryView: View {
 		
 		let columns = Array(
 			repeating: GridItem(.flexible(), spacing: padding),
-			count: isLandscape ? difficulty.columns : cardStore.duplicatedCards.count / difficulty.columns
+			count: isLandscape ? difficulty.horizontalColumns : difficulty.verticalColumns
 		)
 		
 		LazyVGrid(columns: columns, spacing: padding) {
