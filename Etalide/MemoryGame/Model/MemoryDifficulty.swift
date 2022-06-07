@@ -16,9 +16,9 @@ enum MemoryDifficulty: String, CaseIterable, Identifiable {
 	
 	var amount: Int {
 		switch self {
-		case .easy: return 2
-		case .medium: return 4
-		case .hard: return 6
+			case .easy: return 2
+			case .medium: return 4
+			case .hard: return 6
 		}
 	}
 	

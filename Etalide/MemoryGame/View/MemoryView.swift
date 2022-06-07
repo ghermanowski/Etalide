@@ -22,24 +22,26 @@ struct MemoryView: View {
 	private let difficulty: MemoryDifficulty
 	
 	var body: some View {
-		let padding: CGFloat = difficulty == .hard ? 12 : 24
+		let padding: CGFloat = 24
 		
 		let columns = Array(
-			repeating: GridItem(.flexible(), spacing: padding),
+			repeating: GridItem(.flexible(maximum: UIScreen.main.bounds.width / (isLandscape ? 5 : 2.5)), spacing: padding),
 			count: isLandscape ? difficulty.horizontalColumns : difficulty.verticalColumns
 		)
 		
-		LazyVGrid(columns: columns, spacing: padding) {
-			ForEach(cardStore.duplicatedCards) { card in
-				// Hides the cards when they match.
-				let isHidden = cardStore.hiddenCards.contains(card)
-				
-				MemoryCardView(card)
-					.opacity(isHidden ? 0 : 1)
-					.animation(.default, value: isHidden)
+		VStack {
+			LazyVGrid(columns: columns, spacing: padding) {
+				ForEach(cardStore.duplicatedCards) { card in
+					let isHidden = cardStore.hiddenCards.contains(card)
+					
+					MemoryCardView(card)
+						.opacity(isHidden ? 0 : 1)
+						.animation(.default, value: isHidden)
+				}
 			}
+			.padding(padding)
 		}
-		.padding(padding)
+		.frame(height: UIScreen.main.bounds.height)
 		.background(Color(uiColor: .systemBackground))
 		.environmentObject(cardStore)
 		.onAppear(perform: cardStore.createGame)
@@ -50,7 +52,6 @@ struct MemoryView: View {
 					
 					Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
 						withAnimation {
-							// Removes selected cards from the array.
 							cardStore.selectedCards.removeAll()
 						}
 					}
@@ -64,6 +65,7 @@ struct MemoryView: View {
 			} label: {
 				Image(systemName: "chevron.left.circle.fill")
 					.font(.largeTitle)
+					.foregroundColor(.backgroundBlue)
 			}
 			.padding(32)
 		}
