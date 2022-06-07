@@ -53,11 +53,11 @@ struct CardView: View {
 			if !cardName.isEmpty || editMode?.wrappedValue == .active {
 				TextField("Name", text: $cardName)
 					.font(.largeTitle.weight(.bold))
-					.foregroundColor(.white)
+					.foregroundColor(.backgroundBlue)
 					.multilineTextAlignment(.center)
 					.frame(maxWidth: .infinity)
 					.padding(.vertical)
-					.background(.ultraThinMaterial)
+					.background(.thinMaterial)
 					.onSubmit {
 						if image != nil {
 							editMode?.wrappedValue = .inactive
