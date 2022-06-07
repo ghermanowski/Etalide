@@ -10,11 +10,15 @@ import SwiftUI
 struct MemoryCardView: View {
 	static private let animationDuration = 0.35
 	
-	internal init(_ card: MemoryCard) {
+	internal init(_ card: MemoryCard, position: Int? = nil) {
 		self.card = card
+		self.position = position
 	}
 	
+	@Environment(\.isLandscape) private var isLandscape
+	
 	private let card: MemoryCard
+	private let position: Int?
 	
 	@EnvironmentObject private var cardStore: CardStore
 	
@@ -27,6 +31,13 @@ struct MemoryCardView: View {
 			.overlay {
 				if !isRotated {
 					Color.backgroundBlue
+						.overlay {
+							if let position = position {
+								Text(verbatim: "\(position)")
+									.foregroundStyle(.regularMaterial)
+									.font(.system(size: isLandscape ? 80 : 96, weight: .bold, design: .serif))
+							}
+						}
 				}
 			}
 			.cornerRadius(25)

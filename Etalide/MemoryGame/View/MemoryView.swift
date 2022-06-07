@@ -31,10 +31,11 @@ struct MemoryView: View {
 		
 		VStack {
 			LazyVGrid(columns: columns, spacing: padding) {
-				ForEach(cardStore.duplicatedCards) { card in
+				ForEach(cardStore.duplicatedCards.indices, id: \.self) { cardIndex in
+					let card = cardStore.duplicatedCards[cardIndex]
 					let isHidden = cardStore.hiddenCards.contains(card)
 					
-					MemoryCardView(card)
+					MemoryCardView(card, position: cardIndex + 1)
 						.opacity(isHidden ? 0 : 1)
 						.animation(.default, value: isHidden)
 				}
