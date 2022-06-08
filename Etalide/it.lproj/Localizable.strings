@@ -34,35 +34,38 @@
 /* No comment provided by engineer. */
 "Play Memory" = "Memory Game";
 
+/* Select Difficulty. */
 "Easy" = "Facile";
 
 "Medium" = "Medio";
 
 "Hard" = "Difficile";
 
-"Animals" = "Animals";
-"Bear" = "Bear";
-"Cat" = "Cat";
-"Cow" = "Cow";
-"Dog" = "Dog";
-"Horse" = "Horse";
-"Lion" = "Lion";
-"Parrot" = "Parrot";
-"Rabbit" = "Rabbit";
-"Rooster" = "Rooster";
-"Sheep" = "Sheep";
-"Tiger" = "Tiger";
+/* Animals Deck. */
+"Animals" = "Animali";
+"Bear" = "Orso";
+"Cat" = "Gatto";
+"Cow" = "Mucca";
+"Dog" = "Cane";
+"Horse" = "Cavallo";
+"Lion" = "Leone";
+"Parrot" = "Pappagallo";
+"Rabbit" = "Coniglio";
+"Rooster" = "Gallo";
+"Sheep" = "Pecora";
+"Tiger" = "Tigre";
 
-"Food" = "Food";
-"Cake" = "Cake";
+/* Food Deck. */
+"Food" = "Cibo";
+"Cake" = "Torta";
 "Caprese" = "Caprese";
-"Cheese" = "Cheese";
-"French Fries" = "French Fries";
-"Ice Cream" = "Ice Cream";
-"Mokka" = "Mokka";
-"Orange" = "Orange";
+"Cheese" = "Formaggio";
+"French Fries" = "Patatine Fritte";
+"Ice Cream" = "Gelato";
+"Mokka" = "Caffè";
+"Orange" = "Arancia";
 "Pasta" = "Pasta";
 "Pizza" = "Pizza";
-"Salami" = "Salami";
-"Strawberry" = "Strawberry";
-"Wine" = "Wine";
+"Salami" = "Salame";
+"Strawberry" = "Fragole";
+"Wine" = "Vino";
