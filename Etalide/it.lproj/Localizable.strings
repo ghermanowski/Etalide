@@ -39,3 +39,30 @@
 "Medium" = "Medio";
 
 "Hard" = "Difficile";
+
+"Animals" = "Animals";
+"Bear" = "Bear";
+"Cat" = "Cat";
+"Cow" = "Cow";
+"Dog" = "Dog";
+"Horse" = "Horse";
+"Lion" = "Lion";
+"Parrot" = "Parrot";
+"Rabbit" = "Rabbit";
+"Rooster" = "Rooster";
+"Sheep" = "Sheep";
+"Tiger" = "Tiger";
+
+"Food" = "Food";
+"Cake" = "Cake";
+"Caprese" = "Caprese";
+"Cheese" = "Cheese";
+"French Fries" = "French Fries";
+"Ice Cream" = "Ice Cream";
+"Mokka" = "Mokka";
+"Orange" = "Orange";
+"Pasta" = "Pasta";
+"Pizza" = "Pizza";
+"Salami" = "Salami";
+"Strawberry" = "Strawberry";
+"Wine" = "Wine";
