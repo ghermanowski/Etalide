@@ -12,6 +12,9 @@ struct DeckPreview: View {
 		self.deck = deck
 	}
 	
+	@Environment(\.editMode) private var editMode
+	@Environment(\.managedObjectContext) private var moc
+	
 	private let deck: Deck
 	
     var body: some View {
@@ -30,7 +33,29 @@ struct DeckPreview: View {
 				.foregroundColor(.white)
 				.shadow(color: .black.opacity(0.5), radius: 5)
 		}
-    }
+		.navigationButtons(alignment: .topTrailing, padding: 16) {
+			if editMode?.wrappedValue == .active {
+				Button(role: .destructive, action: deleteDeck) {
+					Label("Delete", systemImage: "trash")
+						.labelStyle(.iconOnly)
+				}
+				.buttonStyle(.circle)
+			}
+		}
+	}
+	
+	private func deleteDeck() {
+		moc.delete(deck)
+		saveContext()
+	}
+	
+	private func saveContext() {
+		do {
+			try moc.save()
+		} catch {
+			fatalError(error.localizedDescription)
+		}
+	}
 }
 
 struct DeckPreview_Previews: PreviewProvider {
