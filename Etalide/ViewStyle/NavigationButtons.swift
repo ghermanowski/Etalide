@@ -10,13 +10,14 @@ import SwiftUI
 extension View {
 	func navigationButtons<Buttons: View>(
 		alignment: Alignment = .topTrailing,
-		buttons: () -> Buttons
+		padding: CGFloat = 32,
+		@ViewBuilder buttons: () -> Buttons
 	) -> some View {
 		overlay(alignment: alignment) {
 			HStack(spacing: 20) {
 				buttons()
 			}
-			.padding([.top, .horizontal], 32)
+			.padding([.top, .horizontal], padding)
 		}
 	}
 }
