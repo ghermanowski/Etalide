@@ -12,7 +12,8 @@ struct CardView: View {
 		self.card = card
 		self.deck = deck
 		
-		_cardName = .init(initialValue: card?.name ?? "")
+		let assetName = card?.assetName != nil ? String(localized: String.LocalizationValue(card!.assetName!)) : nil
+		_cardName = .init(initialValue: assetName ?? card?.name ?? "")
 	}
 	
 	@Environment(\.editMode) private var editMode
@@ -52,12 +53,12 @@ struct CardView: View {
 		.overlay(alignment: .bottom) {
 			if !cardName.isEmpty || editMode?.wrappedValue == .active {
 				TextField("Name", text: $cardName)
-					.font(.largeTitle.weight(.bold))
-					.foregroundColor(.backgroundBlue)
+					.font(Font.system(.largeTitle, design: .serif).weight(.bold))
+					.foregroundStyle(.regularMaterial)
 					.multilineTextAlignment(.center)
 					.frame(maxWidth: .infinity)
 					.padding(.vertical)
-					.background(.thinMaterial)
+					.background(Color.backgroundBlue)
 					.onSubmit {
 						if image != nil {
 							editMode?.wrappedValue = .inactive
