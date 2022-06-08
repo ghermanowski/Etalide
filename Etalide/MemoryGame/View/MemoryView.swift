@@ -60,15 +60,13 @@ struct MemoryView: View {
 			}
 		}
 		.navigationBarHidden(true)
-		.overlay(alignment: .topLeading) {
+		.navigationButtons(alignment: .topLeading) {
 			Button {
 				dismiss()
 			} label: {
-				Image(systemName: "chevron.left.circle.fill")
-					.font(.largeTitle)
-					.foregroundColor(.backgroundBlue)
+				Image(systemName: "chevron.left")
 			}
-			.padding(32)
+			.buttonStyle(.circle)
 		}
 	}
 }
