@@ -13,6 +13,7 @@ struct CircleStyle: ButtonStyle {
 			.foregroundColor(configuration.role == .destructive ? .red : .backgroundBlue)
 			.font(.system(.largeTitle).weight(.semibold))
 			.scaleEffect(configuration.isPressed ? 0.85 : 1)
+			.opacity(configuration.isPressed ? 0.75 : 1)
 	}
 }
 
