@@ -8,9 +8,9 @@
 import SwiftUI
 
 extension View {
-	func navigationButtons(
+	func navigationButtons<Buttons: View>(
 		alignment: Alignment = .topTrailing,
-		buttons: @escaping () -> some View
+		buttons: () -> Buttons
 	) -> some View {
 		overlay(alignment: alignment) {
 			HStack(spacing: 20) {
