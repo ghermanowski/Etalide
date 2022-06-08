@@ -10,7 +10,9 @@ import SwiftUI
 struct CircleStyle: ButtonStyle {
 	func makeBody(configuration: Configuration) -> some View {
 		configuration.label
-			.foregroundColor(configuration.role == .destructive ? .red : .backgroundBlue)
+			.symbolVariant(.circle.fill)
+			.symbolRenderingMode(.palette)
+			.foregroundStyle(.white, configuration.role == .destructive ? .red : .backgroundBlue)
 			.font(.system(.largeTitle).weight(.semibold))
 			.scaleEffect(configuration.isPressed ? 0.85 : 1)
 			.opacity(configuration.isPressed ? 0.75 : 1)
