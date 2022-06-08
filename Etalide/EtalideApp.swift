@@ -19,7 +19,12 @@ struct EtalideApp: App {
 				.environment(\.managedObjectContext, dataController.container.viewContext)
 				.environment(\.isLandscape, isLandscape)
 				.onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
-					guard let scene = UIApplication.shared.windows.first?.windowScene else { return }
+					guard let scene = UIApplication.shared.connectedScenes
+						.first(where: { $0.activationState == .foregroundActive && $0 is UIWindowScene })
+							as? UIWindowScene else {
+						return
+					}
+					
 					isLandscape = scene.interfaceOrientation.isLandscape
 				}
         }
