@@ -13,9 +13,11 @@ import CoreData
 public class Deck: NSManagedObject {
 	convenience init(context moc: NSManagedObjectContext,
 					 id: UUID = UUID(),
-					 name: String) {
+					 name: String,
+					 assetName: String? = nil) {
 		self.init(context: moc)
 		self.id = id
 		self.name = name
+		self.assetName = assetName
 	}
 }

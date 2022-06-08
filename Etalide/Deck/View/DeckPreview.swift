@@ -25,7 +25,7 @@ struct DeckPreview: View {
 		}
 		.cornerRadius(25)
 		.overlay {
-			Text(deck.wrappedName)
+			Text(deck.localisedName ?? deck.wrappedName)
 				.font(.largeTitle.bold())
 				.foregroundColor(.white)
 				.shadow(color: .black.opacity(0.5), radius: 5)

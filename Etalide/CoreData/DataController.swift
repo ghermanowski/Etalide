@@ -28,7 +28,7 @@ class DataController: ObservableObject {
 			let folderURLs = Bundle.main.urls(forResourcesWithExtension: nil, subdirectory: "Images")!
 			let decks = folderURLs
 				.map(\.lastPathComponent)
-				.map { Deck(context: context, name: $0) }
+				.map { Deck(context: context, name: $0, assetName: $0) }
 			
 			let fileManager = FileManager.default
 			
