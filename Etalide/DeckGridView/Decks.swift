@@ -1,5 +1,5 @@
 //
-//  DeckGridView.swift
+//  Decks.swift
 //  Etalide
 //
 //  Created by Diego Castro on 25/05/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DeckGridView: View {
+struct Decks: View {
 	@Environment(\.editMode) private var editMode
 	@Environment(\.isLandscape) private var isLandscape
 	@Environment(\.managedObjectContext) private var moc
@@ -88,6 +88,6 @@ struct DeckGridView: View {
 
 struct DeckGridView_Previews: PreviewProvider {
     static var previews: some View {
-        DeckGridView()
+        Decks()
     }
 }
