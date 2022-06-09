@@ -23,8 +23,8 @@ struct DeckOfCardsView: View {
 		)
 		
         LazyVGrid(columns: columns, spacing: 16) {
-            if let cards = deck.allCards {
-                ForEach(cards) { card in
+			if let cards = deck.allCards {
+                ForEach(cards.prefix(12)) { card in
 					if let imageURL = card.imageURL {
 						CardImageView(imageURL)
 							.cornerRadius(15)

@@ -8,56 +8,72 @@
 import SwiftUI
 
 struct DeckGridView: View {
-	@Environment(\.managedObjectContext) private var moc
+	@Environment(\.editMode) private var editMode
 	@Environment(\.isLandscape) private var isLandscape
+	@Environment(\.managedObjectContext) private var moc
 	
 	@State private var selectedDeck: Deck?
     
 	@FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) private var decks: FetchedResults<Deck>
     
 	var body: some View {
-		ScrollView {
-			let columns = Array(
-				repeating: GridItem(spacing: 20),
-				count: isLandscape ? 4 : 3
-			)
-			
-			LazyVGrid(columns: columns, spacing: 20) {
-				Button {
-					_ = Deck(context: moc, name: "TestDeck")
-					saveContext()
-				} label: {
-					VStack(spacing: 16) {
-						Image(systemName: "plus")
-							.font(.title.bold())
-						
-						Text("New Deck")
-							.font(.title3.bold())
-					}
-					.foregroundColor(.blue)
-				}
-				.buttonStyle(.verticalRectangle)
-				
-				ForEach(decks) { deck in
+		VStack {
+			Text("Decks")
+				.font(.largeTitle.weight(.bold))
+				.foregroundColor(.backgroundBlue)
+				.padding(.vertical)
+				.frame(maxWidth: .infinity)
+				.background(Color.white)
+				.navigationButtons(alignment: .topTrailing) {
 					Button {
-						selectedDeck = deck
+						_ = Deck(context: moc, name: "TestDeck")
+						saveContext()
 					} label: {
-						DeckPreview(deck)
+						Image(systemName: "plus")
 					}
-					.buttonStyle(.verticalRectangle)
+					.buttonStyle(.circle)
+					
+					Button {
+						if editMode?.wrappedValue != .active {
+							editMode?.wrappedValue = .active
+						} else {
+							editMode?.wrappedValue = .inactive
+						}
+					} label: {
+						Image(systemName: "pencil")
+					}
+					.buttonStyle(.circle)
 				}
+			
+			ScrollView {
+				let columns = Array(
+					repeating: GridItem(spacing: 20),
+					count: isLandscape ? 4 : 3
+				)
+				
+				LazyVGrid(columns: columns, spacing: 20) {
+					ForEach(decks) { deck in
+						Button {
+							selectedDeck = deck
+						} label: {
+							DeckPreview(deck)
+						}
+						.buttonStyle(.verticalRectangle)
+					}
+				}
+				.environment(\.editMode, editMode)
+				.padding()
 			}
-			.padding()
 		}
-        .overlay {
-            if let selectedDeck = selectedDeck {
-                DeckPopoverView(
-                    selectedDeck,
-                    isShowingPopover: Binding(get: { self.selectedDeck != nil },
-                                              set: { self.selectedDeck = $0 ? selectedDeck : nil }))
-            }
-        }
-		.navigationTitle("Decks")
+		.navigationBarHidden(true)
+		.overlay {
+			if let selectedDeck = selectedDeck {
+				DeckPopoverView(
+					selectedDeck,
+					isShowingPopover: Binding(get: { self.selectedDeck != nil },
+											  set: { self.selectedDeck = $0 ? selectedDeck : nil }))
+			}
+		}
 	}
 	
 	private func saveContext() {
