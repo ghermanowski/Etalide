@@ -22,6 +22,7 @@ struct CardImageView: View {
 			Color.backgroundBlue
 				.overlay {
 					ProgressView()
+						.tint(Color.background)
 				}
 		}
 		.aspectRatio(3 / 4, contentMode: .fit)
