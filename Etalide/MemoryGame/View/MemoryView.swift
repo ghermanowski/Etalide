@@ -53,7 +53,7 @@ struct MemoryView: View {
 				Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
 					cardStore.checkPair()
 					
-					Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+					Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
 						withAnimation {
 							cardStore.selectedCards.removeAll()
 						}
