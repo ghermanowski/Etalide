@@ -34,7 +34,7 @@ struct MemoryCardView: View {
 						.overlay {
 							if let position = position {
 								Text(verbatim: "\(position)")
-									.foregroundStyle(.regularMaterial)
+									.foregroundStyle(Color.background)
 									.font(.system(size: isLandscape ? 80 : 96, weight: .bold, design: .serif))
 							}
 						}
