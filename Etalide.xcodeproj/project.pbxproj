@@ -42,6 +42,7 @@
 		5C596C70283FC7180097C7B8 /* DeckOfCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C6F283FC7180097C7B8 /* DeckOfCardsView.swift */; };
 		6C7C3B0D283E284500F42669 /* DeviceRotationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C3B0C283E284500F42669 /* DeviceRotationViewModifier.swift */; };
 		6C7C3B0F283E3B7A00F42669 /* DeckGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C3B0E283E3B7A00F42669 /* DeckGridView.swift */; };
+		7151973E2851E5B80049B474 /* FireworkParticlesGeometryEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151973D2851E5B80049B474 /* FireworkParticlesGeometryEffect.swift */; };
 		71AE0B132844D3F700A128F2 /* SelectDifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE0B122844D3F600A128F2 /* SelectDifficultyView.swift */; };
 		71AE0B152844D6C500A128F2 /* MemoryDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE0B142844D6C500A128F2 /* MemoryDifficulty.swift */; };
 		F52F23BF2850A04A0031179E /* NavigationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52F23BE2850A04A0031179E /* NavigationButtons.swift */; };
@@ -118,6 +119,7 @@
 		5C596C6F283FC7180097C7B8 /* DeckOfCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCardsView.swift; sourceTree = "<group>"; };
 		6C7C3B0C283E284500F42669 /* DeviceRotationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRotationViewModifier.swift; sourceTree = "<group>"; };
 		6C7C3B0E283E3B7A00F42669 /* DeckGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckGridView.swift; sourceTree = "<group>"; };
+		7151973D2851E5B80049B474 /* FireworkParticlesGeometryEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireworkParticlesGeometryEffect.swift; sourceTree = "<group>"; };
 		71AE0B122844D3F600A128F2 /* SelectDifficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDifficultyView.swift; sourceTree = "<group>"; };
 		71AE0B142844D6C500A128F2 /* MemoryDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryDifficulty.swift; sourceTree = "<group>"; };
 		F52F23BE2850A04A0031179E /* NavigationButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtons.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				F54D603C28490CEF008B732D /* View */,
+				7151973C2851E5270049B474 /* FireworksAnimation */,
 				F54D603D28490CF7008B732D /* Model */,
 			);
 			path = MemoryGame;
@@ -198,6 +201,14 @@
 				6C7C3B0E283E3B7A00F42669 /* DeckGridView.swift */,
 			);
 			path = DeckGridView;
+			sourceTree = "<group>";
+		};
+		7151973C2851E5270049B474 /* FireworksAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				7151973D2851E5B80049B474 /* FireworkParticlesGeometryEffect.swift */,
+			);
+			path = FireworksAnimation;
 			sourceTree = "<group>";
 		};
 		F54D603C28490CEF008B732D /* View */ = {
@@ -524,6 +535,7 @@
 				50DA136B283E1CF100A7ECC4 /* CardStore.swift in Sources */,
 				F52F23BF2850A04A0031179E /* NavigationButtons.swift in Sources */,
 				50CF1BC0283CD8DA00324353 /* Deck+CoreDataProperties.swift in Sources */,
+				7151973E2851E5B80049B474 /* FireworkParticlesGeometryEffect.swift in Sources */,
 				50CF1BC3283CD8DA00324353 /* Card+CoreDataClass.swift in Sources */,
 				50CF1BCA283CD9C900324353 /* DataController.swift in Sources */,
 				5C596C6C283FBF750097C7B8 /* DeckPopoverView.swift in Sources */,

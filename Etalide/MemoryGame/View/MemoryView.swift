@@ -32,19 +32,47 @@ struct MemoryView: View {
 		)
 		
 		VStack {
-			LazyVGrid(columns: columns, spacing: padding) {
-				ForEach(cardStore.duplicatedCards.indices, id: \.self) { cardIndex in
-					let card = cardStore.duplicatedCards[cardIndex]
-					let isHidden = cardStore.hiddenCards.contains(card)
-					
-					MemoryCardView(card, position: cardIndex + 1)
-						.opacity(isHidden ? 0 : 1)
-						.animation(.default, value: isHidden)
+			if cardStore.hiddenCards.isEmpty || cardStore.duplicatedCards.count != cardStore.hiddenCards.count {
+				LazyVGrid(columns: columns, spacing: padding) {
+					ForEach(cardStore.duplicatedCards.indices, id: \.self) { cardIndex in
+						let card = cardStore.duplicatedCards[cardIndex]
+						let isHidden = cardStore.hiddenCards.contains(card)
+						
+						MemoryCardView(card, position: cardIndex + 1)
+							.opacity(isHidden ? 0 : 1)
+							.animation(.default, value: isHidden)
+					}
 				}
+				.padding(padding)
+				.animation(nil, value: cardStore.duplicatedCards.count != cardStore.hiddenCards.count)
+			} else {
+				ZStack {
+					Text("Well Done!")
+						.foregroundColor(.backgroundBlue)
+						.font(.system(size: 100, weight: .semibold))
+					
+					Circle()
+						.fill(Color.blue)
+						.frame(width: 12, height: 12)
+						.modifier(ParticlesModifier())
+						.offset(x: -100, y : -50)
+					
+					Circle()
+						.fill(Color.red)
+						.frame(width: 12, height: 12)
+						.modifier(ParticlesModifier())
+						.offset(x: 60, y : 70)
+					
+					Circle()
+						.fill(Color.green)
+						.frame(width: 12, height: 12)
+						.modifier(ParticlesModifier())
+				}
+				.transition(.opacity.animation(.default.delay(1)))
 			}
-			.padding(padding)
 		}
-		.frame(height: UIScreen.main.bounds.height)
+		.animation(.default, value: cardStore.duplicatedCards.count != cardStore.hiddenCards.count)
+		.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 		.background(Color(uiColor: .systemBackground))
 		.environmentObject(cardStore)
 		.onAppear(perform: cardStore.createGame)
