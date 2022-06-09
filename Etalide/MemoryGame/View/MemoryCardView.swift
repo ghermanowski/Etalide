@@ -51,9 +51,12 @@ struct MemoryCardView: View {
 				}
 			}
 			.onTapGesture {
-				// Selects up to 2 cards adding them to the array of selected cards.
-				if !isSelected && cardStore.selectedCards.count < 2 {
-					cardStore.selectedCards.append(card)
+				if cardStore.selectedCards.count < 2 {
+					if isSelected {
+						cardStore.selectedCards.removeAll()
+					} else {
+						cardStore.selectedCards.append(card)
+					}
 				}
 			}
 	}
