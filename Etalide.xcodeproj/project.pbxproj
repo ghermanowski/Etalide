@@ -63,9 +63,6 @@
 		F58A8D1D283CC3B8000A859A /* EtalideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D1C283CC3B8000A859A /* EtalideTests.swift */; };
 		F58A8D27283CC3B8000A859A /* EtalideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D26283CC3B8000A859A /* EtalideUITests.swift */; };
 		F58A8D29283CC3B8000A859A /* EtalideUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D28283CC3B8000A859A /* EtalideUITestsLaunchTests.swift */; };
-		F58C3774284DF23000623783 /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C3773284DF23000623783 /* OrientationManager.swift */; };
-		F58C3775284DF23000623783 /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C3773284DF23000623783 /* OrientationManager.swift */; };
-		F58C3776284DF23000623783 /* OrientationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C3773284DF23000623783 /* OrientationManager.swift */; };
 		F58C3778284E0B4300623783 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C3777284E0B4300623783 /* Orientation.swift */; };
 		F58C3779284E0B4300623783 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C3777284E0B4300623783 /* Orientation.swift */; };
 		F58C377A284E0B4300623783 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C3777284E0B4300623783 /* Orientation.swift */; };
@@ -140,7 +137,6 @@
 		F58A8D28283CC3B8000A859A /* EtalideUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtalideUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F58A8D37283CC492000A859A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F58A8D38283CC492000A859A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		F58C3773284DF23000623783 /* OrientationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrientationManager.swift; sourceTree = "<group>"; };
 		F58C3777284E0B4300623783 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		F58CB7832840D65100B74FD5 /* VerticalRectangleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalRectangleStyle.swift; sourceTree = "<group>"; };
 		F58CB7F72845690800B74FD5 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
@@ -267,7 +263,6 @@
 				F58CB7F72845690800B74FD5 /* Images */,
 				F58A8D0F283CC3B8000A859A /* Assets.xcassets */,
 				50FC97E62844D78700410666 /* Extension-Color.swift */,
-				F58C3773284DF23000623783 /* OrientationManager.swift */,
 				F58A8D11283CC3B8000A859A /* Preview Content */,
 			);
 			path = Etalide;
@@ -521,7 +516,6 @@
 				71AE0B152844D6C500A128F2 /* MemoryDifficulty.swift in Sources */,
 				71AE0B132844D3F700A128F2 /* SelectDifficultyView.swift in Sources */,
 				50CF1BD2283CE17B00324353 /* MemoryCardView.swift in Sources */,
-				F58C3774284DF23000623783 /* OrientationManager.swift in Sources */,
 				5C596C70283FC7180097C7B8 /* DeckOfCardsView.swift in Sources */,
 				5CBCAD97285207EB00EAEBE4 /* CardPopupView.swift in Sources */,
 				5C596C27283E17050097C7B8 /* SwipableCardView.swift in Sources */,
@@ -555,7 +549,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C596C28283E17050097C7B8 /* SwipableCardView.swift in Sources */,
-				F58C3775284DF23000623783 /* OrientationManager.swift in Sources */,
 				50DA136C283E1CF100A7ECC4 /* CardStore.swift in Sources */,
 				50CF1BB7283CD78300324353 /* Etalide.xcdatamodeld in Sources */,
 				50CF1BC4283CD8DA00324353 /* Card+CoreDataClass.swift in Sources */,
@@ -586,7 +579,6 @@
 				F5C4230D283CE69900A385B5 /* ImagePicker.swift in Sources */,
 				50CF1BC2283CD8DA00324353 /* Deck+CoreDataProperties.swift in Sources */,
 				50CF1BC5283CD8DA00324353 /* Card+CoreDataClass.swift in Sources */,
-				F58C3776284DF23000623783 /* OrientationManager.swift in Sources */,
 				50CF1BBF283CD8DA00324353 /* Deck+CoreDataClass.swift in Sources */,
 				F54D603B284901F2008B732D /* DeckPreview.swift in Sources */,
 				F58C377A284E0B4300623783 /* Orientation.swift in Sources */,
