@@ -74,6 +74,9 @@ struct CardPopupView: View {
         .overlay(alignment: .topTrailing, content: {
             Button {
                 showPopover = false
+                // MARK: need to improve card saving - GREGOR
+                saveCard()
+                saveContext()
             } label: {
                 Image(systemName: "checkmark.circle.fill")
             }
