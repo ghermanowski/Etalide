@@ -246,9 +246,6 @@
 			children = (
 				F58A8D0B283CC3B8000A859A /* EtalideApp.swift */,
 				F58A8D0D283CC3B8000A859A /* ContentView.swift */,
-				5C596C6B283FBF750097C7B8 /* DeckPopoverView.swift */,
-				5C596C6F283FC7180097C7B8 /* DeckOfCardsView.swift */,
-				5C596C6D283FC34A0097C7B8 /* ButtonView.swift */,
 				5C596C25283E16EC0097C7B8 /* FlashCardGame */,
 				F5C42307283CDBA600A385B5 /* Card */,
 				F5C42306283CDB4200A385B5 /* Deck */,
@@ -370,6 +367,9 @@
 		F5EDE195283FAD3100E96A3A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5C596C6D283FC34A0097C7B8 /* ButtonView.swift */,
+				5C596C6F283FC7180097C7B8 /* DeckOfCardsView.swift */,
+				5C596C6B283FBF750097C7B8 /* DeckPopoverView.swift */,
 				F54D6039284901F2008B732D /* DeckPreview.swift */,
 				6C7C3B0E283E3B7A00F42669 /* Decks.swift */,
 				F5EDE193283FAD2600E96A3A /* DeckView.swift */,
