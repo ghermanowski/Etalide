@@ -194,14 +194,6 @@
 			path = FlashCardGame;
 			sourceTree = "<group>";
 		};
-		6C7C3B10283EED6000F42669 /* DeckGridView */ = {
-			isa = PBXGroup;
-			children = (
-				6C7C3B0E283E3B7A00F42669 /* Decks.swift */,
-			);
-			path = DeckGridView;
-			sourceTree = "<group>";
-		};
 		7151973C2851E5270049B474 /* FireworksAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,7 +255,6 @@
 				F58C3777284E0B4300623783 /* Orientation.swift */,
 				5C596C6F283FC7180097C7B8 /* DeckOfCardsView.swift */,
 				5C596C6D283FC34A0097C7B8 /* ButtonView.swift */,
-				6C7C3B10283EED6000F42669 /* DeckGridView */,
 				5C596C25283E16EC0097C7B8 /* FlashCardGame */,
 				F5C42307283CDBA600A385B5 /* Card */,
 				F5C42306283CDB4200A385B5 /* Deck */,
@@ -375,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				F54D6039284901F2008B732D /* DeckPreview.swift */,
+				6C7C3B0E283E3B7A00F42669 /* Decks.swift */,
 				F5EDE193283FAD2600E96A3A /* DeckView.swift */,
 			);
 			path = View;
