@@ -23,37 +23,17 @@ struct DeckPopoverView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
-                
-				NavigationLink {
-					DeckView(deck)
-				} label: {
-					Image(systemName: "pencil.circle.fill")
-						.foregroundColor(.backgroundBlue)
-						.font(.system(.largeTitle).weight(.semibold))
-				}
-				
-                Button {
-                    isShowingPopover = false
-                } label: {
-                    Image(systemName: "xmark.circle.fill")
-                        .foregroundColor(.secondary)
-						.font(.system(.largeTitle).weight(.semibold))
-                }
-            }
-			.overlay {
-				Text(deck.wrappedName)
-					.font(.system(.largeTitle))
-					.bold()
-					.foregroundColor(.backgroundBlue)
-			}
-			.padding([.top, .horizontal], 32)
+			Text(deck.localisedName ?? deck.wrappedName)
+				.font(.system(.largeTitle))
+				.bold()
+				.foregroundColor(.backgroundBlue)
+				.padding([.top, .horizontal], 32)
+				.frame(maxWidth: .infinity)
             
             GeometryReader { geometry in
                 HStack(alignment: .center, spacing: 40) {
                     DeckOfCardsView(deck)
-                        .frame(width: geometry.size.width * 0.4)
+                        .frame(width: geometry.size.width * 0.45)
                     
                     Divider()
 						.foregroundStyle(Color.backgroundBlue)
@@ -81,14 +61,31 @@ struct DeckPopoverView: View {
 					}
                 }
 				.padding(.vertical, 32)
-				.padding(.horizontal, isLandscape ? 128 : 32)
+				.padding(.horizontal, isLandscape ? 64 : 32)
 			}
         }
+		.frame(width: UIScreen.main.bounds.width * (isLandscape ? 0.85 : 0.95),
+			   height: UIScreen.main.bounds.height * (isLandscape ? 0.75 : 0.65))
         .background(.white)
         .cornerRadius(40)
-		.padding(.vertical, isLandscape ? 32 : 160)
-		.padding(.horizontal, isLandscape ? 64 : 32)
-		.background(Color(uiColor: .secondarySystemBackground))
+		.navigationButtons(alignment: .topLeading) {
+			Button {
+				isShowingPopover = false
+			} label: {
+				Image(systemName: "xmark")
+			}
+			.buttonStyle(.circle)
+		}
+		.navigationButtons(alignment: .topTrailing) {
+			NavigationLink {
+				DeckView(deck)
+			} label: {
+				Image(systemName: "info")
+			}
+			.buttonStyle(.circle)
+		}
+		.frame(maxWidth: .infinity, maxHeight: .infinity)
+		.background(Color.primary.opacity(0.75))
     }
 }
 
