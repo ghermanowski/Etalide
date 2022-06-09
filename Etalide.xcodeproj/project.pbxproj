@@ -72,6 +72,8 @@
 		F58CB7842840D65100B74FD5 /* VerticalRectangleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CB7832840D65100B74FD5 /* VerticalRectangleStyle.swift */; };
 		F58CB7852840D65100B74FD5 /* VerticalRectangleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CB7832840D65100B74FD5 /* VerticalRectangleStyle.swift */; };
 		F58CB7F82845690800B74FD5 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = F58CB7F72845690800B74FD5 /* Images */; };
+		F594095228524CBE00AE5B75 /* NavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F594095128524CBE00AE5B75 /* NavigationTitle.swift */; };
+		F594095328524CBE00AE5B75 /* NavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F594095128524CBE00AE5B75 /* NavigationTitle.swift */; };
 		F5C4230C283CE69900A385B5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C4230B283CE69900A385B5 /* ImagePicker.swift */; };
 		F5C4230D283CE69900A385B5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C4230B283CE69900A385B5 /* ImagePicker.swift */; };
 		F5EDE18E283F8F7C00E96A3A /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EDE18D283F8F7C00E96A3A /* ImageManager.swift */; };
@@ -142,6 +144,7 @@
 		F58C3777284E0B4300623783 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		F58CB7832840D65100B74FD5 /* VerticalRectangleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalRectangleStyle.swift; sourceTree = "<group>"; };
 		F58CB7F72845690800B74FD5 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
+		F594095128524CBE00AE5B75 /* NavigationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitle.swift; sourceTree = "<group>"; };
 		F5C4230B283CE69900A385B5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F5EDE18D283F8F7C00E96A3A /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		F5EDE191283F939500E96A3A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -300,6 +303,7 @@
 			children = (
 				F52F23C12850AE250031179E /* CircleStyle.swift */,
 				F52F23BE2850A04A0031179E /* NavigationButtons.swift */,
+				F594095128524CBE00AE5B75 /* NavigationTitle.swift */,
 				F58CB7832840D65100B74FD5 /* VerticalRectangleStyle.swift */,
 			);
 			path = ViewStyle;
@@ -529,6 +533,7 @@
 				F52F23BF2850A04A0031179E /* NavigationButtons.swift in Sources */,
 				50CF1BC0283CD8DA00324353 /* Deck+CoreDataProperties.swift in Sources */,
 				7151973E2851E5B80049B474 /* FireworkParticlesGeometryEffect.swift in Sources */,
+				F594095228524CBE00AE5B75 /* NavigationTitle.swift in Sources */,
 				50CF1BC3283CD8DA00324353 /* Card+CoreDataClass.swift in Sources */,
 				50CF1BCA283CD9C900324353 /* DataController.swift in Sources */,
 				5C596C6C283FBF750097C7B8 /* DeckPopoverView.swift in Sources */,
@@ -570,6 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F594095328524CBE00AE5B75 /* NavigationTitle.swift in Sources */,
 				5C596C2D283E17700097C7B8 /* CardGameView.swift in Sources */,
 				F52F23C02850A04A0031179E /* NavigationButtons.swift in Sources */,
 				50CF1BB8283CD78300324353 /* Etalide.xcdatamodeld in Sources */,
