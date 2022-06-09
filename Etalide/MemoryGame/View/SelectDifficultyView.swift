@@ -24,21 +24,20 @@ struct SelectDifficultyView: View {
 				.padding(.bottom, 20)
 			
 			ForEach(MemoryDifficulty.allCases) { difficulty in
-				NavigationLink {
-					MemoryView(deck: deck, difficulty: difficulty)
-				} label: {
-					
-					// I don't know why this doesn't extract the String for Localisation.
-					Text(String(localized: String.LocalizationValue(difficulty.rawValue)))
-						.font(.title.weight(.semibold))
-						.foregroundColor(.white)
-						.padding(.vertical)
-						.frame(maxWidth: .infinity)
-						.background {
-							RoundedRectangle(cornerRadius: 15)
-								.foregroundColor(Color(difficulty.rawValue))
-						}
-//						.padding(.bottom, 8)
+				if difficulty.amount <= (deck.cards ?? []).count {
+					NavigationLink {
+						MemoryView(deck: deck, difficulty: difficulty)
+					} label: {
+						Text(String(localized: String.LocalizationValue(difficulty.rawValue)))
+							.font(.title.weight(.semibold))
+							.foregroundColor(.white)
+							.padding(.vertical)
+							.frame(maxWidth: .infinity)
+							.background {
+								RoundedRectangle(cornerRadius: 15)
+									.foregroundColor(Color(difficulty.rawValue))
+							}
+					}
 				}
 			}
 			
