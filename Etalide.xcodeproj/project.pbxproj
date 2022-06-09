@@ -64,8 +64,6 @@
 		F58A8D27283CC3B8000A859A /* EtalideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D26283CC3B8000A859A /* EtalideUITests.swift */; };
 		F58A8D29283CC3B8000A859A /* EtalideUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D28283CC3B8000A859A /* EtalideUITestsLaunchTests.swift */; };
 		F58C3778284E0B4300623783 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C3777284E0B4300623783 /* Orientation.swift */; };
-		F58C3779284E0B4300623783 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C3777284E0B4300623783 /* Orientation.swift */; };
-		F58C377A284E0B4300623783 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C3777284E0B4300623783 /* Orientation.swift */; };
 		F58CB7842840D65100B74FD5 /* VerticalRectangleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CB7832840D65100B74FD5 /* VerticalRectangleStyle.swift */; };
 		F58CB7852840D65100B74FD5 /* VerticalRectangleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CB7832840D65100B74FD5 /* VerticalRectangleStyle.swift */; };
 		F58CB7F82845690800B74FD5 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = F58CB7F72845690800B74FD5 /* Images */; };
@@ -246,12 +244,9 @@
 		F58A8D0A283CC3B8000A859A /* Etalide */ = {
 			isa = PBXGroup;
 			children = (
-				F5F2B0B528461DD000F5FFB3 /* Info.plist */,
-				50314FB8284E454F005A1A7E /* Localizable.strings */,
 				F58A8D0B283CC3B8000A859A /* EtalideApp.swift */,
 				F58A8D0D283CC3B8000A859A /* ContentView.swift */,
 				5C596C6B283FBF750097C7B8 /* DeckPopoverView.swift */,
-				F58C3777284E0B4300623783 /* Orientation.swift */,
 				5C596C6F283FC7180097C7B8 /* DeckOfCardsView.swift */,
 				5C596C6D283FC34A0097C7B8 /* ButtonView.swift */,
 				5C596C25283E16EC0097C7B8 /* FlashCardGame */,
@@ -261,6 +256,8 @@
 				F5C42308283CDBD600A385B5 /* CoreData */,
 				F58CB7862840E42700B74FD5 /* ViewStyle */,
 				F59409542852566700AE5B75 /* Extensions */,
+				F5F2B0B528461DD000F5FFB3 /* Info.plist */,
+				50314FB8284E454F005A1A7E /* Localizable.strings */,
 				F58CB7F72845690800B74FD5 /* Images */,
 				F58A8D0F283CC3B8000A859A /* Assets.xcassets */,
 				F58A8D11283CC3B8000A859A /* Preview Content */,
@@ -307,6 +304,7 @@
 		F59409542852566700AE5B75 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F58C3777284E0B4300623783 /* Orientation.swift */,
 				50FC97E62844D78700410666 /* Color.swift */,
 			);
 			path = Extensions;
@@ -565,7 +563,6 @@
 				50CF1BBE283CD8DA00324353 /* Deck+CoreDataClass.swift in Sources */,
 				5C596C2C283E17700097C7B8 /* CardGameView.swift in Sources */,
 				50CF1BC7283CD8DA00324353 /* Card+CoreDataProperties.swift in Sources */,
-				F58C3779284E0B4300623783 /* Orientation.swift in Sources */,
 				50CF1BC1283CD8DA00324353 /* Deck+CoreDataProperties.swift in Sources */,
 				F5EDE18F283F8F8100E96A3A /* ImageManager.swift in Sources */,
 				F58A8D1D283CC3B8000A859A /* EtalideTests.swift in Sources */,
@@ -589,7 +586,6 @@
 				50CF1BC5283CD8DA00324353 /* Card+CoreDataClass.swift in Sources */,
 				50CF1BBF283CD8DA00324353 /* Deck+CoreDataClass.swift in Sources */,
 				F54D603B284901F2008B732D /* DeckPreview.swift in Sources */,
-				F58C377A284E0B4300623783 /* Orientation.swift in Sources */,
 				F58CB7852840D65100B74FD5 /* VerticalRectangleStyle.swift in Sources */,
 				F58A8D29283CC3B8000A859A /* EtalideUITestsLaunchTests.swift in Sources */,
 				5C596C29283E17050097C7B8 /* SwipableCardView.swift in Sources */,
