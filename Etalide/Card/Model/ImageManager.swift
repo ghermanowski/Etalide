@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 /// Provides access to the Images directory.
 class ImageManager {
@@ -17,6 +18,9 @@ class ImageManager {
 	private init() {}
 	
 	private let fileManager = FileManager.default
+	
+	/// Stores previously loaded images.
+	var cache = [URL: Image]()
 	
 	/// URL to the Images directory.
 	private lazy var imagesURL: URL = {
