@@ -54,6 +54,7 @@
 "Rooster" = "Gallo";
 "Sheep" = "Pecora";
 "Tiger" = "Tigre";
+"Pig" = "Maiale";
 
 /* Food Deck. */
 "Food" = "Cibo";

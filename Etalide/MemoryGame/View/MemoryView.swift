@@ -21,6 +21,8 @@ struct MemoryView: View {
 	
 	private let difficulty: MemoryDifficulty
 	
+	@State private var showingCards = false
+	
 	var body: some View {
 		let padding: CGFloat = 24
 		
@@ -67,6 +69,26 @@ struct MemoryView: View {
 				Image(systemName: "chevron.left")
 			}
 			.buttonStyle(.circle)
+		}
+		.navigationButtons(alignment: .topTrailing) {
+			Button {
+				//Show all cards
+				showingCards.toggle()
+				
+				for card in cardStore.duplicatedCards {
+					if showingCards {
+						
+						cardStore.selectedCards.append(card)
+						
+					} else {
+						cardStore.selectedCards.removeAll()
+					}
+				}
+			} label: {
+				Image(systemName: "eye.circle.fill")
+			}
+			.buttonStyle(.circle)
+			
 		}
 	}
 }
