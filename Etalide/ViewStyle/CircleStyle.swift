@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct CircleStyle: ButtonStyle {
+	let invertColours: Bool
+	
 	func makeBody(configuration: Configuration) -> some View {
+		let tintColour = configuration.role == .destructive ? Color.red : .backgroundBlue
+		
 		configuration.label
 			.symbolVariant(.circle.fill)
 			.symbolRenderingMode(.palette)
-			.foregroundStyle(.white, configuration.role == .destructive ? .red : .backgroundBlue)
+			.foregroundStyle(
+				invertColours ? tintColour : .white,
+				invertColours ? .white : tintColour
+			)
 			.font(.system(.largeTitle).weight(.semibold))
 			.scaleEffect(configuration.isPressed ? 0.85 : 1)
 			.opacity(configuration.isPressed ? 0.75 : 1)
@@ -21,6 +28,10 @@ struct CircleStyle: ButtonStyle {
 
 extension ButtonStyle where Self == CircleStyle {
 	static var circle: CircleStyle {
-		CircleStyle()
+		circle()
+	}
+	
+	static func circle(invertColours: Bool = false) -> CircleStyle {
+		CircleStyle(invertColours: invertColours)
 	}
 }
