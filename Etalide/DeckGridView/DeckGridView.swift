@@ -46,12 +46,13 @@ struct DeckGridView: View {
 				}
 			
 			ScrollView {
+				let padding: CGFloat = isLandscape ? 40 : 30
 				let columns = Array(
-					repeating: GridItem(spacing: 20),
+					repeating: GridItem(spacing: padding),
 					count: isLandscape ? 4 : 3
 				)
 				
-				LazyVGrid(columns: columns, spacing: 20) {
+				LazyVGrid(columns: columns, spacing: padding) {
 					ForEach(decks) { deck in
 						Button {
 							selectedDeck = deck
@@ -62,7 +63,7 @@ struct DeckGridView: View {
 					}
 				}
 				.environment(\.editMode, editMode)
-				.padding()
+				.padding([.horizontal, .bottom], padding)
 			}
 		}
 		.navigationBarHidden(true)
