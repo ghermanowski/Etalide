@@ -17,33 +17,8 @@ struct Decks: View {
 	@FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) private var decks: FetchedResults<Deck>
     
 	var body: some View {
-		VStack {
-			Text("Decks")
-				.font(.largeTitle.weight(.bold))
-				.foregroundColor(.backgroundBlue)
-				.padding(.vertical)
-				.frame(maxWidth: .infinity)
-				.background(Color.white)
-				.navigationButtons(alignment: .topTrailing) {
-					Button {
-						_ = Deck(context: moc, name: "TestDeck")
-						saveContext()
-					} label: {
-						Image(systemName: "plus")
-					}
-					.buttonStyle(.circle)
-					
-					Button {
-						if editMode?.wrappedValue != .active {
-							editMode?.wrappedValue = .active
-						} else {
-							editMode?.wrappedValue = .inactive
-						}
-					} label: {
-						Image(systemName: "pencil")
-					}
-					.buttonStyle(.circle)
-				}
+		VStack(spacing: .zero) {
+			NavigationTitle(String(localized: "Decks"), invertColours: true)
 			
 			ScrollView {
 				let padding: CGFloat = isLandscape ? 40 : 30
@@ -63,10 +38,32 @@ struct Decks: View {
 					}
 				}
 				.environment(\.editMode, editMode)
-				.padding([.horizontal, .bottom], padding)
+				.padding(padding)
 			}
 		}
 		.navigationBarHidden(true)
+		.background(Color.background)
+		.navigationButtons(alignment: .topTrailing, padding: 16) {
+			Button {
+				_ = Deck(context: moc, name: "TestDeck")
+				saveContext()
+			} label: {
+				Image(systemName: "plus")
+			}
+			.buttonStyle(.circle(invertColours: true))
+			
+			Button {
+				if editMode?.wrappedValue != .active {
+					editMode?.wrappedValue = .active
+				} else {
+					editMode?.wrappedValue = .inactive
+				}
+			} label: {
+				Image(systemName: "pencil")
+			}
+			.buttonStyle(.circle(invertColours: true))
+			.padding(.trailing, 8)
+		}
 		.overlay {
 			if let selectedDeck = selectedDeck {
 				DeckPopoverView(
