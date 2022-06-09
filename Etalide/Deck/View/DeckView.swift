@@ -16,7 +16,7 @@ struct DeckView: View {
 			animation: .default
 		)
 	}
-	
+	@State private var showEditCardPopover = false
 	@FetchRequest var decks: FetchedResults<Deck>
 	
 	var body: some View {
@@ -26,7 +26,7 @@ struct DeckView: View {
 			let columns = Array(repeating: GridItem(.flexible()), count: 5)
 			
 			LazyVGrid(columns: columns, spacing: 20) {
-				NewCards(in: deck)
+                NewCards(in: deck, showEditCardPopover: $showEditCardPopover)
 				
 				if let cards = deck.allCards {
 					ForEach(cards.sorted()) { card in
@@ -36,6 +36,12 @@ struct DeckView: View {
 			}
 			.padding()
 		}
+        .overlay(content: {
+            if showEditCardPopover {
+            CardPopupView(showPopover: $showEditCardPopover)
+                .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.8, alignment: .center)
+            }
+        })
 		.toolbar {
 			ToolbarItem(placement: .primaryAction) {
 				EditButton()
@@ -47,16 +53,19 @@ struct DeckView: View {
 }
 
 private struct NewCards: View {
-	init(in deck: Deck) {
+    init(in deck: Deck, showEditCardPopover: Binding<Bool>) {
+        _showEditCardPopover = showEditCardPopover
 		self.deck = deck
 	}
 	
 	@State private var newCardsCount = 0
+    @Binding var showEditCardPopover: Bool
 	
 	private let deck: Deck
 	
 	var body: some View {
 		Button {
+            showEditCardPopover = true
 			withAnimation {
 				newCardsCount += 1
 			}
@@ -64,7 +73,7 @@ private struct NewCards: View {
 			Label("New Card", systemImage: "plus.rectangle.portrait.fill")
 		}
 		.buttonStyle(.verticalRectangle)
-		
+        
 		ForEach(0..<newCardsCount, id: \.self) { _ in
 			CardView(in: deck)
 		}

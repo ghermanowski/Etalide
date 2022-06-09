@@ -40,6 +40,7 @@
 		5C596C6C283FBF750097C7B8 /* DeckPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C6B283FBF750097C7B8 /* DeckPopoverView.swift */; };
 		5C596C6E283FC34B0097C7B8 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C6D283FC34A0097C7B8 /* ButtonView.swift */; };
 		5C596C70283FC7180097C7B8 /* DeckOfCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C6F283FC7180097C7B8 /* DeckOfCardsView.swift */; };
+		5CBCAD97285207EB00EAEBE4 /* CardPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCAD96285207EB00EAEBE4 /* CardPopupView.swift */; };
 		6C7C3B0D283E284500F42669 /* DeviceRotationViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C3B0C283E284500F42669 /* DeviceRotationViewModifier.swift */; };
 		6C7C3B0F283E3B7A00F42669 /* DeckGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C3B0E283E3B7A00F42669 /* DeckGridView.swift */; };
 		71AE0B132844D3F700A128F2 /* SelectDifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE0B122844D3F600A128F2 /* SelectDifficultyView.swift */; };
@@ -116,6 +117,7 @@
 		5C596C6B283FBF750097C7B8 /* DeckPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckPopoverView.swift; sourceTree = "<group>"; };
 		5C596C6D283FC34A0097C7B8 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		5C596C6F283FC7180097C7B8 /* DeckOfCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCardsView.swift; sourceTree = "<group>"; };
+		5CBCAD96285207EB00EAEBE4 /* CardPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPopupView.swift; sourceTree = "<group>"; };
 		6C7C3B0C283E284500F42669 /* DeviceRotationViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRotationViewModifier.swift; sourceTree = "<group>"; };
 		6C7C3B0E283E3B7A00F42669 /* DeckGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckGridView.swift; sourceTree = "<group>"; };
 		71AE0B122844D3F600A128F2 /* SelectDifficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDifficultyView.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 		F5C42314283CED0500A385B5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5CBCAD96285207EB00EAEBE4 /* CardPopupView.swift */,
 				F5EDE191283F939500E96A3A /* CardView.swift */,
 				F5F2B0B32846094D00F5FFB3 /* CardImageView.swift */,
 				F5C4230B283CE69900A385B5 /* ImagePicker.swift */,
@@ -516,6 +519,7 @@
 				50CF1BD2283CE17B00324353 /* MemoryCardView.swift in Sources */,
 				F58C3774284DF23000623783 /* OrientationManager.swift in Sources */,
 				5C596C70283FC7180097C7B8 /* DeckOfCardsView.swift in Sources */,
+				5CBCAD97285207EB00EAEBE4 /* CardPopupView.swift in Sources */,
 				5C596C27283E17050097C7B8 /* SwipableCardView.swift in Sources */,
 				F58CB7842840D65100B74FD5 /* VerticalRectangleStyle.swift in Sources */,
 				F5EDE192283F939500E96A3A /* CardView.swift in Sources */,

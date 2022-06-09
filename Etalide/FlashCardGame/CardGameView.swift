@@ -27,7 +27,7 @@ struct CardGameView: View {
                         ForEach(cards, id: \.self) { card in
                             SwipableCardView(card: card, onRemove:
                                 { removedCard in
-                                withAnimation(.easeOut) {
+                                withAnimation(.interactiveSpring()) {
                                     cards.removeAll { $0.id == removedCard.id}
                                 }
                             }
