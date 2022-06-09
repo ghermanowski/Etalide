@@ -17,7 +17,7 @@ struct DeckPreview: View {
 	
 	private let deck: Deck
 	
-	@ViewBuilder func cardView(_ card: Card?) -> some View {
+	@ViewBuilder private func cardView(_ card: Card?) -> some View {
 		Group {
 			if let imageURL = card?.imageURL {
 				CardImageView(imageURL)
@@ -50,13 +50,14 @@ struct DeckPreview: View {
 				.foregroundColor(.white)
 				.shadow(color: .black.opacity(0.5), radius: 5)
 		}
-		.navigationButtons(alignment: .topTrailing) {
+		.navigationButtons(alignment: .topTrailing, padding: 16) {
 			if editMode?.wrappedValue == .active {
 				Button(role: .destructive, action: deleteDeck) {
 					Label("Delete", systemImage: "trash")
 						.labelStyle(.iconOnly)
 				}
 				.buttonStyle(.circle)
+				.padding(.trailing)
 			}
 		}
 	}
