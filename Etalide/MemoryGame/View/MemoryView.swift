@@ -71,24 +71,11 @@ struct MemoryView: View {
 				.transition(.opacity.animation(.default.delay(1)))
 			}
 		}
-		.animation(.default, value: cardStore.duplicatedCards.count != cardStore.hiddenCards.count)
 		.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-		.background(Color(uiColor: .systemBackground))
+		.background(Color.background)
 		.environmentObject(cardStore)
-		.onAppear(perform: cardStore.createGame)
-		.onChange(of: cardStore.selectedCards.count) { _ in
-			if cardStore.selectedCards.count == 2 {
-				Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
-					cardStore.checkPair()
-					
-					Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { _ in
-						withAnimation {
-							cardStore.selectedCards.removeAll()
-						}
-					}
-				}
-			}
-		}
+		.animation(.default, value: cardStore.duplicatedCards.count != cardStore.hiddenCards.count)
+		.statusBarHidden(true)
 		.navigationBarHidden(true)
 		.navigationButtons(alignment: .topLeading) {
 			Button {
@@ -113,10 +100,20 @@ struct MemoryView: View {
 					}
 				}
 			} label: {
-				Image(systemName: "eye.circle.fill")
+				Image(systemName: "eye")
 			}
 			.buttonStyle(.circle)
-			
+		}
+		.onChange(of: cardStore.selectedCards.count) { _ in
+			if cardStore.selectedCards.count == 2 {
+				Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+					cardStore.checkPair()
+					
+					Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
+						cardStore.selectedCards.removeAll()
+					}
+				}
+			}
 		}
 	}
 }
