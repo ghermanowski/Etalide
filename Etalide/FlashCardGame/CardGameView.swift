@@ -8,18 +8,21 @@
 import SwiftUI
 
 struct CardGameView: View {
-    
-    init(_ deck: Deck, cards: [Card]) {
+    init(_ deck: Deck) {
         self.deck = deck
-        self.cards = deck.allCards!
+        _cards = State(initialValue: deck.allCards!)
     }
     
+	@Environment(\.dismiss) private var dismiss
+	
     @State var cards: [Card]
     
     private let deck: Deck
     
     var body: some View {
         VStack {
+			NavigationTitle(String(localized: "Flashcards"))
+			
             GeometryReader { geometry in
                 VStack {
                     ZStack {
@@ -62,15 +65,26 @@ struct CardGameView: View {
             }
         }
         .padding()
-		.navigationBarTitle("Flashcards")
-		.navigationBarTitleDisplayMode(.inline)
-    }
+		.padding(.bottom)
+		.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+		.background(Color.background)
+		.statusBarHidden(true)
+		.navigationBarHidden(true)
+		.navigationButtons(alignment: .topLeading) {
+			Button {
+				dismiss()
+			} label: {
+				Image(systemName: "chevron.left")
+			}
+			.buttonStyle(.circle)
+		}
+	}
 }
 
 struct CardGameView_Previews: PreviewProvider {
-    
-    static var deck = Deck()
-    static var previews: some View {
-        CardGameView(deck, cards: deck.allCards!)
-    }
+	static var deck = Deck()
+	
+	static var previews: some View {
+		CardGameView(deck)
+	}
 }
