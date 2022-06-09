@@ -21,9 +21,7 @@ struct CardGameView: View {
     
     var body: some View {
         VStack {
-			NavigationTitle(String(localized: "Flashcards"))
-			
-            GeometryReader { geometry in
+			GeometryReader { geometry in
                 VStack {
                     ZStack {
                         
@@ -64,8 +62,7 @@ struct CardGameView: View {
                 
             }
         }
-        .padding()
-		.padding(.bottom)
+        .padding(64)
 		.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 		.background(Color.background)
 		.statusBarHidden(true)
