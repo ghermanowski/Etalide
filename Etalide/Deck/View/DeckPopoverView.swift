@@ -63,14 +63,14 @@ struct DeckPopoverView: View {
 						isShowingDifficulties = true
 					}
 				} label: {
-					ButtonView(imageTitle: "MemoryGameButton", title: "Play Memory")
+					GameButton(imageTitle: "MemoryGameButton", title: "Play Memory")
 				}
 			}
 			
 			NavigationLink {
 				CardGameView(deck)
 			} label: {
-				ButtonView(imageTitle: "FlashcardButton", title: String(localized: "Play FlashCards"))
+				GameButton(imageTitle: "FlashcardButton", title: String(localized: "Play FlashCards"))
 			}
 		}
 		.overlay {
@@ -122,7 +122,7 @@ struct DeckPopoverView: View {
 		}
 		.navigationButtons(alignment: .top) {
 			Text(deck.localisedName ?? deck.wrappedName)
-				.font(.system(.largeTitle).weight(.semibold))
+				.font(.system(.largeTitle).weight(.bold))
 				.foregroundColor(.accentColor)
 		}
 		.navigationButtons(alignment: .topTrailing) {
@@ -173,10 +173,7 @@ struct DeckPopoverView: View {
 		}
 		.cornerRadius(40)
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
-		.background {
-			Color.black.opacity(0.75)
-				.onTapGesture(perform: dismiss)
-		}
+		.background(Color.black.opacity(0.75))
     }
 	
 	private func dismiss() {
