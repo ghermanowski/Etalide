@@ -2,7 +2,7 @@
 //  Orientation.swift
 //  Etalide
 //
-//  Created by Gregor Hermanowski on 6. June.
+//  Created by Gregor Hermanowski on 06/06/22.
 //
 
 import SwiftUI
