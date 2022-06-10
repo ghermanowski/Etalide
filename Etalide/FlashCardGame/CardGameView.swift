@@ -16,6 +16,7 @@ struct CardGameView: View {
 	@Environment(\.dismiss) private var dismiss
 	
     @State var cards: [Card]
+	@State var isShowingAlert = false
     
     private let deck: Deck
     
@@ -65,6 +66,11 @@ struct CardGameView: View {
         .padding(64)
 		.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 		.background(Color.background)
+		.overlay {
+			if isShowingAlert {
+				InfoAlert(isShowingAlert: $isShowingAlert)
+			}
+		}
 		.statusBar(hidden: true)
 		.navigationBarHidden(true)
 		.navigationButtons(alignment: .topLeading) {
@@ -77,12 +83,13 @@ struct CardGameView: View {
 		}
 		.navigationButtons(alignment: .topTrailing) {
 			Button {
-				// change the boolean for showing the alert that explains how to show the whole word
+				isShowingAlert = true
 			} label: {
 				Image(systemName: "info")
 			}
 			.buttonStyle(.circle)
 		}
+		
 	}
 }
 
