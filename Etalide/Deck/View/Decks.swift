@@ -41,6 +41,7 @@ struct Decks: View {
 				.padding(padding)
 			}
 		}
+        
 		.navigationBarHidden(true)
 		.background(Color.background)
 		.navigationButtons(alignment: .topTrailing, padding: 16) {

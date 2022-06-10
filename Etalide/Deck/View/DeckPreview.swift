@@ -16,6 +16,7 @@ struct DeckPreview: View {
 	@Environment(\.managedObjectContext) private var moc
 	
 	private let deck: Deck
+    @State private var showAlert = false
 	
 	@ViewBuilder private func cardView(_ card: Card?) -> some View {
 		Group {
@@ -44,6 +45,15 @@ struct DeckPreview: View {
 				}
 			}
 		}
+//        .confirmationDialog("Delete deck", isPresented: $showAlert, actions: {
+//            Button("Delete") {
+//                deleteDeck()
+//            }
+//            Button("Cancel", role: .cancel) { }
+//        }, message: {
+//            Text("Are you sure you want to delete deck of cards?")
+//
+//        })
 		.overlay {
 			Text(deck.localisedName ?? deck.wrappedName)
 				.font(.largeTitle.bold())
@@ -52,10 +62,23 @@ struct DeckPreview: View {
 		}
 		.navigationButtons(alignment: .topTrailing, padding: 16) {
 			if editMode?.wrappedValue == .active {
-				Button(role: .destructive, action: deleteDeck) {
-					Label("Delete", systemImage: "trash")
-						.labelStyle(.iconOnly)
-				}
+                Button(role: .destructive){
+                    showAlert.toggle()
+                } label: {
+                    Label("Delete", systemImage: "trash")
+                        .labelStyle(.iconOnly)
+                }
+                .confirmationDialog("Delete deck", isPresented: $showAlert, titleVisibility: .visible) {
+                    Button("Delete deck", role: .destructive) {
+                        deleteDeck()
+                    }
+                } message: {
+                    Text("Are you sure you want to delete deck of cards?")
+                }
+//                Button(role: .destructive, action: showAlert.toggle()) {
+//					Label("Delete", systemImage: "trash")
+//						.labelStyle(.iconOnly)
+//				}
 				.buttonStyle(.circle)
 				.padding(.trailing)
 			}
