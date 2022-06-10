@@ -86,23 +86,24 @@ struct MemoryView: View {
 			.buttonStyle(.circle)
 		}
 		.navigationButtons(alignment: .topTrailing) {
-			Button {
-				//Show all cards
-				showingCards.toggle()
-				
-				for card in cardStore.duplicatedCards {
-					if showingCards {
-						
-						cardStore.selectedCards.append(card)
-						
-					} else {
-						cardStore.selectedCards.removeAll()
+			if cardStore.duplicatedCards.count != cardStore.hiddenCards.count {
+				Button {
+					showingCards.toggle()
+					
+					for card in cardStore.duplicatedCards {
+						if showingCards {
+							
+							cardStore.selectedCards.append(card)
+							
+						} else {
+							cardStore.selectedCards.removeAll()
+						}
 					}
+				} label: {
+					Image(systemName: "eye")
 				}
-			} label: {
-				Image(systemName: "eye")
+				.buttonStyle(.circle)
 			}
-			.buttonStyle(.circle)
 		}
 		.onChange(of: cardStore.selectedCards.count) { _ in
 			if cardStore.selectedCards.count == 2 {
