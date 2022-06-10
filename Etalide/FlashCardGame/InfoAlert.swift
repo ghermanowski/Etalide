@@ -11,38 +11,39 @@ struct InfoAlert: View {
 	@Binding var isShowingAlert: Bool
 	
 	var body: some View {
-		
-			VStack(alignment: .center, spacing: 20) {
-				Text("Instructions")
-					.fontWeight(.bold)
-					.font(.system(size: 40))
-				Text("""
-		 Swipe horizontaly for see the next card
-		 Tap on the card to reveal the entire word
-		 """)
-					.font(.system(size: 30))
-					.fontWeight(.medium)
-					.multilineTextAlignment(.leading)
-				Button(action: {
-					self.isShowingAlert.toggle()
-				} ) {
-					Text("Ok")
-						.foregroundColor(.blue)
-						.fontWeight(.medium)
-						.font(.system(size: 30))
-				}
+		VStack(spacing: 32) {
+			Text("Instructions")
+				.fontWeight(.bold)
+				.font(.largeTitle)
+			
+			Text("""
+   Swipe horizontally to see the next card.
+   Tap on the card to reveal the entire word.
+   """)
+			.font(.title2)
+			.fontWeight(.medium)
+			.multilineTextAlignment(.leading)
+			.padding(.bottom, 8)
+			
+			Button(action: {
+				self.isShowingAlert.toggle()
+			} ) {
+				Text("OK")
+					.font(.title2.weight(.bold))
 			}
-			.padding(48)
-			//.background {
-				//Color.white.clipShape(RoundedRectangle(cornerRadius: 45)
-				//	.strokeBorder(Color.accentColor, lineWidth: 10).foregroundColor(.white))
-			//}
-			.frame(maxWidth: .infinity, maxHeight: .infinity)
+		}
+		.padding(32)
+		.background {
+			RoundedRectangle(cornerRadius: 45, style: .continuous)
+				.fill(Color.background2)
+				.shadow(radius: 5)
+		}
+		.frame(maxWidth: .infinity, maxHeight: .infinity)
 	}
 }
 
-struct MyAlert_Previews: PreviewProvider {
-    static var previews: some View {
+struct InfoAlert_Previews: PreviewProvider {
+	static var previews: some View {
 		InfoAlert(isShowingAlert: .constant(true))
-    }
+	}
 }
