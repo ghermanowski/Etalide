@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct Decks: View {
-	@Environment(\.editMode) private var editMode
 	@Environment(\.isLandscape) private var isLandscape
-	@Environment(\.managedObjectContext) private var moc
 	
 	@State private var selectedDeck: Deck?
     
@@ -37,7 +35,6 @@ struct Decks: View {
 						.buttonStyle(.verticalRectangle)
 					}
 				}
-				.environment(\.editMode, editMode)
 				.padding(padding)
 			}
 		}
@@ -46,21 +43,9 @@ struct Decks: View {
 		.background(Color.background)
 		.navigationButtons(alignment: .topTrailing, padding: 16) {
 			Button {
-				_ = Deck(context: moc, name: "TestDeck")
-				saveContext()
+				// TODO: Add deck
 			} label: {
 				Image(systemName: "plus")
-			}
-			.buttonStyle(.circle(invertColours: true))
-			
-			Button {
-				if editMode?.wrappedValue != .active {
-					editMode?.wrappedValue = .active
-				} else {
-					editMode?.wrappedValue = .inactive
-				}
-			} label: {
-				Image(systemName: "pencil")
 			}
 			.buttonStyle(.circle(invertColours: true))
 			.padding(.trailing, 8)
@@ -72,14 +57,6 @@ struct Decks: View {
 					isShowingPopover: Binding(get: { self.selectedDeck != nil },
 											  set: { self.selectedDeck = $0 ? selectedDeck : nil }))
 			}
-		}
-	}
-	
-	private func saveContext() {
-		do {
-			try moc.save()
-		} catch {
-			fatalError("Unresolved error: \(error.localizedDescription)")
 		}
 	}
 }
