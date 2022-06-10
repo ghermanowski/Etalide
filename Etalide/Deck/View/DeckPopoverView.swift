@@ -17,10 +17,22 @@ struct DeckPopoverView: View {
     
     private let deck: Deck
     
-    @Binding var isShowingPopover: Bool
+    @Binding private var isShowingPopover: Bool
 	
-	@State var isShowingDifficulties: Bool = false
+	@State private var isShowingDifficulties: Bool = false
+	@State private var selectedCard: Card?
     
+	@ViewBuilder private func cardView(_ card: Card) -> some View {
+		if let imageURL = card.imageURL {
+			Button {
+				selectedCard = card
+			} label: {
+				CardImageView(imageURL)
+					.cornerRadius(15)
+			}
+		}
+	}
+	
 	@ViewBuilder private var cardGrid: some View {
 		let columns = Array(
 			repeating: GridItem(spacing: 16),
@@ -31,10 +43,7 @@ struct DeckPopoverView: View {
 			LazyVGrid(columns: columns, spacing: 16) {
 				if let cards = deck.allCards {
 					ForEach(cards) { card in
-						if let imageURL = card.imageURL {
-							CardImageView(imageURL)
-								.cornerRadius(15)
-						}
+						cardView(card)
 					}
 				}
 			}
@@ -82,6 +91,7 @@ struct DeckPopoverView: View {
 						.frame(width: 1.5)
 						.background(Color.accentColor)
 						.padding(.vertical, 20)
+						.padding(.bottom, 20)
                     
 					gameSelection
                 }
@@ -92,7 +102,6 @@ struct DeckPopoverView: View {
 		.frame(width: UIScreen.main.bounds.width * (isLandscape ? 0.85 : 0.95),
 			   height: UIScreen.main.bounds.height * (isLandscape ? 0.75 : 0.65))
         .background(.white)
-        .cornerRadius(40)
 		.navigationButtons(alignment: .topLeading) {
 			Button {
 				isShowingPopover = false
@@ -109,6 +118,19 @@ struct DeckPopoverView: View {
 			}
 			.buttonStyle(.circle)
 		}
+		.overlay {
+			if let card = selectedCard {
+				CardPopupView(
+					card,
+					deck: deck,
+					showPopover: Binding(
+						get: { selectedCard != nil },
+						set: { _ in selectedCard = nil }
+					)
+				)
+			}
+		}
+		.cornerRadius(40)
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
 		.background(Color.primary.opacity(0.75))
     }

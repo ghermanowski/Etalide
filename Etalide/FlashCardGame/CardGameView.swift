@@ -75,6 +75,14 @@ struct CardGameView: View {
 			}
 			.buttonStyle(.circle)
 		}
+		.navigationButtons(alignment: .topTrailing) {
+			Button {
+				// change the boolean for showing the alert that explains how to show the whole word
+			} label: {
+				Image(systemName: "info")
+			}
+			.buttonStyle(.circle)
+		}
 	}
 }
 

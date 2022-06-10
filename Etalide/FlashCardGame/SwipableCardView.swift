@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SwipableCardView: View {
     
+	@State var showFirstLetter = true
     @State private var translation: CGSize = .zero
 //    @State var opacity: Double = 1.0
     
@@ -26,11 +27,31 @@ struct SwipableCardView: View {
         gesture.translation.width / geometry.size.width
     }
     
+	@ViewBuilder var cardView: some View {
+		if let imageURL = card.imageURL {
+			CardImageView(imageURL)
+				.overlay(alignment: .bottom) {
+					if let cardName = card.name {
+						Text(showFirstLetter ? String(cardName.prefix(1)) : cardName)
+							.font(Font.system(.largeTitle, design: .serif).weight(.bold))
+							.foregroundStyle(.regularMaterial)
+							.multilineTextAlignment(.center)
+							.frame(maxWidth: .infinity)
+							.padding(.vertical)
+							.background(Color.accentColor)
+					}
+				}
+				.cornerRadius(30)
+				.onTapGesture {
+					showFirstLetter.toggle()
+				}
+			
+		}
+	}
+	
     var body: some View {
         GeometryReader { geometry in
-			
-            CardView(card)
-                .frame(width: geometry.size.width)
+			cardView
                 .frame(width: geometry.size.width, height: geometry.size.height)
                 //.opacity(opacity)
             //Update the offset of the view based on whatever values are in the width/height of our translation. This will move the view exactly where we are dragging it.

@@ -36,12 +36,6 @@ struct DeckView: View {
 			}
 			.padding()
 		}
-        .overlay(content: {
-            if showEditCardPopover {
-            CardPopupView(showPopover: $showEditCardPopover)
-                .frame(width: UIScreen.main.bounds.width * 0.8, height: UIScreen.main.bounds.height * 0.8, alignment: .center)
-            }
-        })
 		.toolbar {
 			ToolbarItem(placement: .primaryAction) {
 				EditButton()
