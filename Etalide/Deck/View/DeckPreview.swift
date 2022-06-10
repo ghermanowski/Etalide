@@ -68,17 +68,11 @@ struct DeckPreview: View {
                     Label("Delete", systemImage: "trash")
                         .labelStyle(.iconOnly)
                 }
-                .confirmationDialog("Delete deck", isPresented: $showAlert, titleVisibility: .visible) {
+                .confirmationDialog("Are you sure you want to delete deck of cards?", isPresented: $showAlert, titleVisibility: .visible) {
                     Button("Delete deck", role: .destructive) {
                         deleteDeck()
                     }
-                } message: {
-                    Text("Are you sure you want to delete deck of cards?")
                 }
-//                Button(role: .destructive, action: showAlert.toggle()) {
-//					Label("Delete", systemImage: "trash")
-//						.labelStyle(.iconOnly)
-//				}
 				.buttonStyle(.circle)
 				.padding(.trailing)
 			}
