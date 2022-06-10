@@ -119,6 +119,7 @@
 		5C596C6F283FC7180097C7B8 /* DeckOfCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCardsView.swift; sourceTree = "<group>"; };
 		5CBCAD96285207EB00EAEBE4 /* CardPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPopupView.swift; sourceTree = "<group>"; };
 		5CBCAD9928532B5000EAEBE4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6C749D7D2853BE65009FA6E5 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6C7C3B0E283E3B7A00F42669 /* Decks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decks.swift; sourceTree = "<group>"; };
 		7151973D2851E5B80049B474 /* FireworkParticlesGeometryEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireworkParticlesGeometryEffect.swift; sourceTree = "<group>"; };
 		719521E72853961A00260687 /* InfoAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlert.swift; sourceTree = "<group>"; };
@@ -476,6 +477,7 @@
 				Base,
 				it,
 				ru,
+				"es-419",
 			);
 			mainGroup = F58A8CFF283CC3B8000A859A;
 			productRefGroup = F58A8D09283CC3B8000A859A /* Products */;
@@ -630,6 +632,7 @@
 				50314FB9284E454F005A1A7E /* en */,
 				50314FBB284E4572005A1A7E /* it */,
 				5CBCAD9928532B5000EAEBE4 /* ru */,
+				6C749D7D2853BE65009FA6E5 /* es-419 */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
