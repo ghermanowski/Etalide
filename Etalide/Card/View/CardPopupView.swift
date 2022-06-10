@@ -78,7 +78,7 @@ struct CardPopupView: View {
 		.cornerRadius(25)
 		.navigationButtons(alignment: .topLeading, padding: 24) {
 			Button(action: dismiss) {
-				Image(systemName: "chevron.down")
+				Image(systemName: "xmark")
 			}
 			.buttonStyle(.circle)
 		}
