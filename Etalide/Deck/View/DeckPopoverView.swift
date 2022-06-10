@@ -23,6 +23,7 @@ struct DeckPopoverView: View {
 	@State private var isShowingDifficulties = false
 	@State private var selectedCard: Card?
 	@State private var showNewCardView = false
+	@State private var showDeckEditView = false
 	@State private var isDeletionRequested = false
     
 	@ViewBuilder private func cardView(_ card: Card) -> some View {
@@ -104,6 +105,10 @@ struct DeckPopoverView: View {
 				}
 				.font(.largeTitle.weight(.semibold))
 				.foregroundColor(.accentColor)
+				
+				// TODO: Localisation
+				// TODO: Edit Deck name
+				// TODO: Game button images
 			}
         }
 		.padding(.top, 96)
@@ -133,6 +138,13 @@ struct DeckPopoverView: View {
 			}
 			
 			Button {
+				showDeckEditView.toggle()
+			} label: {
+				Image(systemName: "pencil")
+			}
+			.buttonStyle(.circle)
+			
+			Button {
 				showNewCardView.toggle()
 			} label: {
 				Image(systemName: "plus")
@@ -140,7 +152,9 @@ struct DeckPopoverView: View {
 			.buttonStyle(.circle)
 		}
 		.overlay {
-			if selectedCard != nil || showNewCardView {
+			if showDeckEditView {
+				DeckPopupView(deck: deck, isPresented: $showDeckEditView)
+			} else if selectedCard != nil || showNewCardView {
 				CardPopupView(
 					selectedCard,
 					deck: deck,

@@ -8,15 +8,20 @@
 import SwiftUI
 
 struct DeckPopupView: View {
-	init(isPresented: Binding<Bool>) {
+	init(deck: Deck? = nil, isPresented: Binding<Bool>) {
 		_isPresented = isPresented
+		_deckName = State(initialValue: deck?.name ?? "")
+		
+		self.deck = deck
 	}
 	
 	@Environment(\.managedObjectContext) private var moc
 	
+	private var deck: Deck?
+	
 	@Binding private var isPresented: Bool
 	
-	@State private var deckName = ""
+	@State private var deckName: String
 	
     var body: some View {
 		VStack(spacing: 32) {
@@ -39,7 +44,7 @@ struct DeckPopupView: View {
 			.buttonStyle(.circle)
 		}
 		.navigationButtons(alignment: .top, padding: 24) {
-			Text("New Deck")
+			Text(deck == nil ? "New Deck" : "Edit")
 				.font(.largeTitle.weight(.bold))
 		}
 		.navigationButtons(alignment: .topTrailing, padding: 24) {
@@ -57,7 +62,14 @@ struct DeckPopupView: View {
 	}
 	
 	private func saveDeck() {
-		_ = Deck(context: moc, name: deckName)
+		guard let deck = deck else {
+			_ = Deck(context: moc, name: deckName)
+			saveContext()
+			dismiss()
+			return
+		}
+		
+		deck.name = deckName
 		saveContext()
 		dismiss()
 	}
