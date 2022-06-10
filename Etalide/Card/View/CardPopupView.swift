@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CardPopupView: View {
-    init(_ card: Card? = nil, in deck: Deck? = nil, showPopover: Binding<Bool>) {
+    init(_ card: Card? = nil, deck: Deck, showPopover: Binding<Bool>) {
         self.card = card
         self.deck = deck
         self._showPopover = showPopover
@@ -20,9 +20,10 @@ struct CardPopupView: View {
     @Environment(\.managedObjectContext) private var moc
     
     private let card: Card?
-    private let deck: Deck?
+    private let deck: Deck
     
     @Binding var showPopover: Bool
+	
     @State private var cardName: String
     @State private var image: UIImage?
     @State private var showImagePicker = false
@@ -86,6 +87,8 @@ struct CardPopupView: View {
         .sheet(isPresented: $showImagePicker) {
             ImagePicker(image: $image)
         }
+		.frame(maxWidth: .infinity, maxHeight: .infinity)
+		.background(Color.primary.opacity(0.75))
     }
     
     private func deleteCard(card: Card) {
@@ -131,13 +134,6 @@ struct CardPopupView: View {
         }
         
         guard let card = card else {
-            // If a new card should be created, it needs to have a deck,
-            // because currently there is no way to manage cards without decks from the UI.
-            guard let deck = deck else {
-                print("No deck present.")
-                return
-            }
-            
             let newCard = Card(context: moc, name: cardName)
             newCard.addToDeck(deck)
             saveContext()
@@ -158,6 +154,6 @@ struct CardPopupView: View {
 
 struct CardPopupView_Previews: PreviewProvider {
     static var previews: some View {
-        CardPopupView(showPopover: .constant(true))
+		CardPopupView(deck: Deck(), showPopover: .constant(true))
     }
 }
