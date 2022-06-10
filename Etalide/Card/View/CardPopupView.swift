@@ -39,6 +39,10 @@ struct CardPopupView: View {
 							.resizable()
 					} else if let imageURL = card?.imageURL {
 						CardImageView(imageURL)
+					} else {
+						Color.accentColor
+							.aspectRatio(3 / 4, contentMode: .fit)
+							.cornerRadius(25)
 					}
 				}
 				.cornerRadius(25)
@@ -93,7 +97,7 @@ struct CardPopupView: View {
     }
 	
 	private func dismiss() {
-		showPopover = false
+		showPopover.toggle()
 	}
     
     private func deleteCard() {
