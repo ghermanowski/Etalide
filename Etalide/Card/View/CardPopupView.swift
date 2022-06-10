@@ -63,10 +63,9 @@ struct CardPopupView: View {
 				}
 			}
 			.buttonStyle(.verticalRectangle)
-			.frame(width: UIScreen.main.bounds.width / 2.5)
 			
 			TextField("Name", text: $cardName)
-				.font(.system(.largeTitle).weight(.bold))
+				.font(.system(.largeTitle).weight(.semibold))
 				.multilineTextAlignment(.center)
 				.foregroundStyle(Color.accentColor)
 				.fixedSize()
@@ -74,6 +73,7 @@ struct CardPopupView: View {
 		.padding(.top, 96)
 		.padding(.horizontal, 48)
 		.padding(.bottom, 32)
+		.frame(width: UIScreen.main.bounds.width / 2.5)
 		.background(Color.white)
 		.cornerRadius(25)
 		.navigationButtons(alignment: .topLeading, padding: 24) {
@@ -84,7 +84,7 @@ struct CardPopupView: View {
 		}
 		.navigationButtons(alignment: .top, padding: 24) {
 			Text(card == nil ? "New Card" : "Edit")
-				.font(.largeTitle.weight(.bold))
+				.font(.largeTitle.weight(.semibold))
 		}
 		.navigationButtons(alignment: .topTrailing, padding: 24) {
 			if card != nil {

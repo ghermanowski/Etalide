@@ -34,7 +34,7 @@ struct DeckPopupView: View {
 		.padding(.top, 96)
 		.padding(.horizontal, 48)
 		.padding(.bottom, 32)
-		.frame(minWidth: UIScreen.main.bounds.width / 2)
+		.frame(width: UIScreen.main.bounds.width / 2.5)
 		.background(Color.white)
 		.cornerRadius(25)
 		.navigationButtons(alignment: .topLeading, padding: 24) {
