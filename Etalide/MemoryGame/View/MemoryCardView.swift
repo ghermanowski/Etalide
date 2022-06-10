@@ -30,7 +30,7 @@ struct MemoryCardView: View {
 		CardImageView(card.imageURL)
 			.overlay {
 				if !isRotated {
-					Color.backgroundBlue
+					Color.accentColor
 						.overlay {
 							if let position = position {
 								Text(verbatim: "\(position)")

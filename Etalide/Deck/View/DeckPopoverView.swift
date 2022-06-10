@@ -67,7 +67,7 @@ struct DeckPopoverView: View {
 			Text(deck.localisedName ?? deck.wrappedName)
 				.font(.system(.largeTitle))
 				.bold()
-				.foregroundColor(.backgroundBlue)
+				.foregroundColor(.accentColor)
 				.padding([.top, .horizontal], 32)
 				.frame(maxWidth: .infinity)
             
@@ -77,7 +77,7 @@ struct DeckPopoverView: View {
 						.frame(width: geometry.size.width * 0.45)
                     
                     Divider()
-						.foregroundStyle(Color.backgroundBlue)
+						.foregroundStyle(Color.accentColor)
 						.padding(.vertical, 20)
                     
 					gameSelection

@@ -22,7 +22,7 @@ struct DeckPreview: View {
 			if let imageURL = card?.imageURL {
 				CardImageView(imageURL)
 			} else {
-				Color.backgroundBlue
+				Color.accentColor
 					.aspectRatio(3 / 4, contentMode: .fit)
 			}
 		}
