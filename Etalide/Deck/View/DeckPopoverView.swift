@@ -19,8 +19,9 @@ struct DeckPopoverView: View {
     
     @Binding private var isShowingPopover: Bool
 	
-	@State private var isShowingDifficulties: Bool = false
+	@State private var isShowingDifficulties = false
 	@State private var selectedCard: Card?
+	@State private var showCardView = false
     
 	@ViewBuilder private func cardView(_ card: Card) -> some View {
 		if let imageURL = card.imageURL {
@@ -30,6 +31,7 @@ struct DeckPopoverView: View {
 				CardImageView(imageURL)
 					.cornerRadius(15)
 			}
+			.buttonStyle(.verticalRectangle)
 		}
 	}
 	
@@ -39,7 +41,7 @@ struct DeckPopoverView: View {
 			count: isLandscape ? 4 : 3
 		)
 		
-		ScrollView {
+		ScrollView(showsIndicators: false) {
 			LazyVGrid(columns: columns, spacing: 16) {
 				if let cards = deck.allCards {
 					ForEach(cards) { card in
@@ -111,17 +113,17 @@ struct DeckPopoverView: View {
 			.buttonStyle(.circle)
 		}
 		.navigationButtons(alignment: .topTrailing) {
-			NavigationLink {
-				DeckView(deck)
+			Button {
+				showCardView.toggle()
 			} label: {
-				Image(systemName: "info")
+				Image(systemName: "plus")
 			}
 			.buttonStyle(.circle)
 		}
 		.overlay {
-			if let card = selectedCard {
+			if selectedCard != nil || showCardView {
 				CardPopupView(
-					card,
+					selectedCard,
 					deck: deck,
 					showPopover: Binding(
 						get: { selectedCard != nil },
