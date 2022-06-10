@@ -13,13 +13,15 @@ struct NavigationTitle: View {
 		self.invertColours = invertColours
 	}
 	
+	@Environment(\.colorScheme) private var colourScheme
+	
 	private let title: String
 	private let invertColours: Bool
 	
     var body: some View {
 		Text(title)
 			.font(.largeTitle.weight(.bold))
-			.foregroundColor(invertColours ? .background : .accentColor)
+			.foregroundColor(invertColours ? colourScheme == .dark ? .white : .background : .accentColor)
 			.padding(.vertical)
 			.frame(maxWidth: .infinity)
 			.background(invertColours ? Color.accentColor : .background)

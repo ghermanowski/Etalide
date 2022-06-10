@@ -35,7 +35,7 @@ struct DeckPopupView: View {
 		.padding(.horizontal, 48)
 		.padding(.bottom, 32)
 		.frame(width: UIScreen.main.bounds.width / 2.5)
-		.background(Color.white)
+		.background(Color.background2)
 		.cornerRadius(25)
 		.navigationButtons(alignment: .topLeading, padding: 24) {
 			Button(action: dismiss) {
@@ -54,7 +54,11 @@ struct DeckPopupView: View {
 			.buttonStyle(.circle)
 		}
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
-		.background(Color.primary.opacity(0.75))
+		.background {
+			Color.black.opacity(0.75)
+				.onTapGesture(perform: dismiss)
+				.allowsHitTesting(false)
+		}
     }
 	
 	private func dismiss() {

@@ -107,14 +107,13 @@ struct DeckPopoverView: View {
 				.foregroundColor(.accentColor)
 				
 				// TODO: Localisation
-				// TODO: Edit Deck name
 				// TODO: Game button images
 			}
         }
 		.padding(.top, 96)
 		.frame(width: UIScreen.main.bounds.width * (isLandscape ? 0.85 : 0.95),
 			   height: UIScreen.main.bounds.height * (isLandscape ? 0.75 : 0.65))
-        .background(.white)
+        .background(Color.background2)
 		.navigationButtons(alignment: .topLeading) {
 			Button(action: dismiss) {
 				Image(systemName: "xmark")
@@ -170,7 +169,10 @@ struct DeckPopoverView: View {
 		}
 		.cornerRadius(40)
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
-		.background(Color.primary.opacity(0.75))
+		.background {
+			Color.black.opacity(0.75)
+				.onTapGesture(perform: dismiss)
+		}
     }
 	
 	private func dismiss() {

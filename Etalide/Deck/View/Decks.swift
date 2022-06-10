@@ -42,7 +42,7 @@ struct Decks: View {
         
 		.navigationBarHidden(true)
 		.background(Color.background)
-		.navigationButtons(alignment: .topTrailing, padding: 16) {
+		.navigationButtons(alignment: .topTrailing, padding: 20) {
 			Button {
 				showNewDeckView = true
 			} label: {
