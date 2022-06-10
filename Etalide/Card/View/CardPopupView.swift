@@ -29,61 +29,70 @@ struct CardPopupView: View {
     @State private var showImagePicker = false
     
     var body: some View {
-        Button {
-            showImagePicker.toggle()
-        } label: {
-            Group {
-                if let image = image {
-                    Image(uiImage: image)
-                        .resizable()
-                } else if let imageURL = card?.imageURL {
-                    CardImageView(imageURL)
-                }
-            }
-            .overlay {
-                    Label("Choose image", systemImage: "camera.fill")
-                        .labelStyle(.iconOnly)
-                        .font(.largeTitle)
-                        .foregroundColor(.white)
-                        .offset(y: -20)
-                
-            }
-        }
-        .buttonStyle(.verticalRectangle)
-        .overlay(alignment: .bottom) {
-                TextField("Name", text: $cardName)
-                    .font(Font.system(.largeTitle, design: .serif).weight(.bold))
-                    .foregroundStyle(.regularMaterial)
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical)
-                    .background(Color.accentColor)
-            
-        }
+		VStack(spacing: 32) {
+			Button {
+				showImagePicker.toggle()
+			} label: {
+				Group {
+					if let image = image {
+						Image(uiImage: image)
+							.resizable()
+					} else if let imageURL = card?.imageURL {
+						CardImageView(imageURL)
+					}
+				}
+				.cornerRadius(25)
+				.overlay {
+					Label("Choose image", systemImage: "camera.circle.fill")
+						.labelStyle(.iconOnly)
+						.symbolVariant(.circle.fill)
+						.symbolRenderingMode(.palette)
+						.imageScale(.large)
+						.foregroundStyle(Color.white, Color.accentColor)
+						.font(.system(.largeTitle).weight(.semibold))
+				}
+			}
+			.buttonStyle(.verticalRectangle)
+			.frame(width: UIScreen.main.bounds.width / 4)
+			
+			TextField("Name", text: $cardName)
+				.font(.system(.largeTitle).weight(.bold))
+				.multilineTextAlignment(.center)
+				.foregroundStyle(Color.accentColor)
+				.fixedSize()
+		}
+		.padding(.top, 96)
+		.padding(.horizontal, 48)
+		.padding(.bottom, 32)
+		.background(Color.white)
         .cornerRadius(25)
-        .overlay(alignment: .topTrailing) {
+		.navigationButtons(alignment: .topLeading, padding: 24) {
+				Button {
+					showPopover = false
+				} label: {
+					Image(systemName: "chevron.down")
+				}
+				.buttonStyle(.circle)
+		}
+		.navigationButtons(alignment: .topTrailing, padding: 24) {
             if let card = card {
                 Button(role: .destructive) {
                     deleteCard(card: card)
                 } label: {
-                    Label("Delete", systemImage: "trash.fill")
-                        .labelStyle(.iconOnly)
-                        .padding()
+                    Image(systemName: "trash")
                 }
+				.buttonStyle(.circle)
             }
+			
+			Button {
+				saveCard()
+				saveContext()
+				showPopover.toggle()
+			} label: {
+				Image(systemName: "checkmark")
+			}
+			.buttonStyle(.circle)
         }
-        .overlay(alignment: .topTrailing, content: {
-            Button {
-                showPopover = false
-                // MARK: need to improve card saving - GREGOR
-                saveCard()
-                saveContext()
-            } label: {
-                Image(systemName: "checkmark.circle.fill")
-            }
-            .buttonStyle(.circle)
-            .padding()
-        })
         .sheet(isPresented: $showImagePicker) {
             ImagePicker(image: $image)
         }
