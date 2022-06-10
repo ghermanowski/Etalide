@@ -1,5 +1,29 @@
+/* Animals Deck. */
+"Animals" = "Животные";
+
+/* No comment provided by engineer. */
+"Are you sure you want to delete this card?" = "Вы уверены, что хотите эту делать карту?";
+
+/* No comment provided by engineer. */
+"Are you sure you want to delete this deck?" = "Вы уверены, что хотите удалить этот сет карт?";
+
+/* (No Comment) */
+"Bear" = "Медведь";
+
+/* (No Comment) */
+"Cake" = "Торт";
+
 /* No comment provided by engineer. */
 "Cancel" = "Отменить";
+
+/* (No Comment) */
+"Caprese" = "Салат";
+
+/* (No Comment) */
+"Cat" = "Кот";
+
+/* (No Comment) */
+"Cheese" = "Сыр";
 
 /* No comment provided by engineer. */
 "Choose a Deck" = "Выбрвть сет карт";
@@ -10,11 +34,50 @@
 /* No comment provided by engineer. */
 "Choose the difficulty" = "Выбрать сложность";
 
+/* (No Comment) */
+"Cow" = "Корова";
+
 /* No comment provided by engineer. */
 "Decks" = "Все сеты";
 
 /* No comment provided by engineer. */
 "Delete" = "Отменить";
+
+/* (No Comment) */
+"Dog" = "Собака";
+
+/* Select Difficulty. */
+"Easy" = "Легко";
+
+/* No comment provided by engineer. */
+"Edit" = "Править";
+
+/* Food Deck. */
+"Food" = "Еда";
+
+/* (No Comment) */
+"French Fries" = "Картошка фри";
+
+/* (No Comment) */
+"Hard" = "Сложно";
+
+/* (No Comment) */
+"Horse" = "Лошадь";
+
+/* (No Comment) */
+"Ice Cream" = "Мороженое";
+
+/* No comment provided by engineer. */
+"Instructions" = "Инструкции";
+
+/* (No Comment) */
+"Lion" = "Лев";
+
+/* (No Comment) */
+"Medium" = "Средне";
+
+/* (No Comment) */
+"Mokka" = "Кофе";
 
 /* No comment provided by engineer. */
 "Name" = "Имя";
@@ -26,6 +89,24 @@
 "New Deck" = "Новый сет карт";
 
 /* No comment provided by engineer. */
+"OK" = "ОК";
+
+/* (No Comment) */
+"Orange" = "Апельсин";
+
+/* (No Comment) */
+"Parrot" = "Попугай";
+
+/* (No Comment) */
+"Pasta" = "Макароны";
+
+/* (No Comment) */
+"Pig" = "Хрюшка";
+
+/* (No Comment) */
+"Pizza" = "Пицца";
+
+/* No comment provided by engineer. */
 "Play again" = "Новая игра";
 
 /* No comment provided by engineer. */
@@ -34,39 +115,33 @@
 /* No comment provided by engineer. */
 "Play Memory" = "Тренировать память";
 
-/* Select Difficulty. */
-"Easy" = "Легко";
-
-"Medium" = "Средне";
-
-"Hard" = "Сложно";
-
-/* Animals Deck. */
-"Animals" = "Животные";
-"Bear" = "Медведь";
-"Cat" = "Кот";
-"Cow" = "Корова";
-"Dog" = "Собака";
-"Horse" = "Лошадь";
-"Lion" = "Лев";
-"Parrot" = "Попугай";
+/* (No Comment) */
 "Rabbit" = "Кролик";
-"Rooster" = "Петух";
-"Sheep" = "Овца";
-"Tiger" = "Тигр";
-"Pig" = "Хрюшка";
 
-/* Food Deck. */
-"Food" = "Еда";
-"Cake" = "Торт";
-"Caprese" = "Салат";
-"Cheese" = "Сыр";
-"French Fries" = "Картошка фри";
-"Ice Cream" = "Мороженое";
-"Mokka" = "Кофе";
-"Orange" = "Апельсин";
-"Pasta" = "Макароны";
-"Pizza" = "Пицца";
+/* (No Comment) */
+"Rooster" = "Петух";
+
+/* (No Comment) */
 "Salami" = "Колбаса";
+
+/* (No Comment) */
+"Sheep" = "Овца";
+
+/* (No Comment) */
 "Strawberry" = "Клубника";
+
+/* No comment provided by engineer. */
+"Swipe horizontally to see the next card.\nTap on the card to reveal the entire word." = "Смахните влево или вправо, чтобы увидеть новую карту.\nНажмите на карту чтобы увидеть полное слово.";
+
+/* No comment provided by engineer. */
+"Tap %@ to add a card." = "Нажмите %@ чтобы добавить карту.";
+
+/* (No Comment) */
+"Tiger" = "Тигр";
+
+/* No comment provided by engineer. */
+"Well Done!" = "Отлично!";
+
+/* (No Comment) */
 "Wine" = "Вино";
+
