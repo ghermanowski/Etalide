@@ -38,7 +38,7 @@ struct SwipableCardView: View {
 							.multilineTextAlignment(.center)
 							.frame(maxWidth: .infinity)
 							.padding(.vertical)
-							.background(Color.backgroundBlue)
+							.background(Color.accentColor)
 					}
 				}
 				.cornerRadius(30)
