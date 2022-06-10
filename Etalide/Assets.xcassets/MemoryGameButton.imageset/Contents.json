@@ -6,10 +6,12 @@
       "scale" : "1x"
     },
     {
+      "filename" : "MemoryGameButton@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "MemoryGameButton@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
