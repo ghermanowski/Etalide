@@ -23,7 +23,7 @@ extension Card {
 	
 	var imageURL: URL? {
 		// Attempts to find a matching file from the images directory for preset cards.
-		guard assetName == nil else {
+		guard assetName == nil && name != assetName else {
 			guard let decks = decks?.allObjects as? [Deck] else { return nil }
 			
 			for deck in decks {
