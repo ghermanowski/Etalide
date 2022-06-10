@@ -22,7 +22,7 @@ struct DeckPopoverView: View {
 	
 	@State private var isShowingDifficulties = false
 	@State private var selectedCard: Card?
-	@State private var showCardView = false
+	@State private var showNewCardView = false
 	@State private var isDeletionRequested = false
     
 	@ViewBuilder private func cardView(_ card: Card) -> some View {
@@ -126,22 +126,22 @@ struct DeckPopoverView: View {
 			}
 			
 			Button {
-				showCardView.toggle()
+				showNewCardView.toggle()
 			} label: {
 				Image(systemName: "plus")
 			}
 			.buttonStyle(.circle)
 		}
 		.overlay {
-			if selectedCard != nil || showCardView {
+			if selectedCard != nil || showNewCardView {
 				CardPopupView(
 					selectedCard,
 					deck: deck,
 					showPopover: Binding(
-						get: { selectedCard != nil || showCardView },
+						get: { selectedCard != nil || showNewCardView },
 						set: { _ in
 							selectedCard = nil
-							showCardView = false
+							showNewCardView = false
 						}
 					)
 				)
