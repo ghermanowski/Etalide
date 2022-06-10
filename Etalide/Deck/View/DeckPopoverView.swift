@@ -99,9 +99,11 @@ struct DeckPopoverView: View {
 					.padding(.horizontal, isLandscape ? 64 : 32)
 				}
 			} else {
-				Text("Tap \(Image(systemName: "plus.circle.fill")) to add a card.")
-					.font(.largeTitle.weight(.semibold))
-					.foregroundColor(.accentColor)
+				Button("Tap \(Image(systemName: "plus.circle.fill")) to add a card.") {
+					showNewCardView = true
+				}
+				.font(.largeTitle.weight(.semibold))
+				.foregroundColor(.accentColor)
 			}
         }
 		.padding(.top, 96)
