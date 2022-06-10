@@ -75,7 +75,7 @@ struct MemoryView: View {
 		.background(Color.background)
 		.environmentObject(cardStore)
 		.animation(.default, value: cardStore.duplicatedCards.count != cardStore.hiddenCards.count)
-		.statusBarHidden(true)
+		.statusBar(hidden: true)
 		.navigationBarHidden(true)
 		.navigationButtons(alignment: .topLeading) {
 			Button {

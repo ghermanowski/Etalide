@@ -65,7 +65,7 @@ struct CardGameView: View {
         .padding(64)
 		.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 		.background(Color.background)
-		.statusBarHidden(true)
+		.statusBar(hidden: true)
 		.navigationBarHidden(true)
 		.navigationButtons(alignment: .topLeading) {
 			Button {
