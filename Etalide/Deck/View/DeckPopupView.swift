@@ -2,7 +2,7 @@
 //  DeckPopupView.swift
 //  Etalide
 //
-//  Created by Gregor Hermanowski on 10. June.
+//  Created by Gregor Hermanowski on 10/06/22.
 //
 
 import SwiftUI

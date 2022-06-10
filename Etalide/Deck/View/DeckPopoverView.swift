@@ -132,7 +132,11 @@ struct DeckPopoverView: View {
 				Image(systemName: "trash")
 			}
 			.buttonStyle(.circle)
-			.confirmationDialog("Are you sure you want to delete this deck?", isPresented: $isDeletionRequested, titleVisibility: .visible) {
+			.confirmationDialog(
+				"Are you sure you want to delete this deck?",
+				isPresented: $isDeletionRequested,
+				titleVisibility: .visible
+			) {
 				Button("Delete", role: .destructive, action: deleteDeck)
 			}
 			
