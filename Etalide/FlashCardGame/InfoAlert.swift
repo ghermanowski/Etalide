@@ -23,6 +23,7 @@ struct InfoAlert: View {
 			.font(.title2)
 			.fontWeight(.medium)
 			.multilineTextAlignment(.leading)
+			.lineSpacing(5)
 			.padding(.bottom, 8)
 			
 			Button(action: {
