@@ -15,7 +15,9 @@ struct SelectDifficultyView: View {
 		
 		VStack(alignment: .leading, spacing: 10){
 			Text("Play Memory")
+                .multilineTextAlignment(.leading)
 				.font(.largeTitle)
+                
 				.foregroundColor(.white)
 			
 			Text("Choose the difficulty")

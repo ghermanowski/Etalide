@@ -18,6 +18,7 @@ struct ButtonView: View {
 			.overlay(alignment: .topLeading) {
 				Text(String(localized: String.LocalizationValue(title)))
 					.font(.title.weight(.bold))
+                    .multilineTextAlignment(.leading)
 					.foregroundColor(.white)
 					.padding(.leading, 8)
 					.padding()

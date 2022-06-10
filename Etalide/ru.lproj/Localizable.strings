@@ -1,0 +1,72 @@
+/* No comment provided by engineer. */
+"Cancel" = "Отменить";
+
+/* No comment provided by engineer. */
+"Choose a Deck" = "Выбрвть сет карт";
+
+/* No comment provided by engineer. */
+"Choose image" = "Выбрать фото";
+
+/* No comment provided by engineer. */
+"Choose the difficulty" = "Выбрать сложность";
+
+/* No comment provided by engineer. */
+"Decks" = "Все сеты";
+
+/* No comment provided by engineer. */
+"Delete" = "Отменить";
+
+/* No comment provided by engineer. */
+"Name" = "Имя";
+
+/* No comment provided by engineer. */
+"New Card" = "Новая карта";
+
+/* No comment provided by engineer. */
+"New Deck" = "Новый сет карт";
+
+/* No comment provided by engineer. */
+"Play again" = "Новая игра";
+
+/* No comment provided by engineer. */
+"Play FlashCards" = "Играть в флеш карты";
+
+/* No comment provided by engineer. */
+"Play Memory" = "Тренировать память";
+
+/* Select Difficulty. */
+"Easy" = "Легко";
+
+"Medium" = "Средне";
+
+"Hard" = "Сложно";
+
+/* Animals Deck. */
+"Animals" = "Животные";
+"Bear" = "Медведь";
+"Cat" = "Кот";
+"Cow" = "Корова";
+"Dog" = "Собака";
+"Horse" = "Лошадь";
+"Lion" = "Лев";
+"Parrot" = "Попугай";
+"Rabbit" = "Кролик";
+"Rooster" = "Петух";
+"Sheep" = "Овца";
+"Tiger" = "Тигр";
+"Pig" = "Хрюшка";
+
+/* Food Deck. */
+"Food" = "Еда";
+"Cake" = "Торт";
+"Caprese" = "Салат";
+"Cheese" = "Сыр";
+"French Fries" = "Картошка фри";
+"Ice Cream" = "Мороженое";
+"Mokka" = "Кофе";
+"Orange" = "Апельсин";
+"Pasta" = "Макароны";
+"Pizza" = "Пицца";
+"Salami" = "Колбаса";
+"Strawberry" = "Клубника";
+"Wine" = "Вино";
