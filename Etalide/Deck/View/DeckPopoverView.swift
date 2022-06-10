@@ -105,14 +105,13 @@ struct DeckPopoverView: View {
 				}
 				.font(.largeTitle.weight(.semibold))
 				.foregroundColor(.accentColor)
-				
-				// TODO: Localisation
-				// TODO: Game button images
 			}
         }
 		.padding(.top, 96)
-		.frame(width: UIScreen.main.bounds.width * (isLandscape ? 0.85 : 0.95),
-			   height: UIScreen.main.bounds.height * (isLandscape ? 0.75 : 0.65))
+		.frame(
+			width: UIScreen.main.bounds.width * (isLandscape ? 0.85 : 0.95),
+			height: UIScreen.main.bounds.height * (isLandscape ? 0.75 : 0.65)
+		)
         .background(Color.background2)
 		.navigationButtons(alignment: .topLeading) {
 			Button(action: dismiss) {
@@ -140,12 +139,14 @@ struct DeckPopoverView: View {
 				Button("Delete", role: .destructive, action: deleteDeck)
 			}
 			
-			Button {
-				showDeckEditView.toggle()
-			} label: {
-				Image(systemName: "pencil")
+			if deck.assetName == nil {
+				Button {
+					showDeckEditView.toggle()
+				} label: {
+					Image(systemName: "pencil")
+				}
+				.buttonStyle(.circle)
 			}
-			.buttonStyle(.circle)
 			
 			Button {
 				showNewCardView.toggle()

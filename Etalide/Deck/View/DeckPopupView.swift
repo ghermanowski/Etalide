@@ -17,7 +17,7 @@ struct DeckPopupView: View {
 	
 	@Environment(\.managedObjectContext) private var moc
 	
-	private var deck: Deck?
+	private let deck: Deck?
 	
 	@Binding private var isPresented: Bool
 	
