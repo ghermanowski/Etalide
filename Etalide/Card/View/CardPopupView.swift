@@ -34,6 +34,7 @@ struct CardPopupView: View {
 	@State private var cardName: String
 	@State private var image: UIImage?
 	@State private var showImagePicker = false
+	@State private var isDeletionRequested = false
 	
 	var body: some View {
 		VStack(spacing: 32) {
@@ -88,10 +89,17 @@ struct CardPopupView: View {
 		}
 		.navigationButtons(alignment: .topTrailing, padding: 24) {
 			if card != nil {
-				Button(role: .destructive, action: deleteCard) {
+				Button(role: .destructive, action: requestDeletion) {
 					Image(systemName: "trash")
 				}
 				.buttonStyle(.circle)
+				.confirmationDialog(
+					"Are you sure you want to delete this card?",
+					isPresented: $isDeletionRequested,
+					titleVisibility: .visible
+				) {
+					Button("Delete", role: .destructive, action: deleteCard)
+				}
 			}
 			
 			Button(action: saveCard) {
@@ -111,6 +119,10 @@ struct CardPopupView: View {
 	
 	private func dismiss() {
 		showPopover.toggle()
+	}
+	
+	private func requestDeletion() {
+		isDeletionRequested = true
 	}
 	
 	private func deleteCard() {
