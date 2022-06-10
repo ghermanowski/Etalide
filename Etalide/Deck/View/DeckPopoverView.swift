@@ -14,6 +14,7 @@ struct DeckPopoverView: View {
     }
 	
 	@Environment(\.isLandscape) private var isLandscape
+	@Environment(\.managedObjectContext) private var moc
     
     private let deck: Deck
     
@@ -22,6 +23,7 @@ struct DeckPopoverView: View {
 	@State private var isShowingDifficulties = false
 	@State private var selectedCard: Card?
 	@State private var showCardView = false
+	@State private var isDeletionRequested = false
     
 	@ViewBuilder private func cardView(_ card: Card) -> some View {
 		if let imageURL = card.imageURL {
@@ -113,6 +115,16 @@ struct DeckPopoverView: View {
 			.buttonStyle(.circle)
 		}
 		.navigationButtons(alignment: .topTrailing) {
+			Button(role: .destructive) {
+				isDeletionRequested = true
+			} label: {
+				Image(systemName: "trash")
+			}
+			.buttonStyle(.circle)
+			.confirmationDialog("Are you sure you want to delete this deck?", isPresented: $isDeletionRequested, titleVisibility: .visible) {
+				Button("Delete", role: .destructive, action: deleteDeck)
+			}
+			
 			Button {
 				showCardView.toggle()
 			} label: {
@@ -139,6 +151,20 @@ struct DeckPopoverView: View {
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
 		.background(Color.primary.opacity(0.75))
     }
+	
+	private func deleteDeck() {
+		moc.delete(deck)
+		saveContext()
+	}
+	
+	private func saveContext() {
+		do {
+			try moc.save()
+		} catch {
+			// TODO: Add error handling
+			fatalError(error.localizedDescription)
+		}
+	}
 }
 
 struct DeckPopoverView_Previews: PreviewProvider {
