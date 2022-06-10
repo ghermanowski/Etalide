@@ -11,6 +11,7 @@ struct Decks: View {
 	@Environment(\.isLandscape) private var isLandscape
 	
 	@State private var selectedDeck: Deck?
+	@State private var showNewDeckView = false
     
 	@FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) private var decks: FetchedResults<Deck>
     
@@ -43,7 +44,7 @@ struct Decks: View {
 		.background(Color.background)
 		.navigationButtons(alignment: .topTrailing, padding: 16) {
 			Button {
-				// TODO: Add deck
+				showNewDeckView = true
 			} label: {
 				Image(systemName: "plus")
 			}
@@ -51,7 +52,9 @@ struct Decks: View {
 			.padding(.trailing, 8)
 		}
 		.overlay {
-			if let selectedDeck = selectedDeck {
+			if showNewDeckView {
+				DeckPopupView(isPresented: $showNewDeckView)
+			} else if let selectedDeck = selectedDeck {
 				DeckPopoverView(
 					selectedDeck,
 					isShowingPopover: Binding(get: { self.selectedDeck != nil },
