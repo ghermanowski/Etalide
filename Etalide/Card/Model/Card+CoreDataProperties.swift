@@ -21,6 +21,11 @@ extension Card {
 	@NSManaged public var assetName: String?
 	@NSManaged public var decks: NSSet?
 	
+	var localisedName: String? {
+		guard let assetName = assetName else { return nil }
+		return String(localized: String.LocalizationValue(assetName))
+	}
+	
 	var imageURL: URL? {
 		// Attempts to find a matching file from the images directory for preset cards.
 		guard assetName == nil && name != assetName else {

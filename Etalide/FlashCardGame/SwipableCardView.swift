@@ -31,9 +31,9 @@ struct SwipableCardView: View {
 		if let imageURL = card.imageURL {
 			CardImageView(imageURL)
 				.overlay(alignment: .bottom) {
-					if let cardName = card.name {
+					if let cardName = card.localisedName ?? card.name {
 						Text(showFirstLetter ? String(cardName.prefix(1)) : cardName)
-							.font(Font.system(.largeTitle, design: .serif).weight(.bold))
+							.font(.system(.largeTitle, design: .serif).weight(.bold))
 							.foregroundStyle(.regularMaterial)
 							.multilineTextAlignment(.center)
 							.frame(maxWidth: .infinity)
