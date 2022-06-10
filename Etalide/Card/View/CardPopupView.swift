@@ -67,28 +67,20 @@ struct CardPopupView: View {
 		.background(Color.white)
         .cornerRadius(25)
 		.navigationButtons(alignment: .topLeading, padding: 24) {
-				Button {
-					showPopover = false
-				} label: {
-					Image(systemName: "chevron.down")
-				}
-				.buttonStyle(.circle)
+			Button(action: dismiss) {
+				Image(systemName: "chevron.down")
+			}
+			.buttonStyle(.circle)
 		}
 		.navigationButtons(alignment: .topTrailing, padding: 24) {
-            if let card = card {
-                Button(role: .destructive) {
-                    deleteCard(card: card)
-                } label: {
+			if card != nil {
+				Button(role: .destructive, action: deleteCard) {
                     Image(systemName: "trash")
                 }
 				.buttonStyle(.circle)
             }
 			
-			Button {
-				saveCard()
-				saveContext()
-				showPopover.toggle()
-			} label: {
+			Button(action: saveCard) {
 				Image(systemName: "checkmark")
 			}
 			.buttonStyle(.circle)
@@ -99,8 +91,14 @@ struct CardPopupView: View {
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
 		.background(Color.primary.opacity(0.75))
     }
+	
+	private func dismiss() {
+		showPopover = false
+	}
     
-    private func deleteCard(card: Card) {
+    private func deleteCard() {
+		guard let card = card else { return }
+		
         let cardID = card.id?.uuidString
         let cardAssetName = card.assetName
         
@@ -113,6 +111,8 @@ struct CardPopupView: View {
            let cardID = cardID {
             ImageManager.shared.delete(withName: cardID)
         }
+		
+		dismiss()
     }
     
     private func saveContext() {
@@ -158,6 +158,8 @@ struct CardPopupView: View {
         saveContext()
         
         ImageManager.shared.save(imageData, withName: card.id!.uuidString)
+		
+		dismiss()
     }
 }
 
