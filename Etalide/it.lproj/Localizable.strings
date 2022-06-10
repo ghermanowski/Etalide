@@ -1,5 +1,29 @@
+/* Animals Deck. */
+"Animals" = "Animali";
+
+/* No comment provided by engineer. */
+"Are you sure you want to delete this card?" = "Vuoi davvero eliminare questa carta?";
+
+/* No comment provided by engineer. */
+"Are you sure you want to delete this deck?" = "Vuoi davvero eliminare questo set di carte?";
+
+/* No comment provided by engineer. */
+"Bear" = "Orso";
+
+/* No comment provided by engineer. */
+"Cake" = "Torta";
+
 /* No comment provided by engineer. */
 "Cancel" = "Annulla";
+
+/* No comment provided by engineer. */
+"Caprese" = "Caprese";
+
+/* No comment provided by engineer. */
+"Cat" = "Gatto";
+
+/* No comment provided by engineer. */
+"Cheese" = "Formaggio";
 
 /* No comment provided by engineer. */
 "Choose a Deck" = "Scegli un set di carte";
@@ -11,10 +35,49 @@
 "Choose the difficulty" = "Scegli la difficoltà";
 
 /* No comment provided by engineer. */
+"Cow" = "Mucca";
+
+/* No comment provided by engineer. */
 "Decks" = "Tutti i set";
 
 /* No comment provided by engineer. */
 "Delete" = "Cancella";
+
+/* No comment provided by engineer. */
+"Dog" = "Cane";
+
+/* Select Difficulty. */
+"Easy" = "Facile";
+
+/* No comment provided by engineer. */
+"Edit" = "Modifica";
+
+/* Food Deck. */
+"Food" = "Cibo";
+
+/* No comment provided by engineer. */
+"French Fries" = "Patatine Fritte";
+
+/* No comment provided by engineer. */
+"Hard" = "Difficile";
+
+/* No comment provided by engineer. */
+"Horse" = "Cavallo";
+
+/* No comment provided by engineer. */
+"Ice Cream" = "Gelato";
+
+/* No comment provided by engineer. */
+"Instructions" = "Istruzioni";
+
+/* No comment provided by engineer. */
+"Lion" = "Leone";
+
+/* No comment provided by engineer. */
+"Medium" = "Medio";
+
+/* No comment provided by engineer. */
+"Mokka" = "Caffè";
 
 /* No comment provided by engineer. */
 "Name" = "Nome";
@@ -26,6 +89,24 @@
 "New Deck" = "Nuovo set di carte";
 
 /* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Orange" = "Arancia";
+
+/* No comment provided by engineer. */
+"Parrot" = "Pappagallo";
+
+/* No comment provided by engineer. */
+"Pasta" = "Pasta";
+
+/* No comment provided by engineer. */
+"Pig" = "Maiale";
+
+/* No comment provided by engineer. */
+"Pizza" = "Pizza";
+
+/* No comment provided by engineer. */
 "Play again" = "Ricomincia";
 
 /* No comment provided by engineer. */
@@ -34,39 +115,33 @@
 /* No comment provided by engineer. */
 "Play Memory" = "Memory Game";
 
-/* Select Difficulty. */
-"Easy" = "Facile";
-
-"Medium" = "Medio";
-
-"Hard" = "Difficile";
-
-/* Animals Deck. */
-"Animals" = "Animali";
-"Bear" = "Orso";
-"Cat" = "Gatto";
-"Cow" = "Mucca";
-"Dog" = "Cane";
-"Horse" = "Cavallo";
-"Lion" = "Leone";
-"Parrot" = "Pappagallo";
+/* No comment provided by engineer. */
 "Rabbit" = "Coniglio";
-"Rooster" = "Gallo";
-"Sheep" = "Pecora";
-"Tiger" = "Tigre";
-"Pig" = "Maiale";
 
-/* Food Deck. */
-"Food" = "Cibo";
-"Cake" = "Torta";
-"Caprese" = "Caprese";
-"Cheese" = "Formaggio";
-"French Fries" = "Patatine Fritte";
-"Ice Cream" = "Gelato";
-"Mokka" = "Caffè";
-"Orange" = "Arancia";
-"Pasta" = "Pasta";
-"Pizza" = "Pizza";
+/* No comment provided by engineer. */
+"Rooster" = "Gallo";
+
+/* No comment provided by engineer. */
 "Salami" = "Salame";
+
+/* No comment provided by engineer. */
+"Sheep" = "Pecora";
+
+/* No comment provided by engineer. */
 "Strawberry" = "Fragole";
+
+/* No comment provided by engineer. */
+"Swipe horizontally to see the next card.\nTap on the card to reveal the entire word." = "Scorri orizzontalmente per vedere la carta successiva. \nTocca la carta per mostrare la parola completa.";
+
+/* No comment provided by engineer. */
+"Tap %@ to add a card." = "Tocca %@ per aggiungere una carta";
+
+/* No comment provided by engineer. */
+"Tiger" = "Tigre";
+
+/* No comment provided by engineer. */
+"Well Done!" = "Ben fatto!";
+
+/* No comment provided by engineer. */
 "Wine" = "Vino";
+
