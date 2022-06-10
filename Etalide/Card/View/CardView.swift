@@ -58,7 +58,7 @@ struct CardView: View {
 					.multilineTextAlignment(.center)
 					.frame(maxWidth: .infinity)
 					.padding(.vertical)
-					.background(Color.backgroundBlue)
+					.background(Color.accentColor)
 					.onSubmit {
 						if image != nil {
 							editMode?.wrappedValue = .inactive

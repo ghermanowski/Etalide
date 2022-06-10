@@ -25,7 +25,7 @@ struct CardImageView: View {
 						.resizable()
 						.onAppear { ImageManager.shared.cache[url] = image }
 				} placeholder: {
-					Color.backgroundBlue
+					Color.accentColor
 						.overlay {
 							ProgressView()
 								.tint(Color.background)

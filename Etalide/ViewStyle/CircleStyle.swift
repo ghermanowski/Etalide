@@ -11,7 +11,7 @@ struct CircleStyle: ButtonStyle {
 	let invertColours: Bool
 	
 	func makeBody(configuration: Configuration) -> some View {
-		let tintColour = configuration.role == .destructive ? Color.red : .backgroundBlue
+		let tintColour = configuration.role == .destructive ? Color.red : .accentColor
 		
 		configuration.label
 			.symbolVariant(.circle.fill)

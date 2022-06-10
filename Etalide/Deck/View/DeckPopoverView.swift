@@ -27,12 +27,14 @@ struct DeckPopoverView: View {
 			count: isLandscape ? 4 : 3
 		)
 		
-		LazyVGrid(columns: columns, spacing: 16) {
-			if let cards = deck.allCards {
-				ForEach(cards) { card in
-					if let imageURL = card.imageURL {
-						CardImageView(imageURL)
-							.cornerRadius(15)
+		ScrollView {
+			LazyVGrid(columns: columns, spacing: 16) {
+				if let cards = deck.allCards {
+					ForEach(cards) { card in
+						if let imageURL = card.imageURL {
+							CardImageView(imageURL)
+								.cornerRadius(15)
+						}
 					}
 				}
 			}
@@ -67,7 +69,7 @@ struct DeckPopoverView: View {
 			Text(deck.localisedName ?? deck.wrappedName)
 				.font(.system(.largeTitle))
 				.bold()
-				.foregroundColor(.backgroundBlue)
+				.foregroundColor(.accentColor)
 				.padding([.top, .horizontal], 32)
 				.frame(maxWidth: .infinity)
             
@@ -77,7 +79,8 @@ struct DeckPopoverView: View {
 						.frame(width: geometry.size.width * 0.45)
                     
                     Divider()
-						.foregroundStyle(Color.backgroundBlue)
+						.frame(width: 1.5)
+						.background(Color.accentColor)
 						.padding(.vertical, 20)
                     
 					gameSelection

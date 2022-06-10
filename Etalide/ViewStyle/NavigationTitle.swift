@@ -19,10 +19,10 @@ struct NavigationTitle: View {
     var body: some View {
 		Text(title)
 			.font(.largeTitle.weight(.bold))
-			.foregroundColor(invertColours ? .background : .backgroundBlue)
+			.foregroundColor(invertColours ? .background : .accentColor)
 			.padding(.vertical)
 			.frame(maxWidth: .infinity)
-			.background(invertColours ? Color.backgroundBlue : .background)
+			.background(invertColours ? Color.accentColor : .background)
     }
 }
 

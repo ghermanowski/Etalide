@@ -48,7 +48,7 @@ struct MemoryView: View {
 			} else {
 				ZStack {
 					Text("Well Done!")
-						.foregroundColor(.backgroundBlue)
+						.foregroundColor(.accentColor)
 						.font(.system(size: 100, weight: .semibold))
 					
 					Circle()
