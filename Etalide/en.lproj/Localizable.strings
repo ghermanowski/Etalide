@@ -1,3 +1,72 @@
 /* No comment provided by engineer. */
-"Play Memory" = "Play Memory ";
+"Cancel" = "Cancel";
 
+/* No comment provided by engineer. */
+"Choose a Deck" = "Choose a Deck";
+
+/* No comment provided by engineer. */
+"Choose image" = "Choose image";
+
+/* No comment provided by engineer. */
+"Choose the difficulty" = "Choose the difficulty";
+
+/* No comment provided by engineer. */
+"Decks" = "Decks";
+
+/* No comment provided by engineer. */
+"Delete" = "Delete";
+
+/* No comment provided by engineer. */
+"Name" = "Name";
+
+/* No comment provided by engineer. */
+"New Card" = "New Card";
+
+/* No comment provided by engineer. */
+"New Deck" = "New Deck";
+
+/* No comment provided by engineer. */
+"Play again" = "Play again";
+
+/* No comment provided by engineer. */
+"Play Flashcards" = "Play Flashcards";
+
+/* No comment provided by engineer. */
+"Play Memory" = "Play Memory";
+
+/* Select Difficulty. */
+"Easy" = "Easy";
+
+"Medium" = "Medium";
+
+"Hard" = "Hard";
+
+/* Animals Deck. */
+"Animals" = "Animals";
+"Bear" = "Bear";
+"Cat" = "Cat";
+"Cow" = "Cow";
+"Dog" = "Dog";
+"Horse" = "Horse";
+"Lion" = "Lion";
+"Parrot" = "Parrot";
+"Rabbit" = "Rabbit";
+"Rooster" = "Rooster";
+"Sheep" = "Sheep";
+"Tiger" = "Tiger";
+"Pig" = "Pig";
+
+/* Food Deck. */
+"Food" = "Food";
+"Cake" = "Cake";
+"Caprese" = "Caprese";
+"Cheese" = "Cheese";
+"French Fries" = "French Fries";
+"Ice Cream" = "Ice Cream";
+"Mokka" = "Mokka";
+"Orange" = "Orange";
+"Pasta" = "Pasta";
+"Pizza" = "Pizza";
+"Salami" = "Salami";
+"Strawberry" = "Strawberry";
+"Wine" = "Wine";
