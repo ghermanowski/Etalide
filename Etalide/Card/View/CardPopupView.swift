@@ -64,17 +64,23 @@ struct CardPopupView: View {
 				}
 			}
 			.buttonStyle(.verticalRectangle)
+			.sheet(isPresented: $showImagePicker) {
+				ImagePicker(image: $image)
+			}
 			
 			TextField("Name", text: $cardName)
 				.font(.system(.largeTitle).weight(.semibold))
 				.multilineTextAlignment(.center)
 				.foregroundStyle(Color.accentColor)
-				.fixedSize()
+				.padding(.vertical)
+				.frame(maxWidth: .infinity)
+				.background(.regularMaterial)
+				.cornerRadius(25)
 		}
 		.padding(.top, 96)
 		.padding(.horizontal, 48)
 		.padding(.bottom, 32)
-		.frame(width: UIScreen.main.bounds.width / 2.5)
+		.frame(width: UIScreen.main.bounds.width / 2.75)
 		.background(Color.background2)
 		.cornerRadius(25)
 		.navigationButtons(alignment: .topLeading, padding: 24) {
@@ -85,7 +91,7 @@ struct CardPopupView: View {
 		}
 		.navigationButtons(alignment: .top, padding: 24) {
 			Text(card == nil ? "New Card" : "Edit")
-				.font(.largeTitle.weight(.semibold))
+				.font(.largeTitle.weight(.bold))
 		}
 		.navigationButtons(alignment: .topTrailing, padding: 24) {
 			if card != nil {
@@ -107,14 +113,8 @@ struct CardPopupView: View {
 			}
 			.buttonStyle(.circle)
 		}
-		.sheet(isPresented: $showImagePicker) {
-			ImagePicker(image: $image)
-		}
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
-		.background {
-			Color.black.opacity(0.75)
-				.onTapGesture(perform: dismiss)
-		}
+		.background(Color.black.opacity(0.75))
 	}
 	
 	private func dismiss() {

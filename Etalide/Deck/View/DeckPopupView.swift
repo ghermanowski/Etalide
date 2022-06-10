@@ -26,15 +26,18 @@ struct DeckPopupView: View {
     var body: some View {
 		VStack(spacing: 32) {
 			TextField("Name", text: $deckName)
-				.font(.system(.largeTitle).weight(.bold))
+				.font(.system(.largeTitle).weight(.semibold))
 				.multilineTextAlignment(.center)
 				.foregroundStyle(Color.accentColor)
-				.fixedSize()
+				.padding(.vertical)
+				.frame(maxWidth: .infinity)
+				.background(.regularMaterial)
+				.cornerRadius(25)
 		}
 		.padding(.top, 96)
 		.padding(.horizontal, 48)
 		.padding(.bottom, 32)
-		.frame(width: UIScreen.main.bounds.width / 2.5)
+		.frame(width: UIScreen.main.bounds.width / 2.75)
 		.background(Color.background2)
 		.cornerRadius(25)
 		.navigationButtons(alignment: .topLeading, padding: 24) {
@@ -54,11 +57,7 @@ struct DeckPopupView: View {
 			.buttonStyle(.circle)
 		}
 		.frame(maxWidth: .infinity, maxHeight: .infinity)
-		.background {
-			Color.black.opacity(0.75)
-				.onTapGesture(perform: dismiss)
-				.allowsHitTesting(false)
-		}
+		.background(Color.black.opacity(0.75))
     }
 	
 	private func dismiss() {
