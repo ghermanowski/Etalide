@@ -126,8 +126,11 @@ struct DeckPopoverView: View {
 					selectedCard,
 					deck: deck,
 					showPopover: Binding(
-						get: { selectedCard != nil },
-						set: { _ in selectedCard = nil }
+						get: { selectedCard != nil || showCardView },
+						set: { _ in
+							selectedCard = nil
+							showCardView = false
+						}
 					)
 				)
 			}
