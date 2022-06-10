@@ -21,6 +21,47 @@ struct DeckPopoverView: View {
 	
 	@State var isShowingDifficulties: Bool = false
     
+	@ViewBuilder private var cardGrid: some View {
+		let columns = Array(
+			repeating: GridItem(spacing: 16),
+			count: isLandscape ? 4 : 3
+		)
+		
+		LazyVGrid(columns: columns, spacing: 16) {
+			if let cards = deck.allCards {
+				ForEach(cards) { card in
+					if let imageURL = card.imageURL {
+						CardImageView(imageURL)
+							.cornerRadius(15)
+					}
+				}
+			}
+		}
+	}
+	
+	var gameSelection: some View {
+		VStack(spacing: 20) {
+			Button {
+				withAnimation{
+					isShowingDifficulties = true
+				}
+			} label: {
+				ButtonView(imageTitle: "MemoryGameButton", title: "Play Memory")
+			}
+			
+			NavigationLink {
+				CardGameView(deck)
+			} label: {
+				ButtonView(imageTitle: "FlashcardButton", title: String(localized: "Play FlashCards"))
+			}
+		}
+		.overlay {
+			if isShowingDifficulties {
+				SelectDifficultyView(deck: deck, isShowingDifficulties: $isShowingDifficulties)
+			}
+		}
+	}
+	
     var body: some View {
         VStack {
 			Text(deck.localisedName ?? deck.wrappedName)
@@ -32,33 +73,14 @@ struct DeckPopoverView: View {
             
             GeometryReader { geometry in
                 HStack(alignment: .center, spacing: 40) {
-                    DeckOfCardsView(deck)
-                        .frame(width: geometry.size.width * 0.45)
+					cardGrid
+						.frame(width: geometry.size.width * 0.45)
                     
                     Divider()
 						.foregroundStyle(Color.backgroundBlue)
 						.padding(.vertical, 20)
                     
-					VStack(spacing: 20) {
-						Button {
-							withAnimation{
-								isShowingDifficulties = true
-							}
-						} label: {
-							ButtonView(imageTitle: "MemoryGameButton", title: "Play Memory")
-						}
-						
-                        NavigationLink {
-                            CardGameView(deck)
-                        } label: {
-                            ButtonView(imageTitle: "FlashcardButton", title: String(localized: "Play FlashCards"))
-                        }
-					}
-					.overlay {
-						if isShowingDifficulties {
-							SelectDifficultyView(deck: deck, isShowingDifficulties: $isShowingDifficulties)
-						}
-					}
+					gameSelection
                 }
 				.padding(.vertical, 32)
 				.padding(.horizontal, isLandscape ? 64 : 32)
