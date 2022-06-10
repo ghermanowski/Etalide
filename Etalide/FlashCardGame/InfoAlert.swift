@@ -29,7 +29,11 @@ struct InfoAlert: View {
 				self.isShowingAlert.toggle()
 			} ) {
 				Text("OK")
+					.padding(.horizontal, 40)
+					.padding(.vertical)
 					.font(.title2.weight(.bold))
+					.foregroundColor(.background2)
+					.background(Capsule())
 			}
 		}
 		.padding(32)
