@@ -63,7 +63,7 @@ struct CardPopupView: View {
 				}
 			}
 			.buttonStyle(.verticalRectangle)
-			.frame(width: UIScreen.main.bounds.width / 4)
+			.frame(width: UIScreen.main.bounds.width / 2.5)
 			
 			TextField("Name", text: $cardName)
 				.font(.system(.largeTitle).weight(.bold))
@@ -81,6 +81,10 @@ struct CardPopupView: View {
 				Image(systemName: "xmark")
 			}
 			.buttonStyle(.circle)
+		}
+		.navigationButtons(alignment: .top, padding: 24) {
+			Text(card == nil ? "New Card" : "Edit")
+				.font(.largeTitle.weight(.bold))
 		}
 		.navigationButtons(alignment: .topTrailing, padding: 24) {
 			if card != nil {
