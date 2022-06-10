@@ -79,40 +79,43 @@ struct DeckPopoverView: View {
 	
     var body: some View {
         VStack {
-			Text(deck.localisedName ?? deck.wrappedName)
-				.font(.system(.largeTitle))
-				.bold()
-				.foregroundColor(.accentColor)
-				.padding([.top, .horizontal], 32)
-				.frame(maxWidth: .infinity)
-            
-            GeometryReader { geometry in
-                HStack(alignment: .center, spacing: 40) {
-					cardGrid
-						.frame(width: geometry.size.width * 0.45)
-                    
-                    Divider()
-						.frame(width: 1.5)
-						.background(Color.accentColor)
-						.padding(.vertical, 20)
-						.padding(.bottom, 20)
-                    
-					gameSelection
-                }
-				.padding(.vertical, 32)
-				.padding(.horizontal, isLandscape ? 64 : 32)
+			if let cards = deck.allCards, !cards.isEmpty {
+				GeometryReader { geometry in
+					HStack(alignment: .center, spacing: 40) {
+						cardGrid
+							.frame(width: geometry.size.width * 0.5)
+						
+						Divider()
+							.frame(width: 1.5)
+							.background(Color.accentColor)
+							.padding(.vertical, 20)
+							.padding(.bottom, 20)
+						
+						gameSelection
+					}
+					.padding(.vertical, 32)
+					.padding(.horizontal, isLandscape ? 64 : 32)
+				}
+			} else {
+				Text("Tap \(Image(systemName: "plus.circle.fill")) to add a card.")
+					.font(.largeTitle.weight(.semibold))
+					.foregroundColor(.accentColor)
 			}
         }
+		.padding(.top, 96)
 		.frame(width: UIScreen.main.bounds.width * (isLandscape ? 0.85 : 0.95),
 			   height: UIScreen.main.bounds.height * (isLandscape ? 0.75 : 0.65))
         .background(.white)
 		.navigationButtons(alignment: .topLeading) {
-			Button {
-				isShowingPopover = false
-			} label: {
+			Button(action: dismiss) {
 				Image(systemName: "xmark")
 			}
 			.buttonStyle(.circle)
+		}
+		.navigationButtons(alignment: .top) {
+			Text(deck.localisedName ?? deck.wrappedName)
+				.font(.system(.largeTitle).weight(.semibold))
+				.foregroundColor(.accentColor)
 		}
 		.navigationButtons(alignment: .topTrailing) {
 			Button(role: .destructive) {
@@ -152,9 +155,14 @@ struct DeckPopoverView: View {
 		.background(Color.primary.opacity(0.75))
     }
 	
+	private func dismiss() {
+		isShowingPopover = false
+	}
+	
 	private func deleteDeck() {
 		moc.delete(deck)
 		saveContext()
+		dismiss()
 	}
 	
 	private func saveContext() {
