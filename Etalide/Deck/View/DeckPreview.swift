@@ -12,11 +12,7 @@ struct DeckPreview: View {
 		self.deck = deck
 	}
 	
-	@Environment(\.editMode) private var editMode
-	@Environment(\.managedObjectContext) private var moc
-	
 	private let deck: Deck
-    @State private var showAlert = false
 	
 	@ViewBuilder private func cardView(_ card: Card?) -> some View {
 		Group {
@@ -45,50 +41,11 @@ struct DeckPreview: View {
 				}
 			}
 		}
-//        .confirmationDialog("Delete deck", isPresented: $showAlert, actions: {
-//            Button("Delete") {
-//                deleteDeck()
-//            }
-//            Button("Cancel", role: .cancel) { }
-//        }, message: {
-//            Text("Are you sure you want to delete deck of cards?")
-//
-//        })
 		.overlay {
 			Text(deck.localisedName ?? deck.wrappedName)
 				.font(.largeTitle.bold())
 				.foregroundColor(.white)
 				.shadow(color: .black.opacity(0.5), radius: 5)
-		}
-		.navigationButtons(alignment: .topTrailing, padding: 16) {
-			if editMode?.wrappedValue == .active {
-                Button(role: .destructive){
-                    showAlert.toggle()
-                } label: {
-                    Label("Delete", systemImage: "trash")
-                        .labelStyle(.iconOnly)
-                }
-                .confirmationDialog("Are you sure you want to delete deck of cards?", isPresented: $showAlert, titleVisibility: .visible) {
-                    Button("Delete deck", role: .destructive) {
-                        deleteDeck()
-                    }
-                }
-				.buttonStyle(.circle)
-				.padding(.trailing)
-			}
-		}
-	}
-	
-	private func deleteDeck() {
-		moc.delete(deck)
-		saveContext()
-	}
-	
-	private func saveContext() {
-		do {
-			try moc.save()
-		} catch {
-			fatalError(error.localizedDescription)
 		}
 	}
 }
