@@ -56,12 +56,14 @@ struct DeckPopoverView: View {
 	
 	var gameSelection: some View {
 		VStack(spacing: 20) {
-			Button {
-				withAnimation{
-					isShowingDifficulties = true
+			if let cards = deck.cards, cards.count >= MemoryDifficulty.easy.amount {
+				Button {
+					withAnimation{
+						isShowingDifficulties = true
+					}
+				} label: {
+					ButtonView(imageTitle: "MemoryGameButton", title: "Play Memory")
 				}
-			} label: {
-				ButtonView(imageTitle: "MemoryGameButton", title: "Play Memory")
 			}
 			
 			NavigationLink {
