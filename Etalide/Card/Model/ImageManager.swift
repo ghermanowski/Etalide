@@ -52,6 +52,7 @@ class ImageManager {
 		
 		do {
 			try imageData.write(to: fileURL)
+			cache.removeValue(forKey: fileURL)
 		} catch {
 			print(error.localizedDescription)
 		}
