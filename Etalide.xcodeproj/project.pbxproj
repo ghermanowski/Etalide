@@ -43,6 +43,7 @@
 		5CBCAD97285207EB00EAEBE4 /* CardPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCAD96285207EB00EAEBE4 /* CardPopupView.swift */; };
 		6C7C3B0F283E3B7A00F42669 /* Decks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C3B0E283E3B7A00F42669 /* Decks.swift */; };
 		7151973E2851E5B80049B474 /* FireworkParticlesGeometryEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151973D2851E5B80049B474 /* FireworkParticlesGeometryEffect.swift */; };
+		719521E82853961A00260687 /* InfoAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719521E72853961A00260687 /* InfoAlert.swift */; };
 		71AE0B132844D3F700A128F2 /* SelectDifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE0B122844D3F600A128F2 /* SelectDifficultyView.swift */; };
 		71AE0B152844D6C500A128F2 /* MemoryDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE0B142844D6C500A128F2 /* MemoryDifficulty.swift */; };
 		F52F23BF2850A04A0031179E /* NavigationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52F23BE2850A04A0031179E /* NavigationButtons.swift */; };
@@ -120,6 +121,7 @@
 		5CBCAD9928532B5000EAEBE4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C7C3B0E283E3B7A00F42669 /* Decks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decks.swift; sourceTree = "<group>"; };
 		7151973D2851E5B80049B474 /* FireworkParticlesGeometryEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireworkParticlesGeometryEffect.swift; sourceTree = "<group>"; };
+		719521E72853961A00260687 /* InfoAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlert.swift; sourceTree = "<group>"; };
 		71AE0B122844D3F600A128F2 /* SelectDifficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDifficultyView.swift; sourceTree = "<group>"; };
 		71AE0B142844D6C500A128F2 /* MemoryDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryDifficulty.swift; sourceTree = "<group>"; };
 		F52F23BE2850A04A0031179E /* NavigationButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButtons.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			children = (
 				5C596C26283E17050097C7B8 /* SwipableCardView.swift */,
 				5C596C2A283E17700097C7B8 /* CardGameView.swift */,
+				719521E72853961A00260687 /* InfoAlert.swift */,
 			);
 			path = FlashCardGame;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				71AE0B132844D3F700A128F2 /* SelectDifficultyView.swift in Sources */,
 				50CF1BD2283CE17B00324353 /* MemoryCardView.swift in Sources */,
 				5C596C70283FC7180097C7B8 /* DeckOfCardsView.swift in Sources */,
+				719521E82853961A00260687 /* InfoAlert.swift in Sources */,
 				5CBCAD97285207EB00EAEBE4 /* CardPopupView.swift in Sources */,
 				5C596C27283E17050097C7B8 /* SwipableCardView.swift in Sources */,
 				F58CB7842840D65100B74FD5 /* VerticalRectangleStyle.swift in Sources */,
