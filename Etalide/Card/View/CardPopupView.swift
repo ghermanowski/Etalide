@@ -74,7 +74,7 @@ struct CardPopupView: View {
 				.foregroundStyle(Color.accentColor)
 				.padding(.vertical)
 				.frame(maxWidth: .infinity)
-				.background(.regularMaterial)
+				.background(Color.background)
 				.cornerRadius(25)
 		}
 		.padding(.top, 96)

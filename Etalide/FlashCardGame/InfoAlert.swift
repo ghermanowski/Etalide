@@ -15,6 +15,7 @@ struct InfoAlert: View {
 			Text("Instructions")
 				.fontWeight(.bold)
 				.font(.largeTitle)
+				.foregroundColor(.black)
 			
 			Text("""
    Swipe horizontally to see the next card.
@@ -25,6 +26,7 @@ struct InfoAlert: View {
 			.multilineTextAlignment(.leading)
 			.lineSpacing(5)
 			.padding(.bottom, 8)
+			.foregroundColor(.black)
 			
 			Button(action: {
 				self.isShowingAlert.toggle()

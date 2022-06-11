@@ -31,7 +31,7 @@ struct DeckPopupView: View {
 				.foregroundStyle(Color.accentColor)
 				.padding(.vertical)
 				.frame(maxWidth: .infinity)
-				.background(.regularMaterial)
+				.background(Color.background)
 				.cornerRadius(25)
 		}
 		.padding(.top, 96)
@@ -49,6 +49,7 @@ struct DeckPopupView: View {
 		.navigationButtons(alignment: .top, padding: 24) {
 			Text(deck == nil ? "New Deck" : "Edit")
 				.font(.largeTitle.weight(.bold))
+				.foregroundColor(Color.accentColor)
 		}
 		.navigationButtons(alignment: .topTrailing, padding: 24) {
 			Button(action: saveDeck) {
