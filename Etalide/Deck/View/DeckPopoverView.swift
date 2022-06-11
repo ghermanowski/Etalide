@@ -65,6 +65,7 @@ struct DeckPopoverView: View {
 				} label: {
 					GameButton(imageTitle: "MemoryGameButton", title: "Play Memory")
 				}
+				.buttonStyle(.verticalRectangle)
 			}
 			
 			NavigationLink {
@@ -72,6 +73,7 @@ struct DeckPopoverView: View {
 			} label: {
 				GameButton(imageTitle: "FlashcardButton", title: String(localized: "Play Flashcards"))
 			}
+			.buttonStyle(.verticalRectangle)
 		}
 		.overlay {
 			if isShowingDifficulties {
