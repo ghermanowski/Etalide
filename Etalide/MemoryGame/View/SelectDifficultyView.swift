@@ -12,18 +12,17 @@ struct SelectDifficultyView: View {
 	@Binding var isShowingDifficulties: Bool
 	
 	var body: some View {
-		
-		VStack(alignment: .leading, spacing: 10){
-			Text("Play Memory")
-                .multilineTextAlignment(.leading)
-				.font(.largeTitle)
-                
-				.foregroundColor(.white)
-			
-			Text("Choose the difficulty")
-				.font(.headline)
-				.foregroundColor(.white)
-				.padding(.bottom, 20)
+		VStack(alignment: .leading, spacing: 10) {
+			VStack(alignment: .leading, spacing: 8) {
+				Text("Play Memory")
+					.font(.title.weight(.bold))
+				
+				Text("Choose the difficulty")
+					.font(.headline.weight(.medium))
+			}
+			.foregroundColor(.white)
+			.multilineTextAlignment(.leading)
+			.padding(.bottom, 20)
 			
 			ForEach(MemoryDifficulty.allCases) { difficulty in
 				if difficulty.amount <= (deck.cards ?? []).count {
@@ -59,8 +58,9 @@ struct SelectDifficultyView: View {
 		.padding(32)
 		.background {
 			Color(UIColor(.accentColor))
-				.clipShape(RoundedRectangle(cornerRadius: 30, style: .continuous))
+				.clipShape(RoundedRectangle(cornerRadius: 35, style: .continuous))
 		}
+		.transition(.opacity.combined(with: .scale(scale: 0.95, anchor: .top)))
 	}
 }
 
