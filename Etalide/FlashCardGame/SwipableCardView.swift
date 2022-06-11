@@ -11,8 +11,9 @@ struct SwipableCardView: View {
     
 	@State var showFirstLetter = true
     @State private var translation: CGSize = .zero
-//    @State var opacity: Double = 1.0
-    
+	
+    @ScaledMetric private var fontSize = 64
+	
     private var card: Card
     private var onRemove: (_ card: Card) -> Void
     //swiping percentage
@@ -33,19 +34,20 @@ struct SwipableCardView: View {
 				.overlay(alignment: .bottom) {
 					if let cardName = card.localisedName ?? card.name {
 						Text(showFirstLetter ? String(cardName.prefix(1)) : cardName)
-							.font(.system(.largeTitle, design: .serif).weight(.bold))
-							.foregroundStyle(.regularMaterial)
+							.font(.system(size: fontSize, weight: .bold))
+							.foregroundStyle(Color.background)
 							.multilineTextAlignment(.center)
 							.frame(maxWidth: .infinity)
 							.padding(.vertical)
 							.background(Color.accentColor)
 					}
 				}
-				.cornerRadius(30)
+				.clipShape(RoundedRectangle(cornerRadius: 45, style: .continuous))
 				.onTapGesture {
-					showFirstLetter.toggle()
+					withAnimation {
+						showFirstLetter.toggle()
+					}
 				}
-			
 		}
 	}
 	
@@ -53,12 +55,10 @@ struct SwipableCardView: View {
         GeometryReader { geometry in
 			cardView
                 .frame(width: geometry.size.width, height: geometry.size.height)
-                //.opacity(opacity)
             //Update the offset of the view based on whatever values are in the width/height of our translation. This will move the view exactly where we are dragging it.
             //only horizontal dragging
                 .offset(x: self.translation.width, y: 0)
             //horizontal and vertical dragging
-//                .offset(x: self.translation.width, y: self.translation.height)
             //to rotate
                 .rotationEffect(.degrees(Double(self.translation.width / geometry.size.width) * 25), anchor: .bottom)
                 .gesture(
@@ -81,7 +81,7 @@ struct SwipableCardView: View {
     }
 }
 
-struct FlashCardGameView_Previews: PreviewProvider {
+struct SwipableCardView_Previews: PreviewProvider {
     static var previews: some View {
         SwipableCardView(card: Card()) { _ in
             // do nothing
