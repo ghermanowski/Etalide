@@ -85,7 +85,7 @@ struct CardGameView: View {
 			Button {
 				isShowingAlert = true
 			} label: {
-				Image(systemName: "info")
+				Image(systemName: "questionmark")
 			}
 			.buttonStyle(.circle)
 		}
