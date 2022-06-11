@@ -22,46 +22,25 @@ struct CardGameView: View {
     
     var body: some View {
         VStack {
-			GeometryReader { geometry in
-                VStack {
-                    ZStack {
-                        
-                        ForEach(cards, id: \.self) { card in
-                            SwipableCardView(card: card, onRemove:
-                                { removedCard in
-                                withAnimation(.interactiveSpring()) {
-                                    cards.removeAll { $0.id == removedCard.id}
-                                }
-                            }
-                            )
-                            
-                        }
-                        
-                        if cards.isEmpty {
-                            Button {
-                                cards.append(contentsOf: deck.allCards!)
-                            } label: {
-                                
-                                VStack {
-                                    Spacer()
-                                    
-                                    HStack {
-                                        Spacer()
-                                        
-                                        GameButton(imageTitle: "FlashcardButton", title: String(localized: "Play again"))
-                                            .frame(width: UIScreen.main.bounds.width * 0.40, height: UIScreen.main.bounds.height * 0.45)
-                                        
-                                        Spacer()
-                                    }
-                                    
-                                    Spacer()
-                                }
-                            }
-                        }
-                    }
-                }
-                
-            }
+			if !cards.isEmpty {
+				ZStack {
+					ForEach(cards, id: \.self) { card in
+						SwipableCardView(card: card) { removedCard in
+							withAnimation(.interactiveSpring()) {
+								cards.removeAll { $0.id == removedCard.id}
+							}
+						}
+					}
+				}
+			} else {
+				Button {
+					cards.append(contentsOf: deck.allCards!)
+				} label: {
+					GameButton(imageTitle: "FlashcardButton", title: String(localized: "Play again"))
+						.frame(height: UIScreen.main.bounds.height * 0.2)
+				}
+				.buttonStyle(.verticalRectangle)
+			}
         }
         .padding(64)
 		.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
