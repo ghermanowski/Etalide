@@ -39,7 +39,6 @@
 		5C596C2D283E17700097C7B8 /* CardGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C2A283E17700097C7B8 /* CardGameView.swift */; };
 		5C596C6C283FBF750097C7B8 /* DeckPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C6B283FBF750097C7B8 /* DeckPopoverView.swift */; };
 		5C596C6E283FC34B0097C7B8 /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C6D283FC34A0097C7B8 /* GameButton.swift */; };
-		5C596C70283FC7180097C7B8 /* DeckOfCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C596C6F283FC7180097C7B8 /* DeckOfCardsView.swift */; };
 		5CBCAD97285207EB00EAEBE4 /* CardPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBCAD96285207EB00EAEBE4 /* CardPopupView.swift */; };
 		6C7C3B0F283E3B7A00F42669 /* Decks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C7C3B0E283E3B7A00F42669 /* Decks.swift */; };
 		7151973E2851E5B80049B474 /* FireworkParticlesGeometryEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7151973D2851E5B80049B474 /* FireworkParticlesGeometryEffect.swift */; };
@@ -77,8 +76,6 @@
 		F5EDE18E283F8F7C00E96A3A /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EDE18D283F8F7C00E96A3A /* ImageManager.swift */; };
 		F5EDE18F283F8F8100E96A3A /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EDE18D283F8F7C00E96A3A /* ImageManager.swift */; };
 		F5EDE190283F8F8200E96A3A /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EDE18D283F8F7C00E96A3A /* ImageManager.swift */; };
-		F5EDE192283F939500E96A3A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EDE191283F939500E96A3A /* CardView.swift */; };
-		F5EDE194283FAD2600E96A3A /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EDE193283FAD2600E96A3A /* DeckView.swift */; };
 		F5F2B0B42846094D00F5FFB3 /* CardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5F2B0B32846094D00F5FFB3 /* CardImageView.swift */; };
 /* End PBXBuildFile section */
 
@@ -116,7 +113,6 @@
 		5C596C2A283E17700097C7B8 /* CardGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardGameView.swift; sourceTree = "<group>"; };
 		5C596C6B283FBF750097C7B8 /* DeckPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckPopoverView.swift; sourceTree = "<group>"; };
 		5C596C6D283FC34A0097C7B8 /* GameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
-		5C596C6F283FC7180097C7B8 /* DeckOfCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckOfCardsView.swift; sourceTree = "<group>"; };
 		5CBCAD96285207EB00EAEBE4 /* CardPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPopupView.swift; sourceTree = "<group>"; };
 		5CBCAD9928532B5000EAEBE4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C749D7E2853C0C7009FA6E5 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -148,8 +144,6 @@
 		F5940955285359C600AE5B75 /* DeckPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckPopupView.swift; sourceTree = "<group>"; };
 		F5C4230B283CE69900A385B5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F5EDE18D283F8F7C00E96A3A /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
-		F5EDE191283F939500E96A3A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		F5EDE193283FAD2600E96A3A /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 		F5F2B0B32846094D00F5FFB3 /* CardImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageView.swift; sourceTree = "<group>"; };
 		F5F2B0B528461DD000F5FFB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -366,7 +360,6 @@
 			children = (
 				F5F2B0B32846094D00F5FFB3 /* CardImageView.swift */,
 				5CBCAD96285207EB00EAEBE4 /* CardPopupView.swift */,
-				F5EDE191283F939500E96A3A /* CardView.swift */,
 				F5C4230B283CE69900A385B5 /* ImagePicker.swift */,
 			);
 			path = View;
@@ -375,12 +368,10 @@
 		F5EDE195283FAD3100E96A3A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5C596C6F283FC7180097C7B8 /* DeckOfCardsView.swift */,
 				5C596C6B283FBF750097C7B8 /* DeckPopoverView.swift */,
 				F5940955285359C600AE5B75 /* DeckPopupView.swift */,
 				F54D6039284901F2008B732D /* DeckPreview.swift */,
 				6C7C3B0E283E3B7A00F42669 /* Decks.swift */,
-				F5EDE193283FAD2600E96A3A /* DeckView.swift */,
 				5C596C6D283FC34A0097C7B8 /* GameButton.swift */,
 			);
 			path = View;
@@ -533,12 +524,10 @@
 				71AE0B152844D6C500A128F2 /* MemoryDifficulty.swift in Sources */,
 				71AE0B132844D3F700A128F2 /* SelectDifficultyView.swift in Sources */,
 				50CF1BD2283CE17B00324353 /* MemoryCardView.swift in Sources */,
-				5C596C70283FC7180097C7B8 /* DeckOfCardsView.swift in Sources */,
 				719521E82853961A00260687 /* InfoAlert.swift in Sources */,
 				5CBCAD97285207EB00EAEBE4 /* CardPopupView.swift in Sources */,
 				5C596C27283E17050097C7B8 /* SwipableCardView.swift in Sources */,
 				F58CB7842840D65100B74FD5 /* ScalesOnPressStyle.swift in Sources */,
-				F5EDE192283F939500E96A3A /* CardView.swift in Sources */,
 				6C7C3B0F283E3B7A00F42669 /* Decks.swift in Sources */,
 				F5853396284B98FA0010765B /* MemoryCard.swift in Sources */,
 				50DA136B283E1CF100A7ECC4 /* CardStore.swift in Sources */,
@@ -550,7 +539,6 @@
 				50CF1BCA283CD9C900324353 /* DataController.swift in Sources */,
 				5C596C6C283FBF750097C7B8 /* DeckPopoverView.swift in Sources */,
 				F5C4230C283CE69900A385B5 /* ImagePicker.swift in Sources */,
-				F5EDE194283FAD2600E96A3A /* DeckView.swift in Sources */,
 				50CF1BBD283CD8DA00324353 /* Deck+CoreDataClass.swift in Sources */,
 				F58C3778284E0B4300623783 /* EnvironmentValues+LandscapeOrientation.swift in Sources */,
 				50FC97E72844D78700410666 /* Color.swift in Sources */,
