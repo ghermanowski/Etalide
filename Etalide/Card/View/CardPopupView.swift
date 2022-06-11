@@ -24,6 +24,7 @@ struct CardPopupView: View {
 		}
 	}
 	
+	@Environment(\.isLandscape) private var isLandscape
 	@Environment(\.managedObjectContext) private var moc
 	
 	private let card: Card?
@@ -80,7 +81,8 @@ struct CardPopupView: View {
 		.padding(.top, 96)
 		.padding(.horizontal, 48)
 		.padding(.bottom, 32)
-		.frame(width: UIScreen.main.bounds.width / 2.75)
+		.frame(maxWidth: UIScreen.main.bounds.width / (isLandscape ? 3 : 2),
+			   maxHeight: UIScreen.main.bounds.height / (isLandscape ? 2 : 1.66))
 		.background(Color.background2)
 		.cornerRadius(25)
 		.navigationButtons(alignment: .topLeading, padding: 24) {
