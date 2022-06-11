@@ -10,7 +10,7 @@ import SwiftUI
 struct CardGameView: View {
     init(_ deck: Deck) {
         self.deck = deck
-        _cards = State(initialValue: deck.allCards!)
+		_cards = State(initialValue: deck.allCards!.shuffled())
     }
     
 	@Environment(\.dismiss) private var dismiss
@@ -34,7 +34,7 @@ struct CardGameView: View {
 				}
 			} else {
 				Button {
-					cards.append(contentsOf: deck.allCards!)
+					cards.append(contentsOf: deck.allCards!.shuffled())
 				} label: {
 					GameButton(imageTitle: "FlashcardButton", title: String(localized: "Play again"))
 						.frame(height: UIScreen.main.bounds.height * 0.2)
