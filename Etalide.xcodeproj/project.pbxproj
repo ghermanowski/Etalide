@@ -192,9 +192,9 @@
 		5C596C25283E16EC0097C7B8 /* FlashCardGame */ = {
 			isa = PBXGroup;
 			children = (
-				5C596C26283E17050097C7B8 /* SwipableCardView.swift */,
 				5C596C2A283E17700097C7B8 /* CardGameView.swift */,
 				719521E72853961A00260687 /* InfoAlert.swift */,
+				5C596C26283E17050097C7B8 /* SwipableCardView.swift */,
 			);
 			path = FlashCardGame;
 			sourceTree = "<group>";
@@ -254,12 +254,12 @@
 			children = (
 				F58A8D0B283CC3B8000A859A /* EtalideApp.swift */,
 				F58A8D0D283CC3B8000A859A /* ContentView.swift */,
-				5C596C25283E16EC0097C7B8 /* FlashCardGame */,
 				F5C42307283CDBA600A385B5 /* Card */,
 				F5C42306283CDB4200A385B5 /* Deck */,
+				5C596C25283E16EC0097C7B8 /* FlashCardGame */,
 				50CF1BD0283CDE6600324353 /* MemoryGame */,
-				F5C42308283CDBD600A385B5 /* CoreData */,
 				F58CB7862840E42700B74FD5 /* ViewStyle */,
+				F5C42308283CDBD600A385B5 /* CoreData */,
 				F59409542852566700AE5B75 /* Extensions */,
 				F5F2B0B528461DD000F5FFB3 /* Info.plist */,
 				50314FB8284E454F005A1A7E /* Localizable.strings */,
@@ -364,9 +364,9 @@
 		F5C42314283CED0500A385B5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F5F2B0B32846094D00F5FFB3 /* CardImageView.swift */,
 				5CBCAD96285207EB00EAEBE4 /* CardPopupView.swift */,
 				F5EDE191283F939500E96A3A /* CardView.swift */,
-				F5F2B0B32846094D00F5FFB3 /* CardImageView.swift */,
 				F5C4230B283CE69900A385B5 /* ImagePicker.swift */,
 			);
 			path = View;
