@@ -64,7 +64,7 @@ struct CardPopupView: View {
 						.font(.system(.largeTitle).weight(.semibold))
 				}
 			}
-			.buttonStyle(.verticalRectangle)
+			.buttonStyle(.scalesOnPress)
 			.sheet(isPresented: $showImagePicker) {
 				ImagePicker(image: $image)
 			}

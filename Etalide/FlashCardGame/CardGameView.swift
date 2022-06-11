@@ -39,7 +39,7 @@ struct CardGameView: View {
 					GameButton(imageTitle: "FlashcardButton", title: String(localized: "Play again"))
 						.frame(height: UIScreen.main.bounds.height * 0.2)
 				}
-				.buttonStyle(.verticalRectangle)
+				.buttonStyle(.scalesOnPress)
 			}
         }
         .padding(64)

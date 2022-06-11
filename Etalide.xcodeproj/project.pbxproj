@@ -65,8 +65,8 @@
 		F58A8D27283CC3B8000A859A /* EtalideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D26283CC3B8000A859A /* EtalideUITests.swift */; };
 		F58A8D29283CC3B8000A859A /* EtalideUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58A8D28283CC3B8000A859A /* EtalideUITestsLaunchTests.swift */; };
 		F58C3778284E0B4300623783 /* EnvironmentValues+LandscapeOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58C3777284E0B4300623783 /* EnvironmentValues+LandscapeOrientation.swift */; };
-		F58CB7842840D65100B74FD5 /* VerticalRectangleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CB7832840D65100B74FD5 /* VerticalRectangleStyle.swift */; };
-		F58CB7852840D65100B74FD5 /* VerticalRectangleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CB7832840D65100B74FD5 /* VerticalRectangleStyle.swift */; };
+		F58CB7842840D65100B74FD5 /* ScalesOnPressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CB7832840D65100B74FD5 /* ScalesOnPressStyle.swift */; };
+		F58CB7852840D65100B74FD5 /* ScalesOnPressStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CB7832840D65100B74FD5 /* ScalesOnPressStyle.swift */; };
 		F58CB7F82845690800B74FD5 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = F58CB7F72845690800B74FD5 /* Images */; };
 		F594095228524CBE00AE5B75 /* NavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F594095128524CBE00AE5B75 /* NavigationTitle.swift */; };
 		F594095328524CBE00AE5B75 /* NavigationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F594095128524CBE00AE5B75 /* NavigationTitle.swift */; };
@@ -142,7 +142,7 @@
 		F58A8D37283CC492000A859A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F58A8D38283CC492000A859A /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F58C3777284E0B4300623783 /* EnvironmentValues+LandscapeOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvironmentValues+LandscapeOrientation.swift"; sourceTree = "<group>"; };
-		F58CB7832840D65100B74FD5 /* VerticalRectangleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalRectangleStyle.swift; sourceTree = "<group>"; };
+		F58CB7832840D65100B74FD5 /* ScalesOnPressStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScalesOnPressStyle.swift; sourceTree = "<group>"; };
 		F58CB7F72845690800B74FD5 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		F594095128524CBE00AE5B75 /* NavigationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTitle.swift; sourceTree = "<group>"; };
 		F5940955285359C600AE5B75 /* DeckPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckPopupView.swift; sourceTree = "<group>"; };
@@ -301,7 +301,7 @@
 				F52F23C12850AE250031179E /* CircleStyle.swift */,
 				F52F23BE2850A04A0031179E /* NavigationButtons.swift */,
 				F594095128524CBE00AE5B75 /* NavigationTitle.swift */,
-				F58CB7832840D65100B74FD5 /* VerticalRectangleStyle.swift */,
+				F58CB7832840D65100B74FD5 /* ScalesOnPressStyle.swift */,
 			);
 			path = ViewStyle;
 			sourceTree = "<group>";
@@ -537,7 +537,7 @@
 				719521E82853961A00260687 /* InfoAlert.swift in Sources */,
 				5CBCAD97285207EB00EAEBE4 /* CardPopupView.swift in Sources */,
 				5C596C27283E17050097C7B8 /* SwipableCardView.swift in Sources */,
-				F58CB7842840D65100B74FD5 /* VerticalRectangleStyle.swift in Sources */,
+				F58CB7842840D65100B74FD5 /* ScalesOnPressStyle.swift in Sources */,
 				F5EDE192283F939500E96A3A /* CardView.swift in Sources */,
 				6C7C3B0F283E3B7A00F42669 /* Decks.swift in Sources */,
 				F5853396284B98FA0010765B /* MemoryCard.swift in Sources */,
@@ -599,7 +599,7 @@
 				50CF1BC5283CD8DA00324353 /* Card+CoreDataClass.swift in Sources */,
 				50CF1BBF283CD8DA00324353 /* Deck+CoreDataClass.swift in Sources */,
 				F54D603B284901F2008B732D /* DeckPreview.swift in Sources */,
-				F58CB7852840D65100B74FD5 /* VerticalRectangleStyle.swift in Sources */,
+				F58CB7852840D65100B74FD5 /* ScalesOnPressStyle.swift in Sources */,
 				F58A8D29283CC3B8000A859A /* EtalideUITestsLaunchTests.swift in Sources */,
 				5C596C29283E17050097C7B8 /* SwipableCardView.swift in Sources */,
 				F5940957285359C600AE5B75 /* DeckPopupView.swift in Sources */,

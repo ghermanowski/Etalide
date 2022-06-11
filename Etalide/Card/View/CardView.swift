@@ -49,7 +49,7 @@ struct CardView: View {
 				}
 			}
 		}
-		.buttonStyle(.verticalRectangle)
+		.buttonStyle(.scalesOnPress)
 		.overlay(alignment: .bottom) {
 			if !cardName.isEmpty || editMode?.wrappedValue == .active {
 				TextField("Name", text: $cardName)

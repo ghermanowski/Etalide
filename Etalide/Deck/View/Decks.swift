@@ -33,7 +33,7 @@ struct Decks: View {
 						} label: {
 							DeckPreview(deck)
 						}
-						.buttonStyle(.verticalRectangle)
+						.buttonStyle(.scalesOnPress)
 					}
 				}
 				.padding(padding)

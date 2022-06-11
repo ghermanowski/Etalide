@@ -66,7 +66,7 @@ private struct NewCards: View {
 		} label: {
 			Label("New Card", systemImage: "plus.rectangle.portrait.fill")
 		}
-		.buttonStyle(.verticalRectangle)
+		.buttonStyle(.scalesOnPress)
         
 		ForEach(0..<newCardsCount, id: \.self) { _ in
 			CardView(in: deck)
