@@ -47,7 +47,7 @@ struct DeckPopoverView: View {
 		ScrollView(showsIndicators: false) {
 			LazyVGrid(columns: columns, spacing: 16) {
 				if let cards = deck.allCards {
-					ForEach(cards) { card in
+					ForEach(cards.sorted()) { card in
 						cardView(card)
 					}
 				}
