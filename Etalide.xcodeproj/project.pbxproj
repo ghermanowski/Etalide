@@ -109,6 +109,7 @@
 		50CF1BD1283CE17B00324353 /* MemoryCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCardView.swift; sourceTree = "<group>"; };
 		50DA136A283E1CF100A7ECC4 /* CardStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStore.swift; sourceTree = "<group>"; };
 		50FC97E62844D78700410666 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		5C0EDD8F2854DBD900D8481A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5C596C26283E17050097C7B8 /* SwipableCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipableCardView.swift; sourceTree = "<group>"; };
 		5C596C2A283E17700097C7B8 /* CardGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardGameView.swift; sourceTree = "<group>"; };
 		5C596C6B283FBF750097C7B8 /* DeckPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckPopoverView.swift; sourceTree = "<group>"; };
@@ -469,6 +470,7 @@
 				it,
 				ru,
 				"es-419",
+				es,
 			);
 			mainGroup = F58A8CFF283CC3B8000A859A;
 			productRefGroup = F58A8D09283CC3B8000A859A /* Products */;
@@ -621,6 +623,7 @@
 				50314FBB284E4572005A1A7E /* it */,
 				5CBCAD9928532B5000EAEBE4 /* ru */,
 				6C749D7E2853C0C7009FA6E5 /* es-419 */,
+				5C0EDD8F2854DBD900D8481A /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
