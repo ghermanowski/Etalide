@@ -16,6 +16,7 @@ struct CardGameView: View {
 	@Environment(\.dismiss) private var dismiss
 	
     @State var cards: [Card]
+	@State var previousCards = [Card]()
 	@State var isShowingAlert = false
     
     private let deck: Deck
@@ -25,9 +26,10 @@ struct CardGameView: View {
 			if !cards.isEmpty {
 				ZStack {
 					ForEach(cards, id: \.self) { card in
-						SwipableCardView(card: card) { removedCard in
+						SwipableCardView(card: card) {
 							withAnimation(.interactiveSpring()) {
-								cards.removeAll { $0.id == removedCard.id}
+								guard let card = cards.popLast() else { return }
+								previousCards.append(card)
 							}
 						}
 					}
@@ -35,6 +37,7 @@ struct CardGameView: View {
 			} else {
 				Button {
 					cards.append(contentsOf: deck.allCards!.shuffled())
+					previousCards.removeAll()
 				} label: {
 					GameButton(imageTitle: "FlashcardButton", title: String(localized: "Play again"))
 						.frame(height: UIScreen.main.bounds.height * 0.2)
@@ -68,7 +71,17 @@ struct CardGameView: View {
 			}
 			.buttonStyle(.circle)
 		}
-		
+		.navigationButtons(alignment: .bottomLeading) {
+			if let lastCard = previousCards.last {
+				Button {
+					cards.append(lastCard)
+					previousCards.removeLast()
+				} label: {
+					Image(systemName: "arrowshape.turn.up.backward")
+				}
+				.buttonStyle(.circle)
+			}
+		}
 	}
 }
 

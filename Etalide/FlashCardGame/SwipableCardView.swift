@@ -15,11 +15,11 @@ struct SwipableCardView: View {
     @ScaledMetric private var fontSize = 64
 	
     private var card: Card
-    private var onRemove: (_ card: Card) -> Void
+    private var onRemove: () -> Void
     //swiping percentage
     private var thresholdPercentage: CGFloat = 0.05
     
-    init(card: Card, onRemove: @escaping (_ card: Card) -> Void) {
+    init(card: Card, onRemove: @escaping () -> Void) {
         self.card = card
         self.onRemove = onRemove
     }
@@ -71,7 +71,7 @@ struct SwipableCardView: View {
                         .onEnded ({ value in
                             // determine snap distance > 0.5 aka half the width of the screen
                             if abs(self.getGesturePercentage(geometry, from: value)) > self.thresholdPercentage {
-                                self.onRemove(self.card)
+                                self.onRemove()
                             } else {
                                 self.translation = .zero
                             }
@@ -83,9 +83,7 @@ struct SwipableCardView: View {
 
 struct SwipableCardView_Previews: PreviewProvider {
     static var previews: some View {
-        SwipableCardView(card: Card()) { _ in
-            // do nothing
-        }
-        .padding()
+        SwipableCardView(card: Card()) {}
+			.padding()
     }
 }
