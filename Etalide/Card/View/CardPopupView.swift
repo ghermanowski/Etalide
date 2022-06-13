@@ -157,6 +157,7 @@ struct CardPopupView: View {
 		guard let image = image else {
 			guard let card = card,
 				  card.name != cardName else {
+				dismiss()
 				return
 			}
 			
