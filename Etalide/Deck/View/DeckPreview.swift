@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct DeckPreview: View {
-	init(_ deck: Deck) {
+	init?(_ deck: Deck) {
+		guard let deckID = deck.id else { return nil }
+		
 		_decks = FetchRequest(
 			entity: Deck.entity(),
 			sortDescriptors: [],
-			predicate: NSPredicate(format: "id = %@", deck.id! as CVarArg),
+			predicate: NSPredicate(format: "id = %@", deckID as CVarArg),
 			animation: .default
 		)
 	}
@@ -32,27 +34,27 @@ struct DeckPreview: View {
 	}
 	
 	var body: some View {
-		let deck = decks.first!
-		
-		Group {
-			if let firstCards = deck.allCards?.sorted().prefix(3) {
-				ZStack {
-					cardView(firstCards.count >= 2 ? firstCards[1] : nil)
-						.opacity(0.8)
-						.offset(x: 10, y: 20)
-						.padding([.trailing, .bottom], 10)
-						.rotationEffect(.degrees(3.5), anchor: .bottomTrailing)
-					
-					cardView(firstCards.count >= 1 ? firstCards[0] : nil)
-						.padding([.trailing, .bottom], 10)
+		if let deck = decks.first {
+			Group {
+				if let firstCards = deck.allCards?.sorted().prefix(3) {
+					ZStack {
+						cardView(firstCards.count >= 2 ? firstCards[1] : nil)
+							.opacity(0.8)
+							.offset(x: 10, y: 20)
+							.padding([.trailing, .bottom], 10)
+							.rotationEffect(.degrees(3.5), anchor: .bottomTrailing)
+						
+						cardView(firstCards.count >= 1 ? firstCards[0] : nil)
+							.padding([.trailing, .bottom], 10)
+					}
 				}
 			}
-		}
-		.overlay {
-			Text(deck.wrappedName)
-				.font(.largeTitle.bold())
-				.foregroundColor(.white)
-				.shadow(color: .black.opacity(0.5), radius: 5)
+			.overlay {
+				Text(deck.wrappedName)
+					.font(.largeTitle.bold())
+					.foregroundColor(.white)
+					.shadow(color: .black.opacity(0.5), radius: 5)
+			}
 		}
 	}
 }
