@@ -18,7 +18,9 @@ struct OverlayShadow: ViewModifier {
 						.frame(maxWidth: .infinity, maxHeight: .infinity)
 						.ignoresSafeArea(.all)
 						.onTapGesture {
-							isShown = false
+							withAnimation {
+								isShown = false
+							}
 						}
 				}
 			}
