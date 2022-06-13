@@ -14,11 +14,8 @@ struct CardPopupView: View {
 		
 		_showPopover = showPopover
 		
-		if let assetName = card?.assetName,
-		   let name = card?.name,
-		   name == assetName {
-			let localisedName = String(localized: String.LocalizationValue(name))
-			_cardName = State(initialValue: localisedName)
+		if let name = card?.name {
+			_cardName = State(initialValue: name)
 		} else {
 			_cardName = .init(initialValue: card?.name ?? "")
 		}

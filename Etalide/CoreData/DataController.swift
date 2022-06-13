@@ -24,21 +24,26 @@ class DataController: ObservableObject {
 		
 		if !hasBeenLaunched {
 			let context = container.viewContext
-			
+			let fileManager = FileManager.default
 			let folderURLs = Bundle.main.urls(forResourcesWithExtension: nil, subdirectory: "Images")!
 			let decks = folderURLs
 				.map(\.lastPathComponent)
-				.map { Deck(context: context, name: $0, assetName: $0) }
-			
-			let fileManager = FileManager.default
+				.map {
+					Deck(
+						context: context,
+						name: String(localized: String.LocalizationValue($0)),
+						assetName: $0
+					)
+				}
 			
 			for index in folderURLs.indices {
 				do {
 					let files = try fileManager.contentsOfDirectory(atPath: folderURLs[index].path)
 					
 					for file in files {
-						let name = file.replacingOccurrences(of: ".jpeg", with: "")
-						let card = Card(context: context, name: name, assetName: name)
+						let fileName = file.replacingOccurrences(of: ".jpeg", with: "")
+						let cardName = String(localized: String.LocalizationValue(fileName))
+						let card = Card(context: context, name: cardName, assetName: fileName)
 						card.addToDeck(decks[index])
 					}
 				} catch {

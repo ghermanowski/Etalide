@@ -124,7 +124,7 @@ struct DeckPopoverView: View {
 			.buttonStyle(.circle)
 		}
 		.navigationButtons(alignment: .top) {
-			Text(deck.localisedName ?? deck.wrappedName)
+			Text(deck.wrappedName)
 				.font(.system(.largeTitle).weight(.bold))
 				.foregroundColor(.accentColor)
 		}

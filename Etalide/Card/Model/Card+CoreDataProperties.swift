@@ -21,21 +21,16 @@ extension Card {
 	@NSManaged public var assetName: String?
 	@NSManaged public var decks: NSSet?
 	
-	var localisedName: String? {
-		guard let assetName = assetName else { return nil }
-		return String(localized: String.LocalizationValue(assetName))
-	}
-	
 	var imageURL: URL? {
 		// Attempts to find a matching file from the images directory for preset cards.
-		guard assetName == nil && name != assetName else {
+		guard assetName == nil else {
 			guard let decks = decks?.allObjects as? [Deck] else { return nil }
 			
 			for deck in decks {
 				if let url = Bundle.main.url(
 					forResource: assetName!,
 					withExtension: "jpeg",
-					subdirectory: "Images/" + deck.name!
+					subdirectory: "Images/" + deck.assetName!
 				) {
 					return url
 				}

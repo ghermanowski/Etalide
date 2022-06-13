@@ -25,11 +25,6 @@ extension Deck {
 		name ?? "No name"
 	}
 	
-	var localisedName: String? {
-		guard let assetName = assetName else { return nil }
-		return String(localized: String.LocalizationValue(assetName))
-	}
-	
 	var wrappedID: UUID {
 		id ?? UUID()
 	}
