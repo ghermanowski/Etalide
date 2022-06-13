@@ -17,7 +17,7 @@ extension View {
 			HStack(spacing: 20) {
 				buttons()
 			}
-			.padding([.top, .horizontal], padding)
+			.padding(padding)
 		}
 	}
 }
