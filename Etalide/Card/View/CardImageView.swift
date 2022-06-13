@@ -15,15 +15,15 @@ struct CardImageView: View {
 	private let url: URL
 	
 	var body: some View {
-		Group {
-			if let image = ImageManager.shared.cache[url] {
-				image
-					.resizable()
-			} else {
+//		Group {
+//			if let image = ImageManager.shared.cache[url] {
+//				image
+//					.resizable()
+//			} else {
 				AsyncImage(url: url) { image in
 					image
 						.resizable()
-						.onAppear { ImageManager.shared.cache[url] = image }
+//						.onAppear { ImageManager.shared.cache[url] = image }
 				} placeholder: {
 					Color.accentColor
 						.overlay {
@@ -31,8 +31,8 @@ struct CardImageView: View {
 								.tint(Color.background)
 						}
 				}
-			}
-		}
+//			}
+//		}
 		.aspectRatio(3 / 4, contentMode: .fit)
 	}
 }
