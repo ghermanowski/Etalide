@@ -44,13 +44,23 @@ struct Decks: View {
 		.background(Color.background)
 		.navigationButtons(alignment: .topTrailing, padding: 20) {
 			Button {
-				showNewDeckView = true
+				withAnimation {
+					showNewDeckView = true
+				}
 			} label: {
 				Image(systemName: "plus")
 			}
 			.buttonStyle(.circle(invertColours: true))
 			.padding(.trailing, 8)
 		}
+		.overlayShadow(
+			isShown: Binding(
+				get: { showNewDeckView || selectedDeck != nil },
+				set: { _ in
+					showNewDeckView = false
+					selectedDeck = nil
+				})
+		)
 		.overlay {
 			if showNewDeckView {
 				DeckPopupView(isPresented: $showNewDeckView)

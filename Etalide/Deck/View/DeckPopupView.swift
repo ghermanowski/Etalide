@@ -57,12 +57,13 @@ struct DeckPopupView: View {
 			}
 			.buttonStyle(.circle)
 		}
-		.frame(maxWidth: .infinity, maxHeight: .infinity)
-		.background(Color.black.opacity(0.75))
+		.transition(.overlay)
     }
 	
 	private func dismiss() {
-		isPresented = false
+		withAnimation {
+			isPresented = false
+		}
 	}
 	
 	private func saveDeck() {

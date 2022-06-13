@@ -115,12 +115,13 @@ struct CardPopupView: View {
 			}
 			.buttonStyle(.circle)
 		}
-		.frame(maxWidth: .infinity, maxHeight: .infinity)
-		.background(Color.black.opacity(0.75))
+		.transition(.overlay)
 	}
 	
 	private func dismiss() {
-		showPopover.toggle()
+		withAnimation {
+			showPopover.toggle()
+		}
 	}
 	
 	private func requestDeletion() {

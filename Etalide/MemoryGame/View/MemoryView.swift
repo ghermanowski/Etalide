@@ -47,10 +47,6 @@ struct MemoryView: View {
 				.animation(nil, value: cardStore.duplicatedCards.count != cardStore.hiddenCards.count)
 			} else {
 				ZStack {
-					Text("Well Done!")
-						.foregroundColor(.accentColor)
-						.font(.system(size: 100, weight: .semibold))
-					
 					Circle()
 						.fill(Color.blue)
 						.frame(width: 12, height: 12)
@@ -67,8 +63,16 @@ struct MemoryView: View {
 						.fill(Color.green)
 						.frame(width: 12, height: 12)
 						.modifier(ParticlesModifier())
+					
+					Text("Well Done!")
+						.foregroundColor(.accentColor)
+						.font(.system(size: 100, weight: .semibold))
 				}
-				.transition(.opacity.animation(.default.delay(1)))
+				.transition(
+					.opacity
+						.combined(with: .scale(scale: 0.85))
+						.animation(.easeInOut.delay(1))
+				)
 			}
 		}
 		.frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
@@ -90,14 +94,10 @@ struct MemoryView: View {
 				Button {
 					showingCards.toggle()
 					
-					for card in cardStore.duplicatedCards {
-						if showingCards {
-							
-							cardStore.selectedCards.append(card)
-							
-						} else {
-							cardStore.selectedCards.removeAll()
-						}
+					if showingCards {
+						cardStore.selectedCards = cardStore.duplicatedCards
+					} else {
+						cardStore.selectedCards.removeAll()
 					}
 				} label: {
 					Image(systemName: "eye")

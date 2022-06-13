@@ -53,6 +53,9 @@
 		F54D603B284901F2008B732D /* DeckPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54D6039284901F2008B732D /* DeckPreview.swift */; };
 		F54D603E28490D0F008B732D /* MemoryDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE0B142844D6C500A128F2 /* MemoryDifficulty.swift */; };
 		F54D603F28490D8A008B732D /* SelectDifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AE0B122844D3F600A128F2 /* SelectDifficultyView.swift */; };
+		F584BA9928574A6400167E51 /* AnyTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F584BA9828574A6400167E51 /* AnyTransition.swift */; };
+		F584BA9B2857813C00167E51 /* OverlayShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F584BA9A2857813C00167E51 /* OverlayShadow.swift */; };
+		F584BA9C2857813C00167E51 /* OverlayShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F584BA9A2857813C00167E51 /* OverlayShadow.swift */; };
 		F5853396284B98FA0010765B /* MemoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5853395284B98FA0010765B /* MemoryCard.swift */; };
 		F5853397284B98FA0010765B /* MemoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5853395284B98FA0010765B /* MemoryCard.swift */; };
 		F5853398284B98FA0010765B /* MemoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5853395284B98FA0010765B /* MemoryCard.swift */; };
@@ -126,6 +129,8 @@
 		F52F23C12850AE250031179E /* CircleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleStyle.swift; sourceTree = "<group>"; };
 		F54D6039284901F2008B732D /* DeckPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckPreview.swift; sourceTree = "<group>"; };
 		F584BA97285746E900167E51 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F584BA9828574A6400167E51 /* AnyTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransition.swift; sourceTree = "<group>"; };
+		F584BA9A2857813C00167E51 /* OverlayShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayShadow.swift; sourceTree = "<group>"; };
 		F5853395284B98FA0010765B /* MemoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCard.swift; sourceTree = "<group>"; };
 		F58A8D08283CC3B8000A859A /* Etalide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Etalide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F58A8D0B283CC3B8000A859A /* EtalideApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EtalideApp.swift; sourceTree = "<group>"; };
@@ -298,6 +303,7 @@
 				F52F23BE2850A04A0031179E /* NavigationButtons.swift */,
 				F594095128524CBE00AE5B75 /* NavigationTitle.swift */,
 				F58CB7832840D65100B74FD5 /* ScalesOnPressStyle.swift */,
+				F584BA9A2857813C00167E51 /* OverlayShadow.swift */,
 			);
 			path = ViewStyle;
 			sourceTree = "<group>";
@@ -305,6 +311,7 @@
 		F59409542852566700AE5B75 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F584BA9828574A6400167E51 /* AnyTransition.swift */,
 				50FC97E62844D78700410666 /* Color.swift */,
 				F58C3777284E0B4300623783 /* EnvironmentValues+LandscapeOrientation.swift */,
 			);
@@ -530,6 +537,7 @@
 				50CF1BD2283CE17B00324353 /* MemoryCardView.swift in Sources */,
 				719521E82853961A00260687 /* InfoAlert.swift in Sources */,
 				5CBCAD97285207EB00EAEBE4 /* CardPopupView.swift in Sources */,
+				F584BA9B2857813C00167E51 /* OverlayShadow.swift in Sources */,
 				5C596C27283E17050097C7B8 /* SwipableCardView.swift in Sources */,
 				F58CB7842840D65100B74FD5 /* ScalesOnPressStyle.swift in Sources */,
 				6C7C3B0F283E3B7A00F42669 /* Decks.swift in Sources */,
@@ -539,6 +547,7 @@
 				50CF1BC0283CD8DA00324353 /* Deck+CoreDataProperties.swift in Sources */,
 				7151973E2851E5B80049B474 /* FireworkParticlesGeometryEffect.swift in Sources */,
 				F594095228524CBE00AE5B75 /* NavigationTitle.swift in Sources */,
+				F584BA9928574A6400167E51 /* AnyTransition.swift in Sources */,
 				50CF1BC3283CD8DA00324353 /* Card+CoreDataClass.swift in Sources */,
 				50CF1BCA283CD9C900324353 /* DataController.swift in Sources */,
 				5C596C6C283FBF750097C7B8 /* DeckPopoverView.swift in Sources */,
@@ -586,6 +595,7 @@
 				F54D603F28490D8A008B732D /* SelectDifficultyView.swift in Sources */,
 				50CF1BC8283CD8DA00324353 /* Card+CoreDataProperties.swift in Sources */,
 				F58A8D27283CC3B8000A859A /* EtalideUITests.swift in Sources */,
+				F584BA9C2857813C00167E51 /* OverlayShadow.swift in Sources */,
 				F5C4230D283CE69900A385B5 /* ImagePicker.swift in Sources */,
 				50CF1BC2283CD8DA00324353 /* Deck+CoreDataProperties.swift in Sources */,
 				50CF1BC5283CD8DA00324353 /* Card+CoreDataClass.swift in Sources */,

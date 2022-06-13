@@ -29,7 +29,9 @@ struct DeckPopoverView: View {
 	@ViewBuilder private func cardView(_ card: Card) -> some View {
 		if let imageURL = card.imageURL {
 			Button {
-				selectedCard = card
+				withAnimation {
+					selectedCard = card
+				}
 			} label: {
 				CardImageView(imageURL)
 					.cornerRadius(15)
@@ -143,7 +145,9 @@ struct DeckPopoverView: View {
 			
 			if deck.assetName == nil {
 				Button {
-					showDeckEditView.toggle()
+					withAnimation {
+						showDeckEditView.toggle()
+					}
 				} label: {
 					Image(systemName: "pencil")
 				}
@@ -151,12 +155,23 @@ struct DeckPopoverView: View {
 			}
 			
 			Button {
-				showNewCardView.toggle()
+				withAnimation {
+					showNewCardView.toggle()
+				}
 			} label: {
 				Image(systemName: "plus")
 			}
 			.buttonStyle(.circle)
 		}
+		.overlayShadow(
+			isShown: Binding(
+				get: { showDeckEditView || selectedCard != nil || showNewCardView },
+				set: { _ in
+					showDeckEditView = false
+					selectedCard = nil
+					showNewCardView = false
+				})
+		)
 		.overlay {
 			if showDeckEditView {
 				DeckPopupView(deck: deck, isPresented: $showDeckEditView)
@@ -175,12 +190,13 @@ struct DeckPopoverView: View {
 			}
 		}
 		.cornerRadius(40)
-		.frame(maxWidth: .infinity, maxHeight: .infinity)
-		.background(Color.black.opacity(0.75))
+		.transition(.overlay)
     }
 	
 	private func dismiss() {
-		isShowingPopover = false
+		withAnimation {
+			isShowingPopover = false
+		}
 	}
 	
 	private func deleteDeck() {
