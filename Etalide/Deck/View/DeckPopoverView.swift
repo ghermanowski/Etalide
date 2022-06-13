@@ -143,16 +143,14 @@ struct DeckPopoverView: View {
 				Button("Delete", role: .destructive, action: deleteDeck)
 			}
 			
-			if deck.assetName == nil {
-				Button {
-					withAnimation {
-						showDeckEditView.toggle()
-					}
-				} label: {
-					Image(systemName: "pencil")
+			Button {
+				withAnimation {
+					showDeckEditView.toggle()
 				}
-				.buttonStyle(.circle)
+			} label: {
+				Image(systemName: "pencil")
 			}
+			.buttonStyle(.circle)
 			
 			Button {
 				withAnimation {
