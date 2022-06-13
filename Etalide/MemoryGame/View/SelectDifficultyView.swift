@@ -13,7 +13,7 @@ struct SelectDifficultyView: View {
 	
 	var body: some View {
 		VStack(alignment: .leading, spacing: 10) {
-			VStack(alignment: .leading, spacing: 8) {
+			LazyVStack(alignment: .leading, spacing: 8) {
 				Text("Play Memory")
 					.font(.title.weight(.bold))
 				
