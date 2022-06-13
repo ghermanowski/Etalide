@@ -9,10 +9,15 @@ import SwiftUI
 
 struct DeckPreview: View {
 	init(_ deck: Deck) {
-		self.deck = deck
+		_decks = FetchRequest(
+			entity: Deck.entity(),
+			sortDescriptors: [],
+			predicate: NSPredicate(format: "id = %@", deck.id! as CVarArg),
+			animation: .default
+		)
 	}
 	
-	private let deck: Deck
+	@FetchRequest var decks: FetchedResults<Deck>
 	
 	@ViewBuilder private func cardView(_ card: Card?) -> some View {
 		Group {
@@ -26,7 +31,9 @@ struct DeckPreview: View {
 		.cornerRadius(25)
 	}
 	
-    var body: some View {
+	var body: some View {
+		let deck = decks.first!
+		
 		Group {
 			if let firstCards = deck.allCards?.sorted().prefix(3) {
 				ZStack {
