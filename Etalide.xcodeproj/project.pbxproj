@@ -119,6 +119,7 @@
 		5C596C6D283FC34A0097C7B8 /* GameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
 		5CBCAD96285207EB00EAEBE4 /* CardPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPopupView.swift; sourceTree = "<group>"; };
 		5CBCAD9928532B5000EAEBE4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6C422EB52857CF5E00781C5E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C749D7E2853C0C7009FA6E5 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6C7C3B0E283E3B7A00F42669 /* Decks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decks.swift; sourceTree = "<group>"; };
 		7151973D2851E5B80049B474 /* FireworkParticlesGeometryEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireworkParticlesGeometryEffect.swift; sourceTree = "<group>"; };
@@ -480,6 +481,7 @@
 				"es-419",
 				es,
 				de,
+				ja,
 			);
 			mainGroup = F58A8CFF283CC3B8000A859A;
 			productRefGroup = F58A8D09283CC3B8000A859A /* Products */;
@@ -637,6 +639,7 @@
 				6C749D7E2853C0C7009FA6E5 /* es-419 */,
 				5C0EDD8F2854DBD900D8481A /* es */,
 				F584BA97285746E900167E51 /* de */,
+				6C422EB52857CF5E00781C5E /* ja */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
