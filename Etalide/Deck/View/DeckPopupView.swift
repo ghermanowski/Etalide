@@ -15,6 +15,7 @@ struct DeckPopupView: View {
 		self.deck = deck
 	}
 	
+	@Environment(\.isLandscape) private var isLandscape
 	@Environment(\.managedObjectContext) private var moc
 	
 	private let deck: Deck?
@@ -37,7 +38,7 @@ struct DeckPopupView: View {
 		.padding(.top, 96)
 		.padding(.horizontal, 48)
 		.padding(.bottom, 32)
-		.frame(width: UIScreen.main.bounds.width / 2.75)
+		.frame(maxWidth: UIScreen.main.bounds.width / (isLandscape ? 2 : 1.5))
 		.background(Color.background2)
 		.cornerRadius(25)
 		.navigationButtons(alignment: .topLeading, padding: 24) {

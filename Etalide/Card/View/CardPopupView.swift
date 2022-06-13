@@ -78,8 +78,7 @@ struct CardPopupView: View {
 		.padding(.top, 96)
 		.padding(.horizontal, 48)
 		.padding(.bottom, 32)
-		.frame(maxWidth: UIScreen.main.bounds.width / (isLandscape ? 3 : 2),
-			   maxHeight: UIScreen.main.bounds.height / (isLandscape ? 2 : 1.66))
+		.frame(maxWidth: UIScreen.main.bounds.width / (isLandscape ? 2 : 1.5))
 		.background(Color.background2)
 		.cornerRadius(25)
 		.navigationButtons(alignment: .topLeading, padding: 24) {
