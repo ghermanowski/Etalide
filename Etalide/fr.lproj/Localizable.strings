@@ -1,0 +1,147 @@
+/* No comment provided by engineer. */
+"Animals" = "Animaux";
+
+/* No comment provided by engineer. */
+"Are you sure you want to delete this card?" = "Vous êtes sûr de vouloir supprimer cette carte?";
+
+/* No comment provided by engineer. */
+"Are you sure you want to delete this deck?" = "Vous êtes sûr de vouloir supprimer ce jeu de cartes?";
+
+/* No comment provided by engineer. */
+"Bear" = "Ours";
+
+/* No comment provided by engineer. */
+"Cake" = "Gâteau";
+
+/* No comment provided by engineer. */
+"Cancel" = "Annuler";
+
+/* No comment provided by engineer. */
+"Caprese" = "Caprese";
+
+/* No comment provided by engineer. */
+"Cat" = "Chat";
+
+/* No comment provided by engineer. */
+"Cheese" = "Fromage";
+
+/* No comment provided by engineer. */
+"Choose a Deck" = "Choisir un jeu de cartes";
+
+/* No comment provided by engineer. */
+"Choose image" = "Choisir image";
+
+/* No comment provided by engineer. */
+"Choose the difficulty" = "Choisir la difficulté ";
+
+/* No comment provided by engineer. */
+"Cow" = "Vache";
+
+/* No comment provided by engineer. */
+"Decks" = "Jeux de cartes";
+
+/* No comment provided by engineer. */
+"Delete" = "Supprimer";
+
+/* No comment provided by engineer. */
+"Dog" = "Chien";
+
+/* No comment provided by engineer. */
+"Easy" = "Facile";
+
+/* No comment provided by engineer. */
+"Edit" = "Modifier";
+
+/* No comment provided by engineer. */
+"Food" = "Nourriture";
+
+/* No comment provided by engineer. */
+"French Fries" = "Pommes frites";
+
+/* No comment provided by engineer. */
+"Hard" = "Difficile";
+
+/* No comment provided by engineer. */
+"Horse" = "Cheval";
+
+/* No comment provided by engineer. */
+"Ice Cream" = "Glace";
+
+/* No comment provided by engineer. */
+"Instructions" = "Instructions";
+
+/* No comment provided by engineer. */
+"Lion" = "Lion";
+
+/* No comment provided by engineer. */
+"Medium" = "Moyen";
+
+/* No comment provided by engineer. */
+"Mokka" = "Moka";
+
+/* No comment provided by engineer. */
+"Name" = "Nom";
+
+/* No comment provided by engineer. */
+"New Card" = "Nouvelle carte";
+
+/* No comment provided by engineer. */
+"New Deck" = "Nouveau jeu de cartes";
+
+/* No comment provided by engineer. */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Orange" = "Orange";
+
+/* No comment provided by engineer. */
+"Parrot" = "Perroquet";
+
+/* No comment provided by engineer. */
+"Pasta" = "Pâte";
+
+/* No comment provided by engineer. */
+"Pig" = "Cochon";
+
+/* No comment provided by engineer. */
+"Pizza" = "Pizza";
+
+/* No comment provided by engineer. */
+"Play again" = "Jouer à nouveau";
+
+/* No comment provided by engineer. */
+"Play Flashcards" = "Jouer à Flashcards";
+
+/* No comment provided by engineer. */
+"Play Memory" = "Jouer à Memory";
+
+/* No comment provided by engineer. */
+"Rabbit" = "Lapin";
+
+/* No comment provided by engineer. */
+"Rooster" = "Coq";
+
+/* No comment provided by engineer. */
+"Salami" = "Salami";
+
+/* No comment provided by engineer. */
+"Sheep" = "Mouton";
+
+/* No comment provided by engineer. */
+"Strawberry" = "Fraise";
+
+/* No comment provided by engineer. */
+"Swipe horizontally to see the next card.\nTap on the card to reveal the entire word." = "Glisser le doigt horizontalement pour montrer la carte suivante. Taper sur la carte pour révéler le mot complet. ";
+
+/* No comment provided by engineer. */
+"Tap %@ to add a card." = "Taper %@ pour ajouter une nouvelle carte. ";
+
+/* No comment provided by engineer. */
+"Tiger" = "Tigre";
+
+/* No comment provided by engineer. */
+"Well Done!" = "Bien fait!";
+
+/* No comment provided by engineer. */
+"Wine" = "Vin";
+
