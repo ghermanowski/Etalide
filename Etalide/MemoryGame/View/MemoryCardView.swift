@@ -32,6 +32,11 @@ struct MemoryCardView: View {
 				if !isRotated {
 					Color.accentColor
 						.overlay {
+							Image("MemoryCardBack")
+								.resizable()
+								.cornerRadius(8)
+								.padding()
+							
 							if let position = position {
 								Text(verbatim: "\(position)")
 									.foregroundStyle(Color.background)
