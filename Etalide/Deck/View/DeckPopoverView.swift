@@ -29,9 +29,9 @@ struct DeckPopoverView: View {
 	@ViewBuilder private func cardView(_ card: Card) -> some View {
 		if let imageURL = card.imageURL {
 			Button {
-				withAnimation {
+//				withAnimation {
 					selectedCard = card
-				}
+//				}
 			} label: {
 				CardImageView(imageURL)
 					.cornerRadius(15)
@@ -61,9 +61,9 @@ struct DeckPopoverView: View {
 		VStack(spacing: 20) {
 			if let cards = deck.cards, cards.count >= MemoryDifficulty.easy.amount {
 				Button {
-					withAnimation{
+//					withAnimation{
 						isShowingDifficulties = true
-					}
+//					}
 				} label: {
 					GameButton(imageTitle: "MemoryGameButton", title: "Play Memory")
 				}
@@ -144,18 +144,18 @@ struct DeckPopoverView: View {
 			}
 			
 			Button {
-				withAnimation {
+//				withAnimation {
 					showDeckEditView.toggle()
-				}
+//				}
 			} label: {
 				Image(systemName: "pencil")
 			}
 			.buttonStyle(.circle)
 			
 			Button {
-				withAnimation {
+//				withAnimation {
 					showNewCardView.toggle()
-				}
+//				}
 			} label: {
 				Image(systemName: "plus")
 			}
@@ -192,9 +192,9 @@ struct DeckPopoverView: View {
     }
 	
 	private func dismiss() {
-		withAnimation {
+//		withAnimation {
 			isShowingPopover = false
-		}
+//		}
 	}
 	
 	private func deleteDeck() {

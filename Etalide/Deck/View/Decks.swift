@@ -44,9 +44,9 @@ struct Decks: View {
 		.background(Color.background)
 		.navigationButtons(alignment: .topTrailing, padding: 20) {
 			Button {
-				withAnimation {
+//				withAnimation {
 					showNewDeckView = true
-				}
+//				}
 			} label: {
 				Image(systemName: "plus")
 			}

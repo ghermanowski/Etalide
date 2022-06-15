@@ -115,9 +115,9 @@ struct CardPopupView: View {
 	}
 	
 	private func dismiss() {
-		withAnimation {
+//		withAnimation {
 			showPopover.toggle()
-		}
+//		}
 	}
 	
 	private func requestDeletion() {

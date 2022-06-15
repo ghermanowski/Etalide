@@ -62,9 +62,9 @@ struct DeckPopupView: View {
     }
 	
 	private func dismiss() {
-		withAnimation {
+//		withAnimation {
 			isPresented = false
-		}
+//		}
 	}
 	
 	private func saveDeck() {
