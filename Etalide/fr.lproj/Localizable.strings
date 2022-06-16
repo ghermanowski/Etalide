@@ -2,10 +2,10 @@
 "Animals" = "Animaux";
 
 /* No comment provided by engineer. */
-"Are you sure you want to delete this card?" = "Vous êtes sûr de vouloir supprimer cette carte?";
+"Are you sure you want to delete this card?" = "Êtes-vous sûr de vouloir supprimer cette carte ?";
 
 /* No comment provided by engineer. */
-"Are you sure you want to delete this deck?" = "Vous êtes sûr de vouloir supprimer ce jeu de cartes?";
+"Are you sure you want to delete this deck?" = "Êtes-vous sûr de vouloir supprimer ce jeu de cartes ?";
 
 /* No comment provided by engineer. */
 "Bear" = "Ours";
@@ -29,10 +29,10 @@
 "Choose a Deck" = "Choisir un jeu de cartes";
 
 /* No comment provided by engineer. */
-"Choose image" = "Choisir image";
+"Choose image" = "Choisir une image";
 
 /* No comment provided by engineer. */
-"Choose the difficulty" = "Choisir la difficulté ";
+"Choose the difficulty" = "Choisir la difficulté";
 
 /* No comment provided by engineer. */
 "Cow" = "Vache";
@@ -56,7 +56,7 @@
 "Food" = "Nourriture";
 
 /* No comment provided by engineer. */
-"French Fries" = "Pommes frites";
+"French Fries" = "Frites";
 
 /* No comment provided by engineer. */
 "Hard" = "Difficile";
@@ -98,7 +98,7 @@
 "Parrot" = "Perroquet";
 
 /* No comment provided by engineer. */
-"Pasta" = "Pâte";
+"Pasta" = "Pâtes";
 
 /* No comment provided by engineer. */
 "Pig" = "Cochon";
@@ -113,7 +113,7 @@
 "Play Flashcards" = "Jouer à Flashcards";
 
 /* No comment provided by engineer. */
-"Play Memory" = "Jouer à Memory";
+"Play Memory" = "Jouer au jeu de paires";
 
 /* No comment provided by engineer. */
 "Rabbit" = "Lapin";
@@ -131,7 +131,7 @@
 "Strawberry" = "Fraise";
 
 /* No comment provided by engineer. */
-"Swipe horizontally to see the next card.\nTap on the card to reveal the entire word." = "Glisser le doigt horizontalement pour montrer la carte suivante. Taper sur la carte pour révéler le mot complet. ";
+"Swipe horizontally to see the next card.\nTap on the card to reveal the entire word." = "Glisser votre doigt horizontalement pour montrer la carte suivante. Taper sur la carte pour révéler le mot complet. ";
 
 /* No comment provided by engineer. */
 "Tap %@ to add a card." = "Taper %@ pour ajouter une nouvelle carte. ";
@@ -140,7 +140,7 @@
 "Tiger" = "Tigre";
 
 /* No comment provided by engineer. */
-"Well Done!" = "Bien fait!";
+"Well Done!" = "Félicitations !";
 
 /* No comment provided by engineer. */
 "Wine" = "Vin";
