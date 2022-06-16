@@ -90,6 +90,7 @@ struct CardPopupView: View {
 		.navigationButtons(alignment: .top, padding: 24) {
 			Text(card == nil ? "New Card" : "Edit")
 				.font(.largeTitle.weight(.bold))
+				.foregroundColor(.accentColor)
 		}
 		.navigationButtons(alignment: .topTrailing, padding: 24) {
 			if card != nil {
