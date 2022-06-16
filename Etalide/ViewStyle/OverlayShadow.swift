@@ -17,11 +17,11 @@ struct OverlayShadow: ViewModifier {
 					Color.black.opacity(0.75)
 						.frame(maxWidth: .infinity, maxHeight: .infinity)
 						.ignoresSafeArea(.all)
-//						.onTapGesture {
-//							withAnimation {
-//								isShown = false
-//							}
-//						}
+						.onTapGesture {
+							withAnimation {
+								isShown = false
+							}
+						}
 				}
 			}
 	}

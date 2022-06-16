@@ -36,6 +36,15 @@ struct CardPopupView: View {
 	
 	var body: some View {
 		VStack(spacing: 32) {
+			TextField("Name", text: $cardName)
+				.font(.system(.largeTitle).weight(.semibold))
+				.multilineTextAlignment(.center)
+				.foregroundStyle(Color.accentColor)
+				.padding(.vertical)
+				.frame(maxWidth: .infinity)
+				.background(Color.background)
+				.cornerRadius(25)
+			
 			Button {
 				showImagePicker.toggle()
 			} label: {
@@ -65,15 +74,6 @@ struct CardPopupView: View {
 			.sheet(isPresented: $showImagePicker) {
 				ImagePicker(image: $image)
 			}
-			
-			TextField("Name", text: $cardName)
-				.font(.system(.largeTitle).weight(.semibold))
-				.multilineTextAlignment(.center)
-				.foregroundStyle(Color.accentColor)
-				.padding(.vertical)
-				.frame(maxWidth: .infinity)
-				.background(Color.background)
-				.cornerRadius(25)
 		}
 		.padding(.top, 96)
 		.padding(.horizontal, 48)
