@@ -102,6 +102,7 @@
 /* Begin PBXFileReference section */
 		50314FB9284E454F005A1A7E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50314FBB284E4572005A1A7E /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		507A5ACB28586AB900777425 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		50CF1BB5283CD78300324353 /* Etalide.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Etalide.xcdatamodel; sourceTree = "<group>"; };
 		50CF1BB9283CD8DA00324353 /* Deck+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataClass.swift"; sourceTree = "<group>"; };
 		50CF1BBA283CD8DA00324353 /* Deck+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Deck+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -482,6 +483,7 @@
 				es,
 				de,
 				ja,
+				fr,
 			);
 			mainGroup = F58A8CFF283CC3B8000A859A;
 			productRefGroup = F58A8D09283CC3B8000A859A /* Products */;
@@ -640,6 +642,7 @@
 				5C0EDD8F2854DBD900D8481A /* es */,
 				F584BA97285746E900167E51 /* de */,
 				6C422EB52857CF5E00781C5E /* ja */,
+				507A5ACB28586AB900777425 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
