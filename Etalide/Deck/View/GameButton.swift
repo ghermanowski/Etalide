@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct GameButton: View {
+	@Environment(\.isLandscape) private var isLandscape
+	
     let imageTitle: String
     let title: String
 	
@@ -22,7 +24,7 @@ struct GameButton: View {
                     .multilineTextAlignment(.leading)
 					.foregroundColor(.white)
 					.padding(.leading, 8)
-					.padding(20)
+					.padding(isLandscape ? 20 : 12)
 			}
     }
 }
