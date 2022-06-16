@@ -8,5 +8,5 @@
 import SwiftUI
 
 extension AnyTransition {
-	static let overlay = AnyTransition.opacity.combined(with: .move(edge: .bottom))
+	static let overlay = AnyTransition.opacity
 }
