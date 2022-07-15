@@ -8,8 +8,6 @@ Perform cognitive exercises with people affected by dementia to train their memo
 - Play with flashcards to stimulate word memory through images
 - Choose between 3 different difficulties in a memory game designed to be easy to use
 
-[App Store](https://apps.apple.com/app/etalide/id1629237785)
-
 ## Screenshots
 
 <div>
