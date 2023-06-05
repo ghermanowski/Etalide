@@ -1,4 +1,7 @@
 # Etalide
+[![](https://img.shields.io/badge/iOS-15.8-orange)](#)
+[![](https://img.shields.io/badge/Platforms-iPad-blue)](#)
+[![](https://img.shields.io/badge/Category-Health-brightgreen)](#)
 
 Perform cognitive exercises with people affected by dementia to train their memory. Whether you are a healthcare professional or a family member, you can create your own decks of cards to use in the activities. Choose between two different activities: Flashcards and a memory game. Choose what’s best for their situation to create cards that are more engaging and appealing.
 
